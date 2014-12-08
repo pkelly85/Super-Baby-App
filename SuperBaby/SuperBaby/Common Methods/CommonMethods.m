@@ -373,12 +373,12 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     rect.size.height += textView.textContainerInset.bottom;
     [textView scrollRectToVisible:rect animated:animated];
 }
-+(void)addBottomLine_to_Label:(UILabel *)lbl
++(void)addBottomLine_to_Label:(UILabel *)lbl withColor:(UIColor *)color
 {
     CALayer* layer = [lbl layer];
     
     CALayer *bottomBorder = [CALayer layer];
-    bottomBorder.borderColor = RGBCOLOR(164.0, 164.0, 167.0).CGColor;
+    bottomBorder.borderColor = color.CGColor;
     bottomBorder.borderWidth = 0.5;
     bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.5, screenSize.size.width, 1);
     [layer addSublayer:bottomBorder];

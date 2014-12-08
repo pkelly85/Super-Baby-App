@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		10C27D011A35A4C20006985C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D001A35A4C20006985C /* main.m */; };
 		10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D031A35A4C20006985C /* S_AppDelegate.m */; };
-		10C27D071A35A4C20006985C /* S_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D061A35A4C20006985C /* S_ViewController.m */; };
 		10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D0B1A35A4C20006985C /* Images.xcassets */; };
 		10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D0D1A35A4C20006985C /* LaunchScreen.xib */; };
 		10C27D1B1A35A4C20006985C /* SuperBabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D1A1A35A4C20006985C /* SuperBabyTests.m */; };
-		10C27D251A35A5070006985C /* S_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D241A35A5070006985C /* S_ViewController.xib */; };
 		10C27D841A35A5DC0006985C /* AFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D291A35A5DB0006985C /* AFAPIClient.m */; };
 		10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D2B1A35A5DB0006985C /* AFDownloadRequestOperation.m */; };
 		10C27D861A35A5DC0006985C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D2D1A35A5DB0006985C /* AFHTTPRequestOperation.m */; };
@@ -57,6 +55,12 @@
 		10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D801A35A5DC0006985C /* SVProgressHUD.bundle */; };
 		10C27DAD1A35A5DC0006985C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D821A35A5DC0006985C /* SVProgressHUD.m */; };
 		10C27DB11A35A7190006985C /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DB01A35A7190006985C /* CommonMethods.m */; };
+		10C27DB91A35AE290006985C /* S_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DB71A35AE290006985C /* S_ViewController.m */; };
+		10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DB81A35AE290006985C /* S_ViewController.xib */; };
+		10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DBD1A35AE570006985C /* S_RegisterVC.m */; };
+		10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DBE1A35AE570006985C /* S_RegisterVC.xib */; };
+		10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */; };
+		10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,14 +79,11 @@
 		10C27D001A35A4C20006985C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10C27D021A35A4C20006985C /* S_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S_AppDelegate.h; sourceTree = "<group>"; };
 		10C27D031A35A4C20006985C /* S_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S_AppDelegate.m; sourceTree = "<group>"; };
-		10C27D051A35A4C20006985C /* S_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S_ViewController.h; sourceTree = "<group>"; };
-		10C27D061A35A4C20006985C /* S_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S_ViewController.m; sourceTree = "<group>"; };
 		10C27D0B1A35A4C20006985C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		10C27D0E1A35A4C20006985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		10C27D141A35A4C20006985C /* SuperBabyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperBabyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C27D191A35A4C20006985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10C27D1A1A35A4C20006985C /* SuperBabyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperBabyTests.m; sourceTree = "<group>"; };
-		10C27D241A35A5070006985C /* S_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_ViewController.xib; sourceTree = "<group>"; };
 		10C27D281A35A5DB0006985C /* AFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAPIClient.h; sourceTree = "<group>"; };
 		10C27D291A35A5DB0006985C /* AFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAPIClient.m; sourceTree = "<group>"; };
 		10C27D2A1A35A5DB0006985C /* AFDownloadRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadRequestOperation.h; sourceTree = "<group>"; };
@@ -172,6 +173,15 @@
 		10C27D831A35A5DC0006985C /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
 		10C27DAF1A35A7190006985C /* CommonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMethods.h; sourceTree = "<group>"; };
 		10C27DB01A35A7190006985C /* CommonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMethods.m; sourceTree = "<group>"; };
+		10C27DB61A35AE290006985C /* S_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_ViewController.h; sourceTree = "<group>"; };
+		10C27DB71A35AE290006985C /* S_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_ViewController.m; sourceTree = "<group>"; };
+		10C27DB81A35AE290006985C /* S_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_ViewController.xib; sourceTree = "<group>"; };
+		10C27DBC1A35AE570006985C /* S_RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_RegisterVC.h; sourceTree = "<group>"; };
+		10C27DBD1A35AE570006985C /* S_RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_RegisterVC.m; sourceTree = "<group>"; };
+		10C27DBE1A35AE570006985C /* S_RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_RegisterVC.xib; sourceTree = "<group>"; };
+		10C27DC21A35CF4F0006985C /* S_EditBabyInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_EditBabyInfoVC.h; sourceTree = "<group>"; };
+		10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_EditBabyInfoVC.m; sourceTree = "<group>"; };
+		10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_EditBabyInfoVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,9 +227,9 @@
 			children = (
 				10C27D021A35A4C20006985C /* S_AppDelegate.h */,
 				10C27D031A35A4C20006985C /* S_AppDelegate.m */,
-				10C27D051A35A4C20006985C /* S_ViewController.h */,
-				10C27D061A35A4C20006985C /* S_ViewController.m */,
-				10C27D241A35A5070006985C /* S_ViewController.xib */,
+				10C27DB41A35ADE90006985C /* View */,
+				10C27DB31A35ADE90006985C /* Model */,
+				10C27DB21A35ADE90006985C /* Controller */,
 				10C27D0B1A35A4C20006985C /* Images.xcassets */,
 				10C27D0D1A35A4C20006985C /* LaunchScreen.xib */,
 				10C27CFE1A35A4C20006985C /* Supporting Files */,
@@ -406,6 +416,60 @@
 			path = "SuperBaby/Common Methods";
 			sourceTree = "<group>";
 		};
+		10C27DB21A35ADE90006985C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10C27DB51A35AE290006985C /* View Controller */,
+				10C27DBB1A35AE3C0006985C /* Register View */,
+				10C27DC11A35CF340006985C /* Edit Baby Info */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		10C27DB31A35ADE90006985C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10C27DB41A35ADE90006985C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10C27DB51A35AE290006985C /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10C27DB61A35AE290006985C /* S_ViewController.h */,
+				10C27DB71A35AE290006985C /* S_ViewController.m */,
+				10C27DB81A35AE290006985C /* S_ViewController.xib */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		10C27DBB1A35AE3C0006985C /* Register View */ = {
+			isa = PBXGroup;
+			children = (
+				10C27DBC1A35AE570006985C /* S_RegisterVC.h */,
+				10C27DBD1A35AE570006985C /* S_RegisterVC.m */,
+				10C27DBE1A35AE570006985C /* S_RegisterVC.xib */,
+			);
+			path = "Register View";
+			sourceTree = "<group>";
+		};
+		10C27DC11A35CF340006985C /* Edit Baby Info */ = {
+			isa = PBXGroup;
+			children = (
+				10C27DC21A35CF4F0006985C /* S_EditBabyInfoVC.h */,
+				10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */,
+				10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */,
+			);
+			path = "Edit Baby Info";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,8 +551,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
-				10C27D251A35A5070006985C /* S_ViewController.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
+				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
+				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
+				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,11 +580,13 @@
 				10C27D931A35A5DC0006985C /* NSMutableAttributedString+Validation.m in Sources */,
 				10C27D861A35A5DC0006985C /* AFHTTPRequestOperation.m in Sources */,
 				10C27D891A35A5DC0006985C /* AFNetworkReachabilityManager.m in Sources */,
+				10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */,
 				10C27D8C1A35A5DC0006985C /* AFURLRequestSerialization.m in Sources */,
 				10C27D841A35A5DC0006985C /* AFAPIClient.m in Sources */,
 				10C27D8D1A35A5DC0006985C /* AFURLResponseSerialization.m in Sources */,
 				10C27DAD1A35A5DC0006985C /* SVProgressHUD.m in Sources */,
 				10C27DA21A35A5DC0006985C /* SDWebImageDownloaderOperation.m in Sources */,
+				10C27DB91A35AE290006985C /* S_ViewController.m in Sources */,
 				10C27DA41A35A5DC0006985C /* SDWebImagePrefetcher.m in Sources */,
 				10C27D981A35A5DC0006985C /* UIImage+KTCategory.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
@@ -531,7 +599,6 @@
 				10C27D921A35A5DC0006985C /* NSDate+Formatting.m in Sources */,
 				10C27D901A35A5DC0006985C /* Base64.m in Sources */,
 				10C27D8E1A35A5DC0006985C /* AFURLResponseSerializerWithData.m in Sources */,
-				10C27D071A35A4C20006985C /* S_ViewController.m in Sources */,
 				10C27D9A1A35A5DC0006985C /* DownloadManager.m in Sources */,
 				10C27D941A35A5DC0006985C /* NSObject+Validation.m in Sources */,
 				10C27D9E1A35A5DC0006985C /* SDImageCache.m in Sources */,
@@ -544,6 +611,7 @@
 				10C27D9B1A35A5DC0006985C /* JSONParser.m in Sources */,
 				10C27DAA1A35A5DC0006985C /* UIImageView+WebCache.m in Sources */,
 				10C27DA11A35A5DC0006985C /* SDWebImageDownloader.m in Sources */,
+				10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */,
 				10C27D961A35A5DC0006985C /* NSUserDefaults+Helpers.m in Sources */,
 				10C27D9C1A35A5DC0006985C /* MKAnnotationView+WebCache.m in Sources */,
 				10C27D011A35A4C20006985C /* main.m in Sources */,

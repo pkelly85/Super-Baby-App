@@ -58,7 +58,7 @@ NSString *DocumentsDirectoryPath() ;
 +(NSArray *)getTagArray:(NSString *)strFinal;
 
 + (BOOL) isValidateUrl: (NSString *)url;
-+(void)addBottomLine_to_Label:(UILabel *)lbl;
++(void)addBottomLine_to_Label:(UILabel *)lbl withColor:(UIColor *)color;
 +(void)addTOPLine_to_View:(UIView *)view;
 
 

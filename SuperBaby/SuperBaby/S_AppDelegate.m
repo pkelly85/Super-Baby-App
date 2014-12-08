@@ -8,7 +8,7 @@
 
 #import "S_AppDelegate.h"
 #import "AppConstant.h"
-#import "S_ViewController.h"
+#import "S_RegisterVC.h"
 
 @interface S_AppDelegate ()
 
@@ -21,7 +21,7 @@
 {
     /*--- Window init ---*/
     self.window = [[UIWindow alloc]initWithFrame:screenSize];
-    self.vc = [[S_ViewController alloc]initWithNibName:@"S_ViewController" bundle:nil];
+    self.vc = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
     self.navC = [[UINavigationController alloc]initWithRootViewController:self.vc];
     self.navC.navigationBarHidden = YES;
     self.window.rootViewController = self.navC;

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class S_ViewController;
+@class S_RegisterVC;
 @interface S_AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navC;
-@property (strong, nonatomic) S_ViewController *vc;
+@property (strong, nonatomic) S_RegisterVC *vc;
 
 
 @end

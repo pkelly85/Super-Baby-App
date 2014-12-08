@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_ViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="tdZ-jm-xxZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-Nu-Thf">
+                    <rect key="frame" x="10" y="30" width="300" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZP1-dv-GI5"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPe-mR-UTY">
+                    <rect key="frame" x="0.0" y="400" width="320" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-Gs-deP">
+                            <rect key="frame" x="10" y="10" width="145" height="40"/>
+                            <color key="backgroundColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ByD-jg-8dr"/>
+                            </constraints>
+                            <state key="normal" title="I Disagree">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnDisAgreeClicked:" destination="-1" eventType="touchUpInside" id="BMr-np-1VK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-ca-u6E">
+                            <rect key="frame" x="165" y="10" width="145" height="40"/>
+                            <color key="backgroundColor" red="0.88627450980392153" green="0.36078431372549019" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="CCm-f9-cwZ"/>
+                            </constraints>
+                            <state key="normal" title="I Agree">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAgreeClicked:" destination="-1" eventType="touchUpInside" id="PaJ-a7-Mc7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="aSF-Gs-deP" firstAttribute="width" secondItem="Uj2-ca-u6E" secondAttribute="width" id="4WR-g8-y2V"/>
+                        <constraint firstAttribute="height" constant="80" id="KGy-Q8-5ag"/>
+                        <constraint firstAttribute="trailing" secondItem="Uj2-ca-u6E" secondAttribute="trailing" constant="10" id="NfX-aS-oZ0"/>
+                        <constraint firstItem="aSF-Gs-deP" firstAttribute="top" secondItem="CPe-mR-UTY" secondAttribute="top" constant="10" id="UpS-oP-kZl"/>
+                        <constraint firstItem="Uj2-ca-u6E" firstAttribute="top" secondItem="CPe-mR-UTY" secondAttribute="top" constant="10" id="lnK-IK-QHO"/>
+                        <constraint firstItem="aSF-Gs-deP" firstAttribute="leading" secondItem="CPe-mR-UTY" secondAttribute="leading" constant="10" id="vIQ-QQ-0t8"/>
+                        <constraint firstItem="Uj2-ca-u6E" firstAttribute="leading" secondItem="aSF-Gs-deP" secondAttribute="trailing" constant="10" id="w4X-3J-gUX"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iU-Nq-YWC">
+                    <rect key="frame" x="10" y="90" width="300" height="282"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CPe-mR-UTY" secondAttribute="bottom" id="GyD-Oc-DZU"/>
+                <constraint firstItem="6iU-Nq-YWC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ITN-r1-BCP"/>
+                <constraint firstItem="6iU-Nq-YWC" firstAttribute="top" secondItem="kAI-Nu-Thf" secondAttribute="bottom" constant="16" id="NMa-d8-SjF"/>
+                <constraint firstAttribute="trailing" secondItem="CPe-mR-UTY" secondAttribute="trailing" id="PrO-Zh-b2j"/>
+                <constraint firstItem="kAI-Nu-Thf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ZYB-ZN-dJ3"/>
+                <constraint firstItem="kAI-Nu-Thf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bTF-j6-ftz"/>
+                <constraint firstAttribute="trailing" secondItem="kAI-Nu-Thf" secondAttribute="trailing" constant="10" id="dw3-6o-1EM"/>
+                <constraint firstAttribute="trailing" secondItem="6iU-Nq-YWC" secondAttribute="trailing" constant="10" id="qKv-De-uVP"/>
+                <constraint firstItem="CPe-mR-UTY" firstAttribute="top" secondItem="6iU-Nq-YWC" secondAttribute="bottom" constant="28" id="qbe-50-bQM"/>
+                <constraint firstItem="CPe-mR-UTY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vy4-Xy-o4p"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="529" y="490"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
