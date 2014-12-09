@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
+		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
+		109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */; };
+		109885DF1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885DB1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		109885E41A37060400FB3BB4 /* S_HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885E21A37060400FB3BB4 /* S_HomeVC.m */; };
+		109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885E31A37060400FB3BB4 /* S_HomeVC.xib */; };
+		109885EA1A370F5500FB3BB4 /* S_BabyDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885E81A370F5500FB3BB4 /* S_BabyDetailVC.m */; };
+		109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885E91A370F5500FB3BB4 /* S_BabyDetailVC.xib */; };
+		109885F01A371A3000FB3BB4 /* S_ExcerciseVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885EE1A371A3000FB3BB4 /* S_ExcerciseVideoVC.m */; };
+		109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885EF1A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib */; };
+		109885F71A371AE200FB3BB4 /* S_TimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885F51A371AE200FB3BB4 /* S_TimelineVC.m */; };
+		109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */; };
+		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
+		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
 		10C27D011A35A4C20006985C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D001A35A4C20006985C /* main.m */; };
 		10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D031A35A4C20006985C /* S_AppDelegate.m */; };
 		10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D0B1A35A4C20006985C /* Images.xcassets */; };
@@ -74,6 +88,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		109885D81A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		109885DA1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		109885DB1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		109885E11A37060400FB3BB4 /* S_HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_HomeVC.h; sourceTree = "<group>"; };
+		109885E21A37060400FB3BB4 /* S_HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_HomeVC.m; sourceTree = "<group>"; };
+		109885E31A37060400FB3BB4 /* S_HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_HomeVC.xib; sourceTree = "<group>"; };
+		109885E71A370F5500FB3BB4 /* S_BabyDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_BabyDetailVC.h; sourceTree = "<group>"; };
+		109885E81A370F5500FB3BB4 /* S_BabyDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_BabyDetailVC.m; sourceTree = "<group>"; };
+		109885E91A370F5500FB3BB4 /* S_BabyDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_BabyDetailVC.xib; sourceTree = "<group>"; };
+		109885ED1A371A3000FB3BB4 /* S_ExcerciseVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_ExcerciseVideoVC.h; sourceTree = "<group>"; };
+		109885EE1A371A3000FB3BB4 /* S_ExcerciseVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_ExcerciseVideoVC.m; sourceTree = "<group>"; };
+		109885EF1A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_ExcerciseVideoVC.xib; sourceTree = "<group>"; };
+		109885F41A371AE200FB3BB4 /* S_TimelineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TimelineVC.h; sourceTree = "<group>"; };
+		109885F51A371AE200FB3BB4 /* S_TimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TimelineVC.m; sourceTree = "<group>"; };
+		109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_TimelineVC.xib; sourceTree = "<group>"; };
+		109885F91A371AF500FB3BB4 /* S_SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_SettingsVC.h; sourceTree = "<group>"; };
+		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
+		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
 		10C27CFB1A35A4C20006985C /* SuperBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C27CFF1A35A4C20006985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10C27D001A35A4C20006985C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -202,6 +239,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */,
+				109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */,
+				109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */,
+				109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */,
+				109885D81A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.h */,
+				109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */,
+				109885DA1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				109885DB1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		109885E01A3705F500FB3BB4 /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				109885E11A37060400FB3BB4 /* S_HomeVC.h */,
+				109885E21A37060400FB3BB4 /* S_HomeVC.m */,
+				109885E31A37060400FB3BB4 /* S_HomeVC.xib */,
+				109885E61A370F4600FB3BB4 /* Baby Detail View */,
+				109885EC1A371A0300FB3BB4 /* Excercise Video */,
+				109885F31A371AC900FB3BB4 /* Timeline View */,
+				109885F21A371AC900FB3BB4 /* Settings View */,
+			);
+			path = "Home View";
+			sourceTree = "<group>";
+		};
+		109885E61A370F4600FB3BB4 /* Baby Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				109885E71A370F5500FB3BB4 /* S_BabyDetailVC.h */,
+				109885E81A370F5500FB3BB4 /* S_BabyDetailVC.m */,
+				109885E91A370F5500FB3BB4 /* S_BabyDetailVC.xib */,
+			);
+			path = "Baby Detail View";
+			sourceTree = "<group>";
+		};
+		109885EC1A371A0300FB3BB4 /* Excercise Video */ = {
+			isa = PBXGroup;
+			children = (
+				109885ED1A371A3000FB3BB4 /* S_ExcerciseVideoVC.h */,
+				109885EE1A371A3000FB3BB4 /* S_ExcerciseVideoVC.m */,
+				109885EF1A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib */,
+			);
+			path = "Excercise Video";
+			sourceTree = "<group>";
+		};
+		109885F21A371AC900FB3BB4 /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				109885F91A371AF500FB3BB4 /* S_SettingsVC.h */,
+				109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */,
+				109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */,
+			);
+			path = "Settings View";
+			sourceTree = "<group>";
+		};
+		109885F31A371AC900FB3BB4 /* Timeline View */ = {
+			isa = PBXGroup;
+			children = (
+				109885F41A371AE200FB3BB4 /* S_TimelineVC.h */,
+				109885F51A371AE200FB3BB4 /* S_TimelineVC.m */,
+				109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */,
+			);
+			path = "Timeline View";
+			sourceTree = "<group>";
+		};
 		10C27CF21A35A4C20006985C = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +372,7 @@
 		10C27D261A35A5DB0006985C /* ALL Classes */ = {
 			isa = PBXGroup;
 			children = (
+				109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */,
 				10C27D271A35A5DB0006985C /* AFNetworking */,
 				10C27D411A35A5DB0006985C /* AppConstant.h */,
 				10C27D421A35A5DB0006985C /* Categories */,
@@ -422,6 +529,7 @@
 				10C27DB51A35AE290006985C /* View Controller */,
 				10C27DBB1A35AE3C0006985C /* Register View */,
 				10C27DC11A35CF340006985C /* Edit Baby Info */,
+				109885E01A3705F500FB3BB4 /* Home View */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -553,9 +661,14 @@
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
+				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
+				109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
+				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
+				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
+				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +692,7 @@
 				10C27D8B1A35A5DC0006985C /* AFURLConnectionOperation.m in Sources */,
 				10C27D931A35A5DC0006985C /* NSMutableAttributedString+Validation.m in Sources */,
 				10C27D861A35A5DC0006985C /* AFHTTPRequestOperation.m in Sources */,
+				109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				10C27D891A35A5DC0006985C /* AFNetworkReachabilityManager.m in Sources */,
 				10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */,
 				10C27D8C1A35A5DC0006985C /* AFURLRequestSerialization.m in Sources */,
@@ -589,6 +703,7 @@
 				10C27DB91A35AE290006985C /* S_ViewController.m in Sources */,
 				10C27DA41A35A5DC0006985C /* SDWebImagePrefetcher.m in Sources */,
 				10C27D981A35A5DC0006985C /* UIImage+KTCategory.m in Sources */,
+				109885E41A37060400FB3BB4 /* S_HomeVC.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
@@ -600,23 +715,30 @@
 				10C27D901A35A5DC0006985C /* Base64.m in Sources */,
 				10C27D8E1A35A5DC0006985C /* AFURLResponseSerializerWithData.m in Sources */,
 				10C27D9A1A35A5DC0006985C /* DownloadManager.m in Sources */,
+				109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */,
 				10C27D941A35A5DC0006985C /* NSObject+Validation.m in Sources */,
+				109885DF1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				10C27D9E1A35A5DC0006985C /* SDImageCache.m in Sources */,
+				109885F71A371AE200FB3BB4 /* S_TimelineVC.m in Sources */,
 				10C27D871A35A5DC0006985C /* AFHTTPRequestOperationManager.m in Sources */,
 				10C27DA31A35A5DC0006985C /* SDWebImageManager.m in Sources */,
+				109885F01A371A3000FB3BB4 /* S_ExcerciseVideoVC.m in Sources */,
 				10C27DA81A35A5DC0006985C /* UIImage+WebP.m in Sources */,
 				10C27D8A1A35A5DC0006985C /* AFSecurityPolicy.m in Sources */,
 				10C27D991A35A5DC0006985C /* UINavigationController+Rotation_IOS6.m in Sources */,
 				10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */,
+				109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				10C27D9B1A35A5DC0006985C /* JSONParser.m in Sources */,
 				10C27DAA1A35A5DC0006985C /* UIImageView+WebCache.m in Sources */,
 				10C27DA11A35A5DC0006985C /* SDWebImageDownloader.m in Sources */,
 				10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */,
 				10C27D961A35A5DC0006985C /* NSUserDefaults+Helpers.m in Sources */,
+				109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				10C27D9C1A35A5DC0006985C /* MKAnnotationView+WebCache.m in Sources */,
 				10C27D011A35A4C20006985C /* main.m in Sources */,
 				10C27DA01A35A5DC0006985C /* SDWebImageDecoder.m in Sources */,
 				10C27D9F1A35A5DC0006985C /* SDWebImageCompat.m in Sources */,
+				109885EA1A370F5500FB3BB4 /* S_BabyDetailVC.m in Sources */,
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
 				10C27D9D1A35A5DC0006985C /* NSData+ImageContentType.m in Sources */,
 				10C27D881A35A5DC0006985C /* AFHTTPSessionManager.m in Sources */,
@@ -802,6 +924,7 @@
 				10C27D201A35A4C20006985C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10C27D211A35A4C20006985C /* Build configuration list for PBXNativeTarget "SuperBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -810,6 +933,7 @@
 				10C27D231A35A4C20006985C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

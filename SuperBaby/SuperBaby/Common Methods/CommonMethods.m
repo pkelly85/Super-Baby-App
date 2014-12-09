@@ -272,7 +272,7 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
 /*----- back button with custom image -----*/
 + (UIBarButtonItem*)backBarButtton
 {
-    UIImage *buttonImage = [UIImage imageNamed:@"back_icon"];
+    UIImage *buttonImage = [UIImage imageNamed:@"back_black"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
@@ -281,7 +281,15 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
 
     return retVal;
 }
-
++ (UIButton*)backbutton
+{
+    UIImage *buttonImage = [UIImage imageNamed:@"back_black"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:buttonImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+    [button addTarget:appDel.navC action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
 + (UIBarButtonItem*)backBarButtton_NewNavigation:(UIViewController *)viewC withSelector:(SEL)mySelector
 {
     UIImage *buttonImage = [UIImage imageNamed:@"back_icon"];
@@ -383,6 +391,17 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.5, screenSize.size.width, 1);
     [layer addSublayer:bottomBorder];
 }
++(void)addBottomLine_to_View:(UIView *)view withColor:(UIColor *)color
+{
+    CALayer* layer = [view layer];
+    
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.borderColor = color.CGColor;
+    bottomBorder.borderWidth = 0.5;
+    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.5, screenSize.size.width, 1);
+    [layer addSublayer:bottomBorder];
+}
+
 +(void)addTOPLine_to_View:(UIView *)view
 {
     CALayer* layer = [view layer];

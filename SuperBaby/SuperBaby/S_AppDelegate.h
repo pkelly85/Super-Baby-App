@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#define NSLog(...)
+
 @class S_RegisterVC;
 @interface S_AppDelegate : UIResponder <UIApplicationDelegate>
 

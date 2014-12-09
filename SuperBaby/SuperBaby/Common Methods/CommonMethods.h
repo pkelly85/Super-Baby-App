@@ -47,6 +47,8 @@ NSString *DocumentsDirectoryPath() ;
 
 + (UIBarButtonItem*)leftMenuButton:(UIViewController *)viewC withSelector:(SEL)mySelector;
 + (UIBarButtonItem*)backBarButtton;
++ (UIButton*)backbutton;
+
 + (UIBarButtonItem*)backBarButtton_Dismiss:(UIViewController *)viewC withSelector:(SEL)mySelector;
 + (UIBarButtonItem*)backBarButtton_NewNavigation:(UIViewController *)viewC withSelector:(SEL)mySelector;
 
@@ -59,6 +61,8 @@ NSString *DocumentsDirectoryPath() ;
 
 + (BOOL) isValidateUrl: (NSString *)url;
 +(void)addBottomLine_to_Label:(UILabel *)lbl withColor:(UIColor *)color;
++(void)addBottomLine_to_View:(UIView *)view withColor:(UIColor *)color;
+
 +(void)addTOPLine_to_View:(UIView *)view;
 
 
