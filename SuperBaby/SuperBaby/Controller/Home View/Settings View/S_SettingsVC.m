@@ -10,8 +10,10 @@
 #import "AppConstant.h"
 @interface S_SettingsVC ()
 {
-    
     __weak IBOutlet UIView *viewTop;
+
+    __weak IBOutlet UIButton *btnAccountUpdate;
+    __weak IBOutlet UIButton *btnRestorePurchase;
 
 }
 @end
@@ -27,7 +29,38 @@
     [super viewDidLoad];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:[UIColor lightGrayColor]];
+    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    
+    [self setAttibutedText];
+}
+-(void)setAttibutedText
+{
+    //btnAccountUpdate
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"Account\nUpdate"];
+    
+    NSRange goRange = [[attributedString string] rangeOfString:@"Account\nUpdate"];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:goRange];//TextColor
+    [attributedString addAttribute:NSFontAttributeName value:btnAccountUpdate.titleLabel.font range:goRange];//TextFont
+    
+    btnAccountUpdate.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    btnAccountUpdate.titleLabel.numberOfLines = 0;
+    btnAccountUpdate.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btnAccountUpdate setAttributedTitle:attributedString forState:UIControlStateNormal];
+    
+    
+    
+    //btnRestorePurchase
+    NSMutableAttributedString *attributedRestore = [[NSMutableAttributedString alloc] initWithString:@"Restore\nPurchases"];
+    
+    NSRange goRange123 = [[attributedRestore string] rangeOfString:@"Restore\nPurchases"];
+    [attributedRestore addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:goRange123];//TextColor
+    [attributedRestore addAttribute:NSFontAttributeName value:btnRestorePurchase.titleLabel.font range:goRange123];//TextFont
+    
+    btnRestorePurchase.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    btnRestorePurchase.titleLabel.numberOfLines = 0;
+    btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btnRestorePurchase setAttributedTitle:attributedString forState:UIControlStateNormal];
+    
 }
 
 - (void)didReceiveMemoryWarning {

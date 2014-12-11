@@ -9,6 +9,8 @@
 #import "CommonMethods.h"
 #import "AppConstant.h"
 
+#import <UIKit/UIDevice.h>
+
 #import <AVFoundation/AVFoundation.h>
 #import <sys/utsname.h>
 #import <EventKit/EventKit.h>
@@ -387,8 +389,8 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.borderColor = color.CGColor;
-    bottomBorder.borderWidth = 0.5;
-    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.5, screenSize.size.width, 1);
+    bottomBorder.borderWidth = 0.3;
+    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.3, screenSize.size.width, 1);
     [layer addSublayer:bottomBorder];
 }
 +(void)addBottomLine_to_View:(UIView *)view withColor:(UIColor *)color
@@ -397,8 +399,8 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.borderColor = color.CGColor;
-    bottomBorder.borderWidth = 0.5;
-    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.5, screenSize.size.width, 1);
+    bottomBorder.borderWidth = 0.3;
+    bottomBorder.frame = CGRectMake(0, layer.frame.size.height-0.3, screenSize.size.width, 1);
     [layer addSublayer:bottomBorder];
 }
 

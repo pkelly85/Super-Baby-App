@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_MilestoneVC">
+            <connections>
+                <outlet property="tblView" destination="wUV-EY-1DB" id="kAl-cG-bVt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTop" destination="jPz-fa-8ub" id="CMx-VP-Nu8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPz-fa-8ub">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nno-wK-8Nu">
+                            <rect key="frame" x="0.0" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Lpm-9t-blZ"/>
+                                <constraint firstAttribute="width" constant="44" id="zQw-Ox-pYL"/>
+                            </constraints>
+                            <state key="normal" image="orange-back-arrow">
+                                <color key="titleColor" red="0.93725490199999995" green="0.7843137255" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="6yl-h5-5v9"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milestones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-7W-ilI">
+                            <rect key="frame" x="54" y="20" width="212" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="KF1-tF-512"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="0.90980392160000001" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="2hA-3b-MOl"/>
+                        <constraint firstItem="Nno-wK-8Nu" firstAttribute="leading" secondItem="jPz-fa-8ub" secondAttribute="leading" id="63F-Le-h7e"/>
+                        <constraint firstItem="kW0-7W-ilI" firstAttribute="top" secondItem="jPz-fa-8ub" secondAttribute="top" constant="20" id="E4o-I4-6aN"/>
+                        <constraint firstItem="kW0-7W-ilI" firstAttribute="leading" secondItem="jPz-fa-8ub" secondAttribute="leading" constant="54" id="GLh-ve-OpN"/>
+                        <constraint firstItem="Nno-wK-8Nu" firstAttribute="top" secondItem="jPz-fa-8ub" secondAttribute="top" constant="20" id="ecm-gH-6mv"/>
+                        <constraint firstAttribute="trailing" secondItem="kW0-7W-ilI" secondAttribute="trailing" constant="54" id="hBc-uW-C8f"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wUV-EY-1DB">
+                    <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="j7m-02-sN7"/>
+                        <outlet property="delegate" destination="-1" id="NFF-vh-EQv"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="jPz-fa-8ub" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B6z-uz-gxb"/>
+                <constraint firstItem="wUV-EY-1DB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EOn-ZY-avt"/>
+                <constraint firstAttribute="trailing" secondItem="wUV-EY-1DB" secondAttribute="trailing" id="Fc0-3S-jBt"/>
+                <constraint firstItem="wUV-EY-1DB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="hbd-y1-C8c"/>
+                <constraint firstItem="jPz-fa-8ub" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k1d-s7-gzT"/>
+                <constraint firstAttribute="trailing" secondItem="jPz-fa-8ub" secondAttribute="trailing" id="w0I-kC-s78"/>
+                <constraint firstAttribute="bottom" secondItem="wUV-EY-1DB" secondAttribute="bottom" id="xmn-fy-yMa"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="480" y="497"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="orange-back-arrow" width="12" height="20"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

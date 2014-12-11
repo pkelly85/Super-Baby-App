@@ -38,6 +38,7 @@
 
 @interface S_EditBabyInfoVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 {
+    __weak IBOutlet UIView *viewTopNavigation;
     __weak IBOutlet UILabel *lblTitle;
     __weak IBOutlet TPKeyboardAvoidingScrollView *scrlView;
     __weak IBOutlet UIView *viewTop;
@@ -52,13 +53,13 @@
     
     /*--- all buttons ---*/
     NSDate *dob;
-    __weak IBOutlet UIButton *btn_b_Month;
-    __weak IBOutlet UIButton *btn_b_Date;
-    __weak IBOutlet UIButton *btn_b_Year;
+    __weak IBOutlet UITextField *txt_b_Month;
+    __weak IBOutlet UITextField *txt_b_Date;
+    __weak IBOutlet UITextField *txt_b_Year;
 
-    __weak IBOutlet UIButton *btn_w_pound;
-    __weak IBOutlet UIButton *btn_w_ounces;
-    __weak IBOutlet UIButton *btn_height;
+    __weak IBOutlet UITextField *txt_w_pound;
+    __weak IBOutlet UITextField *txt_w_ounces;
+    __weak IBOutlet UITextField *txt_height;
     
     NSString *strSelected;
     NSMutableArray *arrWeight;
@@ -94,7 +95,7 @@
     [self setDefaultText];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_Label:lblTitle withColor:RGBCOLOR(205, 205, 205)];
+    [CommonMethods addBottomLine_to_View:viewTopNavigation withColor:RGBCOLOR_GREY];
         
     viewTop.layer.borderColor = RGBCOLOR(205, 205, 205).CGColor;
     viewTop.layer.borderWidth = 1;
@@ -109,7 +110,8 @@
             UIView *vEmailPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
             tft.leftView = vEmailPadding;
             tft.leftViewMode = UITextFieldViewModeAlways;
-            
+            tft.textColor = RGBCOLOR(100, 100, 100);
+            tft.delegate = self;
         }
         else if([txtF isKindOfClass:[UILabel class]])
         {
@@ -118,11 +120,11 @@
         }
         else if ([txtF isKindOfClass:[UIButton class]])
         {
-            UIButton *btn = (UIButton *)txtF;
-            btn.layer.borderColor = RGBCOLOR(205, 205, 205).CGColor;
-            btn.layer.borderWidth = 1;
-            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
-            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//            UIButton *btn = (UIButton *)txtF;
+//            btn.layer.borderColor = RGBCOLOR(205, 205, 205).CGColor;
+//            btn.layer.borderWidth = 1;
+//            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+//            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             //[btn.titleLabel setTextColor:RGBCOLOR(100, 100, 100)];
         }
     }
@@ -132,22 +134,22 @@
     /*--- set backgroun to white ---*/
     datePiker.backgroundColor = [UIColor whiteColor];
     piker.backgroundColor = [UIColor whiteColor];
-    viewPiker.alpha = 0.0;
-    
-    /*--- set all constraint mask to no ---*/
-    viewPiker.translatesAutoresizingMaskIntoConstraints = NO;
-    datePiker.translatesAutoresizingMaskIntoConstraints = NO;
-    piker.translatesAutoresizingMaskIntoConstraints = NO;
-    toolbar.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    /*--- add piker view ---*/
-    [self.view addSubview:viewPiker];
-    [self.view bringSubviewToFront:viewPiker];
-    
-    
-    /*--- set constraint full view ---*/
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
+//    viewPiker.alpha = 0.0;
+//    
+//    /*--- set all constraint mask to no ---*/
+//    viewPiker.translatesAutoresizingMaskIntoConstraints = NO;
+//    datePiker.translatesAutoresizingMaskIntoConstraints = NO;
+//    piker.translatesAutoresizingMaskIntoConstraints = NO;
+//    toolbar.translatesAutoresizingMaskIntoConstraints = NO;
+//    
+//    /*--- add piker view ---*/
+//    [self.view addSubview:viewPiker];
+//    [self.view bringSubviewToFront:viewPiker];
+//    
+//    
+//    /*--- set constraint full view ---*/
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
 
     /*--- setup weight and height array ---*/
     arrWeight = [[NSMutableArray alloc]init];
@@ -159,21 +161,20 @@
     for (int i = 0; i<100; i++)
         [arrWeight addObject:@{POUND:[NSString stringWithFormat:@"%d",i+1],OUNCES:[NSString stringWithFormat:@"%d",i+1]}];
     
-    piker.dataSource = nil;
-    piker.delegate = nil;
+//    piker.dataSource = nil;
+//    piker.delegate = nil;
 }
 -(void)setDefaultText
 {
     dob = [NSDate date];
-    [btn_b_Date setTitle:[dob convertDateinFormat:@"dd"] forState:UIControlStateNormal];
-    [btn_b_Month setTitle:[dob convertDateinFormat:@"MMMM"] forState:UIControlStateNormal];
-    [btn_b_Year setTitle:[dob convertDateinFormat:@"yyyy"] forState:UIControlStateNormal];
+    txt_b_Date.text = [dob convertDateinFormat:@"dd"];
+    txt_b_Month.text = [dob convertDateinFormat:@"MMMM"];
+    txt_b_Year.text = [dob convertDateinFormat:@"yyyy"];
 
-    [btn_w_pound setTitle:@"1" forState:UIControlStateNormal];
-    [btn_w_ounces setTitle:@"1" forState:UIControlStateNormal];
-
-    [btn_height setTitle:@"1" forState:UIControlStateNormal];
-
+    txt_w_pound.text = @"1";
+    txt_w_ounces.text = @"1";
+    
+    txt_height.text = @"1";
 }
 #pragma mark - IBAction Methods
 -(IBAction)doneClicked:(id)sender
@@ -194,6 +195,7 @@
 }
 -(IBAction)btnPhotoClicked:(id)sender
 {
+    [self.view endEditing:YES];
     if (ios8)
     {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Select Image from" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -301,18 +303,15 @@
     
     @try
     {
-        [piker selectRow:[[btn_w_pound titleForState:UIControlStateNormal]integerValue]-1 inComponent:0 animated:NO];
-        [piker selectRow:[[btn_w_ounces titleForState:UIControlStateNormal]integerValue]-1 inComponent:1 animated:NO];
+        [piker selectRow:[txt_w_pound.text integerValue]-1 inComponent:0 animated:NO];
+        [piker selectRow:[txt_w_ounces.text integerValue]-1 inComponent:1 animated:NO];
     }
     @catch (NSException *exception) {
         NSLog(@"%@",exception.description);
     }
     @finally {
     }
-    
-
     [piker reloadAllComponents];
-    
 }
 -(IBAction)btnHeightClicked:(id)sender
 {
@@ -327,7 +326,7 @@
     
     @try
     {
-       [piker selectRow:[[btn_height titleForState:UIControlStateNormal]integerValue]-1 inComponent:0 animated:NO];
+       [piker selectRow:[txt_height.text integerValue]-1 inComponent:0 animated:NO];
     }
     @catch (NSException *exception) {
         NSLog(@"%@",exception.description);
@@ -340,30 +339,25 @@
 }
 -(IBAction)btnDoneClicked:(id)sender
 {
+    [self.view endEditing:YES];
     viewPiker.alpha = 0.0;
     if ([strSelected isEqualToString:BIRTHDATE_SELECT])
     {
         NSLog(@"%@",[datePiker.date convertDateinFormat:@"MMMM-dd-yyyy"]);
         dob = datePiker.date;
         
-        [btn_b_Date setTitle:[dob convertDateinFormat:@"dd"] forState:UIControlStateNormal];
-        [btn_b_Month setTitle:[dob convertDateinFormat:@"MMMM"] forState:UIControlStateNormal];
-        [btn_b_Year setTitle:[dob convertDateinFormat:@"yyyy"] forState:UIControlStateNormal];
+        txt_b_Date.text = [dob convertDateinFormat:@"dd"];
+        txt_b_Month.text = [dob convertDateinFormat:@"MMMM"];
+        txt_b_Year.text = [dob convertDateinFormat:@"yyyy"];
     }
     else if([strSelected isEqualToString:WEIGHT_SELECT])
     {
-        NSString *strPound = arrWeight[[piker selectedRowInComponent:0]][POUND];
-        NSString *strOunce = arrWeight[[piker selectedRowInComponent:1]][OUNCES];
-
-        [btn_w_pound setTitle:strPound forState:UIControlStateNormal];
-        [btn_w_ounces setTitle:strOunce forState:UIControlStateNormal];
+        txt_w_pound.text = arrWeight[[piker selectedRowInComponent:0]][POUND];
+        txt_w_ounces.text = arrWeight[[piker selectedRowInComponent:1]][OUNCES];
     }
     else
     {
-        NSString *strPound = arrHeight[[piker selectedRowInComponent:0] ];
-
-        [btn_height setTitle:strPound forState:UIControlStateNormal];
-
+        txt_height.text = arrHeight[[piker selectedRowInComponent:0] ];
     }
 }
 #pragma mark - Picker Delegate
@@ -426,6 +420,25 @@
     }];
 }
 #pragma mark - Text Field Delegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == txt_b_Date || textField == txt_b_Month || textField == txt_b_Year) {
+        
+        [textField setInputView:viewPiker];
+        [self btnBirthdateClicked:nil];
+    }
+    else if (textField == txt_w_pound || textField == txt_w_ounces) {
+        [textField setInputView:viewPiker];
+        [self btnWeightClicked:nil];
+
+    }
+    else if (textField == txt_height) {
+        [textField setInputView:viewPiker];
+        [self btnHeightClicked:nil];
+
+    }
+
+}
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     return YES;
@@ -435,10 +448,27 @@
 {
     return YES;
 }
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self btnDoneClicked:nil];
+}
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    [self btnBirthdateClicked:nil];
+    if (textField == txtBabyName)
+    {
+        [txt_b_Month becomeFirstResponder];
+    }
+    else if(textField == txt_b_Date || textField == txt_b_Month || textField == txt_b_Year)
+    {
+        [txt_w_pound becomeFirstResponder];
+    }
+    else if(textField == txt_w_pound || textField == txt_w_ounces)
+    {
+        [txt_height becomeFirstResponder];
+    }
+    else
+        [textField resignFirstResponder];
+    //[self btnBirthdateClicked:nil];
 
     return YES;
 }

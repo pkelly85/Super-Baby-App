@@ -13,7 +13,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="u5Z-by-WLw">
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="u5Z-by-WLw">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -26,7 +26,7 @@
                                 <constraint firstAttribute="width" constant="44" id="a2P-0e-SqU"/>
                                 <constraint firstAttribute="height" constant="44" id="znX-Ca-Pjq"/>
                             </constraints>
-                            <state key="normal" image="back_black">
+                            <state key="normal" image="blue-back-arrow">
                                 <color key="titleColor" red="0.93725490199999995" green="0.7843137255" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -39,8 +39,8 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Pap-wv-aCY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.29411764705882354" green="0.69803921568627447" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -59,7 +59,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5N-MH-lm2">
                             <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
-                            <color key="backgroundColor" red="0.29411764709999999" green="0.69803921570000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="6za-2Y-pOM"/>
                             </constraints>
@@ -87,12 +87,13 @@
                                 <outlet property="delegate" destination="-1" id="o7Z-ct-TeQ"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6j-T6-dPM">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6j-T6-dPM">
                             <rect key="frame" x="270" y="40" width="50" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="Ffc-EL-OqS"/>
                             </constraints>
-                            <state key="normal" title="Button">
+                            <state key="normal" image="search-icon">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -146,7 +147,8 @@
         </view>
     </objects>
     <resources>
-        <image name="back_black" width="32" height="32"/>
+        <image name="blue-back-arrow" width="12" height="20"/>
+        <image name="search-icon" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

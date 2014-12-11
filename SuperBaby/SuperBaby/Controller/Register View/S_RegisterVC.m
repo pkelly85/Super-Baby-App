@@ -43,7 +43,7 @@
     UIView *vEmailPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtEmail.leftView = vEmailPadding;
     txtEmail.leftViewMode = UITextFieldViewModeAlways;
-    
+        
     UIView *vPassPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtPassword.leftView = vPassPadding;
     txtPassword.leftViewMode = UITextFieldViewModeAlways;

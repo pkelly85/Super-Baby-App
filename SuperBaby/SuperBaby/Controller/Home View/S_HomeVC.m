@@ -37,33 +37,26 @@
 #pragma mark - Methods
 -(void)babyImageTapped
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     S_BabyDetailVC *obj = [[S_BabyDetailVC alloc]initWithNibName:@"S_BabyDetailVC" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
 }
 
 -(IBAction)btnExcerciseVideoClicked:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     S_ExcerciseVideoVC *obj = [[S_ExcerciseVideoVC alloc]initWithNibName:@"S_ExcerciseVideoVC" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
-
 }
 
 -(IBAction)btnTimelineClicked:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     S_TimelineVC *obj = [[S_TimelineVC alloc]initWithNibName:@"S_TimelineVC" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
-
 }
 
 -(IBAction)btnSettingsClicked:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     S_SettingsVC *obj = [[S_SettingsVC alloc]initWithNibName:@"S_SettingsVC" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
-
 }
 
 #pragma mark - Extra

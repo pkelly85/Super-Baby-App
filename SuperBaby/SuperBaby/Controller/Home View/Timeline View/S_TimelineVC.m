@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:[UIColor lightGrayColor]];
+    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
 }
 
 #pragma mark - Table Delegate
@@ -49,6 +49,7 @@
         //[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil];
         //cell = myCell;
     }
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
 }

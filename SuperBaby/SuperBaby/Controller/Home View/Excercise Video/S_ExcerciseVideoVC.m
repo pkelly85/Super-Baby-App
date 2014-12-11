@@ -8,6 +8,7 @@
 
 #import "S_ExcerciseVideoVC.h"
 #import "AppConstant.h"
+#import "S_Excercise_Carousel.h"
 @interface S_ExcerciseVideoVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     __weak IBOutlet UIView *viewTop;
@@ -35,7 +36,7 @@
     
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:[UIColor lightGrayColor]];
+    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
 }
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -60,7 +61,11 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    S_Excercise_Carousel *obj = [[S_Excercise_Carousel alloc]initWithNibName:@"S_Excercise_Carousel" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
+}
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;

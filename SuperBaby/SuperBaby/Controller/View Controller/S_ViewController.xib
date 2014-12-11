@@ -14,13 +14,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="MQf-cP-Zzh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-Nu-Thf">
                     <rect key="frame" x="10" y="30" width="300" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ZP1-dv-GI5"/>
                     </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -33,6 +37,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="ByD-jg-8dr"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                             <state key="normal" title="I Disagree">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,10 +48,11 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-ca-u6E">
                             <rect key="frame" x="165" y="10" width="145" height="40"/>
-                            <color key="backgroundColor" red="0.88627450980392153" green="0.36078431372549019" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.90980392156862744" green="0.44705882352941173" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="CCm-f9-cwZ"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                             <state key="normal" title="I Agree">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,7 +62,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="aSF-Gs-deP" firstAttribute="width" secondItem="Uj2-ca-u6E" secondAttribute="width" id="4WR-g8-y2V"/>
                         <constraint firstAttribute="height" constant="80" id="KGy-Q8-5ag"/>
@@ -72,19 +78,23 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CPe-mR-UTY" secondAttribute="bottom" id="GyD-Oc-DZU"/>
                 <constraint firstItem="6iU-Nq-YWC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ITN-r1-BCP"/>
                 <constraint firstItem="6iU-Nq-YWC" firstAttribute="top" secondItem="kAI-Nu-Thf" secondAttribute="bottom" constant="16" id="NMa-d8-SjF"/>
                 <constraint firstAttribute="trailing" secondItem="CPe-mR-UTY" secondAttribute="trailing" id="PrO-Zh-b2j"/>
+                <constraint firstItem="MQf-cP-Zzh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vbc-r3-4nu"/>
                 <constraint firstItem="kAI-Nu-Thf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ZYB-ZN-dJ3"/>
                 <constraint firstItem="kAI-Nu-Thf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bTF-j6-ftz"/>
                 <constraint firstAttribute="trailing" secondItem="kAI-Nu-Thf" secondAttribute="trailing" constant="10" id="dw3-6o-1EM"/>
+                <constraint firstAttribute="bottom" secondItem="MQf-cP-Zzh" secondAttribute="bottom" id="ent-NG-Ib3"/>
+                <constraint firstAttribute="trailing" secondItem="MQf-cP-Zzh" secondAttribute="trailing" id="m5B-Bw-OQg"/>
+                <constraint firstItem="MQf-cP-Zzh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p4f-t6-sBm"/>
                 <constraint firstAttribute="trailing" secondItem="6iU-Nq-YWC" secondAttribute="trailing" constant="10" id="qKv-De-uVP"/>
                 <constraint firstItem="CPe-mR-UTY" firstAttribute="top" secondItem="6iU-Nq-YWC" secondAttribute="bottom" constant="28" id="qbe-50-bQM"/>
                 <constraint firstItem="CPe-mR-UTY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vy4-Xy-o4p"/>
@@ -96,6 +106,9 @@
             <point key="canvasLocation" x="529" y="490"/>
         </view>
     </objects>
+    <resources>
+        <image name="babby" width="320" height="568"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

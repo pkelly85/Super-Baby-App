@@ -8,9 +8,15 @@
 
 #import "S_BabyDetailVC.h"
 #import "AppConstant.h"
+#import "S_MilestoneVC.h"
+
+#import "S_RedFlagVC.h"
 @interface S_BabyDetailVC ()
 {
     __weak IBOutlet UIView *viewTop;
+
+    __weak IBOutlet UIButton *btn_4_EditBabyInfo;
+
 }
 @end
 
@@ -24,9 +30,44 @@
     [super viewDidLoad];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:[UIColor lightGrayColor]];
+    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    
+    [self setAttibutedText];
+}
+-(void)setAttibutedText
+{
+    //send existing\nimage
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"Edit Baby\nInformation"];
+    
+    NSRange goRange = [[attributedString string] rangeOfString:@"Edit Baby\nInformation"];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:goRange];//TextColor
+    [attributedString addAttribute:NSFontAttributeName value:btn_4_EditBabyInfo.titleLabel.font range:goRange];//TextFont
+    
+    btn_4_EditBabyInfo.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    btn_4_EditBabyInfo.titleLabel.numberOfLines = 0;
+    btn_4_EditBabyInfo.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btn_4_EditBabyInfo setAttributedTitle:attributedString forState:UIControlStateNormal];
+    
+}
+#pragma mark - IBAction methods
+-(IBAction)btnMilestoneClicked:(id)sender
+{
+    S_MilestoneVC *obj = [[S_MilestoneVC alloc]initWithNibName:@"S_MilestoneVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
+}
+-(IBAction)btnTipsClicked:(id)sender
+{
+}
+-(IBAction)btnRedFlagClicked:(id)sender
+{
+    S_RedFlagVC *obj = [[S_RedFlagVC alloc]initWithNibName:@"S_RedFlagVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
+}
+-(IBAction)btnEditBabyInfoClicked:(id)sender
+{
 }
 
+#pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
