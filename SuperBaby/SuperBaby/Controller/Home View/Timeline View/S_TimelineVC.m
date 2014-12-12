@@ -8,6 +8,7 @@
 
 #import "S_TimelineVC.h"
 #import "AppConstant.h"
+#import "CCell_TimeLine.h"
 @interface S_TimelineVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIView *viewTop;
@@ -27,6 +28,10 @@
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_TimeLine" bundle:nil] forCellReuseIdentifier:@"CCell_TimeLine"];
+    tblView.delegate = self;
+    tblView.dataSource = self;
 }
 
 #pragma mark - Table Delegate
@@ -38,19 +43,24 @@
 {
     return 10;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"Cell";
-    UITableViewCell *cell = [tblView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        /*--- For Custom Cell ---*/
-        //[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil];
-        //cell = myCell;
-    }
+    CCell_TimeLine *cell = (CCell_TimeLine *)[tblView dequeueReusableCellWithIdentifier:@"CCell_TimeLine"];
     cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.lblTime.backgroundColor = [UIColor clearColor];
+    cell.lblTime.layer.borderWidth = 1.0;
+    cell.lblTime.layer.borderColor = [UIColor whiteColor].CGColor;
+
+    cell.lblDescription.textColor = [UIColor whiteColor];
+    cell.viewTransperant.backgroundColor = RGBCOLOR(176, 176, 176);
+
+    cell.lblDescription.text = @"lorem adsas duasd ajisdj iasijd ijas aij jiasijod aijos ij DONE";
     return cell;
 }
 

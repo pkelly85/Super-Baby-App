@@ -17,11 +17,13 @@
     
     __weak IBOutlet UITextField *txtEmail;
     __weak IBOutlet UITextField *txtPassword;
+    
+    BOOL allowRotation;
 }
 @end
 
 @implementation S_RegisterVC
-
+#pragma mark - Movie Player
 - (void)viewDidLoad {
     [super viewDidLoad];
     

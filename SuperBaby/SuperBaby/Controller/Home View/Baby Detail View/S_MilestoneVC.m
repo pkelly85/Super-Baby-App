@@ -9,10 +9,20 @@
 #import "S_MilestoneVC.h"
 #import "AppConstant.h"
 #import "CCell_HeaderView.h"
+
+#define SECTION_NAME @"sectionValue"
+#define TOOGLE @"toogleValue"
+
+#define ROW_NAME @"rowValue"
+
+#import "CCell_Milestone.h"
 @interface S_MilestoneVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIView *viewTop;
+    __weak IBOutlet UIView *viewTableHeader;
     __weak IBOutlet UITableView *tblView;
+    
+    NSMutableArray *arrContent;
 }
 @end
 
@@ -26,20 +36,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    arrContent = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i<5; i++) {
+        NSMutableDictionary *dict = [NSMutableDictionary new];
+        [dict setValue:[NSString stringWithFormat:@"Section %d",i] forKey:SECTION_NAME];
+        [dict setValue:@"0" forKey:TOOGLE];
+
+        NSMutableArray *arrTemp = [[NSMutableArray alloc]init];
+        for (int i = 0; i<3; i++) {
+            [arrTemp addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+        [dict setObject:arrTemp forKey:ROW_NAME];
+        
+        [arrContent addObject:dict];
+    }
+    
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     tblView.backgroundColor = [UIColor clearColor];
+    tblView.tableHeaderView = viewTableHeader;
+    //tblView.sectionHeaderHeight = 216.0;
     [tblView registerNib:[UINib nibWithNibName:@"CCell_HeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"CCell_HeaderView"];
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
 }
 
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return arrContent.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ([arrContent[section][TOOGLE] boolValue]) {
+        return [arrContent[section][ROW_NAME]  count];
+    }
     return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -59,23 +91,46 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     CCell_HeaderView *header = (CCell_HeaderView *)[tblView dequeueReusableHeaderFooterViewWithIdentifier:@"CCell_HeaderView"];
-    header.lblTitle.text = @"temp";
+    header.lblTitle.text = arrContent[section][SECTION_NAME];
+    
+    header.btnHeader.tag = section;
+    [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
     return header;
+}
+
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"Cell";
-    UITableViewCell *cell = [tblView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        /*--- For Custom Cell ---*/
-        //[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil];
-        //cell = myCell;
-    }
+    CCell_Milestone *cell = (CCell_Milestone *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Milestone"];
+    NSDictionary *dict = arrContent[indexPath.section];
+    cell.lblDescription.text = dict[ROW_NAME][indexPath.row];
     return cell;
 }
-
+-(void)toggleRow:(UIButton *)btnHeader
+{
+    NSMutableDictionary *dict = arrContent[btnHeader.tag];
+    
+    NSString *str = dict[TOOGLE];
+    if ([dict[TOOGLE] isEqualToString:@"0"])
+    {
+        str = @"1";
+    }
+    else
+        str = @"0";
+    
+    [dict setValue:str forKey:TOOGLE];
+    
+    [arrContent replaceObjectAtIndex:btnHeader.tag withObject:dict];
+    
+    [tblView beginUpdates];
+    [tblView reloadSections:[NSIndexSet indexSetWithIndex:btnHeader.tag] withRowAnimation:UITableViewRowAnimationNone];
+    [tblView endUpdates];
+}
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

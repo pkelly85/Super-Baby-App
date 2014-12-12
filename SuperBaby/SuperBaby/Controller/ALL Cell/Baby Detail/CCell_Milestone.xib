@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CCell_Milestone" id="KGk-i7-Jjw" customClass="CCell_Milestone">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-icon" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-Na-DCY">
+                        <rect key="frame" x="15" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="3f7-ga-Di8"/>
+                            <constraint firstAttribute="height" constant="20" id="OYw-yw-8Nu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-gZ-hYY">
+                        <rect key="frame" x="55" y="11" width="250" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2PM-gZ-hYY" secondAttribute="bottom" constant="12" id="6IT-XE-Z1I"/>
+                    <constraint firstItem="2PM-gZ-hYY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="TaZ-zb-6j0"/>
+                    <constraint firstItem="wwX-Na-DCY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bfk-i8-y6p"/>
+                    <constraint firstItem="2PM-gZ-hYY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="eXk-lH-HBX"/>
+                    <constraint firstAttribute="trailing" secondItem="2PM-gZ-hYY" secondAttribute="trailing" constant="15" id="gRf-St-QCc"/>
+                    <constraint firstItem="wwX-Na-DCY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nEU-OC-7pi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgV_On_Off" destination="wwX-Na-DCY" id="edh-r9-9yf"/>
+                <outlet property="lblDescription" destination="2PM-gZ-hYY" id="Zfx-ge-ib4"/>
+            </connections>
+            <point key="canvasLocation" x="462" y="358"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="radio-icon" width="19" height="19"/>
+    </resources>
+</document>

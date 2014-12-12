@@ -17,6 +17,6 @@
 @property (strong, nonatomic) UINavigationController *navC;
 @property (strong, nonatomic) S_RegisterVC *vc;
 
-
+@property(nonatomic,readwrite)BOOL allowRotation;
 @end
 

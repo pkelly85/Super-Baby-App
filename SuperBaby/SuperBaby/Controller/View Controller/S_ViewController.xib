@@ -28,51 +28,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPe-mR-UTY">
-                    <rect key="frame" x="0.0" y="400" width="320" height="80"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-Gs-deP">
-                            <rect key="frame" x="10" y="10" width="145" height="40"/>
-                            <color key="backgroundColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="ByD-jg-8dr"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                            <state key="normal" title="I Disagree">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnDisAgreeClicked:" destination="-1" eventType="touchUpInside" id="BMr-np-1VK"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-ca-u6E">
-                            <rect key="frame" x="165" y="10" width="145" height="40"/>
-                            <color key="backgroundColor" red="0.90980392156862744" green="0.44705882352941173" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="CCm-f9-cwZ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                            <state key="normal" title="I Agree">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnAgreeClicked:" destination="-1" eventType="touchUpInside" id="PaJ-a7-Mc7"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="aSF-Gs-deP" firstAttribute="width" secondItem="Uj2-ca-u6E" secondAttribute="width" id="4WR-g8-y2V"/>
-                        <constraint firstAttribute="height" constant="80" id="KGy-Q8-5ag"/>
-                        <constraint firstAttribute="trailing" secondItem="Uj2-ca-u6E" secondAttribute="trailing" constant="10" id="NfX-aS-oZ0"/>
-                        <constraint firstItem="aSF-Gs-deP" firstAttribute="top" secondItem="CPe-mR-UTY" secondAttribute="top" constant="10" id="UpS-oP-kZl"/>
-                        <constraint firstItem="Uj2-ca-u6E" firstAttribute="top" secondItem="CPe-mR-UTY" secondAttribute="top" constant="10" id="lnK-IK-QHO"/>
-                        <constraint firstItem="aSF-Gs-deP" firstAttribute="leading" secondItem="CPe-mR-UTY" secondAttribute="leading" constant="10" id="vIQ-QQ-0t8"/>
-                        <constraint firstItem="Uj2-ca-u6E" firstAttribute="leading" secondItem="aSF-Gs-deP" secondAttribute="trailing" constant="10" id="w4X-3J-gUX"/>
-                    </constraints>
-                </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iU-Nq-YWC">
                     <rect key="frame" x="10" y="90" width="300" height="282"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -81,23 +36,38 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-ca-u6E">
+                    <rect key="frame" x="87" y="410" width="146" height="40"/>
+                    <color key="backgroundColor" red="0.90980392156862744" green="0.44705882352941173" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CCm-f9-cwZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="I Agree">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnAgreeClicked:" destination="-1" eventType="touchUpInside" id="PaJ-a7-Mc7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="CPe-mR-UTY" secondAttribute="bottom" id="GyD-Oc-DZU"/>
+                <constraint firstAttribute="bottom" secondItem="Uj2-ca-u6E" secondAttribute="bottom" constant="30" id="1d7-NG-wLc"/>
+                <constraint firstAttribute="trailing" secondItem="Uj2-ca-u6E" secondAttribute="trailing" constant="87" id="9RD-I7-OXw"/>
                 <constraint firstItem="6iU-Nq-YWC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ITN-r1-BCP"/>
+                <constraint firstItem="Uj2-ca-u6E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="87" id="NLR-U7-ERg"/>
                 <constraint firstItem="6iU-Nq-YWC" firstAttribute="top" secondItem="kAI-Nu-Thf" secondAttribute="bottom" constant="16" id="NMa-d8-SjF"/>
-                <constraint firstAttribute="trailing" secondItem="CPe-mR-UTY" secondAttribute="trailing" id="PrO-Zh-b2j"/>
                 <constraint firstItem="MQf-cP-Zzh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vbc-r3-4nu"/>
                 <constraint firstItem="kAI-Nu-Thf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ZYB-ZN-dJ3"/>
                 <constraint firstItem="kAI-Nu-Thf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bTF-j6-ftz"/>
                 <constraint firstAttribute="trailing" secondItem="kAI-Nu-Thf" secondAttribute="trailing" constant="10" id="dw3-6o-1EM"/>
                 <constraint firstAttribute="bottom" secondItem="MQf-cP-Zzh" secondAttribute="bottom" id="ent-NG-Ib3"/>
                 <constraint firstAttribute="trailing" secondItem="MQf-cP-Zzh" secondAttribute="trailing" id="m5B-Bw-OQg"/>
+                <constraint firstItem="Uj2-ca-u6E" firstAttribute="top" secondItem="6iU-Nq-YWC" secondAttribute="bottom" constant="38" id="oCA-QM-9Fy"/>
                 <constraint firstItem="MQf-cP-Zzh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p4f-t6-sBm"/>
                 <constraint firstAttribute="trailing" secondItem="6iU-Nq-YWC" secondAttribute="trailing" constant="10" id="qKv-De-uVP"/>
-                <constraint firstItem="CPe-mR-UTY" firstAttribute="top" secondItem="6iU-Nq-YWC" secondAttribute="bottom" constant="28" id="qbe-50-bQM"/>
-                <constraint firstItem="CPe-mR-UTY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vy4-Xy-o4p"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

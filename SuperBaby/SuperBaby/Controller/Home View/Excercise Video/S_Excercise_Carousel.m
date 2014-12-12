@@ -10,10 +10,10 @@
 #import "iCarousel.h"
 #import "AppConstant.h"
 #import "MyViewCarousel.h"
-@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate>
+@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
-    NSMutableArray *items;
-    IBOutlet UIView *viewCell;
+    NSMutableArray *items;    
+    __weak IBOutlet UITextField *txtSearch;
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
@@ -35,6 +35,11 @@
     }
     _carousel.type = iCarouselTypeCylinder;
     [_carousel setVertical:YES];
+    
+    UIView *vtxtPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
+    txtSearch.leftView = vtxtPadding;
+    txtSearch.leftViewMode = UITextFieldViewModeAlways;
+    
     
     [_carousel reloadData];
 }
@@ -76,6 +81,19 @@
 {
     NSLog(@"%ld",(long)btnPlay.tag);
 }
+
+
+#pragma mark - Text Field Delegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    return YES;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,10 +9,16 @@
 #import "S_ExcerciseVideoVC.h"
 #import "AppConstant.h"
 #import "S_Excercise_Carousel.h"
+
+#import "CCell_Excercise.h"
 @interface S_ExcerciseVideoVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
+    
+    __weak IBOutlet UIButton *btnAge;
+    __weak IBOutlet UIButton *btnMilestone;
+    BOOL isAgeSelected;
     
     __weak IBOutlet UITextField *txtSearch;
 }
@@ -34,9 +40,34 @@
     txtSearch.leftView = vtxtPadding;
     txtSearch.leftViewMode = UITextFieldViewModeAlways;
     
-    
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    
+    /*--- Set Defaults ---*/
+    isAgeSelected = NO;
+    [self btnAge_MilestoneClicked:btnAge];
+    
+    /*--- Register Class ---*/
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_Excercise" bundle:nil] forCellReuseIdentifier:@"CCell_Excercise"];
+    tblView.delegate = self;
+    tblView.dataSource = self;
+}
+-(IBAction)btnAge_MilestoneClicked:(UIButton *)sender
+{
+    [txtSearch resignFirstResponder];
+    if (sender == btnAge) {
+        isAgeSelected = YES;
+        [btnAge setBackgroundColor:RGBCOLOR_BLUE];
+        [btnMilestone setBackgroundColor:RGBCOLOR_GREY];
+        [tblView reloadData];
+    }
+    else
+    {
+        isAgeSelected = NO;
+        [btnAge setBackgroundColor:RGBCOLOR_GREY];
+        [btnMilestone setBackgroundColor:RGBCOLOR_BLUE];
+        [tblView reloadData];
+    }
 }
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -47,18 +78,20 @@
 {
     return 10;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"Cell";
-    UITableViewCell *cell = [tblView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        /*--- For Custom Cell ---*/
-        //[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil];
-        //cell = myCell;
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
+    cell.imgV.image = [UIImage imageNamed:@"babby"];
+    
+    if (isAgeSelected)
+        cell.lblTitle.text = @"Age";
+    else
+        cell.lblTitle.text = @"Milestone";
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +99,17 @@
     S_Excercise_Carousel *obj = [[S_Excercise_Carousel alloc]initWithNibName:@"S_Excercise_Carousel" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
 }
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Get visible cells on table view.
+    NSArray *visibleCells = [tblView visibleCells];
+    
+    for (CCell_Excercise *cell in visibleCells) {
+        [cell cellOnTableView:tblView didScrollOnView:self.view];
+    }
+}
+
+
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;

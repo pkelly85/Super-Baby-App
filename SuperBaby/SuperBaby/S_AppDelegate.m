@@ -9,6 +9,7 @@
 #import "S_AppDelegate.h"
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface S_AppDelegate ()
 
@@ -20,6 +21,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     /*--- Window init ---*/
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
+    
     self.window = [[UIWindow alloc]initWithFrame:screenSize];
     self.vc = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
     self.navC = [[UINavigationController alloc]initWithRootViewController:self.vc];
@@ -28,6 +32,30 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+#pragma mark - Orientation
+-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (self.allowRotation) {
+        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+- (void) moviePlayerStartNotification:(NSNotification*)notification {
+    self.allowRotation = YES;
+}
+- (void) moviePlayerEndNotification:(NSNotification*)notification {
+    self.allowRotation = NO;
+}
+//-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    if (self.allowRotation) {
+//        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

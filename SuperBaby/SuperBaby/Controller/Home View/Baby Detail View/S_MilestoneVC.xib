@@ -8,9 +8,43 @@
             <connections>
                 <outlet property="tblView" destination="wUV-EY-1DB" id="kAl-cG-bVt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTableHeader" destination="Gfp-Gb-kgA" id="iAd-gR-nTi"/>
                 <outlet property="viewTop" destination="jPz-fa-8ub" id="CMx-VP-Nu8"/>
             </connections>
         </placeholder>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="Gfp-Gb-kgA" userLabel="View Header">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-JE-5SP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="4PB-m2-UXf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-fI-6gy">
+                    <rect key="frame" x="10" y="188" width="300" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kMg-JE-5SP" secondAttribute="trailing" id="7BK-LO-biU"/>
+                <constraint firstAttribute="bottom" secondItem="nR0-fI-6gy" secondAttribute="bottom" constant="10" id="9ZL-xv-YLz"/>
+                <constraint firstAttribute="trailing" secondItem="nR0-fI-6gy" secondAttribute="trailing" constant="10" id="Fuw-Dq-RT5"/>
+                <constraint firstItem="nR0-fI-6gy" firstAttribute="top" secondItem="kMg-JE-5SP" secondAttribute="bottom" constant="8" id="IcF-Sr-lcE"/>
+                <constraint firstItem="kMg-JE-5SP" firstAttribute="top" secondItem="Gfp-Gb-kgA" secondAttribute="top" id="eGN-2g-syq"/>
+                <constraint firstItem="nR0-fI-6gy" firstAttribute="leading" secondItem="Gfp-Gb-kgA" secondAttribute="leading" constant="10" id="gHc-dN-1e2"/>
+                <constraint firstItem="kMg-JE-5SP" firstAttribute="leading" secondItem="Gfp-Gb-kgA" secondAttribute="leading" id="sCk-5t-MsQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="797" y="554.5"/>
+        </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -53,7 +87,7 @@
                         <constraint firstAttribute="trailing" secondItem="kW0-7W-ilI" secondAttribute="trailing" constant="54" id="hBc-uW-C8f"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wUV-EY-1DB">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wUV-EY-1DB">
                     <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -81,6 +115,7 @@
         </view>
     </objects>
     <resources>
+        <image name="babby" width="320" height="568"/>
         <image name="orange-back-arrow" width="12" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

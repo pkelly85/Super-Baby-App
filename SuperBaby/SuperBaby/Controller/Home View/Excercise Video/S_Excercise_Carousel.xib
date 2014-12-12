@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_Carousel">
             <connections>
                 <outlet property="carousel" destination="ENp-1O-R8c" id="4xX-Ht-7QY"/>
+                <outlet property="txtSearch" destination="3TH-fc-jnl" id="ALC-DB-yqh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,6 +60,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="fPk-DT-cgg"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E04-hJ-5yI">
                             <rect key="frame" x="270" y="0.0" width="50" height="40"/>
@@ -111,81 +115,10 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="462" y="496"/>
         </view>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="2hY-nN-NY1" userLabel="View Cell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="hiV-wd-X7c">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSn-Gh-wPN">
-                    <rect key="frame" x="0.0" y="160" width="320" height="40"/>
-                    <color key="backgroundColor" red="0.90980392160000001" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="OMM-zZ-bj7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-oX-NWk">
-                    <rect key="frame" x="10" y="169" width="271" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="HZb-ma-cvU"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-side-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-0r-HTw">
-                    <rect key="frame" x="291" y="174" width="9" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="9" id="WNB-Ew-Hqx"/>
-                        <constraint firstAttribute="height" constant="16" id="eJ9-MO-He1"/>
-                    </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpP-Jr-sNr">
-                    <rect key="frame" x="128" y="51" width="65" height="65"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="65" id="LeX-Zc-shd"/>
-                        <constraint firstAttribute="width" constant="65" id="h5w-Rp-PFL"/>
-                    </constraints>
-                    <state key="normal" image="playvideo-icon">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="UB3-0r-HTw" firstAttribute="leading" secondItem="rRs-oX-NWk" secondAttribute="trailing" constant="10" id="27q-V5-Aa3"/>
-                <constraint firstItem="rRs-oX-NWk" firstAttribute="leading" secondItem="2hY-nN-NY1" secondAttribute="leading" constant="10" id="4al-5A-SLD"/>
-                <constraint firstItem="hiV-wd-X7c" firstAttribute="leading" secondItem="2hY-nN-NY1" secondAttribute="leading" id="52M-Cb-U0v"/>
-                <constraint firstAttribute="bottom" secondItem="UB3-0r-HTw" secondAttribute="bottom" constant="10" id="62I-oF-JZD"/>
-                <constraint firstItem="xSn-Gh-wPN" firstAttribute="leading" secondItem="2hY-nN-NY1" secondAttribute="leading" id="HAx-4b-5lQ"/>
-                <constraint firstItem="hiV-wd-X7c" firstAttribute="top" secondItem="2hY-nN-NY1" secondAttribute="top" id="JMi-cz-MTp"/>
-                <constraint firstAttribute="trailing" secondItem="UB3-0r-HTw" secondAttribute="trailing" constant="20" id="KPj-b9-7r9"/>
-                <constraint firstAttribute="trailing" secondItem="xSn-Gh-wPN" secondAttribute="trailing" id="Lb1-B7-Ylb"/>
-                <constraint firstAttribute="bottom" secondItem="xSn-Gh-wPN" secondAttribute="bottom" id="SEo-At-8pW"/>
-                <constraint firstAttribute="bottom" secondItem="hiV-wd-X7c" secondAttribute="bottom" id="WYu-KR-KID"/>
-                <constraint firstItem="BpP-Jr-sNr" firstAttribute="top" secondItem="2hY-nN-NY1" secondAttribute="top" constant="51" id="XQp-cw-Oob"/>
-                <constraint firstAttribute="centerX" secondItem="BpP-Jr-sNr" secondAttribute="centerX" constant="-0.5" id="pZh-5S-2dF"/>
-                <constraint firstAttribute="trailing" secondItem="hiV-wd-X7c" secondAttribute="trailing" id="x3n-bR-Sya"/>
-                <constraint firstItem="xSn-Gh-wPN" firstAttribute="top" secondItem="BpP-Jr-sNr" secondAttribute="bottom" constant="44" id="yD3-nt-8Wb"/>
-                <constraint firstAttribute="bottom" secondItem="rRs-oX-NWk" secondAttribute="bottom" constant="10" id="zoi-es-3w8"/>
-            </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="777" y="561"/>
-        </view>
     </objects>
     <resources>
-        <image name="babby" width="320" height="568"/>
         <image name="orange-back-arrow" width="12" height="20"/>
-        <image name="playvideo-icon" width="65" height="65"/>
         <image name="search-icon" width="24" height="24"/>
-        <image name="white-side-arrow" width="8" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -11,35 +11,50 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmh-On-AjS">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-9c-bbF">
                             <rect key="frame" x="15" y="12" width="255" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="cZG-JN-3C8"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-5s-5ZP">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="43" id="HEV-oT-6dW"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="dGa-9c-bbF" secondAttribute="bottom" constant="12" id="CPn-Bt-grE"/>
-                        <constraint firstItem="dGa-9c-bbF" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" constant="15" id="DE4-JQ-wHA"/>
-                        <constraint firstAttribute="trailing" secondItem="dGa-9c-bbF" secondAttribute="trailing" constant="50" id="aSq-yG-Wan"/>
-                        <constraint firstItem="dGa-9c-bbF" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="12" id="uaq-yB-J1y"/>
+                        <constraint firstItem="dGa-9c-bbF" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="12" id="2Bs-n8-0NO"/>
+                        <constraint firstItem="dGa-9c-bbF" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" constant="15" id="5m4-zo-rUa"/>
+                        <constraint firstAttribute="trailing" secondItem="cjK-5s-5ZP" secondAttribute="trailing" priority="750" id="Pr1-f9-f8O"/>
+                        <constraint firstItem="cjK-5s-5ZP" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" id="ZxZ-Je-VIR"/>
+                        <constraint firstAttribute="height" constant="44" id="cUY-o8-Pwa"/>
+                        <constraint firstAttribute="trailing" secondItem="dGa-9c-bbF" secondAttribute="trailing" priority="750" constant="50" id="k2w-DM-5rI"/>
+                        <constraint firstItem="cjK-5s-5ZP" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" id="wwu-jk-FVQ"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="Gmh-On-AjS" firstAttribute="top" secondItem="DBb-7c-sNs" secondAttribute="top" id="E9J-yQ-GwO"/>
-                <constraint firstItem="Gmh-On-AjS" firstAttribute="leading" secondItem="DBb-7c-sNs" secondAttribute="leading" id="VfN-OO-IkL"/>
-                <constraint firstAttribute="trailing" secondItem="Gmh-On-AjS" secondAttribute="trailing" id="Zdt-aj-SMX"/>
-                <constraint firstAttribute="bottom" secondItem="Gmh-On-AjS" secondAttribute="bottom" id="cAa-Pt-kdb"/>
+                <constraint firstItem="Gmh-On-AjS" firstAttribute="top" secondItem="DBb-7c-sNs" secondAttribute="top" id="K8O-Uz-BhB"/>
+                <constraint firstItem="Gmh-On-AjS" firstAttribute="leading" secondItem="DBb-7c-sNs" secondAttribute="leading" id="TRr-28-IR2"/>
+                <constraint firstAttribute="trailing" secondItem="Gmh-On-AjS" secondAttribute="trailing" id="yVV-M9-kpe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnHeader" destination="cjK-5s-5ZP" id="yqr-Mg-Gaa"/>
                 <outlet property="lblTitle" destination="dGa-9c-bbF" id="1d3-In-r3E"/>
             </connections>
             <point key="canvasLocation" x="401" y="163.5"/>

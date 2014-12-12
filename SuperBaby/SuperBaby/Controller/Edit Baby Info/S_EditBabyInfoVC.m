@@ -19,6 +19,8 @@
 #define OUNCES @"ounces"
 #define POUND @"pound"
 
+#import "UINavigationController+Rotation_IOS6.h"
+
 @interface UIView (viewRecursion)
 - (NSMutableArray*) allSubViews;
 @end
@@ -68,6 +70,7 @@
 @end
 
 @implementation S_EditBabyInfoVC
+
 
 #pragma mark - View Did Load
 -(IBAction)back:(id)sender

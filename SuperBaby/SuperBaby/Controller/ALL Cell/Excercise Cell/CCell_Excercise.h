@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CCell_Excercise : UITableViewCell
+@property(nonatomic,weak)IBOutlet UIImageView *imgV;
+@property(nonatomic,weak)IBOutlet UILabel *lblTitle;
+
+
+- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
 
 @end

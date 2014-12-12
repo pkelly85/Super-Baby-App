@@ -14,6 +14,10 @@
 		1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1047D0DA1A39CE0000273457 /* MyViewCarousel.xib */; };
 		106C08DD1A385CCA002AD6BE /* S_MilestoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C08DB1A385CCA002AD6BE /* S_MilestoneVC.m */; };
 		106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106C08DC1A385CCA002AD6BE /* S_MilestoneVC.xib */; };
+		1078FCB21A3ABDCC006303EE /* CCell_TimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1078FCB01A3ABDCC006303EE /* CCell_TimeLine.m */; };
+		1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */; };
+		1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */; };
+		1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1078FCBF1A3AF34E006303EE /* CCell_Milestone.xib */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
 		109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */; };
@@ -113,6 +117,12 @@
 		106C08DA1A385CCA002AD6BE /* S_MilestoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_MilestoneVC.h; sourceTree = "<group>"; };
 		106C08DB1A385CCA002AD6BE /* S_MilestoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_MilestoneVC.m; sourceTree = "<group>"; };
 		106C08DC1A385CCA002AD6BE /* S_MilestoneVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_MilestoneVC.xib; sourceTree = "<group>"; };
+		1078FCAF1A3ABDCC006303EE /* CCell_TimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_TimeLine.h; sourceTree = "<group>"; };
+		1078FCB01A3ABDCC006303EE /* CCell_TimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_TimeLine.m; sourceTree = "<group>"; };
+		1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_TimeLine.xib; sourceTree = "<group>"; };
+		1078FCBD1A3AF34E006303EE /* CCell_Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Milestone.h; sourceTree = "<group>"; };
+		1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Milestone.m; sourceTree = "<group>"; };
+		1078FCBF1A3AF34E006303EE /* CCell_Milestone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Milestone.xib; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -296,10 +306,21 @@
 		106107BF1A386083005F2A4A /* ALL Cell */ = {
 			isa = PBXGroup;
 			children = (
+				1078FCAE1A3ABDAE006303EE /* Timeline Cell */,
 				10FB44D71A398D4C00DDA935 /* Baby Detail */,
 				10FB44D81A398D4C00DDA935 /* Excercise Cell */,
 			);
 			path = "ALL Cell";
+			sourceTree = "<group>";
+		};
+		1078FCAE1A3ABDAE006303EE /* Timeline Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1078FCAF1A3ABDCC006303EE /* CCell_TimeLine.h */,
+				1078FCB01A3ABDCC006303EE /* CCell_TimeLine.m */,
+				1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */,
+			);
+			path = "Timeline Cell";
 			sourceTree = "<group>";
 		};
 		109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */ = {
@@ -652,6 +673,9 @@
 				10FB44DE1A398D7200DDA935 /* CCell_HeaderView.h */,
 				10FB44DF1A398D7200DDA935 /* CCell_HeaderView.m */,
 				10FB44E11A398D8400DDA935 /* CCell_HeaderView.xib */,
+				1078FCBD1A3AF34E006303EE /* CCell_Milestone.h */,
+				1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */,
+				1078FCBF1A3AF34E006303EE /* CCell_Milestone.xib */,
 			);
 			path = "Baby Detail";
 			sourceTree = "<group>";
@@ -763,7 +787,9 @@
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
 				109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */,
+				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
+				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
@@ -812,6 +838,7 @@
 				10FB44E01A398D7200DDA935 /* CCell_HeaderView.m in Sources */,
 				1047D0D91A39CDEF00273457 /* MyViewCarousel.m in Sources */,
 				10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */,
+				1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
@@ -826,6 +853,7 @@
 				109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */,
 				10C27D941A35A5DC0006985C /* NSObject+Validation.m in Sources */,
 				109885DF1A36E5C100FB3BB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				1078FCB21A3ABDCC006303EE /* CCell_TimeLine.m in Sources */,
 				1047D0D01A39C30600273457 /* S_Excercise_Carousel.m in Sources */,
 				10C27D9E1A35A5DC0006985C /* SDImageCache.m in Sources */,
 				109885F71A371AE200FB3BB4 /* S_TimelineVC.m in Sources */,
