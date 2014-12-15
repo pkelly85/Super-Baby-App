@@ -52,6 +52,12 @@
     tblView.delegate = self;
     tblView.dataSource = self;
 }
+
+#pragma mark - IBAction
+-(IBAction)btnSearchClicked:(id)sender
+{
+    [txtSearch becomeFirstResponder];
+}
 -(IBAction)btnAge_MilestoneClicked:(UIButton *)sender
 {
     [txtSearch resignFirstResponder];

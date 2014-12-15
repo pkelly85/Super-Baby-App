@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  SuperBaby
+
+  Created by MAC107 on 15/12/14.
+  Copyright (c) 2014 tatva. All rights reserved.
+*/
+
+//no internet
+"str_No_Internet" = "Please check your internet connection";
+
+
+
+//facebook
+"strFacebookFailureMessage" = "Please configure the Facebook account from  settings.";
+"strFacebookFailureTitle" = "Facebook failure";
+"strPermissionNotGrantedTitle" = "Permissions not granted!";
+"strPermissionNotGrantedMessage" = "Please allow permissions to your app from 'Settings >> Facebook'.";
+
+"strNoFacebookAccountTitle" = "No Facebook Account";
+"strNoFacebookAccountMessage" = "There are no facebook accounts configured. You can add or create a Facebook account in settings.";
+

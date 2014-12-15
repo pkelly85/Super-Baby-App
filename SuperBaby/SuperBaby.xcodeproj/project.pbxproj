@@ -18,6 +18,11 @@
 		1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */; };
 		1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */; };
 		1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1078FCBF1A3AF34E006303EE /* CCell_Milestone.xib */; };
+		107995901A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1079958E1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.m */; };
+		107995911A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1079958F1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib */; };
+		107995951A3EB621006EA4BA /* S_FacebookClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995941A3EB621006EA4BA /* S_FacebookClass.m */; };
+		107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */; };
+		107995991A3EBA62006EA4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 107995981A3EBA62006EA4BA /* Localizable.strings */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
 		109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */; };
@@ -123,6 +128,13 @@
 		1078FCBD1A3AF34E006303EE /* CCell_Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Milestone.h; sourceTree = "<group>"; };
 		1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Milestone.m; sourceTree = "<group>"; };
 		1078FCBF1A3AF34E006303EE /* CCell_Milestone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Milestone.xib; sourceTree = "<group>"; };
+		1079958D1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_Excercise_VideoInfoVC.h; sourceTree = "<group>"; };
+		1079958E1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_Excercise_VideoInfoVC.m; sourceTree = "<group>"; };
+		1079958F1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_Excercise_VideoInfoVC.xib; sourceTree = "<group>"; };
+		107995931A3EB621006EA4BA /* S_FacebookClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_FacebookClass.h; sourceTree = "<group>"; };
+		107995941A3EB621006EA4BA /* S_FacebookClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_FacebookClass.m; sourceTree = "<group>"; };
+		107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		107995981A3EBA62006EA4BA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +334,23 @@
 				1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */,
 			);
 			path = "Timeline Cell";
+			sourceTree = "<group>";
+		};
+		107995921A3EB621006EA4BA /* Facebook Class */ = {
+			isa = PBXGroup;
+			children = (
+				107995931A3EB621006EA4BA /* S_FacebookClass.h */,
+				107995941A3EB621006EA4BA /* S_FacebookClass.m */,
+			);
+			path = "Facebook Class";
+			sourceTree = "<group>";
+		};
+		1079959A1A3EBFD1006EA4BA /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 		109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */ = {
@@ -377,6 +407,9 @@
 				1047D0CD1A39C30600273457 /* S_Excercise_Carousel.h */,
 				1047D0CE1A39C30600273457 /* S_Excercise_Carousel.m */,
 				1047D0CF1A39C30600273457 /* S_Excercise_Carousel.xib */,
+				1079958D1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.h */,
+				1079958E1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.m */,
+				1079958F1A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib */,
 			);
 			path = "Excercise Video";
 			sourceTree = "<group>";
@@ -404,6 +437,7 @@
 		10C27CF21A35A4C20006985C = {
 			isa = PBXGroup;
 			children = (
+				1079959A1A3EBFD1006EA4BA /* Framework */,
 				10FB44E31A39927C00DDA935 /* ALL Plist */,
 				10C27DAE1A35A7190006985C /* Common Methods */,
 				10C27D261A35A5DB0006985C /* ALL Classes */,
@@ -466,6 +500,7 @@
 		10C27D261A35A5DB0006985C /* ALL Classes */ = {
 			isa = PBXGroup;
 			children = (
+				107995921A3EB621006EA4BA /* Facebook Class */,
 				1047D0D21A39C68700273457 /* iCarousel */,
 				109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */,
 				10C27D271A35A5DB0006985C /* AFNetworking */,
@@ -613,6 +648,7 @@
 			children = (
 				10C27DAF1A35A7190006985C /* CommonMethods.h */,
 				10C27DB01A35A7190006985C /* CommonMethods.m */,
+				107995981A3EBA62006EA4BA /* Localizable.strings */,
 			);
 			name = "Common Methods";
 			path = "SuperBaby/Common Methods";
@@ -786,11 +822,13 @@
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
+				107995911A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib in Resources */,
 				109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */,
 				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
+				107995991A3EBA62006EA4BA /* Localizable.strings in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */,
@@ -816,6 +854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107995901A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.m in Sources */,
 				10C27DAB1A35A5DC0006985C /* UIView+WebCacheOperation.m in Sources */,
 				10C27DB11A35A7190006985C /* CommonMethods.m in Sources */,
 				10C27D8F1A35A5DC0006985C /* AFURLSessionManager.m in Sources */,
@@ -881,6 +920,7 @@
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
 				10C27D9D1A35A5DC0006985C /* NSData+ImageContentType.m in Sources */,
 				10C27D881A35A5DC0006985C /* AFHTTPSessionManager.m in Sources */,
+				107995951A3EB621006EA4BA /* S_FacebookClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

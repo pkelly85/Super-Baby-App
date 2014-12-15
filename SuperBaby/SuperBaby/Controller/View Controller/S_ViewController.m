@@ -30,8 +30,9 @@
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }];
-    
 }
+
+
 -(IBAction)btnDisAgreeClicked:(id)sender
 {
     [CommonMethods displayAlertwithTitle:@"Note" withMessage:@"You must have to accept Terms to Continue to Superbaby" withViewController:self];

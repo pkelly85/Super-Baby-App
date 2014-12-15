@@ -10,7 +10,7 @@
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#import <SystemConfiguration/SystemConfiguration.h>
 @interface S_AppDelegate ()
 
 @end
@@ -20,10 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    /*--- Window init ---*/
+    /*--- Movieplayer Start and end notification ---*/
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
     
+    /*--- Window init ---*/
     self.window = [[UIWindow alloc]initWithFrame:screenSize];
     self.vc = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
     self.navC = [[UINavigationController alloc]initWithRootViewController:self.vc];
@@ -49,14 +50,27 @@
 - (void) moviePlayerEndNotification:(NSNotification*)notification {
     self.allowRotation = NO;
 }
-//-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-//{
-//    if (self.allowRotation) {
-//        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
-//    }
-//    return UIInterfaceOrientationMaskPortrait;
-//}
 
+#pragma mark - Connection Check
+- (BOOL)checkConnection:(void (^)(void))completion
+{
+    const char *host_name = "www.google.com";
+    BOOL _isDataSourceAvailable = NO;
+    Boolean success;
+    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL,host_name);
+    SCNetworkReachabilityFlags flags;
+    success = SCNetworkReachabilityGetFlags(reachability, &flags);
+    _isDataSourceAvailable = success &&
+    (flags & kSCNetworkFlagsReachable) &&
+    !(flags & kSCNetworkFlagsConnectionRequired);
+    
+    CFRelease(reachability);
+    
+    if (completion) {
+        completion();
+    }
+    return _isDataSourceAvailable;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

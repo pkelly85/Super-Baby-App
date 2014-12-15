@@ -9,9 +9,9 @@
 #import "NSMutableAttributedString+Validation.h"
 #import "AppConstant.h"
 @implementation NSMutableAttributedString (Validation)
--(NSMutableAttributedString *)replaceFonts
+-(NSMutableAttributedString *)replaceFonts_withFont:(UIFont *)fontSelected
 {
-    UIFont *fontSelected = (iPhone)?kFONT_REGULAR(14.0):kFONT_REGULAR(28.0);
+//    UIFont *fontSelected = (iPhone)?kFONT_REGULAR(14.0):kFONT_REGULAR(28.0);
     @try
     {
         [self beginEditing];

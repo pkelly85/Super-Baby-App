@@ -10,6 +10,8 @@
 #import "iCarousel.h"
 #import "AppConstant.h"
 #import "MyViewCarousel.h"
+
+#import "S_Excercise_VideoInfoVC.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
     NSMutableArray *items;    
@@ -43,6 +45,11 @@
     
     [_carousel reloadData];
 }
+#pragma mark - IBAction
+-(IBAction)btnSearchClicked:(id)sender
+{
+    [txtSearch becomeFirstResponder];
+}
 #pragma mark -
 #pragma mark iCarousel methods
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
@@ -62,14 +69,15 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(MyViewCarousel *)view
 {
-    
     //create new view if no view is available for recycling
     if (view == nil)
     {
         view = [[[NSBundle mainBundle]loadNibNamed:@"MyViewCarousel" owner:self options:nil] objectAtIndex:0];
         [view.btnPlay addTarget:self action:@selector(btnPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [view.btnInfo addTarget:self action:@selector(btnInfoClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     view.btnPlay.tag = index;
+    view.btnInfo.tag = index;
     view.lblText.text = [items[index] stringValue];
     
     return view;
@@ -79,9 +87,14 @@
 
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
-    NSLog(@"%ld",(long)btnPlay.tag);
+    NSLog(@"Play : %ld",(long)btnPlay.tag);
 }
-
+-(void)btnInfoClicked:(UIButton *)btnInfo
+{
+    NSLog(@"Info : %ld",(long)btnInfo.tag);
+    S_Excercise_VideoInfoVC *obj = [[S_Excercise_VideoInfoVC alloc]initWithNibName:@"S_Excercise_VideoInfoVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
+}
 
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

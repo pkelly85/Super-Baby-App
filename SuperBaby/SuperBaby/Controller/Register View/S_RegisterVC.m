@@ -11,6 +11,8 @@
 
 #import "S_ViewController.h"
 #import "S_EditBabyInfoVC.h"
+
+#import "S_FacebookClass.h"
 @interface S_RegisterVC ()<UITextFieldDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -59,10 +61,6 @@
     [super viewDidAppear:animated];
 }
 #pragma mark - IBAction Method
--(IBAction)btnSignInWithFBClicked:(id)sender
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-}
 -(IBAction)btnSignInClicked:(id)sender
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
@@ -71,6 +69,34 @@
 {
     S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
     [self.navigationController pushViewController:obj animated:YES];
+}
+- (IBAction)btnSignInWithFBClicked:(id)sender
+{
+    S_FacebookClass *obj_FbClass = [[S_FacebookClass alloc] init];
+    [obj_FbClass loginWithViewCtr:self withIndicatorText:@"Login with Facebook" withCompletionHandler:^(NSDictionary *Dic)
+     {
+         if ([[NSThread currentThread] isMainThread])
+         {
+             [self callLoginWithFBWebservice:Dic];
+         }
+         else
+         {
+             [self performSelectorOnMainThread:@selector(callLoginWithFBWebservice:) withObject:Dic waitUntilDone:YES];
+         }
+     }];
+}
+
+- (void)callLoginWithFBWebservice:(NSDictionary*)dicFB
+{
+    if (dicFB == nil)
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:@"Fail" withMessage:@"Facebook Fail Please Try Again!" withViewController:self];
+    }
+    else
+    {
+        
+    }
 }
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

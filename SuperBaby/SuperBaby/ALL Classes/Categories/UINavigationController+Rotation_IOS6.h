@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationController (Rotation_IOS6)
--(BOOL)shouldAutorotate;
--(NSUInteger)supportedInterfaceOrientations;
--(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation;
+//-(BOOL)shouldAutorotate;
+//-(NSUInteger)supportedInterfaceOrientations;
+//-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation;
 @end

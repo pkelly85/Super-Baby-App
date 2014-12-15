@@ -39,7 +39,8 @@ NSString *DocumentsDirectoryPath() ;
 
 +(void)addEvent_withTitle:(NSString *)strTitle withStartDate:(NSDate *)dateStart withEndData:(NSDate *)dateEnd withHandler:(void(^)(BOOL Success,BOOL granted))compilation;
 
-
+/*----- no internet alertview -----*/
++ (void)showNoInternetAlertViewwithViewCtr:(UIViewController*)viewCtr;
 + (void)displayAlertwithTitle:(NSString*)title withMessage:(NSString*)msg withViewController:(UIViewController*)viewCtr;
 
 

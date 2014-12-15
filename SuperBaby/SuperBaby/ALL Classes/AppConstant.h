@@ -40,6 +40,8 @@
 #define App_Name @"Superbaby"
 #define BUCKET_NAME @"Superbaby"
 
+#define FACEBOOK_APPID @""
+
 #pragma mark - Extra
 /*-----------------------------------------------------------------------------*/
 #define appDel ((S_AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -103,10 +105,8 @@
 #define kFONT_THIN(sizeF) [UIFont fontWithName:@"HelveticaNeue-Thin" size:sizeF]
 #define kFONT_LIGHT(sizeF) [UIFont fontWithName:@"HelveticaNeue-Light" size:sizeF]
 #define kFONT_ITALIC(sizeF) [UIFont fontWithName:@"HelveticaNeue-Italic" size:sizeF]
-#define kFONT_BOLD(sizeF) [UIFont fontWithName:@"HelveticaNeue-Medium" size:sizeF]
+#define kFONT_MEDIUM(sizeF) [UIFont fontWithName:@"HelveticaNeue-Medium" size:sizeF]
 #define kFONT_ITALIC_LIGHT(sizeF) [UIFont fontWithName:@"HelveticaNeue-LightItalic" size:sizeF]
-
-#define kFONT_OSWALD(sizeF) [UIFont fontWithName:@"Oswald-Regular" size:sizeF]
 
 
 /*-----------------------------------------------------------------------------*/
@@ -119,20 +119,7 @@
 #define kTimeOutInterval 60
 
 /*-----------------------------------------------------------------------------*/
-#pragma mark - Cell Identifier
-#define cellHistoryID @"idcellHistory"
-#
-/*-----------------------------------------------------------------------------*/
 
-#pragma mark - Keyboard Animation Declaration of values
-
-static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
-static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
-static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
-static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
-CGFloat animatedDistance;
-
-/*-----------------------------------------------------------------------------*/
 #define showHUD [SVProgressHUD show];
 #define hideHUD [SVProgressHUD dismiss];
 
@@ -141,15 +128,14 @@ CGFloat animatedDistance;
 
 #define showHUD_with_error(errorTitle) [SVProgressHUD showErrorWithStatus:errorTitle];
 #define showHUD_with_Success(successTitle) [SVProgressHUD showSuccessWithStatus:successTitle];
-/*-----------------------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------------------*/
 
 #define kNotification_refresh_HomeView @"refresh_HomeView"
 #define kNotification_Update_MessageList @"updateMessageListNotification"
 
 /*-----------------------------------------------------------------------------*/
 
-#define text_InternetCheck @"Please check your internet connection"
 
 #define placeHolderAvtar [UIImage imageNamed:@"placeholder-avtar"]
 #define placeHolderImage [UIImage imageNamed:@"placeholder"]
@@ -173,3 +159,16 @@ CGFloat animatedDistance;
 #define USER_INFO @"userinformation"
 #define USER_TOKEN @"access_token"
 #define USER_ID @"useridloggedinuser"
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+
+#pragma mark - Keyboard Animation Declaration of values
+
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+CGFloat animatedDistance;

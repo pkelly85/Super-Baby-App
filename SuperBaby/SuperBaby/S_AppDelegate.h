@@ -18,5 +18,7 @@
 @property (strong, nonatomic) S_RegisterVC *vc;
 
 @property(nonatomic,readwrite)BOOL allowRotation;
+- (BOOL)checkConnection:(void (^)(void))completion;
+
 @end
 

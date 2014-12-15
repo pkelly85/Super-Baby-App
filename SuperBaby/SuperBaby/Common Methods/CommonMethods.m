@@ -240,7 +240,24 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
         }
     }];
 }
-
+/*----- no internet alertview -----*/
++ (void)showNoInternetAlertViewwithViewCtr:(UIViewController*)viewCtr
+{
+    if (ios8)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:NSLocalizedString(@"str_No_Internet", nil) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
+                                        {[alert dismissViewControllerAnimated:YES completion:nil];
+                                        }];
+        [alert addAction:defaultAction];
+        [viewCtr presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:NSLocalizedString(@"str_No_Internet", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
 /*----- alertview for iOS 7 & 8 -----*/
 + (void)displayAlertwithTitle:(NSString*)title withMessage:(NSString*)msg withViewController:(UIViewController*)viewCtr
 {

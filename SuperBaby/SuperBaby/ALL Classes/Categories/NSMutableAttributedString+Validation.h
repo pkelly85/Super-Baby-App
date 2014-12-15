@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface NSMutableAttributedString (Validation)
--(NSMutableAttributedString *)replaceFonts;
+-(NSMutableAttributedString *)replaceFonts_withFont:(UIFont *)fontSelected;
 
 -(NSMutableAttributedString *)replaceFonts_Quicksand;
 
