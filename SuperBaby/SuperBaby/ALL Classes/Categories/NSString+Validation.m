@@ -287,33 +287,33 @@
     return [df stringFromDate:date];
 }
 
--(NSDate *)dateFromStringDateFormate:(NSString*)format Type:(int)type{
-    
-    // Set up an NSDateFormatter for UTC time zone
-    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    NSDateFormatter* formatterUtc = [[NSDateFormatter alloc] init];
-    [formatterUtc setDateFormat:format];
-    [formatterUtc setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    [formatterUtc setLocale:enUSPOSIXLocale];
-
-    // Cast the input string to NSDate
-    NSDate* utcDate = [formatterUtc dateFromString:self];
-    
-    // Set up an NSDateFormatter for the device's local time zone
-    NSDateFormatter* formatterLocal = [[NSDateFormatter alloc] init];
-    [formatterLocal setDateFormat:format];
-    [formatterLocal setTimeZone:[NSTimeZone localTimeZone]];
-    [formatterLocal setLocale:enUSPOSIXLocale];
-
-    // Create local NSDate with time zone difference
-    NSDate* localDate = [formatterUtc dateFromString:[formatterLocal stringFromDate:utcDate]];
-    
-    if (type == 0) {
-        return utcDate;
-    }
-    else
-        return localDate;
-}
+//-(NSDate *)dateFromStringDateFormate:(NSString*)format Type:(int)type{
+//    
+//    // Set up an NSDateFormatter for UTC time zone
+//    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+//    NSDateFormatter* formatterUtc = [[NSDateFormatter alloc] init];
+//    [formatterUtc setDateFormat:format];
+//    [formatterUtc setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+//    [formatterUtc setLocale:enUSPOSIXLocale];
+//
+//    // Cast the input string to NSDate
+//    NSDate* utcDate = [formatterUtc dateFromString:self];
+//    
+//    // Set up an NSDateFormatter for the device's local time zone
+//    NSDateFormatter* formatterLocal = [[NSDateFormatter alloc] init];
+//    [formatterLocal setDateFormat:format];
+//    [formatterLocal setTimeZone:[NSTimeZone localTimeZone]];
+//    [formatterLocal setLocale:enUSPOSIXLocale];
+//
+//    // Create local NSDate with time zone difference
+//    NSDate* localDate = [formatterUtc dateFromString:[formatterLocal stringFromDate:utcDate]];
+//    
+//    if (type == 0) {
+//        return utcDate;
+//    }
+//    else
+//        return localDate;
+//}
 -(NSString *)getDate_From_Timestamp
 {
     double unixTimeStamp =[self doubleValue];
@@ -338,6 +338,33 @@
     [df setDateFormat:currentFormate];
     return [df dateFromString:self];
 }
+
+
+-(NSDate *)get_UTC_Date_with_currentformat:(NSString*)format Type:(int)type{
+    
+    // Set up an NSDateFormatter for UTC time zone
+    NSDateFormatter* formatterUtc = [[NSDateFormatter alloc] init];
+    [formatterUtc setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    [formatterUtc setDateFormat:format];
+    // Cast the input string to NSDate
+    NSDate* utcDate = [formatterUtc dateFromString:self];
+    
+    if (type == 0)
+        return utcDate;
+    
+    // Set up an NSDateFormatter for the device's local time zone
+    NSDateFormatter* formatterLocal = [[NSDateFormatter alloc] init];
+    [formatterLocal setDateFormat:format];
+    [formatterLocal setTimeZone:[NSTimeZone systemTimeZone]];
+    
+    // Create local NSDate with time zone difference
+    NSDate* localDate = [formatterUtc dateFromString:[formatterLocal stringFromDate:utcDate]];
+    
+    return localDate;
+}
+
+
+
 #pragma mark - Check File Already Exist
 - (BOOL)fileAlreadyExist
 {

@@ -37,6 +37,11 @@
 		109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */; };
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
+		10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */; };
+		10B7D5A11A44090E004EFF60 /* UITextFiledWithoutInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D5A01A44090E004EFF60 /* UITextFiledWithoutInteraction.m */; };
+		10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */; };
+		10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A41A442E15004EFF60 /* Videos.plist */; };
+		10B7D5A91A444442004EFF60 /* S_BabyInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */; };
 		10C27D011A35A4C20006985C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D001A35A4C20006985C /* main.m */; };
 		10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D031A35A4C20006985C /* S_AppDelegate.m */; };
 		10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D0B1A35A4C20006985C /* Images.xcassets */; };
@@ -95,7 +100,6 @@
 		10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */; };
 		10FB44E01A398D7200DDA935 /* CCell_HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DF1A398D7200DDA935 /* CCell_HeaderView.m */; };
 		10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E11A398D8400DDA935 /* CCell_HeaderView.xib */; };
-		10FB44E51A39929000DDA935 /* MilestonesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E41A39929000DDA935 /* MilestonesList.plist */; };
 		10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */; };
 		10FB44EA1A399A4800DDA935 /* S_RedFlagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */; };
 /* End PBXBuildFile section */
@@ -158,6 +162,14 @@
 		109885F91A371AF500FB3BB4 /* S_SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_SettingsVC.h; sourceTree = "<group>"; };
 		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
+		10B7D59C1A43F8AF004EFF60 /* S_UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_UserModel.h; sourceTree = "<group>"; };
+		10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_UserModel.m; sourceTree = "<group>"; };
+		10B7D59F1A44090E004EFF60 /* UITextFiledWithoutInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFiledWithoutInteraction.h; sourceTree = "<group>"; };
+		10B7D5A01A44090E004EFF60 /* UITextFiledWithoutInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextFiledWithoutInteraction.m; sourceTree = "<group>"; };
+		10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByAge.plist; sourceTree = "<group>"; };
+		10B7D5A41A442E15004EFF60 /* Videos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Videos.plist; sourceTree = "<group>"; };
+		10B7D5A71A444442004EFF60 /* S_BabyInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_BabyInfoModel.h; sourceTree = "<group>"; };
+		10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_BabyInfoModel.m; sourceTree = "<group>"; };
 		10C27CFB1A35A4C20006985C /* SuperBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C27CFF1A35A4C20006985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10C27D001A35A4C20006985C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -272,7 +284,6 @@
 		10FB44DE1A398D7200DDA935 /* CCell_HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_HeaderView.h; sourceTree = "<group>"; };
 		10FB44DF1A398D7200DDA935 /* CCell_HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_HeaderView.m; sourceTree = "<group>"; };
 		10FB44E11A398D8400DDA935 /* CCell_HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_HeaderView.xib; sourceTree = "<group>"; };
-		10FB44E41A39929000DDA935 /* MilestonesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MilestonesList.plist; sourceTree = "<group>"; };
 		10FB44E61A399A4800DDA935 /* S_RedFlagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_RedFlagVC.h; sourceTree = "<group>"; };
 		10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_RedFlagVC.m; sourceTree = "<group>"; };
 		10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_RedFlagVC.xib; sourceTree = "<group>"; };
@@ -309,6 +320,8 @@
 		1047D0D61A39CDE000273457 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10B7D59F1A44090E004EFF60 /* UITextFiledWithoutInteraction.h */,
+				10B7D5A01A44090E004EFF60 /* UITextFiledWithoutInteraction.m */,
 				1047D0D71A39CDEF00273457 /* MyViewCarousel.h */,
 				1047D0D81A39CDEF00273457 /* MyViewCarousel.m */,
 				1047D0DA1A39CE0000273457 /* MyViewCarousel.xib */,
@@ -434,11 +447,21 @@
 			path = "Timeline View";
 			sourceTree = "<group>";
 		};
+		10B7D5A21A442E15004EFF60 /* ALL Plist */ = {
+			isa = PBXGroup;
+			children = (
+				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
+				10B7D5A41A442E15004EFF60 /* Videos.plist */,
+			);
+			name = "ALL Plist";
+			path = "SuperBaby/ALL Plist";
+			sourceTree = "<group>";
+		};
 		10C27CF21A35A4C20006985C = {
 			isa = PBXGroup;
 			children = (
+				10B7D5A21A442E15004EFF60 /* ALL Plist */,
 				1079959A1A3EBFD1006EA4BA /* Framework */,
-				10FB44E31A39927C00DDA935 /* ALL Plist */,
 				10C27DAE1A35A7190006985C /* Common Methods */,
 				10C27D261A35A5DB0006985C /* ALL Classes */,
 				10C27CFD1A35A4C20006985C /* SuperBaby */,
@@ -669,6 +692,10 @@
 		10C27DB31A35ADE90006985C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				10B7D59C1A43F8AF004EFF60 /* S_UserModel.h */,
+				10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */,
+				10B7D5A71A444442004EFF60 /* S_BabyInfoModel.h */,
+				10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -724,15 +751,6 @@
 				10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */,
 			);
 			path = "Excercise Cell";
-			sourceTree = "<group>";
-		};
-		10FB44E31A39927C00DDA935 /* ALL Plist */ = {
-			isa = PBXGroup;
-			children = (
-				10FB44E41A39929000DDA935 /* MilestonesList.plist */,
-			);
-			name = "ALL Plist";
-			path = "SuperBaby/ALL Plist";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -817,8 +835,8 @@
 			files = (
 				10FB44EA1A399A4800DDA935 /* S_RedFlagVC.xib in Resources */,
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
+				10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */,
 				10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */,
-				10FB44E51A39929000DDA935 /* MilestonesList.plist in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
@@ -837,6 +855,7 @@
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
 				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
+				10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,12 +890,15 @@
 				10C27DAD1A35A5DC0006985C /* SVProgressHUD.m in Sources */,
 				10C27DA21A35A5DC0006985C /* SDWebImageDownloaderOperation.m in Sources */,
 				10C27DB91A35AE290006985C /* S_ViewController.m in Sources */,
+				10B7D5A91A444442004EFF60 /* S_BabyInfoModel.m in Sources */,
 				10C27DA41A35A5DC0006985C /* SDWebImagePrefetcher.m in Sources */,
 				10C27D981A35A5DC0006985C /* UIImage+KTCategory.m in Sources */,
 				109885E41A37060400FB3BB4 /* S_HomeVC.m in Sources */,
 				10FB44E01A398D7200DDA935 /* CCell_HeaderView.m in Sources */,
 				1047D0D91A39CDEF00273457 /* MyViewCarousel.m in Sources */,
+				10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */,
 				10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */,
+				10B7D5A11A44090E004EFF60 /* UITextFiledWithoutInteraction.m in Sources */,
 				1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,

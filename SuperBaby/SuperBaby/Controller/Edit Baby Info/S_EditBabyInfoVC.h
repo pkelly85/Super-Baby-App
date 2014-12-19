@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface S_EditBabyInfoVC : UIViewController
-
+@property(nonatomic,readwrite)BOOL isEditingFirstTime;
 @end

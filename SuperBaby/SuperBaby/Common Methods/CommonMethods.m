@@ -617,8 +617,84 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
         generator.maximumSize = maxSize;
         [generator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
     });
-    
-    
-    
+}
+
+
+#define USER Model
+
+#pragma mark - Get Profile + Save profile
++(S_UserModel *)getMyUser_LoggedIN
+{
+    @try
+    {
+        NSData *myDecodedObject = [UserDefaults objectForKey:USER_INFO];
+        S_UserModel *myUser = [NSKeyedUnarchiver unarchiveObjectWithData:myDecodedObject];
+        return myUser;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+        return nil;
+    }
+    @finally {
+    }
+    return nil;
+}
++(void)saveMyUser_LoggedIN:(S_UserModel *)myUser
+{
+    @try
+    {
+        NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:myUser];
+        [UserDefaults setObject:myEncodedObject forKey:USER_INFO];
+        [UserDefaults synchronize];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+    }
+    @finally {
+    }
+}
+
+
++(S_BabyInfoModel *)getMyBaby
+{
+    @try
+    {
+        NSData *myDecodedObject = [UserDefaults objectForKey:BABY_INFO];
+        S_BabyInfoModel *myUser = [NSKeyedUnarchiver unarchiveObjectWithData:myDecodedObject];
+        return myUser;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+        return nil;
+    }
+    @finally {
+    }
+    return nil;
+}
++(void)saveMyBaby:(S_BabyInfoModel *)myBaby
+{
+    @try
+    {
+        NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:myBaby];
+        [UserDefaults setObject:myEncodedObject forKey:BABY_INFO];
+        [UserDefaults synchronize];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+    }
+    @finally {
+    }
+}
+
+#pragma mark - Convert in UTC
++ (NSString*)GetDateFromUTCTimeZone:(NSDate*)Curr_date Formatter:(NSString*)strFormatter
+{
+    NSCalendar *sysCalendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateFormatter *dateFormatter= [[NSDateFormatter alloc] init];
+    dateFormatter.calendar = sysCalendar;
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    [dateFormatter setDateFormat:strFormatter];
+    NSString *strStartDate = [dateFormatter stringFromDate:Curr_date];
+    return strStartDate;
 }
 @end

@@ -23,6 +23,8 @@
 -(IBAction)btnAgreeClicked:(id)sender
 {
     self.view.alpha = 1.0;
+    [UserDefaults setValue:@"done" forKey:TERMS_AGREE];
+    [UserDefaults synchronize];
     [UIView animateWithDuration:0.5 animations:^{
         self.view.alpha = 0.0;
     } completion:^(BOOL finished) {

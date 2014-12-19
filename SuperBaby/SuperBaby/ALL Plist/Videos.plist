@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>0</integer>
+		<key>description</key>
+		<string>To promote hip flexion, abdominal activation, and bringing hands to mouth.</string>
+		<key>title</key>
+		<string>Supine- rolled towel under legs</string>
+		<key>instruction</key>
+		<string>With baby lying on back, place a small rolled towel under the knees. Give baby a toy to play with to promote bringing hands to midline and to mouth. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>com.sbapp.superbaby.tooshydowntummytime</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>description</key>
+		<string>To promote bilateral integration, abdominal activation, and body awareness.</string>
+		<key>title</key>
+		<string>Cross-Crawl</string>
+		<key>instruction</key>
+		<string>With baby lying on back, bring opposite hand to foot/knee, crossing body.  Switch extremities. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>description</key>
+		<string>To promote leg extension strength and provide opportunity to weight bear.</string>
+		<key>title</key>
+		<string>Resisted Kicking “Kick-Off” </string>
+		<key>instruction</key>
+		<string>Roll baby onto back, apply gentle pressure to the sole’s of baby’s feet. Baby will naturally push back, apply gentle resistance to kick, but let baby fully extend legs. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>2</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>3</integer>
+		<key>description</key>
+		<string>To promote tracking of an object and head control.</string>
+		<key>title</key>
+		<string>Optical Scanning “tracking training”</string>
+		<key>instruction</key>
+		<string>With baby on back slowly move an object of interest from side to side and up and down, across baby’s field of vision.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>3</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>4</integer>
+		<key>description</key>
+		<string>To promote head control and neck strength.</string>
+		<key>title</key>
+		<string>Head Control “Bobble Head”</string>
+		<key>instruction</key>
+		<string>While supporting newborn with both hands under the shoulders and behind neck, slowly move infant in small circles, side to side, and back and forth.  Careful not to flop the infants head around. Baby has very little head control in first month.  </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>5</integer>
+		<key>description</key>
+		<string>To promote body awareness, extremity control, coming to midline, and bilateral coordination. </string>
+		<key>title</key>
+		<string>Gentle Extremity Movements “Baby Tai-Chi”</string>
+		<key>instruction</key>
+		<string>Gently move the arms/legs/arm and leg in different directions.  Move the limbs in the same and in opposite directions.  Bring the arms together to midline.  Bring opposite hand and foot together, crossing the body</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>5</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
+		<key>description</key>
+		<string>To promote trunk control, head control, balance, vestibular development, and strength.</string>
+		<key>title</key>
+		<string>Baby on belly  “Baby on Board”</string>
+		<key>instruction</key>
+		<string>While lying on your back, place baby lying on belly on your stomach/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>6</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>description</key>
+		<string>To provide vestibular input and promote a rolling motion.</string>
+		<key>title</key>
+		<string>Baby Blanket Roll  “Baby in a Blanket”</string>
+		<key>instruction</key>
+		<string>With baby lying on back on a small blanket, gently roll baby side to side. Position arms under blanket and on either side of baby.  Helps with balance later on in development. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>7</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>8</integer>
+		<key>description</key>
+		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control.</string>
+		<key>title</key>
+		<string>Tooshy Down Tummy Time</string>
+		<key>instruction</key>
+		<string>Gently roll baby onto belly, apply gentle pressure down on the top of the tooshy (pelvis) to allow for easier head lifting and use of arms.  For a younger baby you can also roll a small towel under the chest to allow for easier head lifting.  If one of baby’s arms get stuck under them, you can apply more pressure to opposite side of tooshy to help them free the stuck arm. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>8</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>9</integer>
+		<key>description</key>
+		<string>To promote head control, arm strength, and trunk strength. (Do not attempt with a baby with low tone)</string>
+		<key>title</key>
+		<string>Baby “sit-ups”</string>
+		<key>instruction</key>
+		<string>With baby lying on its back, hold babies hands and extend arms.  While maintaining eye contact with Baby, encourage the baby to come to sit by pulling arms gently. If baby is unable to tuck chin and has significant head lag, do not attempt “sit-ups” until they are able to maintain eye contact with you when pulling to sit. As baby becomes stronger you will need to provide less help, as baby will do more of the work. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>9</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>10</integer>
+		<key>description</key>
+		<string>To promote neck strength, head control, and shoulder girdle development.</string>
+		<key>title</key>
+		<string>Over Leg Tummy Time</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly with chest resting on your leg.  Encourage baby to use arms to push off your leg.  Encourage baby to look up/down in different directions. As baby’s arms become stronger, you can roll baby forward over your leg.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>10</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>11</integer>
+		<key>description</key>
+		<string>To promote body awareness and trunk flexion.</string>
+		<key>title</key>
+		<string>Feet to Mouth  “Nibbly toes”</string>
+		<key>instruction</key>
+		<string>With baby on back, bring both and/or one foot to baby’s mouth.  Let baby hold feet themselves, if they can. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>11</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>12</integer>
+		<key>description</key>
+		<string>To promote strength, head control, balance, and vestibular development.</string>
+		<key>title</key>
+		<string>Baby on Belly  &quot;Baby on Board&quot;</string>
+		<key>instruction</key>
+		<string>While lying on your back, place baby on your belly/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>12</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>13</integer>
+		<key>description</key>
+		<string>To promote anti-gravity movements, rolling, arm/hand coordination, and trunk muscles.</string>
+		<key>title</key>
+		<string>Supported Side-Lying</string>
+		<key>instruction</key>
+		<string>Place rolled towel behind baby’s back in side-lying.  Place toy in front of child where they can reach it.  Baby has to work to maintain position, and will naturally lift side of head of ground. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>13</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>14</integer>
+		<key>description</key>
+		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control.</string>
+		<key>title</key>
+		<string>Assisted Tummy Time</string>
+		<key>instruction</key>
+		<string>Roll baby onto their belly.  Place a small rolled towel or Baby Bolster under the chest so that the arms are in front.  Place a toy or child-safe mirror in front of them to promote head-lifting and arm use. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>14</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>15</integer>
+		<key>description</key>
+		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control.</string>
+		<key>title</key>
+		<string>Assisted Tummy Time</string>
+		<key>instruction</key>
+		<string>Roll baby onto their belly.  Place a small rolled towel or Baby Bolster under the chest so that the arms are in front.  Place a toy or child-safe mirror in front of them to promote head-lifting and arm use. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>15</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>16</integer>
+		<key>description</key>
+		<string>To promote rolling from back to belly.</string>
+		<key>title</key>
+		<string>Symmetrical Leg Roll  &quot;Rollie-Pollie&quot;</string>
+		<key>instruction</key>
+		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>16</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>17</integer>
+		<key>description</key>
+		<string>To promote rolling from back to belly.</string>
+		<key>title</key>
+		<string>Flex/Ext Leg Roll  “Rollie-Pollie to belly” </string>
+		<key>instruction</key>
+		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>17</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>18</integer>
+		<key>description</key>
+		<string>To promote sitting balance and trunk strength.</string>
+		<key>title</key>
+		<string>Supported Long Sit, Side to Side and Front to Back</string>
+		<key>instruction</key>
+		<string>Place baby in seated position between your legs.  Supporting baby with your body, move together side to side and front to back.  As baby gains more sitting balance, provide less support.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>18</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>19</integer>
+		<key>description</key>
+		<string>To promote rolling from belly to back. </string>
+		<key>title</key>
+		<string>Row Your Boat</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly.  Sing “Row, Row, Row Your Boat”, as you gently roll baby’s hips side to side, and then roll over to back.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>19</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>20</integer>
+		<key>description</key>
+		<string>To promote dissociation, trunk control, and body awareness. </string>
+		<key>title</key>
+		<string>Rolling Back to Belly</string>
+		<key>instruction</key>
+		<string>With baby on back, use a toy to encourage baby to turn to side and then belly.  If baby needs more assistance, use a leading arm or leg to help baby roll onto side and then belly.  Once on belly, use the “Tooshy Down” method to help baby lift head and free-up arms. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>20</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>21</integer>
+		<key>description</key>
+		<string>To promote strength, trunk control, head control, and sitting balance.  </string>
+		<key>title</key>
+		<string>&quot;Baby on Board Sitting&quot;</string>
+		<key>instruction</key>
+		<string>While lying on your back, place baby in a supported sitting on your belly/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>21</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>22</integer>
+		<key>description</key>
+		<string>To promote vestibular development and trunk control.</string>
+		<key>title</key>
+		<string>Backwards on Ball</string>
+		<key>instruction</key>
+		<string>While securing a Thera-ball or beach ball with your legs, place baby on top of ball while supporting at the hips.  Slowly assist baby onto back and roll baby backwards so they are momentarily upside-down.  Roll baby back towards you and back into a sitting position. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>22</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>23</integer>
+		<key>description</key>
+		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
+		<key>title</key>
+		<string>Sitting on Ball (Beginner)</string>
+		<key>instruction</key>
+		<string>While securing a Thera-ball or beach ball with your legs, place baby on top of ball while supporting at the trunk or under the arms.  While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down).  As baby gains better head control you can perform larger movements with baby.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>23</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>24</integer>
+		<key>description</key>
+		<string>To promote head and trunk control/strength, arm strength, balance, and vestibular development. </string>
+		<key>title</key>
+		<string>Belly on Ball (Beginner)</string>
+		<key>instruction</key>
+		<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you.  Supporting baby at the sides, roll baby forward to encourage looking up and weight bearing on arms.  The farther forward baby is on the ball, the more work they’re doing. Grade movements depending on baby’s level of development. Slower movements with more support for younger babies.  Can move baby from side to side for added vestibular input.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>24</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>25</integer>
+		<key>description</key>
+		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control. </string>
+		<key>title</key>
+		<string>Tooshy Down Tummy Time Advanced</string>
+		<key>instruction</key>
+		<string>For babies who are 4-5 months old by now, try moving your hand lower to encourage weight bearing at the thighs, and greater head lift and arm extension. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>25</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>26</integer>
+		<key>description</key>
+		<string>To promote shoulder girdle strength, weight shifting, reaching, and dissociation. </string>
+		<key>title</key>
+		<string>Reaching in Prone</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly and propped on elbows or hands, place toy just out of reach to encourage baby to reach.  Move toy to different sides to encourage reaching with both arms. If baby is falling over when attempting to reach, you can provide support over the pelvis.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>26</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>27</integer>
+		<key>description</key>
+		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
+		<key>title</key>
+		<string>Sitting on Ball</string>
+		<key>instruction</key>
+		<string>While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the trunk and hips. While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down).  As baby gains better head/trunk control you can perform larger movements with baby and provide less support. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>27</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>28</integer>
+		<key>description</key>
+		<string>To promote trunk rotation and reaching in sitting.</string>
+		<key>title</key>
+		<string>Advanced Sitting Training</string>
+		<key>instruction</key>
+		<string>With baby in sitting, place toys just out of reach of child to encourage reaching and weight shifting.  Place toys in front and at different sides of baby.  Place toys slightly behind, to encourage trunk rotation and balance control.  Give baby a chance to try even if he is struggling a little.  Don’t rush to help.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>28</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>29</integer>
+		<key>description</key>
+		<string>To promote whole body strengthening, shoulder and hip stability, and preparing to crawl.</string>
+		<key>title</key>
+		<string>Quadruped Training</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly.  Bring knees under the baby’s trunk.  Lift tooshy off of heel to come to a quadruped position.  Support baby at hips, while they attempt to maintain quadruped position. You can provide extra support under chest if unable to bear weight on arms. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>29</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>30</integer>
+		<key>description</key>
+		<string>To promote extensor strength and provide vestibular input. </string>
+		<key>title</key>
+		<string>Reverse Sit-Ups</string>
+		<key>instruction</key>
+		<string>Hold baby very securely by wrapping arms around waist.  Move baby’s head towards ground so their trunk is flexed, then encourage extension by applying gentle pressure to baby’s trunk and leaning back.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>30</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>31</integer>
+		<key>description</key>
+		<string>To develop strength and provide vestibular input. </string>
+		<key>title</key>
+		<string>Baby Toss</string>
+		<key>instruction</key>
+		<string>Supporting baby under the arms, gently toss baby in the air and catch!  Baby will naturally flex muscles to prepare for catch.   The more head control the baby has, the higher you can toss them. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>31</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>32</integer>
+		<key>description</key>
+		<string>To promote strength, dissociation, and extremity coordination.</string>
+		<key>title</key>
+		<string>Moving While on Belly</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly.  Slowly move toy such as car in a circle around baby to encourage them to pivot while on belly. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>32</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>33</integer>
+		<key>description</key>
+		<string>To promote head and trunk control/strength, arm strength, balance, and vestibular development. </string>
+		<key>title</key>
+		<string>Belly on Ball (Advanced)</string>
+		<key>instruction</key>
+		<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you.  Supporting baby at the sides, roll baby forward to encourage looking up and weight bearing on arms.  The farther forward baby is on the ball, the more work they’re doing. Grade movements depending on baby’s level of development. Slower movements with more support for younger babies.  Can move baby from side to side for added vestibular input.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>33</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>34</integer>
+		<key>description</key>
+		<string>To promote trunk control and eventually transitioning from sitting to standing.</string>
+		<key>title</key>
+		<string>Kneeling Training</string>
+		<key>instruction</key>
+		<string>With baby in quadruped, support baby under the arms and bring to an upright position where baby is sitting on heels in a kneeling position.  For older babies, you can try encouraging them to come off of heels into a tall kneel position. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>34</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>35</integer>
+		<key>description</key>
+		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
+		<key>title</key>
+		<string>Sitting on Ball (Advanced)</string>
+		<key>instruction</key>
+		<string> While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the pelvis or at thighs.  While supporting baby, move the baby in different directions (back and forth, side to side, circles, bounce up and down).  For babies with good head and trunk control, you can try moving quickly in different directions. You can also lay baby on back and move them upside-down to help develop vestibular system. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>35</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>36</integer>
+		<key>description</key>
+		<string>To promote weight shifting, trunk control, and motor planning. </string>
+		<key>title</key>
+		<string>Transitioning Sitting to Crawling</string>
+		<key>instruction</key>
+		<string>With baby in a seated position, assist baby’s hands moving to ground.  With baby’s hands on the ground, assist baby into a quadruped position.  Place toy a few feet in front of baby to motivate crawling while stabilizing baby at the hips. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>36</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>37</integer>
+		<key>description</key>
+		<string>To promote strength, hamstring elongation, and develop a safe way to fall from standing.</string>
+		<key>title</key>
+		<string>Bear Walk</string>
+		<key>instruction</key>
+		<string>With baby in a quadruped position, gently lift the pelvis up into the air so baby is weight bearing on hands and feet.  Gently shift baby’s weight in different directions.  This position will also help to develop arched in the hands and feet.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>37</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>38</integer>
+		<key>description</key>
+		<string>To promote reaching in a crawling position and weight bearing on one arm.</string>
+		<key>title</key>
+		<string>Reaching in Quadruped</string>
+		<key>instruction</key>
+		<string>Help baby to transition into a quadruped position.  Place toy just out of reach to encourage baby to reach up with one arm to grab toy.  Practice switching arms. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>38</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>39</integer>
+		<key>description</key>
+		<string>To promote lower and upper extremity strength and coordination. </string>
+		<key>title</key>
+		<string>Cruising Practice &quot;Cruise Control&quot;</string>
+		<key>instruction</key>
+		<string>With baby in self-supported standing, place toy a few feet away from them.  Assist baby through the arms and/or hips to cruise to get toy.  Place toys on couch and other surfaces so baby can cruise along furniture. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>39</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>40</integer>
+		<key>description</key>
+		<string>To promote moving from sitting to standing.</string>
+		<key>title</key>
+		<string>Half-Kneel Training</string>
+		<key>instruction</key>
+		<string>(Once baby is able to maintain a kneeling position and is ready to start pulling to stand.)  Place baby in a half-kneel position, with one leg in front, and other leg under them.  Place toy on low table/chair in front of them to encourage them to pull to stand.  Practice maintaining position on both legs. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>40</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>41</integer>
+		<key>description</key>
+		<string>To promote weight bearing, leg strength, balance, and coordination.</string>
+		<key>title</key>
+		<string>Assisted Walking</string>
+		<key>instruction</key>
+		<string>(Once baby is pulling to stand and cruising, you can begin practice walking.)  Begin by holding both hands, then switch to only one.  Make sure baby’s arms are not too high. Try to keep them no higher shoulder level.  Can also use push toys or an upside down laundry basket. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>41</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>42</integer>
+		<key>description</key>
+		<string>To promote stability and balance while walking.</string>
+		<key>title</key>
+		<string>Chasing Bubbles</string>
+		<key>instruction</key>
+		<string>In a clear space, blow bubbles out of reach of baby to encourage quick stepping and turning different directions. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>42</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>43</integer>
+		<key>description</key>
+		<string>To promote balance, leg strength, trunk stability, and lifting feet higher off ground.</string>
+		<key>title</key>
+		<string>Walking Over Blankets</string>
+		<key>instruction</key>
+		<string>Place a thick blanket on ground and encourage baby to walk over the uneven surface.</string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>43</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>44</integer>
+		<key>description</key>
+		<string>To promote shoulder girdle strength and upper extremity coordination. </string>
+		<key>title</key>
+		<string>Wheel-Barrel Walking</string>
+		<key>instruction</key>
+		<string>Slowly lift baby’s legs off the ground when in a crawling position.  Place a toy infront of them that they can move towards.  You can also roll baby slowly forward on a ball until arms touch ground. Slowly roll ball forward and backward to have baby perform a “wheel-barrel” walk.  </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>44</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>45</integer>
+		<key>description</key>
+		<string>To promote leg strength, coordination, balance, and body/spatial awareness. </string>
+		<key>title</key>
+		<string>Walking Backwards &quot;Moon Walk&quot;</string>
+		<key>instruction</key>
+		<string>Holding baby’s arms at shoulder level or at trunk in standing, pull gently backwards to promote walking backwards. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotationId</key>
+		<string>45</string>
+	</dict>
+</array>
+</plist>

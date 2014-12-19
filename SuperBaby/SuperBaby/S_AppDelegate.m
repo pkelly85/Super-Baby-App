@@ -24,6 +24,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
     
+    /*--- SDWebImage setup ---*/
+    [SDWebImageManager.sharedManager.imageDownloader setValue:@"SuperBaby Image" forHTTPHeaderField:@"SuperBaby"];
+    SDWebImageManager.sharedManager.imageDownloader.executionOrder = SDWebImageDownloaderLIFOExecutionOrder;
+    
+    if (![UserDefaults objectForKey:TERMS_AGREE]) {
+        [UserDefaults setValue:@"NO" forKey:TERMS_AGREE];
+        [UserDefaults synchronize];
+    }
+    if (![UserDefaults objectForKey:EDIT_BABY_INFO_FIRST_TIME]) {
+        [UserDefaults setValue:@"NO" forKey:EDIT_BABY_INFO_FIRST_TIME];
+        [UserDefaults synchronize];
+    }
+    if ([UserDefaults objectForKey:USER_INFO]) {
+        myUserModelGlobal = [CommonMethods getMyUser_LoggedIN];
+    }
+    if ([UserDefaults objectForKey:BABY_INFO]) {
+        babyModelGlobal = [CommonMethods getMyBaby];
+    }
     /*--- Window init ---*/
     self.window = [[UIWindow alloc]initWithFrame:screenSize];
     self.vc = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];

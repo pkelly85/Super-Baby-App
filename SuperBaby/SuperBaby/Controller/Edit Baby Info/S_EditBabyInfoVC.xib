@@ -89,7 +89,7 @@
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMZ-oZ-tsK" userLabel="V - Top">
                             <rect key="frame" x="20" y="20" width="280" height="170"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="81P-TF-mas">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="81P-TF-mas">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
                                 </imageView>
                                 <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50S-r3-tz8">
@@ -152,7 +152,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krY-9P-5qf" userLabel="V - Birthdate">
                             <rect key="frame" x="20" y="322" width="280" height="40"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="October" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JY6-eQ-Ffd">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="October" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JY6-eQ-Ffd" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="0.0" y="0.0" width="142" height="40"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -163,7 +163,7 @@
                                         <constraint firstAttribute="width" constant="15" id="FH0-CN-pgk"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhq-RL-DS9">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhq-RL-DS9" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="152" y="0.0" width="50" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="JBo-uF-fn2"/>
@@ -177,7 +177,7 @@
                                         <constraint firstAttribute="width" constant="15" id="UBy-bE-vCk"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2014" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfV-Wj-QNR">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2014" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfV-Wj-QNR" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="212" y="0.0" width="68" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="68" id="Kpl-54-SAa"/>
@@ -225,7 +225,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhX-QG-Nvl" userLabel="V - Weight">
                             <rect key="frame" x="20" y="413" width="280" height="40"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-v4-1gl">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-v4-1gl" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="zYE-Je-pph"/>
@@ -248,7 +248,7 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBm-s7-TrI">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBm-s7-TrI" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="152" y="0.0" width="53" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="53" id="S3X-4a-9T3"/>
@@ -304,7 +304,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuJ-EG-VMZ" userLabel="V - Height">
                             <rect key="frame" x="20" y="504" width="280" height="40"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tN-cP-0Wi">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tN-cP-0Wi" customClass="UITextFiledWithoutInteraction">
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="UFe-n7-j1w"/>
@@ -451,7 +451,6 @@
         </view>
     </objects>
     <resources>
-        <image name="babby" width="320" height="568"/>
         <image name="camera-icon" width="26" height="21"/>
         <image name="yellow-back-arrow" width="12" height="20"/>
         <image name="yellow-down-arrow" width="15" height="8"/>

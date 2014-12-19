@@ -67,7 +67,8 @@
 -(NSString *)FormateDate_withCurrentFormate:(NSString *)currentFormate newFormate:(NSString *)dateFormatter;
 
 //Get Date
--(NSDate *)dateFromStringDateFormate:(NSString*)format Type:(int)type;
+//-(NSDate *)dateFromStringDateFormate:(NSString*)format Type:(int)type;
+-(NSDate *)get_UTC_Date_with_currentformat:(NSString*)format Type:(int)type;
 
 -(NSString *)getDate_From_Timestamp;
 -(NSDate *)getDate_withCurrentFormate:(NSString *)currentFormate;

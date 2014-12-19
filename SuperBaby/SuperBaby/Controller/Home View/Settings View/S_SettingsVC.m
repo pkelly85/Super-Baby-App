@@ -60,9 +60,17 @@
     btnRestorePurchase.titleLabel.numberOfLines = 0;
     btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btnRestorePurchase setAttributedTitle:attributedString forState:UIControlStateNormal];
-    
 }
 
+-(IBAction)btnLogOutClicked:(id)sender
+{
+    [UserDefaults removeObjectForKey:USER_INFO];
+    [UserDefaults removeObjectForKey:BABY_INFO];
+    [UserDefaults synchronize];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+#pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

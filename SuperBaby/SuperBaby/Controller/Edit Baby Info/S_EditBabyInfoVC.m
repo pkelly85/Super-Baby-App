@@ -9,8 +9,11 @@
 #import "S_EditBabyInfoVC.h"
 #import "AppConstant.h"
 #import "TPKeyboardAvoidingScrollView.h"
-
+#import "UITextFiledWithoutInteraction.h"
 #import "S_HomeVC.h"
+
+
+
 
 #define BIRTHDATE_SELECT @"birthdateSelected"
 #define WEIGHT_SELECT @"weightSelected"
@@ -20,6 +23,7 @@
 #define POUND @"pound"
 
 #import "UINavigationController+Rotation_IOS6.h"
+
 
 @interface UIView (viewRecursion)
 - (NSMutableArray*) allSubViews;
@@ -55,17 +59,19 @@
     
     /*--- all buttons ---*/
     NSDate *dob;
-    __weak IBOutlet UITextField *txt_b_Month;
-    __weak IBOutlet UITextField *txt_b_Date;
-    __weak IBOutlet UITextField *txt_b_Year;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_b_Month;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_b_Date;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_b_Year;
 
-    __weak IBOutlet UITextField *txt_w_pound;
-    __weak IBOutlet UITextField *txt_w_ounces;
-    __weak IBOutlet UITextField *txt_height;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_w_pound;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_w_ounces;
+    __weak IBOutlet UITextFiledWithoutInteraction *txt_height;
     
     NSString *strSelected;
     NSMutableArray *arrWeight;
     NSMutableArray *arrHeight;
+    
+    JSONParser *parser;
 }
 @end
 
@@ -93,7 +99,6 @@
 #else
     // Device
 #endif
-    
     [self setupPickerView];
     [self setDefaultText];
     
@@ -121,15 +126,6 @@
             UILabel *lbl = (UILabel *)txtF;
             lbl.textColor = RGBCOLOR(100, 100, 100);
         }
-        else if ([txtF isKindOfClass:[UIButton class]])
-        {
-//            UIButton *btn = (UIButton *)txtF;
-//            btn.layer.borderColor = RGBCOLOR(205, 205, 205).CGColor;
-//            btn.layer.borderWidth = 1;
-//            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
-//            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            //[btn.titleLabel setTextColor:RGBCOLOR(100, 100, 100)];
-        }
     }
 }
 -(void)setupPickerView
@@ -137,22 +133,6 @@
     /*--- set backgroun to white ---*/
     datePiker.backgroundColor = [UIColor whiteColor];
     piker.backgroundColor = [UIColor whiteColor];
-//    viewPiker.alpha = 0.0;
-//    
-//    /*--- set all constraint mask to no ---*/
-//    viewPiker.translatesAutoresizingMaskIntoConstraints = NO;
-//    datePiker.translatesAutoresizingMaskIntoConstraints = NO;
-//    piker.translatesAutoresizingMaskIntoConstraints = NO;
-//    toolbar.translatesAutoresizingMaskIntoConstraints = NO;
-//    
-//    /*--- add piker view ---*/
-//    [self.view addSubview:viewPiker];
-//    [self.view bringSubviewToFront:viewPiker];
-//    
-//    
-//    /*--- set constraint full view ---*/
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[viewPiker]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,viewPiker)]];
 
     /*--- setup weight and height array ---*/
     arrWeight = [[NSMutableArray alloc]init];
@@ -164,8 +144,6 @@
     for (int i = 0; i<100; i++)
         [arrWeight addObject:@{POUND:[NSString stringWithFormat:@"%d",i+1],OUNCES:[NSString stringWithFormat:@"%d",i+1]}];
     
-//    piker.dataSource = nil;
-//    piker.delegate = nil;
 }
 -(void)setDefaultText
 {
@@ -190,9 +168,7 @@
     }
     else
     {
-        S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
-        obj.imgBaby = imgV.image;
-        [self.navigationController pushViewController:obj animated:YES];
+        [self updateBabyInfoNow];
     }
     
 }
@@ -277,6 +253,96 @@
         [CommonMethods displayAlertwithTitle:@"oops!" withMessage:@"Your device doesn't support Camera." withViewController:self];
     }
 }
+#pragma mark -
+#pragma mark - Update Baby Info
+-(void)updateBabyInfoNow
+{
+    @try
+    {
+        showHUD_with_Title(@"Updating Baby Info");
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *strBase64Image = [Base64 encode:UIImagePNGRepresentation(imgV.image)];
+            
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Name":[txtBabyName.text isNull],
+                                       @"Birthday":[CommonMethods GetDateFromUTCTimeZone:dob Formatter:@"yyyy-MM-dd"],
+                                       @"WeightPounds":[txt_w_pound.text isNull],
+                                       @"WeightOunces":[txt_w_ounces.text isNull],
+                                       @"Height":[txt_height.text isNull],
+                                       @"ImageData":strBase64Image};
+            
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_EDIT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(updateBabyInfoSuccessful:) withObject:self];
+        });
+        
+        
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+    }
+    @finally {
+    }
+}
+-(void)updateBabyInfoSuccessful:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"AddEditBabyInfoResult"])
+    {
+        BOOL isBabyInfoUpdated = [[objResponse valueForKeyPath:@"AddEditBabyInfoResult.ResultStatus.Status"] boolValue];;
+        
+        if (isBabyInfoUpdated)
+        {
+            /*--- save baby info global ---*/
+            @try
+            {
+                babyModelGlobal = [S_BabyInfoModel addMyBaby:[objResponse valueForKeyPath:@"AddEditBabyInfoResult.GetBabyResult"]];
+                [CommonMethods saveMyBaby:babyModelGlobal];
+                babyModelGlobal = [CommonMethods getMyBaby];
+                
+                if (_isEditingFirstTime) {
+                    [UserDefaults setValue:@"YES" forKey:EDIT_BABY_INFO_FIRST_TIME];
+                    [UserDefaults synchronize];
+                    S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
+                    obj.imgBaby = imgV.image;
+                    [self.navigationController pushViewController:obj animated:YES];
+                }
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            @finally {
+            }
+            
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"AddEditBabyInfoResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+}
+
 #pragma mark - Birthdate choose
 -(IBAction)btnBirthdateClicked:(id)sender
 {
@@ -343,10 +409,10 @@
 -(IBAction)btnDoneClicked:(id)sender
 {
     [self.view endEditing:YES];
+
     viewPiker.alpha = 0.0;
     if ([strSelected isEqualToString:BIRTHDATE_SELECT])
     {
-        NSLog(@"%@",[datePiker.date convertDateinFormat:@"MMMM-dd-yyyy"]);
         dob = datePiker.date;
         
         txt_b_Date.text = [dob convertDateinFormat:@"dd"];

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+@class S_UserModel;
+@class S_BabyInfoModel;
 @interface CommonMethods : NSObject
 
 + (NSString *)totalDiskSpace;
@@ -73,12 +74,21 @@ NSString *DocumentsDirectoryPath() ;
 
 +(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint UsingDictionary:(NSDictionary*)dict;
 
-+(void)getProgress_with_array:(NSMutableArray *)arrPhotos withHandler:(void(^)(CGFloat finalTime,float finalProgress))compilation;
+//+(void)getProgress_with_array:(NSMutableArray *)arrPhotos withHandler:(void(^)(CGFloat finalTime,float finalProgress))compilation;
 +(void)getRemainTime_with_minute_seconds:(NSInteger)totalTime withHandler:(void(^)(NSInteger remainMinutes,NSInteger remainSeconds))compilation;
 +(void)getVideo_Thumb_With_Time_url:(NSURL *)videoUrl withHandler:(void(^)(UIImage *img,float duration))compilation;
 +(void)generateVideoThumbnail_from_URL_UsingBlock:(NSString *)strVideoURL withHandler:(void(^)(UIImage *imageF))compilation;
 
 + (void)setVideoThumbnail:(UIImageView *)imgV withURL:(NSString *)strURL;
 +(void)generateImage:(NSString *)strURL withHandler:(void(^)(UIImage *image))complition;
+
+
+#define Save User Info
++(S_UserModel *)getMyUser_LoggedIN;
++(void)saveMyUser_LoggedIN:(S_UserModel *)myUser;
++(S_BabyInfoModel *)getMyBaby;
++(void)saveMyBaby:(S_BabyInfoModel *)myBaby;
+
++ (NSString*)GetDateFromUTCTimeZone:(NSDate*)Curr_date Formatter:(NSString*)strFormatter;
 
 @end

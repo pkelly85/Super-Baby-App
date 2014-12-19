@@ -12,19 +12,14 @@
 #pragma mark - Web Service Section
 
 
-#define BASE_URL @"http://54.164.170.82/BL088.Web"
+#define BASE_URL @"http://192.168.0.4/SuperBabyWCF/Service1.svc/"
 
 
 
-#define Web_LOGIN BASE_URL@"/Token"
-#define Web_REGISTER BASE_URL@"/api/Account/Register"
-#define Web_GET_STREAM_LIST BASE_URL@"/api/Stream/GetStreams?"
-#define Web_GET_STREAM_DETAIL BASE_URL@"/api/Stream/GetStream?"
+#define Web_LOGIN BASE_URL@"Login"
+#define Web_REGISTER BASE_URL@"RegisterUser"
+#define Web_LOGIN_WITH_FB BASE_URL@"LoginWithFacebook"
 
+#define Web_BABY_EDIT BASE_URL@"AddEditBabyInfo"
 
-#define Web_CREATE_STREAM BASE_URL@"/api/Stream/CreateStream"
-#define Web_REPLACE_STREAM BASE_URL@"/api/Stream/ReplaceStream?"
-
-#define WEB_SET_STREAM_ORDER BASE_URL@"/api/Stream/SetStreamOrder?streamID=30"
-#define WEB_ADD_ITEM_TO_STREAM BASE_URL@"/api/Stream/AddItemToStream?streamID=23"
 #endif

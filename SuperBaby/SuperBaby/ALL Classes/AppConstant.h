@@ -34,13 +34,14 @@
 
 #import "Base64.h"
 
-
+#import "S_UserModel.h"
+#import "S_BabyInfoModel.h"
 
 // App Name
 #define App_Name @"Superbaby"
 #define BUCKET_NAME @"Superbaby"
 
-#define FACEBOOK_APPID @""
+#define FACEBOOK_APPID @"327625884110904"
 
 #pragma mark - Extra
 /*-----------------------------------------------------------------------------*/
@@ -147,8 +148,12 @@
 #define SUCCESS @"success"
 #define DATA @"data"
 #define MESSAGE @"message"
-#define ERROR_MESSAGE @"StatusMessage"
 
+
+#define STATUS_PATH @"ResultStatus.Status"
+#define STATUS_MESSAGE_PATH @"ResultStatus.StatusMessage"
+
+#define PLEASE_TRY_AGAIN @"Please Try Again"
 /*-----------------------------------------------------------------------------*/
 #define imageDefaultTime 2.5
 #define totalStreamTime 150
@@ -157,11 +162,10 @@
 #define AMAZON_SECRET_KEY @"hHm9p+vACIMrENt57JJN7VQjoc1hAkInZZ+wlhVU"
 
 #define USER_INFO @"userinformation"
-#define USER_TOKEN @"access_token"
-#define USER_ID @"useridloggedinuser"
+#define BABY_INFO @"babyinformation"
 
-
-
+#define TERMS_AGREE @"termsagree"
+#define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
 
 /*-----------------------------------------------------------------------------*/
 
@@ -172,3 +176,10 @@ static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
 static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
 static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
 CGFloat animatedDistance;
+
+
+
+//Global Parameter
+S_UserModel *myUserModelGlobal;
+S_BabyInfoModel *babyModelGlobal;
+

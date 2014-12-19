@@ -37,7 +37,6 @@
         AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc]initWithRequest:request];
         op.responseSerializer = [AFURLResponseSerializerWithData serializerWithReadingOptions:0];
         op.responseSerializer = [AFURLResponseSerializerWithData serializer];
-        //[[AFAPIClient sharedClient].requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         NSLog(@"URL : %@ \n Post Data = %@",strURL,queryString);
         [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
          {
@@ -101,49 +100,7 @@
             Object = objectReceive;
             mySelector = sel;
             self.webData = [[NSMutableData alloc]init];
-            
-            /*NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
-            [postRequest setURL:[NSURL URLWithString:[strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-            [postRequest setHTTPMethod:type];
-            [postRequest setTimeoutInterval:kTimeOutInterval];
-            
-            NSString *boundary = @"---------------------------14737809831466499882746641449";
-            NSMutableData  *body = [[NSMutableData alloc] init];
-            
-            [postRequest addValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
-            
-//            if (dictParameter.count > 0) {
-//                NSString *webSData = dictParameter.JSONRepresentation;
-//                [body appendData:[[NSString stringWithFormat:@"%@",webSData] dataUsingEncoding:NSUTF8StringEncoding]];
-//                
-//            }
-            
-            
-            for (NSString *theKey in [dictParameter allKeys])
-            {
-             [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-             [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",theKey] dataUsingEncoding:NSUTF8StringEncoding]];
-             [body appendData:[[NSString stringWithFormat:@"%@\r\n",[dictParameter objectForKey:theKey]] dataUsingEncoding:NSUTF8StringEncoding]];
-             }
-            
-            for (NSString *theKey in [dictData allKeys])
-            {
-                [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\";  filename=\"%@\"\r\n",theKey] dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                [body appendData:[dictData objectForKey:theKey]];
-                
-                [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-            }
-            
-            
-            [postRequest setHTTPBody:body];
-            [UIApplication sharedApplication].networkActivityIndicatorVisible=YES;
-            NSLog(@"URL: %@ \nand PostData:%@",strURL,dictParameter);
-            self.connection = [NSURLConnection connectionWithRequest:postRequest delegate:self];*/
+
             
             NSData *body = [NSJSONSerialization dataWithJSONObject:dictParameter options:NSJSONWritingPrettyPrinted error:nil];
 //           NSString *strRequest = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
@@ -213,7 +170,7 @@
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"HTTP RES :\n %@",[[NSString alloc]initWithData:self.webData encoding:NSUTF8StringEncoding]);
+    //NSLog(@"HTTP RES :\n %@",[[NSString alloc]initWithData:self.webData encoding:NSUTF8StringEncoding]);
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
     self.connection = nil;
