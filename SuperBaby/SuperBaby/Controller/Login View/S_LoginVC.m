@@ -1,66 +1,42 @@
 //
-//  S_RegisterVC.m
+//  S_LoginVC.m
 //  SuperBaby
 //
-//  Created by MAC107 on 08/12/14.
+//  Created by MAC107 on 22/12/14.
 //  Copyright (c) 2014 tatva. All rights reserved.
 //
 
-#import "S_RegisterVC.h"
-#import "AppConstant.h"
-
-#import "S_ViewController.h"
-#import "S_EditBabyInfoVC.h"
-
-#import "S_FacebookClass.h"
 #import "S_LoginVC.h"
-#import "S_HomeVC.h"
-
-
-@interface S_RegisterVC ()<UITextFieldDelegate>
+#import "S_FacebookClass.h"
+#import "S_EditBabyInfoVC.h"
+#import "AppConstant.h"
+@interface S_LoginVC ()<UITextFieldDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
     
     __weak IBOutlet UITextField *txtEmail;
     __weak IBOutlet UITextField *txtPassword;
-    
+
     JSONParser *parser;
 }
 @end
 
-@implementation S_RegisterVC
-#pragma mark - Movie Player
-- (void)viewDidLoad
+@implementation S_LoginVC
+#pragma mark - View Did Load
+-(IBAction)back:(id)sender
 {
+    popView;
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     /*--- set textfield default values ---*/
     [self setupTextField];
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_Label:lblTitle withColor:[UIColor whiteColor]];
-    
-    /*--- add agree disagree view ---*/
-    if ([[UserDefaults valueForKey:TERMS_AGREE] isEqualToString:@"NO"])
-    {
-        S_ViewController *obj = [[S_ViewController alloc]initWithNibName:@"S_ViewController" bundle:nil];
-        [self addChildViewController:obj];
-        obj.view.frame = self.view.bounds;
-        [self.view addSubview:obj.view];
-        [obj didMoveToParentViewController:self];
-    }
-    else if ([[UserDefaults valueForKey:EDIT_BABY_INFO_FIRST_TIME] isEqualToString:@"NO"] && myUserModelGlobal!=nil)
-    {
-        S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
-        obj.isEditingFirstTime = YES;
-        [self.navigationController pushViewController:obj animated:NO];
-    }
-    else if(myUserModelGlobal)
-    {
-        S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
-        [self.navigationController pushViewController:obj animated:NO];
-        return;
-    }
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -70,7 +46,7 @@
     UIView *vEmailPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtEmail.leftView = vEmailPadding;
     txtEmail.leftViewMode = UITextFieldViewModeAlways;
-        
+    
     UIView *vPassPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtPassword.leftView = vPassPadding;
     txtPassword.leftViewMode = UITextFieldViewModeAlways;
@@ -79,29 +55,15 @@
     txtEmail.delegate = self;
     txtPassword.delegate = self;
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-#pragma mark - IBAction Method
--(IBAction)btnContinueAsGuest:(id)sender
-{
-    S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
-    [self.navigationController pushViewController:obj animated:YES];
-}
--(IBAction)btnLogInClicked:(id)sender
-{
-    S_LoginVC *obj = [[S_LoginVC alloc]initWithNibName:@"S_LoginVC" bundle:nil];
-    [self.navigationController pushViewController:obj animated:YES];
-}
 -(void)closeHUD
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         hideHUD;
     });
 }
--(IBAction)btnSignUpClicked:(id)sender
+-(IBAction)btnLoginClicked:(id)sender
 {
+    
     if ([[txtEmail.text isNull] isEqualToString:@""]) {
         showHUD_with_error(@"Please add Email");
         [self closeHUD];
@@ -123,6 +85,10 @@
     }
     
 }
+
+
+
+#pragma mark - Sign In With FB
 - (IBAction)btnSignInWithFBClicked:(id)sender
 {
     [self.view endEditing:YES];
@@ -166,16 +132,16 @@
                         @"FacebookID":strPass_FBID,
                         @"DeviceToken":@""};
             parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN_WITH_FB withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(registerSuccessful:) withObject:self];
-
+            
         }
         else
         {
-            showHUD_with_Title(@"Register");
+            showHUD_with_Title(@"Login");
             dictReg = @{@"EmailAddress":strEmail,
                         @"Password":strPass_FBID,
                         @"DeviceToken":@""};
-            parser = [[JSONParser alloc]initWith_withURL:Web_REGISTER withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(registerSuccessful:) withObject:self];
-
+            parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(registerSuccessful:) withObject:self];
+            
         }
         
     }
@@ -202,7 +168,7 @@
         hideHUD;
         [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
     }
-    else if([objResponse objectForKey:@"RegisterUserResult"] || [objResponse objectForKey:@"LoginWithFacebookResult"])
+    else if([objResponse objectForKey:@"LoginResult"] || [objResponse objectForKey:@"LoginWithFacebookResult"])
     {
         @try
         {
@@ -210,8 +176,8 @@
             BOOL isRegularRegister = YES;
             
             /*--- check if user register or fb login ---*/
-            if ([objResponse objectForKey:@"RegisterUserResult"])
-                isRegisterSuccess = [[objResponse valueForKeyPath:@"RegisterUserResult.ResultStatus.Status"] boolValue];
+            if ([objResponse objectForKey:@"LoginResult"])
+                isRegisterSuccess = [[objResponse valueForKeyPath:@"LoginResult.ResultStatus.Status"] boolValue];
             else
             {
                 isRegisterSuccess = [[objResponse valueForKeyPath:@"LoginWithFacebookResult.ResultStatus.Status"] boolValue];
@@ -221,7 +187,7 @@
             if (isRegisterSuccess)
             {
                 if (isRegularRegister)
-                    [self saveUser:[objResponse valueForKeyPath:@"RegisterUserResult.GetUserResult"]];
+                    [self saveUser:[objResponse valueForKeyPath:@"LoginResult.GetUserResult"]];
                 else
                     [self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"]];
             }
@@ -230,7 +196,7 @@
                 hideHUD;
                 NSString *strText;
                 if (isRegularRegister)
-                    strText = [objResponse valueForKeyPath:@"RegisterUserResult.ResultStatus.StatusMessage"] ;
+                    strText = [objResponse valueForKeyPath:@"LoginResult.ResultStatus.StatusMessage"] ;
                 else
                 {
                     strText = [objResponse valueForKeyPath:@"LoginWithFacebookResult.ResultStatus.StatusMessage"] ;
@@ -260,7 +226,7 @@
     myUserModelGlobal = [S_UserModel addMyUser:dictUser];
     [CommonMethods saveMyUser_LoggedIN:myUserModelGlobal];
     myUserModelGlobal = [CommonMethods getMyUser_LoggedIN];
-
+    
     S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
     obj.isEditingFirstTime = YES;
     [self.navigationController pushViewController:obj animated:YES];
@@ -279,12 +245,12 @@
     return YES;
 }
 
+
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

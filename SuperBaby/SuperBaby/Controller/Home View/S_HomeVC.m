@@ -14,9 +14,14 @@
 #import "S_ExcerciseVideoVC.h"
 #import "S_TimelineVC.h"
 #import "S_SettingsVC.h"
+
+#import "S_RegisterVC.h"
 @interface S_HomeVC ()
 {
     __weak IBOutlet UIImageView *imgV;
+    
+    __weak IBOutlet UIView *viewGuest;
+    __weak IBOutlet UIView *viewUser;
 }
 @end
 
@@ -25,10 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    imgV.image = _imgBaby;
-    imgV.userInteractionEnabled = YES;
-    
+    if (myUserModelGlobal) {
+        imgV.image = _imgBaby;
+        imgV.userInteractionEnabled = YES;
+        viewGuest.hidden = YES;
+        viewUser.backgroundColor = [UIColor clearColor];
+    }
+    else
+    {
+        viewUser.hidden = YES;
+    }
+
     UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(babyImageTapped)];
     tapGest.numberOfTapsRequired = 1;
     [imgV addGestureRecognizer:tapGest];
@@ -37,8 +49,16 @@
 #pragma mark - Methods
 -(void)babyImageTapped
 {
-    S_BabyDetailVC *obj = [[S_BabyDetailVC alloc]initWithNibName:@"S_BabyDetailVC" bundle:nil];
-    [self.navigationController pushViewController:obj animated:YES];
+    if (myUserModelGlobal) {
+        S_BabyDetailVC *obj = [[S_BabyDetailVC alloc]initWithNibName:@"S_BabyDetailVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    
 }
 
 -(IBAction)btnExcerciseVideoClicked:(id)sender
@@ -49,8 +69,16 @@
 
 -(IBAction)btnTimelineClicked:(id)sender
 {
-    S_TimelineVC *obj = [[S_TimelineVC alloc]initWithNibName:@"S_TimelineVC" bundle:nil];
-    [self.navigationController pushViewController:obj animated:YES];
+    if (myUserModelGlobal) {
+        S_TimelineVC *obj = [[S_TimelineVC alloc]initWithNibName:@"S_TimelineVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    
 }
 
 -(IBAction)btnSettingsClicked:(id)sender

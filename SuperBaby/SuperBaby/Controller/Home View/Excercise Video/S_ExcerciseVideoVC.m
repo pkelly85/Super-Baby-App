@@ -21,6 +21,8 @@
     BOOL isAgeSelected;
     
     __weak IBOutlet UITextField *txtSearch;
+    
+    NSMutableArray *arrExcercise;
 }
 @end
 
@@ -43,6 +45,8 @@
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
+    arrExcercise = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByAge" ofType:@"plist"]];
+    NSLog(@"Excercise : %@",arrExcercise);
     /*--- Set Defaults ---*/
     isAgeSelected = NO;
     [self btnAge_MilestoneClicked:btnAge];
@@ -82,7 +86,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return arrExcercise.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -94,7 +98,7 @@
     cell.imgV.image = [UIImage imageNamed:@"babby"];
     
     if (isAgeSelected)
-        cell.lblTitle.text = @"Age";
+        cell.lblTitle.text = arrExcercise[indexPath.row][EV_AGE];
     else
         cell.lblTitle.text = @"Milestone";
     
@@ -103,6 +107,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     S_Excercise_Carousel *obj = [[S_Excercise_Carousel alloc]initWithNibName:@"S_Excercise_Carousel" bundle:nil];
+    obj.dictInfo = arrExcercise[indexPath.row];
     [self.navigationController pushViewController:obj animated:YES];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -14,6 +14,8 @@
 		1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1047D0DA1A39CE0000273457 /* MyViewCarousel.xib */; };
 		106C08DD1A385CCA002AD6BE /* S_MilestoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C08DB1A385CCA002AD6BE /* S_MilestoneVC.m */; };
 		106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106C08DC1A385CCA002AD6BE /* S_MilestoneVC.xib */; };
+		1072DD531A4807CF00F156F7 /* S_LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1072DD511A4807CF00F156F7 /* S_LoginVC.m */; };
+		1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1072DD521A4807CF00F156F7 /* S_LoginVC.xib */; };
 		1078FCB21A3ABDCC006303EE /* CCell_TimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1078FCB01A3ABDCC006303EE /* CCell_TimeLine.m */; };
 		1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */; };
 		1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1078FCBE1A3AF34E006303EE /* CCell_Milestone.m */; };
@@ -126,6 +128,9 @@
 		106C08DA1A385CCA002AD6BE /* S_MilestoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_MilestoneVC.h; sourceTree = "<group>"; };
 		106C08DB1A385CCA002AD6BE /* S_MilestoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_MilestoneVC.m; sourceTree = "<group>"; };
 		106C08DC1A385CCA002AD6BE /* S_MilestoneVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_MilestoneVC.xib; sourceTree = "<group>"; };
+		1072DD501A4807CF00F156F7 /* S_LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_LoginVC.h; sourceTree = "<group>"; };
+		1072DD511A4807CF00F156F7 /* S_LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_LoginVC.m; sourceTree = "<group>"; };
+		1072DD521A4807CF00F156F7 /* S_LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_LoginVC.xib; sourceTree = "<group>"; };
 		1078FCAF1A3ABDCC006303EE /* CCell_TimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_TimeLine.h; sourceTree = "<group>"; };
 		1078FCB01A3ABDCC006303EE /* CCell_TimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_TimeLine.m; sourceTree = "<group>"; };
 		1078FCB11A3ABDCC006303EE /* CCell_TimeLine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_TimeLine.xib; sourceTree = "<group>"; };
@@ -339,6 +344,16 @@
 			path = "ALL Cell";
 			sourceTree = "<group>";
 		};
+		1072DD4F1A4807AF00F156F7 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				1072DD501A4807CF00F156F7 /* S_LoginVC.h */,
+				1072DD511A4807CF00F156F7 /* S_LoginVC.m */,
+				1072DD521A4807CF00F156F7 /* S_LoginVC.xib */,
+			);
+			path = "Login View";
+			sourceTree = "<group>";
+		};
 		1078FCAE1A3ABDAE006303EE /* Timeline Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,13 +542,13 @@
 				1047D0D21A39C68700273457 /* iCarousel */,
 				109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */,
 				10C27D271A35A5DB0006985C /* AFNetworking */,
-				10C27D411A35A5DB0006985C /* AppConstant.h */,
 				10C27D421A35A5DB0006985C /* Categories */,
 				10C27D571A35A5DC0006985C /* Download Manager */,
 				10C27D5A1A35A5DC0006985C /* JSONParser */,
 				10C27D5D1A35A5DC0006985C /* SDWebImage */,
 				10C27D7F1A35A5DC0006985C /* SVProgressHUD */,
 				10C27D831A35A5DC0006985C /* WebService.h */,
+				10C27D411A35A5DB0006985C /* AppConstant.h */,
 			);
 			name = "ALL Classes";
 			path = "SuperBaby/ALL Classes";
@@ -683,6 +698,7 @@
 				106107BF1A386083005F2A4A /* ALL Cell */,
 				10C27DB51A35AE290006985C /* View Controller */,
 				10C27DBB1A35AE3C0006985C /* Register View */,
+				1072DD4F1A4807AF00F156F7 /* Login View */,
 				10C27DC11A35CF340006985C /* Edit Baby Info */,
 				109885E01A3705F500FB3BB4 /* Home View */,
 			);
@@ -851,6 +867,7 @@
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */,
 				10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */,
+				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
@@ -905,6 +922,7 @@
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
 				10C27D951A35A5DC0006985C /* NSString+Validation.m in Sources */,
 				10C27D911A35A5DC0006985C /* NSAttributedString+Validation.m in Sources */,
+				1072DD531A4807CF00F156F7 /* S_LoginVC.m in Sources */,
 				10C27DA51A35A5DC0006985C /* UIButton+WebCache.m in Sources */,
 				10C27DA61A35A5DC0006985C /* UIImage+GIF.m in Sources */,
 				10C27D921A35A5DC0006985C /* NSDate+Formatting.m in Sources */,

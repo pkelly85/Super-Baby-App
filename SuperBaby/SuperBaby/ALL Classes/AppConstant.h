@@ -166,6 +166,20 @@
 
 #define TERMS_AGREE @"termsagree"
 #define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
+/*-----------------------------------------------------------------------------*/
+
+//For Excercise Video Keys
+#define EV_AGE @"age"
+#define EV_ID @"id"
+#define EV_VIDEOS @"videos"
+#define EV_Detail_annotationId @"annotationId"
+#define EV_Detail_description @"description"
+#define EV_Detail_vid @"id"
+#define EV_Detail_instruction @"instruction"
+#define EV_Detail_price @"price"
+#define EV_Detail_thumbnail @"thumbnail"
+#define EV_Detail_title @"title"
+#define EV_Detail_url @"url"
 
 /*-----------------------------------------------------------------------------*/
 

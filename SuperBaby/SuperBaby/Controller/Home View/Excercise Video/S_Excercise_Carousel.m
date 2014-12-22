@@ -30,10 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"dictInfo : %@",_dictInfo);
+    NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Videos" ofType:@"plist"]];
+    
+    NSInteger startIndex = [_dictInfo[EV_VIDEOS][0] integerValue];
+    NSInteger endIndex = [[_dictInfo[EV_VIDEOS] lastObject] integerValue];
+
     items = [NSMutableArray array];
-    for (int i = 0; i < 100; i++)
+    for (NSInteger i = startIndex; i <= endIndex; i++)
     {
-        [items addObject:@(i)];
+        [items addObject:arrTemp[i]];
     }
     _carousel.type = iCarouselTypeCylinder;
     [_carousel setVertical:YES];
@@ -78,7 +85,7 @@
     }
     view.btnPlay.tag = index;
     view.btnInfo.tag = index;
-    view.lblText.text = [items[index] stringValue];
+    view.lblText.text = items[index][EV_Detail_description];
     
     return view;
 }
