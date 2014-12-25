@@ -10,6 +10,8 @@
 #import "S_FacebookClass.h"
 #import "S_EditBabyInfoVC.h"
 #import "AppConstant.h"
+
+#import "S_HomeVC.h"
 @interface S_LoginVC ()<UITextFieldDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -131,7 +133,7 @@
             dictReg = @{@"EmailAddress":strEmail,
                         @"FacebookID":strPass_FBID,
                         @"DeviceToken":@""};
-            parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN_WITH_FB withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(registerSuccessful:) withObject:self];
+            parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN_WITH_FB withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(loginSuccessful:) withObject:self];
             
         }
         else
@@ -140,7 +142,7 @@
             dictReg = @{@"EmailAddress":strEmail,
                         @"Password":strPass_FBID,
                         @"DeviceToken":@""};
-            parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(registerSuccessful:) withObject:self];
+            parser = [[JSONParser alloc]initWith_withURL:Web_LOGIN withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(loginSuccessful:) withObject:self];
             
         }
         
@@ -153,7 +155,7 @@
     @finally {
     }
 }
--(void)registerSuccessful:(id)objResponse
+-(void)loginSuccessful:(id)objResponse
 {
     NSLog(@"Response > %@",objResponse);
     if (![objResponse isKindOfClass:[NSDictionary class]])
@@ -187,9 +189,9 @@
             if (isRegisterSuccess)
             {
                 if (isRegularRegister)
-                    [self saveUser:[objResponse valueForKeyPath:@"LoginResult.GetUserResult"]];
+                    [self saveUser:[objResponse valueForKeyPath:@"LoginResult.GetUserResult"] withBabyDetail:[objResponse valueForKeyPath:@"LoginResult.BabyInformation"]];
                 else
-                    [self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"]];
+                    [self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"] withBabyDetail:[objResponse valueForKeyPath:@"LoginWithFacebookResult.BabyInformation"]];
             }
             else
             {
@@ -220,16 +222,27 @@
 }
 
 
--(void)saveUser:(NSDictionary *)dictUser
+-(void)saveUser:(NSDictionary *)dictUser withBabyDetail:(NSDictionary *)dictBaby
 {
     hideHUD;
     myUserModelGlobal = [S_UserModel addMyUser:dictUser];
     [CommonMethods saveMyUser_LoggedIN:myUserModelGlobal];
     myUserModelGlobal = [CommonMethods getMyUser_LoggedIN];
     
-    S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
-    obj.isEditingFirstTime = YES;
-    [self.navigationController pushViewController:obj animated:YES];
+    babyModelGlobal = [S_BabyInfoModel addMyBaby:dictBaby];
+    [CommonMethods saveMyBaby:babyModelGlobal];
+    babyModelGlobal = [CommonMethods getMyBaby];
+    if ([babyModelGlobal.BabyID isEqualToString:@""])
+    {
+        S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
+        obj.isEditingFirstTime = YES;
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:NO];
+    }
 }
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

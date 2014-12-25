@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="btnAccountUpdate" destination="CBu-cl-Wtp" id="TLx-0S-Jcp"/>
                 <outlet property="btnRestorePurchase" destination="V54-t7-JPv" id="UbR-Sr-7sX"/>
+                <outlet property="imgVBaby" destination="eJ5-95-oSg" id="c6F-tO-e9s"/>
                 <outlet property="view" destination="ZQG-0l-7oT" id="SyR-f3-CRd"/>
                 <outlet property="viewTop" destination="F16-aK-bl7" id="9pA-zu-2Ed"/>
             </connections>

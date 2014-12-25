@@ -165,13 +165,15 @@
 #define BABY_INFO @"babyinformation"
 
 #define TERMS_AGREE @"termsagree"
-#define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
+//#define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
 /*-----------------------------------------------------------------------------*/
 
 //For Excercise Video Keys
 #define EV_AGE @"age"
+#define EV_MILESTONE @"milestone"
 #define EV_ID @"id"
 #define EV_VIDEOS @"videos"
+
 #define EV_Detail_annotationId @"annotationId"
 #define EV_Detail_description @"description"
 #define EV_Detail_vid @"id"
@@ -191,7 +193,9 @@ static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
 static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
 CGFloat animatedDistance;
 
+#define ImageURL(url) [NSString stringWithFormat:@"%@%@",IMAGE_BASE_URL,url]
 
+//[NSString stringWithFormat:@"%@%@",IMAGE_BASE_URL]
 
 //Global Parameter
 S_UserModel *myUserModelGlobal;

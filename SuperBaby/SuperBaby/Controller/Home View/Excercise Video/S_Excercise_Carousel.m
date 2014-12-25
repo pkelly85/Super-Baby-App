@@ -33,14 +33,14 @@
     
     NSLog(@"dictInfo : %@",_dictInfo);
     NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Videos" ofType:@"plist"]];
-    
-    NSInteger startIndex = [_dictInfo[EV_VIDEOS][0] integerValue];
-    NSInteger endIndex = [[_dictInfo[EV_VIDEOS] lastObject] integerValue];
+    NSArray *arrVideosID = [NSArray arrayWithArray:_dictInfo[EV_VIDEOS]];
+//    NSInteger startIndex = [_dictInfo[EV_VIDEOS][0] integerValue];
+//    NSInteger endIndex = [[_dictInfo[EV_VIDEOS] lastObject] integerValue];
 
     items = [NSMutableArray array];
-    for (NSInteger i = startIndex; i <= endIndex; i++)
+    for (NSInteger i = 0; i < [arrVideosID count]; i++)
     {
-        [items addObject:arrTemp[i]];
+        [items addObject:[arrTemp objectAtIndex:[arrVideosID[i] integerValue]]];
     }
     _carousel.type = iCarouselTypeCylinder;
     [_carousel setVertical:YES];

@@ -48,7 +48,7 @@
         [self.view addSubview:obj.view];
         [obj didMoveToParentViewController:self];
     }
-    else if ([[UserDefaults valueForKey:EDIT_BABY_INFO_FIRST_TIME] isEqualToString:@"NO"] && myUserModelGlobal!=nil)
+    else if ((babyModelGlobal== nil || [babyModelGlobal.BabyID isEqualToString:@""]) && myUserModelGlobal!= nil)
     {
         S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
         obj.isEditingFirstTime = YES;

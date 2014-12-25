@@ -39,6 +39,7 @@
 		109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */; };
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
+		10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */; };
 		10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */; };
 		10B7D5A11A44090E004EFF60 /* UITextFiledWithoutInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D5A01A44090E004EFF60 /* UITextFiledWithoutInteraction.m */; };
 		10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */; };
@@ -167,6 +168,7 @@
 		109885F91A371AF500FB3BB4 /* S_SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_SettingsVC.h; sourceTree = "<group>"; };
 		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
+		10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByMilestone.plist; sourceTree = "<group>"; };
 		10B7D59C1A43F8AF004EFF60 /* S_UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_UserModel.h; sourceTree = "<group>"; };
 		10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_UserModel.m; sourceTree = "<group>"; };
 		10B7D59F1A44090E004EFF60 /* UITextFiledWithoutInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFiledWithoutInteraction.h; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		10B7D5A21A442E15004EFF60 /* ALL Plist */ = {
 			isa = PBXGroup;
 			children = (
+				10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */,
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
 			);
@@ -861,6 +864,7 @@
 				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
+				10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				107995991A3EBA62006EA4BA /* Localizable.strings in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,

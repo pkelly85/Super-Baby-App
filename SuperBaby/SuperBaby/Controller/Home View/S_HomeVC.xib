@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_HomeVC">
             <connections>
                 <outlet property="imgV" destination="C3q-Zs-vAp" id="e9H-j5-zbB"/>
+                <outlet property="lblName" destination="XYy-I4-Xzn" id="aj2-As-w01"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewGuest" destination="5gr-To-mZI" id="UWF-EU-bok"/>
                 <outlet property="viewUser" destination="kZo-ld-rQj" id="k3q-lR-mHL"/>
@@ -120,8 +121,8 @@
                         <constraint firstItem="H7x-bc-aUn" firstAttribute="top" secondItem="5gr-To-mZI" secondAttribute="top" id="r6i-oN-eef"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-ld-rQj" userLabel="View User">
-                    <rect key="frame" x="0.0" y="285" width="320" height="45"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-ld-rQj" userLabel="View User">
+                    <rect key="frame" x="0.0" y="265" width="320" height="45"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-babby" translatesAutoresizingMaskIntoConstraints="NO" id="R3B-8T-tiZ">
                             <rect key="frame" x="20" y="0.0" width="45" height="45"/>
@@ -171,7 +172,7 @@
                 <constraint firstItem="bAo-2h-xWG" firstAttribute="leading" secondItem="itp-69-mWf" secondAttribute="trailing" id="oC6-rr-Wve"/>
                 <constraint firstAttribute="trailing" secondItem="5gr-To-mZI" secondAttribute="trailing" id="qzp-XC-8iV"/>
                 <constraint firstAttribute="trailing" secondItem="bAo-2h-xWG" secondAttribute="trailing" id="yoT-nc-aCo"/>
-                <constraint firstItem="WZw-av-xr5" firstAttribute="top" secondItem="kZo-ld-rQj" secondAttribute="bottom" id="zny-ZQ-saG"/>
+                <constraint firstItem="WZw-av-xr5" firstAttribute="top" secondItem="kZo-ld-rQj" secondAttribute="bottom" constant="20" id="zny-ZQ-saG"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

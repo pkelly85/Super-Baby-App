@@ -311,15 +311,13 @@
             /*--- save baby info global ---*/
             @try
             {
+                hideHUD;
                 babyModelGlobal = [S_BabyInfoModel addMyBaby:[objResponse valueForKeyPath:@"AddEditBabyInfoResult.GetBabyResult"]];
                 [CommonMethods saveMyBaby:babyModelGlobal];
                 babyModelGlobal = [CommonMethods getMyBaby];
                 
                 if (_isEditingFirstTime) {
-                    [UserDefaults setValue:@"YES" forKey:EDIT_BABY_INFO_FIRST_TIME];
-                    [UserDefaults synchronize];
                     S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
-                    obj.imgBaby = imgV.image;
                     [self.navigationController pushViewController:obj animated:YES];
                 }
             }

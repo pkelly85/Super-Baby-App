@@ -32,14 +32,14 @@
         [UserDefaults setValue:@"NO" forKey:TERMS_AGREE];
         [UserDefaults synchronize];
     }
-    if (![UserDefaults objectForKey:EDIT_BABY_INFO_FIRST_TIME]) {
-        [UserDefaults setValue:@"NO" forKey:EDIT_BABY_INFO_FIRST_TIME];
-        [UserDefaults synchronize];
-    }
+//    if (![UserDefaults objectForKey:EDIT_BABY_INFO_FIRST_TIME]) {
+//        [UserDefaults setValue:@"NO" forKey:EDIT_BABY_INFO_FIRST_TIME];
+//        [UserDefaults synchronize];
+//    }
     if ([UserDefaults objectForKey:USER_INFO]) {
         myUserModelGlobal = [CommonMethods getMyUser_LoggedIN];
     }
-    if ([UserDefaults objectForKey:BABY_INFO]) {
+    if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
     /*--- Window init ---*/

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface S_HomeVC : UIViewController
-@property(nonatomic,strong)UIImage *imgBaby;
+//@property(nonatomic,strong)UIImage *imgBaby;
 @end

@@ -15,6 +15,7 @@
     __weak IBOutlet UIButton *btnAccountUpdate;
     __weak IBOutlet UIButton *btnRestorePurchase;
 
+    __weak IBOutlet UIImageView *imgVBaby;
 }
 @end
 
@@ -27,6 +28,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+    }
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
@@ -59,7 +65,7 @@
     btnRestorePurchase.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     btnRestorePurchase.titleLabel.numberOfLines = 0;
     btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [btnRestorePurchase setAttributedTitle:attributedString forState:UIControlStateNormal];
+    [btnRestorePurchase setAttributedTitle:attributedRestore forState:UIControlStateNormal];
 }
 
 -(IBAction)btnLogOutClicked:(id)sender

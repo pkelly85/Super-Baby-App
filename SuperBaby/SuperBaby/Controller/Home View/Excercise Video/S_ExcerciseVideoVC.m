@@ -22,7 +22,10 @@
     
     __weak IBOutlet UITextField *txtSearch;
     
-    NSMutableArray *arrExcercise;
+    NSMutableArray *arrExcercise_Age;
+    NSMutableArray *arrExcercise_Milestone;
+    NSArray *arrSearch;
+    BOOL isSearching;
 }
 @end
 
@@ -41,13 +44,19 @@
     UIView *vtxtPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtSearch.leftView = vtxtPadding;
     txtSearch.leftViewMode = UITextFieldViewModeAlways;
+    [txtSearch addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
-    arrExcercise = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByAge" ofType:@"plist"]];
-    NSLog(@"Excercise : %@",arrExcercise);
+    
+    arrExcercise_Age = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByAge" ofType:@"plist"]];
+    arrExcercise_Milestone = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByMilestone" ofType:@"plist"]];
+    
     /*--- Set Defaults ---*/
+    isSearching = NO;
     isAgeSelected = NO;
     [self btnAge_MilestoneClicked:btnAge];
     
@@ -65,7 +74,12 @@
 -(IBAction)btnAge_MilestoneClicked:(UIButton *)sender
 {
     [txtSearch resignFirstResponder];
-    if (sender == btnAge) {
+    isSearching = NO;
+    txtSearch.text = @"";
+//    [tblView reloadData];
+    
+    if (sender == btnAge)
+    {
         isAgeSelected = YES;
         [btnAge setBackgroundColor:RGBCOLOR_BLUE];
         [btnMilestone setBackgroundColor:RGBCOLOR_GREY];
@@ -86,7 +100,17 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return arrExcercise.count;
+    if (isSearching) {
+        return arrSearch.count;
+    }
+    else
+    {
+        if (isAgeSelected) {
+            return arrExcercise_Age.count;
+        }
+        return arrExcercise_Milestone.count;
+    }
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -97,17 +121,40 @@
     CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
     cell.imgV.image = [UIImage imageNamed:@"babby"];
     
-    if (isAgeSelected)
-        cell.lblTitle.text = arrExcercise[indexPath.row][EV_AGE];
+    if (isSearching)
+    {
+        if (isAgeSelected)
+            cell.lblTitle.text = arrSearch[indexPath.row][EV_AGE];
+        else
+            cell.lblTitle.text = arrSearch[indexPath.row][EV_MILESTONE];
+    }
     else
-        cell.lblTitle.text = @"Milestone";
+    {
+        if (isAgeSelected)
+            cell.lblTitle.text = arrExcercise_Age[indexPath.row][EV_AGE];
+        else
+            cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
+    }
+    
     
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     S_Excercise_Carousel *obj = [[S_Excercise_Carousel alloc]initWithNibName:@"S_Excercise_Carousel" bundle:nil];
-    obj.dictInfo = arrExcercise[indexPath.row];
+    obj.isAgeSelected = isAgeSelected;
+    if (isSearching)
+    {
+        obj.dictInfo = arrSearch[indexPath.row];
+    }
+    else
+    {
+        if (isAgeSelected)
+            obj.dictInfo = arrExcercise_Age[indexPath.row];
+        else
+            obj.dictInfo = arrExcercise_Milestone[indexPath.row];
+    }
+    
     [self.navigationController pushViewController:obj animated:YES];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -119,10 +166,45 @@
         [cell cellOnTableView:tblView didScrollOnView:self.view];
     }
 }
-
+-(void)textFieldDidChange:(UITextField *)textF
+{
+    NSString *strText = [textF.text isNull];
+    if ([strText isEqualToString:@""])
+    {
+        isSearching = NO;
+        [tblView reloadData];
+    }
+    else
+    {
+        isSearching = YES;
+        @try
+        {
+            if (isAgeSelected) {
+                NSPredicate *pred = [NSPredicate predicateWithFormat:@"age contains[cd] %@",strText];
+                arrSearch = [[NSArray alloc]initWithArray:[arrExcercise_Age filteredArrayUsingPredicate:pred]];
+                [tblView reloadData];
+            }
+            else
+            {
+                NSPredicate *pred = [NSPredicate predicateWithFormat:@"milestone contains[cd] %@",strText];
+                arrSearch = [[NSArray alloc]initWithArray:[arrExcercise_Milestone filteredArrayUsingPredicate:pred]];
+                [tblView reloadData];
+                
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+        }
+        
+    }
+}
 
 #pragma mark - Text Field Delegate
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
     return YES;
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

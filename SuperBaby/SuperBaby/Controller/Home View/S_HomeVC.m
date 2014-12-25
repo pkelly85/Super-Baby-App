@@ -19,7 +19,8 @@
 @interface S_HomeVC ()
 {
     __weak IBOutlet UIImageView *imgV;
-    
+    __weak IBOutlet UILabel *lblName;
+
     __weak IBOutlet UIView *viewGuest;
     __weak IBOutlet UIView *viewUser;
 }
@@ -30,8 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (myUserModelGlobal) {
-        imgV.image = _imgBaby;
+    if (myUserModelGlobal)
+    {
+        if (![babyModelGlobal.ImageURL isEqualToString:@""])
+        {
+            [imgV sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+        }
+        lblName.text = babyModelGlobal.Name;
         imgV.userInteractionEnabled = YES;
         viewGuest.hidden = YES;
         viewUser.backgroundColor = [UIColor clearColor];

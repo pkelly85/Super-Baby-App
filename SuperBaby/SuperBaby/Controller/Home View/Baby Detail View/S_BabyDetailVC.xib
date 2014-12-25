@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_BabyDetailVC">
             <connections>
                 <outlet property="btn_4_EditBabyInfo" destination="1BT-Ja-uNY" id="jfz-uC-yIT"/>
+                <outlet property="imgVBaby" destination="7lU-oi-uQF" id="qTg-WE-ccn"/>
                 <outlet property="view" destination="5tl-g6-mpA" id="x3S-JH-Go9"/>
                 <outlet property="viewTop" destination="s8N-9E-BgD" id="P4c-hR-at1"/>
             </connections>

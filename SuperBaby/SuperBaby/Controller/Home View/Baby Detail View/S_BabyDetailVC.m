@@ -17,6 +17,7 @@
 
     __weak IBOutlet UIButton *btn_4_EditBabyInfo;
 
+    __weak IBOutlet UIImageView *imgVBaby;
 }
 @end
 
@@ -29,6 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+    }
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
