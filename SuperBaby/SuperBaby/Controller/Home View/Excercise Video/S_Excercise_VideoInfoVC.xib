@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_VideoInfoVC">
             <connections>
+                <outlet property="imgVideo" destination="bzr-pS-48S" id="OCu-Qf-7A1"/>
+                <outlet property="lblCompletedExcercise" destination="dDa-W4-BKh" id="7f6-pS-v8V"/>
+                <outlet property="lblTitle" destination="Vnk-4g-1vr" id="peO-Yh-fFv"/>
+                <outlet property="lblTitle_Age" destination="zIk-NS-fqv" id="8QT-00-n7a"/>
                 <outlet property="tblView" destination="Eh5-vt-gT1" id="y4m-sq-fkG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewHeader" destination="gcz-7q-tSi" id="MnY-Wn-1cE"/>

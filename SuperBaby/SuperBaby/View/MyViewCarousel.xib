@@ -84,6 +84,7 @@
             <connections>
                 <outlet property="btnInfo" destination="wqk-kL-zbh" id="YU8-vE-Vtj"/>
                 <outlet property="btnPlay" destination="I47-KB-4hS" id="gTO-kZ-FnS"/>
+                <outlet property="imgVideo" destination="9yf-zq-pPF" id="nv0-yA-QXB"/>
                 <outlet property="lblText" destination="5aI-CP-I4x" id="Jwd-ES-LQj"/>
             </connections>
             <point key="canvasLocation" x="278" y="398"/>

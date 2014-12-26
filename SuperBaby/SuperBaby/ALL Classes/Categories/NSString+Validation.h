@@ -77,5 +77,6 @@
 - (BOOL)fileAlreadyExist;
 
 - (BOOL)containsString: (NSString*) substring;
+-(BOOL)isEqualToString_CaseInsensitive:(NSString *)strText;
 
 @end

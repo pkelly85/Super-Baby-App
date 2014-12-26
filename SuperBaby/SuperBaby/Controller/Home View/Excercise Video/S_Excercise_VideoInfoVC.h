@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface S_Excercise_VideoInfoVC : UIViewController
-
+@property(nonatomic,strong)NSDictionary *dictInfo;
 @end

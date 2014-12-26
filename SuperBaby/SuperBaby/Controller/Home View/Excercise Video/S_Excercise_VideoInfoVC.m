@@ -10,8 +10,15 @@
 #import "AppConstant.h"
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
+    __weak IBOutlet UILabel *lblTitle;
+
     __weak IBOutlet UITableView *tblView;
     __weak IBOutlet UIView *viewHeader;
+    __weak IBOutlet UIImageView *imgVideo;
+    __weak IBOutlet UILabel *lblTitle_Age;
+
+    __weak IBOutlet UILabel *lblCompletedExcercise;
+
 }
 @end
 
@@ -24,6 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     tblView.tableHeaderView = viewHeader;
+    
+    lblTitle.text = _dictInfo[EV_Detail_title];
+    imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
+    lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
+    lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
 }
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

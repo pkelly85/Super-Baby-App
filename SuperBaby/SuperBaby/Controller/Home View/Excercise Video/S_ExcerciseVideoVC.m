@@ -15,6 +15,7 @@
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
+    __weak IBOutlet UILabel *lblNoDataFound;
     
     __weak IBOutlet UIButton *btnAge;
     __weak IBOutlet UIButton *btnMilestone;
@@ -58,6 +59,7 @@
     /*--- Set Defaults ---*/
     isSearching = NO;
     isAgeSelected = NO;
+    lblNoDataFound.alpha = 0.0;
     [self btnAge_MilestoneClicked:btnAge];
     
     /*--- Register Class ---*/
@@ -135,8 +137,6 @@
         else
             cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
     }
-    
-    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -171,6 +171,7 @@
     NSString *strText = [textF.text isNull];
     if ([strText isEqualToString:@""])
     {
+        lblNoDataFound.alpha = 0.0;
         isSearching = NO;
         [tblView reloadData];
     }
@@ -182,15 +183,23 @@
             if (isAgeSelected) {
                 NSPredicate *pred = [NSPredicate predicateWithFormat:@"age contains[cd] %@",strText];
                 arrSearch = [[NSArray alloc]initWithArray:[arrExcercise_Age filteredArrayUsingPredicate:pred]];
-                [tblView reloadData];
             }
             else
             {
                 NSPredicate *pred = [NSPredicate predicateWithFormat:@"milestone contains[cd] %@",strText];
                 arrSearch = [[NSArray alloc]initWithArray:[arrExcercise_Milestone filteredArrayUsingPredicate:pred]];
-                [tblView reloadData];
-                
             }
+            
+            if (arrSearch.count == 0) {
+                lblNoDataFound.alpha = 1.0;
+                tblView.alpha = 0.0;
+            }
+            else
+            {
+                tblView.alpha = 1.0;
+                lblNoDataFound.alpha = 0.0;
+            }
+            [tblView reloadData];
         }
         @catch (NSException *exception) {
             NSLog(@"%@",exception.description);

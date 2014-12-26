@@ -83,10 +83,20 @@
         [view.btnPlay addTarget:self action:@selector(btnPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
         [view.btnInfo addTarget:self action:@selector(btnInfoClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
+    NSDictionary *dictInfo = (NSDictionary *)items[index];
     view.btnPlay.tag = index;
     view.btnInfo.tag = index;
-    view.lblText.text = items[index][EV_Detail_description];
+   
+    NSString *strPrice = [[NSString stringWithFormat:@"%@",dictInfo[EV_Detail_price]] isNull];
+    if ([strPrice isEqualToString_CaseInsensitive:@"FREE"]) {
+        view.lblText.text = [NSString stringWithFormat:@"%@",dictInfo[EV_Detail_title]];
+    }
+    else
+    {
+        view.lblText.text = [NSString stringWithFormat:@"%@ - %@",dictInfo[EV_Detail_title],dictInfo[EV_Detail_price]];
+    }
     
+    view.imgVideo.image = [UIImage imageNamed:items[index][EV_Detail_thumbnail]];
     return view;
 }
 
@@ -100,6 +110,7 @@
 {
     NSLog(@"Info : %ld",(long)btnInfo.tag);
     S_Excercise_VideoInfoVC *obj = [[S_Excercise_VideoInfoVC alloc]initWithNibName:@"S_Excercise_VideoInfoVC" bundle:nil];
+    obj.dictInfo = (NSDictionary *)items[btnInfo.tag];
     [self.navigationController pushViewController:obj animated:YES];
 }
 

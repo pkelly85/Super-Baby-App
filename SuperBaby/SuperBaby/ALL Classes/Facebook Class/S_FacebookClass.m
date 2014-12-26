@@ -202,19 +202,4 @@
     }
 }
 
-
-/*+ (NSMutableDictionary *)setLoginWithFacebookWebServiceParameter:(NSDictionary*)dicFB
-{
-    //ProfilePic_URL
-   // NSString *strProfilePic_URL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [dicFB valueForKey:@"id"]];
-    
-    NSMutableDictionary *retVal = [[NSMutableDictionary alloc] init];
-    [retVal setValue:[dicFB valueForKey:@"email"] forKey:@"EmailAddress"];
-    [retVal setValue:[dicFB valueForKey:@"first_name"] forKey:@"FirstName"];
-    [retVal setValue:[dicFB valueForKey:@"last_name"] forKey:@"LastName"];
-    [retVal setValue:[dicFB valueForKey:@"id"] forKey:@"FacebookID"];
-    [retVal setValue:@"" forKey:@"Profile_PIC"];
-    [retVal setValue:AppDel.device_Token forKey:@"DeviceToken"];
-    return retVal;
-}*/
 @end

@@ -379,6 +379,14 @@
 }
 
 #pragma mark - Check Contains String
+-(BOOL)isEqualToString_CaseInsensitive:(NSString *)strText
+{
+    if( [self caseInsensitiveCompare:strText] == NSOrderedSame ) {
+        // strings are equal except for possibly case
+        return YES;
+    }
+    return NO;
+}
 - (BOOL)containsString: (NSString*) substring
 {
     NSRange range = [self rangeOfString:substring options:NSCaseInsensitiveSearch];
