@@ -122,7 +122,6 @@
 {
     CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
     cell.imgV.image = [UIImage imageNamed:@"babby"];
-    
     if (isSearching)
     {
         if (isAgeSelected)

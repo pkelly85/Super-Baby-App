@@ -14,8 +14,12 @@
 #import "S_Excercise_VideoInfoVC.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
-    NSMutableArray *items;    
+    NSMutableArray *arrVideos;    
     __weak IBOutlet UITextField *txtSearch;
+    __weak IBOutlet UILabel *lblNoDataFound;
+    
+    NSArray *arrSearch;
+    BOOL isSearching;
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
@@ -37,10 +41,15 @@
 //    NSInteger startIndex = [_dictInfo[EV_VIDEOS][0] integerValue];
 //    NSInteger endIndex = [[_dictInfo[EV_VIDEOS] lastObject] integerValue];
 
-    items = [NSMutableArray array];
+    /*--- Set Defaults ---*/
+    isSearching = NO;
+    lblNoDataFound.alpha = 0.0;
+
+    
+    arrVideos = [NSMutableArray array];
     for (NSInteger i = 0; i < [arrVideosID count]; i++)
     {
-        [items addObject:[arrTemp objectAtIndex:[arrVideosID[i] integerValue]]];
+        [arrVideos addObject:[arrTemp objectAtIndex:[arrVideosID[i] integerValue]]];
     }
     _carousel.type = iCarouselTypeCylinder;
     [_carousel setVertical:YES];
@@ -48,7 +57,9 @@
     UIView *vtxtPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     txtSearch.leftView = vtxtPadding;
     txtSearch.leftViewMode = UITextFieldViewModeAlways;
-    
+    [txtSearch addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
     
     [_carousel reloadData];
 }
@@ -71,7 +82,10 @@
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [items count];
+    if (isSearching) {
+        return arrSearch.count;
+    }
+    return [arrVideos count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(MyViewCarousel *)view
@@ -83,7 +97,16 @@
         [view.btnPlay addTarget:self action:@selector(btnPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
         [view.btnInfo addTarget:self action:@selector(btnInfoClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
-    NSDictionary *dictInfo = (NSDictionary *)items[index];
+    
+    NSDictionary *dictInfo;
+    if (isSearching)
+    {
+        dictInfo = (NSDictionary *)arrSearch[index];
+    }
+    else
+    {
+        dictInfo = (NSDictionary *)arrVideos[index];
+    }
     view.btnPlay.tag = index;
     view.btnInfo.tag = index;
    
@@ -96,7 +119,7 @@
         view.lblText.text = [NSString stringWithFormat:@"%@ - %@",dictInfo[EV_Detail_title],dictInfo[EV_Detail_price]];
     }
     
-    view.imgVideo.image = [UIImage imageNamed:items[index][EV_Detail_thumbnail]];
+    view.imgVideo.image = [UIImage imageNamed:dictInfo[EV_Detail_thumbnail]];
     return view;
 }
 
@@ -110,7 +133,11 @@
 {
     NSLog(@"Info : %ld",(long)btnInfo.tag);
     S_Excercise_VideoInfoVC *obj = [[S_Excercise_VideoInfoVC alloc]initWithNibName:@"S_Excercise_VideoInfoVC" bundle:nil];
-    obj.dictInfo = (NSDictionary *)items[btnInfo.tag];
+    if (isSearching)
+        obj.dictInfo = (NSDictionary *)arrSearch[btnInfo.tag];
+    else
+        obj.dictInfo = (NSDictionary *)arrVideos[btnInfo.tag];
+    
     [self.navigationController pushViewController:obj animated:YES];
 }
 
@@ -124,6 +151,43 @@
     return YES;
 }
 
+-(void)textFieldDidChange:(UITextField *)textF
+{
+    NSString *strText = [textF.text isNull];
+    if ([strText isEqualToString:@""])
+    {
+        lblNoDataFound.alpha = 0.0;
+        isSearching = NO;
+        [_carousel reloadData];
+    }
+    else
+    {
+        isSearching = YES;
+        @try
+        {
+
+            NSPredicate *pred = [NSPredicate predicateWithFormat:@"title contains[cd] %@",strText];
+            arrSearch = [[NSArray alloc]initWithArray:[arrVideos filteredArrayUsingPredicate:pred]];
+            
+            if (arrSearch.count == 0) {
+                lblNoDataFound.alpha = 1.0;
+                _carousel.alpha = 0.0;
+            }
+            else
+            {
+                _carousel.alpha = 1.0;
+                lblNoDataFound.alpha = 0.0;
+            }
+            [_carousel reloadData];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+        }
+        
+    }
+}
 
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {

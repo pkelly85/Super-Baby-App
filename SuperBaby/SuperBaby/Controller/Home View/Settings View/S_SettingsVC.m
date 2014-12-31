@@ -29,11 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    if (myUserModelGlobal)
     {
-        [imgVBaby sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+        if (![babyModelGlobal.ImageURL isEqualToString:@""])
+        {
+            [imgVBaby sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+        }
     }
-    
+
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     

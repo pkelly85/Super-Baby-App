@@ -204,6 +204,7 @@
         //[self btnTakePhotoClicked:nil];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:@"Select Image from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Choose Existing" ,nil];
         [actionSheet showInView:self.view];
+        
     }
 }
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

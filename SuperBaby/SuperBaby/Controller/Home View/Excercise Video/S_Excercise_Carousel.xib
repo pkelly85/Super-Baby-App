@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_Carousel">
             <connections>
                 <outlet property="carousel" destination="ENp-1O-R8c" id="4xX-Ht-7QY"/>
+                <outlet property="lblNoDataFound" destination="VN1-Sg-HMa" id="SR7-WJ-agz"/>
                 <outlet property="txtSearch" destination="3TH-fc-jnl" id="ALC-DB-yqh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,6 +17,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VN1-Sg-HMa">
+                    <rect key="frame" x="0.0" y="220" width="320" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="zLE-aS-26M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lL-ab-iAK">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
@@ -101,11 +111,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerY" secondItem="VN1-Sg-HMa" secondAttribute="centerY" id="329-4G-zRO"/>
                 <constraint firstAttribute="bottom" secondItem="ENp-1O-R8c" secondAttribute="bottom" id="IEt-h9-QSN"/>
+                <constraint firstAttribute="trailing" secondItem="VN1-Sg-HMa" secondAttribute="trailing" id="JTW-W6-0PG"/>
                 <constraint firstAttribute="trailing" secondItem="8lL-ab-iAK" secondAttribute="trailing" id="NFF-VG-BrY"/>
                 <constraint firstAttribute="trailing" secondItem="ENp-1O-R8c" secondAttribute="trailing" id="RXZ-ox-Mw6"/>
                 <constraint firstItem="ENp-1O-R8c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TG6-Yf-7yk"/>
                 <constraint firstItem="8lL-ab-iAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xfh-n7-GpL"/>
+                <constraint firstItem="VN1-Sg-HMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cVz-9c-FpG"/>
                 <constraint firstItem="u48-ba-G19" firstAttribute="top" secondItem="8lL-ab-iAK" secondAttribute="bottom" id="deu-ho-M80"/>
                 <constraint firstAttribute="trailing" secondItem="u48-ba-G19" secondAttribute="trailing" id="jNu-cH-cFY"/>
                 <constraint firstItem="u48-ba-G19" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="whA-aI-EbP"/>
