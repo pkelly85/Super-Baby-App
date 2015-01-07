@@ -40,6 +40,11 @@
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
 		10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */; };
+		10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBC71A5CF00900529EDC /* Annotations.plist */; };
+		10A7DBCC1A5CF50D00529EDC /* CustomMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */; };
+		10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBCD1A5D022E00529EDC /* CustomMoviePlayerViewController.xib */; };
+		10A7DBD81A5D4A2C00529EDC /* CCell_Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */; };
+		10A7DBD91A5D4A2C00529EDC /* CCell_Dot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */; };
 		10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */; };
 		10B7D5A11A44090E004EFF60 /* UITextFiledWithoutInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D5A01A44090E004EFF60 /* UITextFiledWithoutInteraction.m */; };
 		10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */; };
@@ -169,6 +174,13 @@
 		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
 		10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByMilestone.plist; sourceTree = "<group>"; };
+		10A7DBC71A5CF00900529EDC /* Annotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Annotations.plist; sourceTree = "<group>"; };
+		10A7DBCA1A5CF50D00529EDC /* CustomMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMoviePlayerViewController.h; sourceTree = "<group>"; };
+		10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMoviePlayerViewController.m; sourceTree = "<group>"; };
+		10A7DBCD1A5D022E00529EDC /* CustomMoviePlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMoviePlayerViewController.xib; sourceTree = "<group>"; };
+		10A7DBD51A5D4A2C00529EDC /* CCell_Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Dot.h; sourceTree = "<group>"; };
+		10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Dot.m; sourceTree = "<group>"; };
+		10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Dot.xib; sourceTree = "<group>"; };
 		10B7D59C1A43F8AF004EFF60 /* S_UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_UserModel.h; sourceTree = "<group>"; };
 		10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_UserModel.m; sourceTree = "<group>"; };
 		10B7D59F1A44090E004EFF60 /* UITextFiledWithoutInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFiledWithoutInteraction.h; sourceTree = "<group>"; };
@@ -339,6 +351,7 @@
 		106107BF1A386083005F2A4A /* ALL Cell */ = {
 			isa = PBXGroup;
 			children = (
+				10A7DBD41A5D4A0600529EDC /* Extra Cell */,
 				1078FCAE1A3ABDAE006303EE /* Timeline Cell */,
 				10FB44D71A398D4C00DDA935 /* Baby Detail */,
 				10FB44D81A398D4C00DDA935 /* Excercise Cell */,
@@ -464,9 +477,30 @@
 			path = "Timeline View";
 			sourceTree = "<group>";
 		};
+		10A7DBC91A5CF50D00529EDC /* CustomMoviePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				10A7DBCA1A5CF50D00529EDC /* CustomMoviePlayerViewController.h */,
+				10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */,
+				10A7DBCD1A5D022E00529EDC /* CustomMoviePlayerViewController.xib */,
+			);
+			path = CustomMoviePlayer;
+			sourceTree = "<group>";
+		};
+		10A7DBD41A5D4A0600529EDC /* Extra Cell */ = {
+			isa = PBXGroup;
+			children = (
+				10A7DBD51A5D4A2C00529EDC /* CCell_Dot.h */,
+				10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */,
+				10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */,
+			);
+			path = "Extra Cell";
+			sourceTree = "<group>";
+		};
 		10B7D5A21A442E15004EFF60 /* ALL Plist */ = {
 			isa = PBXGroup;
 			children = (
+				10A7DBC71A5CF00900529EDC /* Annotations.plist */,
 				10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */,
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
@@ -541,6 +575,7 @@
 		10C27D261A35A5DB0006985C /* ALL Classes */ = {
 			isa = PBXGroup;
 			children = (
+				10A7DBC91A5CF50D00529EDC /* CustomMoviePlayer */,
 				107995921A3EB621006EA4BA /* Facebook Class */,
 				1047D0D21A39C68700273457 /* iCarousel */,
 				109885D31A36E5C100FB3BB4 /* TPKeyboardAvoiding */,
@@ -859,17 +894,20 @@
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
+				10A7DBD91A5D4A2C00529EDC /* CCell_Dot.xib in Resources */,
 				107995911A3EA9AD006EA4BA /* S_Excercise_VideoInfoVC.xib in Resources */,
 				109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */,
 				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
 				10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */,
+				10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				107995991A3EBA62006EA4BA /* Localizable.strings in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */,
+				10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */,
 				10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */,
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
@@ -927,6 +965,7 @@
 				10C27D951A35A5DC0006985C /* NSString+Validation.m in Sources */,
 				10C27D911A35A5DC0006985C /* NSAttributedString+Validation.m in Sources */,
 				1072DD531A4807CF00F156F7 /* S_LoginVC.m in Sources */,
+				10A7DBCC1A5CF50D00529EDC /* CustomMoviePlayerViewController.m in Sources */,
 				10C27DA51A35A5DC0006985C /* UIButton+WebCache.m in Sources */,
 				10C27DA61A35A5DC0006985C /* UIImage+GIF.m in Sources */,
 				10C27D921A35A5DC0006985C /* NSDate+Formatting.m in Sources */,
@@ -959,6 +998,7 @@
 				10C27D011A35A4C20006985C /* main.m in Sources */,
 				10C27DA01A35A5DC0006985C /* SDWebImageDecoder.m in Sources */,
 				10C27D9F1A35A5DC0006985C /* SDWebImageCompat.m in Sources */,
+				10A7DBD81A5D4A2C00529EDC /* CCell_Dot.m in Sources */,
 				109885EA1A370F5500FB3BB4 /* S_BabyDetailVC.m in Sources */,
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
@@ -1079,6 +1119,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SuperBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1089,6 +1130,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SuperBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

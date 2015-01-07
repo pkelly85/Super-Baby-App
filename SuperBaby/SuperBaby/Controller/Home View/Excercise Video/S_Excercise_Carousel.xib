@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_Carousel">
             <connections>
                 <outlet property="carousel" destination="ENp-1O-R8c" id="4xX-Ht-7QY"/>
-                <outlet property="lblNoDataFound" destination="VN1-Sg-HMa" id="SR7-WJ-agz"/>
-                <outlet property="txtSearch" destination="3TH-fc-jnl" id="ALC-DB-yqh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,15 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VN1-Sg-HMa">
-                    <rect key="frame" x="0.0" y="220" width="320" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="zLE-aS-26M"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lL-ab-iAK">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
@@ -63,45 +53,8 @@
                         <constraint firstItem="T6D-1d-jIl" firstAttribute="leading" secondItem="8lL-ab-iAK" secondAttribute="leading" id="xlQ-ZZ-x3X"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u48-ba-G19" userLabel="Container">
-                    <rect key="frame" x="0.0" y="64" width="320" height="40"/>
-                    <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-fc-jnl">
-                            <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="fPk-DT-cgg"/>
-                            </connections>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E04-hJ-5yI">
-                            <rect key="frame" x="270" y="0.0" width="50" height="40"/>
-                            <color key="backgroundColor" red="0.90980392160000001" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="IZg-Sj-4gD"/>
-                            </constraints>
-                            <state key="normal" image="search-icon">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnSearchClicked:" destination="-1" eventType="touchUpInside" id="duB-XW-9Z9"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="E04-hJ-5yI" secondAttribute="trailing" id="DNS-9L-zKZ"/>
-                        <constraint firstAttribute="bottom" secondItem="E04-hJ-5yI" secondAttribute="bottom" id="QTK-z4-lgI"/>
-                        <constraint firstItem="3TH-fc-jnl" firstAttribute="top" secondItem="u48-ba-G19" secondAttribute="top" id="cUo-4N-hYX"/>
-                        <constraint firstItem="E04-hJ-5yI" firstAttribute="top" secondItem="u48-ba-G19" secondAttribute="top" id="cfE-sD-waf"/>
-                        <constraint firstItem="E04-hJ-5yI" firstAttribute="leading" secondItem="3TH-fc-jnl" secondAttribute="trailing" id="lLx-Hr-1bc"/>
-                        <constraint firstAttribute="height" constant="40" id="lXJ-h4-MZs"/>
-                        <constraint firstAttribute="bottom" secondItem="3TH-fc-jnl" secondAttribute="bottom" id="r9o-la-6XN"/>
-                        <constraint firstItem="3TH-fc-jnl" firstAttribute="leading" secondItem="u48-ba-G19" secondAttribute="leading" id="w0X-lq-1iJ"/>
-                    </constraints>
-                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENp-1O-R8c" customClass="iCarousel">
-                    <rect key="frame" x="0.0" y="104" width="320" height="376"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hlI-qm-jPY"/>
@@ -111,19 +64,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="VN1-Sg-HMa" secondAttribute="centerY" id="329-4G-zRO"/>
                 <constraint firstAttribute="bottom" secondItem="ENp-1O-R8c" secondAttribute="bottom" id="IEt-h9-QSN"/>
-                <constraint firstAttribute="trailing" secondItem="VN1-Sg-HMa" secondAttribute="trailing" id="JTW-W6-0PG"/>
                 <constraint firstAttribute="trailing" secondItem="8lL-ab-iAK" secondAttribute="trailing" id="NFF-VG-BrY"/>
                 <constraint firstAttribute="trailing" secondItem="ENp-1O-R8c" secondAttribute="trailing" id="RXZ-ox-Mw6"/>
                 <constraint firstItem="ENp-1O-R8c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TG6-Yf-7yk"/>
                 <constraint firstItem="8lL-ab-iAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xfh-n7-GpL"/>
-                <constraint firstItem="VN1-Sg-HMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cVz-9c-FpG"/>
-                <constraint firstItem="u48-ba-G19" firstAttribute="top" secondItem="8lL-ab-iAK" secondAttribute="bottom" id="deu-ho-M80"/>
-                <constraint firstAttribute="trailing" secondItem="u48-ba-G19" secondAttribute="trailing" id="jNu-cH-cFY"/>
-                <constraint firstItem="u48-ba-G19" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="whA-aI-EbP"/>
                 <constraint firstItem="8lL-ab-iAK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yC2-W1-3qO"/>
-                <constraint firstItem="ENp-1O-R8c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="zOl-Mu-xco"/>
+                <constraint firstItem="ENp-1O-R8c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="zOl-Mu-xco"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -134,7 +81,6 @@
     </objects>
     <resources>
         <image name="orange-back-arrow" width="12" height="20"/>
-        <image name="search-icon" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

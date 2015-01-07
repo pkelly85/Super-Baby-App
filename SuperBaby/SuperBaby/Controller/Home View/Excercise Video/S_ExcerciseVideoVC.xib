@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
@@ -8,9 +9,7 @@
             <connections>
                 <outlet property="btnAge" destination="g5N-MH-lm2" id="diA-ZP-0IE"/>
                 <outlet property="btnMilestone" destination="o0z-2S-XlD" id="ZI0-Yy-AQa"/>
-                <outlet property="lblNoDataFound" destination="3QI-tY-eEk" id="K8C-h2-nJT"/>
                 <outlet property="tblView" destination="dFp-Xd-JWx" id="Oil-jv-ZL7"/>
-                <outlet property="txtSearch" destination="58a-K2-Xry" id="YVX-5w-hqR"/>
                 <outlet property="view" destination="u5Z-by-WLw" id="PrV-1p-Mox"/>
                 <outlet property="viewTop" destination="fQh-T9-V4Y" id="I7T-BW-DVb"/>
             </connections>
@@ -20,15 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QI-tY-eEk">
-                    <rect key="frame" x="0.0" y="230" width="320" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="MWQ-St-IAk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-T9-V4Y">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
@@ -67,7 +57,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wql-sG-j9y" userLabel="Container">
-                    <rect key="frame" x="0.0" y="64" width="320" height="80"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5N-MH-lm2">
                             <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
@@ -97,48 +87,20 @@
                                 <action selector="btnAge_MilestoneClicked:" destination="-1" eventType="touchUpInside" id="MlL-Hh-sHk"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="58a-K2-Xry">
-                            <rect key="frame" x="0.0" y="40" width="270" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="o7Z-ct-TeQ"/>
-                            </connections>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6j-T6-dPM">
-                            <rect key="frame" x="270" y="40" width="50" height="40"/>
-                            <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="Ffc-EL-OqS"/>
-                            </constraints>
-                            <state key="normal" image="search-icon">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnSearchClicked:" destination="-1" eventType="touchUpInside" id="NjN-ht-6MI"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="58a-K2-Xry" firstAttribute="top" secondItem="wql-sG-j9y" secondAttribute="top" constant="40" id="2NE-G7-466"/>
-                        <constraint firstItem="58a-K2-Xry" firstAttribute="leading" secondItem="wql-sG-j9y" secondAttribute="leading" id="768-pK-pqF"/>
-                        <constraint firstItem="d6j-T6-dPM" firstAttribute="top" secondItem="wql-sG-j9y" secondAttribute="top" constant="40" id="8JO-8f-RG1"/>
-                        <constraint firstAttribute="trailing" secondItem="d6j-T6-dPM" secondAttribute="trailing" id="9pe-BK-XnU"/>
-                        <constraint firstAttribute="bottom" secondItem="d6j-T6-dPM" secondAttribute="bottom" id="A30-30-dM2"/>
                         <constraint firstItem="g5N-MH-lm2" firstAttribute="top" secondItem="wql-sG-j9y" secondAttribute="top" id="AUa-zb-G6g"/>
-                        <constraint firstItem="d6j-T6-dPM" firstAttribute="leading" secondItem="58a-K2-Xry" secondAttribute="trailing" id="DcI-ju-oD2"/>
                         <constraint firstItem="g5N-MH-lm2" firstAttribute="width" secondItem="o0z-2S-XlD" secondAttribute="width" id="OSD-hn-sf6"/>
-                        <constraint firstAttribute="height" constant="80" id="Tj2-L1-vCN"/>
+                        <constraint firstAttribute="height" constant="40" id="Tj2-L1-vCN"/>
                         <constraint firstItem="o0z-2S-XlD" firstAttribute="leading" secondItem="g5N-MH-lm2" secondAttribute="trailing" id="fTj-WG-NoH"/>
                         <constraint firstItem="g5N-MH-lm2" firstAttribute="leading" secondItem="wql-sG-j9y" secondAttribute="leading" id="jgy-xf-6b5"/>
                         <constraint firstItem="o0z-2S-XlD" firstAttribute="top" secondItem="wql-sG-j9y" secondAttribute="top" id="kZu-F2-9Gd"/>
-                        <constraint firstAttribute="bottom" secondItem="58a-K2-Xry" secondAttribute="bottom" id="srl-xC-YkA"/>
                         <constraint firstAttribute="trailing" secondItem="o0z-2S-XlD" secondAttribute="trailing" id="veZ-uJ-GVW"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dFp-Xd-JWx">
-                    <rect key="frame" x="0.0" y="144" width="320" height="336"/>
+                    <rect key="frame" x="0.0" y="104" width="320" height="376"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -153,14 +115,11 @@
                 <constraint firstItem="dFp-Xd-JWx" firstAttribute="leading" secondItem="u5Z-by-WLw" secondAttribute="leading" id="Jcq-GE-Xaj"/>
                 <constraint firstAttribute="trailing" secondItem="dFp-Xd-JWx" secondAttribute="trailing" id="MN9-GC-Ayu"/>
                 <constraint firstItem="fQh-T9-V4Y" firstAttribute="top" secondItem="u5Z-by-WLw" secondAttribute="top" id="SKA-Xt-uE7"/>
-                <constraint firstAttribute="centerY" secondItem="3QI-tY-eEk" secondAttribute="centerY" constant="-10" id="Snb-1P-LaI"/>
                 <constraint firstAttribute="trailing" secondItem="wql-sG-j9y" secondAttribute="trailing" id="TNY-Yf-SZo"/>
-                <constraint firstItem="3QI-tY-eEk" firstAttribute="leading" secondItem="u5Z-by-WLw" secondAttribute="leading" id="YYo-eL-5me"/>
                 <constraint firstItem="fQh-T9-V4Y" firstAttribute="leading" secondItem="u5Z-by-WLw" secondAttribute="leading" id="cq1-Em-jAJ"/>
                 <constraint firstItem="wql-sG-j9y" firstAttribute="top" secondItem="fQh-T9-V4Y" secondAttribute="bottom" id="jM3-gU-eRV"/>
                 <constraint firstAttribute="trailing" secondItem="fQh-T9-V4Y" secondAttribute="trailing" id="qwG-2H-q1e"/>
                 <constraint firstItem="dFp-Xd-JWx" firstAttribute="top" secondItem="wql-sG-j9y" secondAttribute="bottom" id="sG5-CF-dBZ"/>
-                <constraint firstAttribute="trailing" secondItem="3QI-tY-eEk" secondAttribute="trailing" id="tHb-68-v5j"/>
                 <constraint firstAttribute="bottom" secondItem="dFp-Xd-JWx" secondAttribute="bottom" id="xlA-Nw-vJz"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -172,7 +131,6 @@
     </objects>
     <resources>
         <image name="blue-back-arrow" width="12" height="20"/>
-        <image name="search-icon" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

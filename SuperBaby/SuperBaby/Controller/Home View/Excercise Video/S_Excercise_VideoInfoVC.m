@@ -8,6 +8,9 @@
 
 #import "S_Excercise_VideoInfoVC.h"
 #import "AppConstant.h"
+
+#import "CustomMoviePlayerViewController.h"
+#import "CCell_Dot.h"
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -30,13 +33,39 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tblView.tableHeaderView = viewHeader;
     
     lblTitle.text = _dictInfo[EV_Detail_title];
     imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
     lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
     lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
+    
+    /*--- Tableview setup ---*/
+    tblView.tableHeaderView = viewHeader;
+    tblView.backgroundColor = [UIColor clearColor];
+    tblView.dataSource = self;
+    tblView.delegate = self;
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_Dot" bundle:nil] forCellReuseIdentifier:@"CCell_Dot"];
+    [tblView reloadData];
 }
+-(IBAction)btnPlayClicked:(UIButton *)btnPlay
+{
+#warning - CHANGE URL HERE
+    NSLog(@"Play : %ld",(long)btnPlay.tag);
+    NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+    //NSString *strURL = dictVideo[EV_Detail_url];
+    
+    NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
+    
+    NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
+                         @{@"startT" : @4,@"dur":@1},
+                         @{@"startT" : @7,@"dur":@1}];
+    CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+    moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:moviePlayer animated:YES completion:^{
+        [moviePlayer readyPlayer];
+    }];
+}
+
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -48,15 +77,9 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"Cell";
-    UITableViewCell *cell = [tblView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        /*--- For Custom Cell ---*/
-        //[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil];
-        //cell = myCell;
-    }
+    CCell_Dot *cell = [tblView dequeueReusableCellWithIdentifier:@"CCell_Dot"];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.lblDescription.text = @"Descripton goes here";
     return cell;
 }
 #pragma mark - Extra

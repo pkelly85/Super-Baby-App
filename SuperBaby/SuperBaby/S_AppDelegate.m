@@ -12,17 +12,45 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 @interface S_AppDelegate ()
-
+{
+    //MPMoviePlayerViewController *moviePlayer;
+}
 @end
 
 @implementation S_AppDelegate
 
-
+//-(void)playMovieWithURL:(NSURL *)url withObject:(id)object
+//{
+//    moviePlayer = [[MPMoviePlayerViewController alloc] init];
+//    
+//    moviePlayer.moviePlayer.shouldAutoplay=YES;
+//    moviePlayer.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+//    
+//    [object presentMoviePlayerViewControllerAnimated:moviePlayer];
+//    moviePlayer.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
+//    [moviePlayer.moviePlayer setContentURL:url];
+//
+//    [moviePlayer.moviePlayer play];
+//}
+#pragma mark - Orientation
+-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (self.allowRotation) {
+        return UIInterfaceOrientationMaskLandscapeLeft;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+- (void) moviePlayerStartNotification:(NSNotification*)notification {
+    self.allowRotation = YES;
+}
+- (void) moviePlayerEndNotification:(NSNotification*)notification {
+    self.allowRotation = NO;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     /*--- Movieplayer Start and end notification ---*/
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
     
     /*--- SDWebImage setup ---*/
     [SDWebImageManager.sharedManager.imageDownloader setValue:@"SuperBaby Image" forHTTPHeaderField:@"SuperBaby"];
@@ -54,20 +82,20 @@
 
 
 
-#pragma mark - Orientation
--(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    if (self.allowRotation) {
-        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
-    }
-    return UIInterfaceOrientationMaskPortrait;
-}
-- (void) moviePlayerStartNotification:(NSNotification*)notification {
-    self.allowRotation = YES;
-}
-- (void) moviePlayerEndNotification:(NSNotification*)notification {
-    self.allowRotation = NO;
-}
+//#pragma mark - Orientation
+//-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    if (self.allowRotation) {
+//        return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//- (void) moviePlayerStartNotification:(NSNotification*)notification {
+//    self.allowRotation = YES;
+//}
+//- (void) moviePlayerEndNotification:(NSNotification*)notification {
+//    self.allowRotation = NO;
+//}
 
 #pragma mark - Connection Check
 - (BOOL)checkConnection:(void (^)(void))completion

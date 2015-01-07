@@ -254,7 +254,10 @@
         [txtPassword becomeFirstResponder];
     }
     else
+    {
         [txtPassword resignFirstResponder];
+        [self btnLoginClicked:nil];
+    }
     return YES;
 }
 

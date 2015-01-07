@@ -15,18 +15,15 @@
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
-    __weak IBOutlet UILabel *lblNoDataFound;
     
     __weak IBOutlet UIButton *btnAge;
     __weak IBOutlet UIButton *btnMilestone;
     BOOL isAgeSelected;
     
-    __weak IBOutlet UITextField *txtSearch;
+    //__weak IBOutlet UITextField *txtSearch;
     
     NSMutableArray *arrExcercise_Age;
     NSMutableArray *arrExcercise_Milestone;
-    NSArray *arrSearch;
-    BOOL isSearching;
 }
 @end
 
@@ -41,14 +38,6 @@
 {
     [super viewDidLoad];
     
-    /*--- set padding to textfield ---*/
-    UIView *vtxtPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    txtSearch.leftView = vtxtPadding;
-    txtSearch.leftViewMode = UITextFieldViewModeAlways;
-    [txtSearch addTarget:self
-                  action:@selector(textFieldDidChange:)
-        forControlEvents:UIControlEventEditingChanged];
-    
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
@@ -57,9 +46,7 @@
     arrExcercise_Milestone = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByMilestone" ofType:@"plist"]];
     
     /*--- Set Defaults ---*/
-    isSearching = NO;
     isAgeSelected = NO;
-    lblNoDataFound.alpha = 0.0;
     [self btnAge_MilestoneClicked:btnAge];
     
     /*--- Register Class ---*/
@@ -69,17 +56,8 @@
 }
 
 #pragma mark - IBAction
--(IBAction)btnSearchClicked:(id)sender
-{
-    [txtSearch becomeFirstResponder];
-}
 -(IBAction)btnAge_MilestoneClicked:(UIButton *)sender
 {
-    [txtSearch resignFirstResponder];
-    isSearching = NO;
-    txtSearch.text = @"";
-//    [tblView reloadData];
-    
     if (sender == btnAge)
     {
         isAgeSelected = YES;
@@ -102,17 +80,10 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (isSearching) {
-        return arrSearch.count;
+    if (isAgeSelected) {
+        return arrExcercise_Age.count;
     }
-    else
-    {
-        if (isAgeSelected) {
-            return arrExcercise_Age.count;
-        }
-        return arrExcercise_Milestone.count;
-    }
-    
+    return arrExcercise_Milestone.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -122,37 +93,22 @@
 {
     CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
     cell.imgV.image = [UIImage imageNamed:@"babby"];
-    if (isSearching)
-    {
-        if (isAgeSelected)
-            cell.lblTitle.text = arrSearch[indexPath.row][EV_AGE];
-        else
-            cell.lblTitle.text = arrSearch[indexPath.row][EV_MILESTONE];
-    }
+    
+    if (isAgeSelected)
+        cell.lblTitle.text = arrExcercise_Age[indexPath.row][EV_AGE];
     else
-    {
-        if (isAgeSelected)
-            cell.lblTitle.text = arrExcercise_Age[indexPath.row][EV_AGE];
-        else
-            cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
-    }
+        cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     S_Excercise_Carousel *obj = [[S_Excercise_Carousel alloc]initWithNibName:@"S_Excercise_Carousel" bundle:nil];
     obj.isAgeSelected = isAgeSelected;
-    if (isSearching)
-    {
-        obj.dictInfo = arrSearch[indexPath.row];
-    }
+    
+    if (isAgeSelected)
+        obj.dictInfo = arrExcercise_Age[indexPath.row];
     else
-    {
-        if (isAgeSelected)
-            obj.dictInfo = arrExcercise_Age[indexPath.row];
-        else
-            obj.dictInfo = arrExcercise_Milestone[indexPath.row];
-    }
+        obj.dictInfo = arrExcercise_Milestone[indexPath.row];
     
     [self.navigationController pushViewController:obj animated:YES];
 }
@@ -165,6 +121,7 @@
         [cell cellOnTableView:tblView didScrollOnView:self.view];
     }
 }
+/*
 -(void)textFieldDidChange:(UITextField *)textF
 {
     NSString *strText = [textF.text isNull];
@@ -220,6 +177,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+ */
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

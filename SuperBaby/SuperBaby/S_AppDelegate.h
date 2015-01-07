@@ -19,6 +19,7 @@
 
 @property(nonatomic,readwrite)BOOL allowRotation;
 - (BOOL)checkConnection:(void (^)(void))completion;
+//-(void)playMovieWithURL:(NSURL *)url withObject:(id)object;
 
 @end
 

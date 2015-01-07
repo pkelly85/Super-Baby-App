@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>0</integer>
+		<key>timeIndex</key>
+		<integer>5</integer>
+		<key>duration</key>
+		<integer>3</integer>
+		<key>text</key>
+		<string>Text</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>timeIndex</key>
+		<integer>2</integer>
+		<key>duration</key>
+		<integer>4</integer>
+		<key>text</key>
+		<string>This is annotation text, it can span several lines.  This text in particular probaby will end up covering three lines on the screen.  I&apos;ll need this sentence here to make sure it wraps onto enough new lines.</string>
+	</dict>
+</array>
+</plist>

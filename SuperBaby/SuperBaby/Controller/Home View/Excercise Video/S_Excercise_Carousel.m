@@ -12,14 +12,11 @@
 #import "MyViewCarousel.h"
 
 #import "S_Excercise_VideoInfoVC.h"
+
+#import "CustomMoviePlayerViewController.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
     NSMutableArray *arrVideos;    
-    __weak IBOutlet UITextField *txtSearch;
-    __weak IBOutlet UILabel *lblNoDataFound;
-    
-    NSArray *arrSearch;
-    BOOL isSearching;
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
@@ -38,36 +35,19 @@
     NSLog(@"dictInfo : %@",_dictInfo);
     NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Videos" ofType:@"plist"]];
     NSArray *arrVideosID = [NSArray arrayWithArray:_dictInfo[EV_VIDEOS]];
-//    NSInteger startIndex = [_dictInfo[EV_VIDEOS][0] integerValue];
-//    NSInteger endIndex = [[_dictInfo[EV_VIDEOS] lastObject] integerValue];
 
-    /*--- Set Defaults ---*/
-    isSearching = NO;
-    lblNoDataFound.alpha = 0.0;
-
-    
-    arrVideos = [NSMutableArray array];
+    arrVideos = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < [arrVideosID count]; i++)
     {
         [arrVideos addObject:[arrTemp objectAtIndex:[arrVideosID[i] integerValue]]];
     }
+    NSLog(@"Video Array :  %@",arrVideos);
     _carousel.type = iCarouselTypeCylinder;
     [_carousel setVertical:YES];
     
-    UIView *vtxtPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    txtSearch.leftView = vtxtPadding;
-    txtSearch.leftViewMode = UITextFieldViewModeAlways;
-    [txtSearch addTarget:self
-                  action:@selector(textFieldDidChange:)
-        forControlEvents:UIControlEventEditingChanged];
-    
     [_carousel reloadData];
 }
-#pragma mark - IBAction
--(IBAction)btnSearchClicked:(id)sender
-{
-    [txtSearch becomeFirstResponder];
-}
+
 #pragma mark -
 #pragma mark iCarousel methods
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
@@ -82,9 +62,6 @@
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    if (isSearching) {
-        return arrSearch.count;
-    }
     return [arrVideos count];
 }
 
@@ -98,15 +75,7 @@
         [view.btnInfo addTarget:self action:@selector(btnInfoClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    NSDictionary *dictInfo;
-    if (isSearching)
-    {
-        dictInfo = (NSDictionary *)arrSearch[index];
-    }
-    else
-    {
-        dictInfo = (NSDictionary *)arrVideos[index];
-    }
+    NSDictionary *dictInfo = (NSDictionary *)arrVideos[index];
     view.btnPlay.tag = index;
     view.btnInfo.tag = index;
    
@@ -123,24 +92,38 @@
     return view;
 }
 
-
-
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
+#warning - CHANGE URL HERE
+
     NSLog(@"Play : %ld",(long)btnPlay.tag);
+    NSDictionary *dictVideo = arrVideos[btnPlay.tag];
+    NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+    //NSString *strURL = dictVideo[EV_Detail_url];
+    
+    NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+
+    
+    NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
+                         @{@"startT" : @4,@"dur":@1},
+                         @{@"startT" : @7,@"dur":@1}];
+    CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+    moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:moviePlayer animated:YES completion:^{
+        [moviePlayer readyPlayer];
+    }];
+    
+    //[appDel playMovieWithURL:[NSURL URLWithString:strURL] withObject:self];
 }
+
 -(void)btnInfoClicked:(UIButton *)btnInfo
 {
     NSLog(@"Info : %ld",(long)btnInfo.tag);
     S_Excercise_VideoInfoVC *obj = [[S_Excercise_VideoInfoVC alloc]initWithNibName:@"S_Excercise_VideoInfoVC" bundle:nil];
-    if (isSearching)
-        obj.dictInfo = (NSDictionary *)arrSearch[btnInfo.tag];
-    else
-        obj.dictInfo = (NSDictionary *)arrVideos[btnInfo.tag];
-    
+    obj.dictInfo = (NSDictionary *)arrVideos[btnInfo.tag];
     [self.navigationController pushViewController:obj animated:YES];
 }
-
+/*
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;
@@ -188,7 +171,7 @@
         
     }
 }
-
+*/
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
