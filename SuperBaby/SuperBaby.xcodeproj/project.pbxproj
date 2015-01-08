@@ -25,6 +25,10 @@
 		107995951A3EB621006EA4BA /* S_FacebookClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995941A3EB621006EA4BA /* S_FacebookClass.m */; };
 		107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */; };
 		107995991A3EBA62006EA4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 107995981A3EBA62006EA4BA /* Localizable.strings */; };
+		108E6ABB1A5E4D460065A582 /* CCell_Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6AB91A5E4D460065A582 /* CCell_Simple.m */; };
+		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
+		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
+		108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
 		109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */; };
@@ -150,6 +154,12 @@
 		107995941A3EB621006EA4BA /* S_FacebookClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_FacebookClass.m; sourceTree = "<group>"; };
 		107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		107995981A3EBA62006EA4BA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		108E6AB81A5E4D460065A582 /* CCell_Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Simple.h; sourceTree = "<group>"; };
+		108E6AB91A5E4D460065A582 /* CCell_Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Simple.m; sourceTree = "<group>"; };
+		108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Simple.xib; sourceTree = "<group>"; };
+		108E6ABD1A5E63C40065A582 /* CCell_SimpleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_SimpleHeader.h; sourceTree = "<group>"; };
+		108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_SimpleHeader.m; sourceTree = "<group>"; };
+		108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_SimpleHeader.xib; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -490,9 +500,15 @@
 		10A7DBD41A5D4A0600529EDC /* Extra Cell */ = {
 			isa = PBXGroup;
 			children = (
+				108E6ABD1A5E63C40065A582 /* CCell_SimpleHeader.h */,
+				108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */,
+				108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */,
 				10A7DBD51A5D4A2C00529EDC /* CCell_Dot.h */,
 				10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */,
 				10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */,
+				108E6AB81A5E4D460065A582 /* CCell_Simple.h */,
+				108E6AB91A5E4D460065A582 /* CCell_Simple.m */,
+				108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */,
 			);
 			path = "Extra Cell";
 			sourceTree = "<group>";
@@ -904,6 +920,7 @@
 				10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				107995991A3EBA62006EA4BA /* Localizable.strings in Resources */,
+				108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */,
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */,
@@ -912,6 +929,7 @@
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,
+				108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
 				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
 				10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */,
@@ -969,6 +987,7 @@
 				10C27DA51A35A5DC0006985C /* UIButton+WebCache.m in Sources */,
 				10C27DA61A35A5DC0006985C /* UIImage+GIF.m in Sources */,
 				10C27D921A35A5DC0006985C /* NSDate+Formatting.m in Sources */,
+				108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */,
 				10C27D901A35A5DC0006985C /* Base64.m in Sources */,
 				10C27D8E1A35A5DC0006985C /* AFURLResponseSerializerWithData.m in Sources */,
 				10C27D9A1A35A5DC0006985C /* DownloadManager.m in Sources */,
@@ -989,6 +1008,7 @@
 				10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */,
 				109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				10C27D9B1A35A5DC0006985C /* JSONParser.m in Sources */,
+				108E6ABB1A5E4D460065A582 /* CCell_Simple.m in Sources */,
 				10C27DAA1A35A5DC0006985C /* UIImageView+WebCache.m in Sources */,
 				10C27DA11A35A5DC0006985C /* SDWebImageDownloader.m in Sources */,
 				10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */,
@@ -1118,6 +1138,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1129,6 +1150,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

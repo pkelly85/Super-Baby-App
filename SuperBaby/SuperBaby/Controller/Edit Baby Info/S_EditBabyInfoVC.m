@@ -258,11 +258,11 @@
 #pragma mark - Update Baby Info
 -(void)updateBabyInfoNow
 {
-    @try
-    {
-        showHUD_with_Title(@"Updating Baby Info");
+    showHUD_with_Title(@"Updating Baby Info");
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        @try
+        {
             NSString *strBase64Image = [Base64 encode:UIImagePNGRepresentation(imgV.image)];
             
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
@@ -276,17 +276,15 @@
             
             
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_EDIT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(updateBabyInfoSuccessful:) withObject:self];
-        });
-        
-        
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@",exception.description);
-        hideHUD;
-        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
-    }
-    @finally {
-    }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
 }
 -(void)updateBabyInfoSuccessful:(id)objResponse
 {

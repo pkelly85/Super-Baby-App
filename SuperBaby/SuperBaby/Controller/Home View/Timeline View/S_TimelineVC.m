@@ -13,6 +13,8 @@
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
+    
+    JSONParser *parser;
 }
 @end
 
@@ -32,6 +34,80 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_TimeLine" bundle:nil] forCellReuseIdentifier:@"CCell_TimeLine"];
     tblView.delegate = self;
     tblView.dataSource = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //[self getTimeLine];
+    });
+}
+#pragma mark -
+#pragma mark - Add To Timeline
+-(void)getTimeLine
+{
+    
+    showHUD_with_Title(@"Getting Timeline");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        @try
+        {
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"PageNumber":@"1"};
+            
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getTimeLineSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)getTimeLineSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"GetTimelineResult"])
+    {
+        BOOL isTimeLineSuccess = [[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.Status"] boolValue];;
+        
+        if (isTimeLineSuccess)
+        {
+            @try
+            {
+                hideHUD;
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            @finally {
+            }
+            
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
 }
 
 #pragma mark - Table Delegate

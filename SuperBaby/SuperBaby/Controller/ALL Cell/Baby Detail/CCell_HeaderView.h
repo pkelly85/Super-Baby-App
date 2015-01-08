@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CCell_HeaderView : UITableViewHeaderFooterView
+@property(nonatomic,weak)IBOutlet UIView *viewContent;
 @property(nonatomic,weak)IBOutlet UILabel *lblTitle;
 @property(nonatomic,weak)IBOutlet UIButton *btnHeader;
 

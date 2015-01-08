@@ -14,6 +14,7 @@
 @interface S_AppDelegate ()
 {
     //MPMoviePlayerViewController *moviePlayer;
+    JSONParser *parser;
 }
 @end
 
@@ -117,6 +118,77 @@
     }
     return _isDataSourceAvailable;
 }
+#pragma mark -
+#pragma mark - Watch Video
+#pragma mark - Add To Timeline
+-(void)addMilestoneToTimeline_WatchVideo:(NSDictionary *)dictTemp withVideoID:(NSString *)strVideoID
+{
+    //Web_BABY_ADD_TIMELINE
+    /*
+     <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="UserToken" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="MilestoneID" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="VideoID" nillable="true" type="xs:string"/>
+     */
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        @try
+        {
+            NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_MILESTONE]];
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_WATCH_VIDEO_COMPLETE,
+                                       @"Message":strMessage,
+                                       @"MilestoneID":dictTemp[EV_ID],
+                                       @"VideoID":strVideoID};
+            
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(watchVideoSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+//            hideHUD;
+//            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)watchVideoSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+    }
+    else if([objResponse objectForKey:@"AddTimelineResult"])
+    {
+        BOOL isTimeLineAdded = [[objResponse valueForKeyPath:@"AddTimelineResult.ResultStatus.Status"] boolValue];;
+        
+        if (isTimeLineAdded)
+        {
+           
+        }
+        else
+        {
+            
+        }
+    }
+    else
+    {
+       
+    }
+}
+
+#pragma mark -
+#pragma mark - UIApplication
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

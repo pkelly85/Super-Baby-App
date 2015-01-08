@@ -41,7 +41,7 @@
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
-    
+    /*--- Get From PList ---*/
     arrExcercise_Age = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByAge" ofType:@"plist"]];
     arrExcercise_Milestone = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByMilestone" ofType:@"plist"]];
     

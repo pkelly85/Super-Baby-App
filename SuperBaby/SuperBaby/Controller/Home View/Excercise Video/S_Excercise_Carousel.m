@@ -95,7 +95,10 @@
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
 #warning - CHANGE URL HERE
+    //change error here
+    //[appDel addMilestoneToTimeline_WatchVideo:arrVideos[btnPlay.tag] withVideoID:arrVideos[btnPlay.tag][EV_ID]];
 
+    
     NSLog(@"Play : %ld",(long)btnPlay.tag);
     NSDictionary *dictVideo = arrVideos[btnPlay.tag];
     NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";

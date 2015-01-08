@@ -167,6 +167,10 @@
 #define TERMS_AGREE @"termsagree"
 //#define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
 /*-----------------------------------------------------------------------------*/
+//Types
+#define TYPE_MILESTONE_COMPLETE @"0"
+#define TYPE_WATCH_VIDEO_COMPLETE @"3"
+
 
 //For Excercise Video Keys
 #define EV_AGE @"age"
@@ -183,6 +187,9 @@
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
 
+/*-----------------------------------------------------------------------------*/
+#define img_radio_Off @"radio-icon"
+#define img_radio_On @"active-radio-icon"
 /*-----------------------------------------------------------------------------*/
 
 #pragma mark - Keyboard Animation Declaration of values

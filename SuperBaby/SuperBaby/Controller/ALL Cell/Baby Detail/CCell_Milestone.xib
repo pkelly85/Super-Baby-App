@@ -21,16 +21,16 @@
                             <constraint firstAttribute="height" constant="20" id="OYw-yw-8Nu"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-gZ-hYY">
-                        <rect key="frame" x="55" y="11" width="250" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PM-gZ-hYY">
+                        <rect key="frame" x="55" y="8" width="250" height="23"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2PM-gZ-hYY" secondAttribute="bottom" constant="12" id="6IT-XE-Z1I"/>
-                    <constraint firstItem="2PM-gZ-hYY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="TaZ-zb-6j0"/>
+                    <constraint firstItem="2PM-gZ-hYY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TaZ-zb-6j0"/>
                     <constraint firstItem="wwX-Na-DCY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bfk-i8-y6p"/>
                     <constraint firstItem="2PM-gZ-hYY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="eXk-lH-HBX"/>
                     <constraint firstAttribute="trailing" secondItem="2PM-gZ-hYY" secondAttribute="trailing" constant="15" id="gRf-St-QCc"/>

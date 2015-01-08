@@ -20,6 +20,7 @@
 @property(nonatomic,readwrite)BOOL allowRotation;
 - (BOOL)checkConnection:(void (^)(void))completion;
 //-(void)playMovieWithURL:(NSURL *)url withObject:(id)object;
+-(void)addMilestoneToTimeline_WatchVideo:(NSDictionary *)dictTemp withVideoID:(NSString *)strVideoID;
 
 @end
 

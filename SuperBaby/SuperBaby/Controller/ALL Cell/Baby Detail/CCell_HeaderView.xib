@@ -19,8 +19,8 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="cZG-JN-3C8"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-5s-5ZP">
@@ -57,6 +57,7 @@
             <connections>
                 <outlet property="btnHeader" destination="cjK-5s-5ZP" id="yqr-Mg-Gaa"/>
                 <outlet property="lblTitle" destination="dGa-9c-bbF" id="1d3-In-r3E"/>
+                <outlet property="viewContent" destination="Gmh-On-AjS" id="xkc-Br-2Yp"/>
             </connections>
             <point key="canvasLocation" x="401" y="163.5"/>
         </view>
