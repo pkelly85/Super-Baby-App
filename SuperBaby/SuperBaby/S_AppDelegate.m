@@ -137,12 +137,12 @@
         
         @try
         {
-            NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_MILESTONE]];
+            NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_Detail_title]];
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
                                        @"Type":TYPE_WATCH_VIDEO_COMPLETE,
                                        @"Message":strMessage,
-                                       @"MilestoneID":dictTemp[EV_ID],
+                                       @"MilestoneID":@"",
                                        @"VideoID":strVideoID};
             
             

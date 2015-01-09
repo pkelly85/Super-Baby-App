@@ -23,6 +23,8 @@
 
 #define Web_BABY_EDIT BASE_URL@"AddEditBabyInfo"
 
+#define Web_BABY_GET_TIMELINE_COMPLETE BASE_URL@"GetCompletedMilestones"
+
 #define Web_BABY_ADD_TIMELINE BASE_URL@"AddTimeline"
 #define Web_BABY_GET_TIMELINE BASE_URL@"GetTimeline"
 #endif

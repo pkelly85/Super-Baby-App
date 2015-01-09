@@ -106,10 +106,15 @@
     obj.isAgeSelected = isAgeSelected;
     
     if (isAgeSelected)
+    {
+        obj.strTitle = arrExcercise_Age[indexPath.row][EV_AGE];
         obj.dictInfo = arrExcercise_Age[indexPath.row];
+    }
     else
+    {
+        obj.strTitle = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
         obj.dictInfo = arrExcercise_Milestone[indexPath.row];
-    
+    }
     [self.navigationController pushViewController:obj animated:YES];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

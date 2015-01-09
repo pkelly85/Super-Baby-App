@@ -11,4 +11,6 @@
 @interface S_Excercise_Carousel : UIViewController
 @property(nonatomic,strong)NSDictionary *dictInfo;
 @property(nonatomic,readwrite)BOOL isAgeSelected;
+@property(nonatomic,strong)NSString *strTitle;;
+
 @end

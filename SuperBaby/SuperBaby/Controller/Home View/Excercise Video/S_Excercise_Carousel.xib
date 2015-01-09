@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_Carousel">
             <connections>
                 <outlet property="carousel" destination="ENp-1O-R8c" id="4xX-Ht-7QY"/>
+                <outlet property="lblTitle" destination="OJr-uy-JTT" id="Xs5-nc-coB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

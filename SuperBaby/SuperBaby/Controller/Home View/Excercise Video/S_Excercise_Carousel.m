@@ -16,6 +16,7 @@
 #import "CustomMoviePlayerViewController.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
+    __weak IBOutlet UILabel *lblTitle;
     NSMutableArray *arrVideos;    
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
@@ -33,6 +34,8 @@
     [super viewDidLoad];
     
     NSLog(@"dictInfo : %@",_dictInfo);
+    lblTitle.text = _strTitle;
+    
     NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Videos" ofType:@"plist"]];
     NSArray *arrVideosID = [NSArray arrayWithArray:_dictInfo[EV_VIDEOS]];
 
@@ -96,7 +99,8 @@
 {
 #warning - CHANGE URL HERE
     //change error here
-    //[appDel addMilestoneToTimeline_WatchVideo:arrVideos[btnPlay.tag] withVideoID:arrVideos[btnPlay.tag][EV_ID]];
+    NSLog(@"%@",arrVideos[btnPlay.tag]);
+    [appDel addMilestoneToTimeline_WatchVideo:arrVideos[btnPlay.tag] withVideoID:arrVideos[btnPlay.tag][EV_ID]];
 
     
     NSLog(@"Play : %ld",(long)btnPlay.tag);

@@ -13,6 +13,8 @@
 @interface CustomMoviePlayerViewController()
 {
     __weak IBOutlet UILabel *lblDescription;
+    __weak IBOutlet UILabel *lblTransperant;
+
 }
 @end
 
@@ -35,7 +37,10 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor clearColor];
     lblDescription.alpha = 0.0;
+    lblTransperant.alpha = 0.0;
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -70,6 +75,8 @@
         NSLog(@"done");
         [UIView animateWithDuration:0.5 animations:^{
             lblDescription.alpha = 0.0;
+            lblTransperant.alpha = 0.0;
+
         } completion:^(BOOL finished) {
             
         }];
@@ -83,7 +90,10 @@
 
         if (mp.currentPlaybackTime >= startTime && mp.currentPlaybackTime <= startTime+durationToShow)
         {
+            lblDescription.text = @"Baby Text";
             lblDescription.alpha = 1.0;
+            lblTransperant.alpha = 0.1;
+
         }
         else
         {
@@ -92,6 +102,8 @@
                 NSLog(@"Index : %ld",(long)currentIndex);
             }
             lblDescription.alpha = 0.0;
+            lblTransperant.alpha = 0.0;
+
         }
     }
     
@@ -119,8 +131,10 @@
           
         // Add movie player as subview
         [self.view addSubview:mp.view];
-
+        
+        [self.view bringSubviewToFront:lblTransperant];
         [self.view bringSubviewToFront:lblDescription];
+        
         // Play the movie
         [mp play];
 	}
@@ -200,6 +214,8 @@
 {
     [self invalidTimer];
     NSLog(@"MOVIE FINISH");
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 /*---------------------------------------------------------------------------

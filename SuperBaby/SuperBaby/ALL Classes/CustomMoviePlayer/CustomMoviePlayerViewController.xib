@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomMoviePlayerViewController">
             <connections>
                 <outlet property="lblDescription" destination="4h8-xN-rMG" id="qky-e6-y5g"/>
+                <outlet property="lblTransperant" destination="cUq-aV-xrZ" id="1e2-yf-htM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aRy-4q-42X"/>
             </connections>
         </placeholder>
@@ -15,18 +17,29 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h8-xN-rMG">
-                    <rect key="frame" x="20" y="70" width="440" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h8-xN-rMG">
+                    <rect key="frame" x="20" y="70" width="42" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUq-aV-xrZ" userLabel="Transperant">
+                    <rect key="frame" x="15" y="65" width="52" height="31"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="4h8-xN-rMG" secondAttribute="trailing" constant="20" id="B0d-ng-o7s"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4h8-xN-rMG" secondAttribute="trailing" priority="750" constant="20" id="B0d-ng-o7s"/>
+                <constraint firstItem="4h8-xN-rMG" firstAttribute="leading" secondItem="cUq-aV-xrZ" secondAttribute="leading" constant="5" id="M2K-24-P89"/>
+                <constraint firstItem="4h8-xN-rMG" firstAttribute="top" secondItem="cUq-aV-xrZ" secondAttribute="top" constant="5" id="Obq-yO-cWQ"/>
+                <constraint firstItem="4h8-xN-rMG" firstAttribute="trailing" secondItem="cUq-aV-xrZ" secondAttribute="trailing" constant="-5" id="Sf7-ik-VoF"/>
                 <constraint firstItem="4h8-xN-rMG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Yz1-wO-ce7"/>
-                <constraint firstAttribute="bottom" secondItem="4h8-xN-rMG" secondAttribute="bottom" priority="250" constant="64" id="Zfz-Ne-2HG"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4h8-xN-rMG" secondAttribute="bottom" priority="750" constant="64" id="Zfz-Ne-2HG"/>
+                <constraint firstItem="4h8-xN-rMG" firstAttribute="bottom" secondItem="cUq-aV-xrZ" secondAttribute="bottom" constant="-5" id="abQ-RF-3W6"/>
                 <constraint firstItem="4h8-xN-rMG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="hy5-Hf-t5j"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

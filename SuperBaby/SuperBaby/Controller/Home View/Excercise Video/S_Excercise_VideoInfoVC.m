@@ -73,13 +73,21 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Dot" bundle:nil] forCellReuseIdentifier:@"CCell_Dot"];
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
     [tblView reloadData];
+    
+    
+    if (arrMilestones.count > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self getTimeLine];
+        });
+    }
+    
 }
 -(IBAction)btnPlayClicked:(UIButton *)btnPlay
 {
 #warning - CHANGE URL HERE
     
     //change error here
-    //[appDel addMilestoneToTimeline_WatchVideo:arrMilestones[btnPlay.tag] withVideoID:_dictInfo[EV_ID]];
+    [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
     
     NSLog(@"Play : %ld",(long)btnPlay.tag);
     NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
@@ -89,12 +97,83 @@
     
     NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
                          @{@"startT" : @4,@"dur":@1},
-                         @{@"startT" : @7,@"dur":@1}];
+                         @{@"startT" : @7,@"du0r":@1}];
     CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
     moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:moviePlayer animated:YES completion:^{
         [moviePlayer readyPlayer];
     }];
+}
+#pragma mark -
+#pragma mark - Get Timeline
+-(void)getTimeLine
+{
+    showHUD_with_Title(@"Getting Milestone");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        @try
+        {
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token};
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE_COMPLETE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getTimeLineSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)getTimeLineSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"GetCompletedMilestonesResult"])
+    {
+        BOOL isTimeLineAdded = [[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.ResultStatus.Status"] boolValue];;
+        
+        if (isTimeLineAdded)
+        {
+            @try
+            {
+                hideHUD;
+                /*--- Add all ids in array to check which milestone is completed ---*/
+                [arrSelected addObjectsFromArray:[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.lstCompletedMilestones"]];
+                [tblView reloadData];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            @finally {
+            }
+            
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
 }
 
 #pragma mark - Table Delegate
@@ -192,7 +271,8 @@
     cellMilestone.backgroundColor = [UIColor clearColor];
     cellMilestone.selectionStyle = UITableViewCellSelectionStyleNone;
     cellMilestone.lblDescription.text = arrMilestones[indexPath.row][EV_MILESTONE];
-    if ([arrSelected containsObject:arrMilestones[indexPath.row][EV_ID]])
+    NSString *strMID = [NSString stringWithFormat:@"%@",arrMilestones[indexPath.row][EV_ID]];
+    if ([arrSelected containsObject:strMID])
         cellMilestone.imgV_On_Off.image = [UIImage imageNamed:img_radio_On];
     else
         cellMilestone.imgV_On_Off.image = [UIImage imageNamed:img_radio_Off];

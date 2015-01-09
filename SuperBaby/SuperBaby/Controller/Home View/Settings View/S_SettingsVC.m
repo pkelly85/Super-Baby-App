@@ -73,6 +73,8 @@
 
 -(IBAction)btnLogOutClicked:(id)sender
 {
+    babyModelGlobal = nil;
+    myUserModelGlobal = nil;
     [UserDefaults removeObjectForKey:USER_INFO];
     [UserDefaults removeObjectForKey:BABY_INFO];
     [UserDefaults synchronize];
