@@ -21,6 +21,9 @@
 #define Web_REGISTER BASE_URL@"RegisterUser"
 #define Web_LOGIN_WITH_FB BASE_URL@"LoginWithFacebook"
 
+#define Web_FORGET_PASS BASE_URL@"ForgotPassword"
+
+
 #define Web_BABY_EDIT BASE_URL@"AddEditBabyInfo"
 
 #define Web_BABY_GET_TIMELINE_COMPLETE BASE_URL@"GetCompletedMilestones"

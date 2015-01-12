@@ -51,14 +51,14 @@ static char imageURLKey;
     
     if (url) {
         __weak UIImageView *wself = self;
-        [self showActivity];
+        //[self showActivity];
         id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL)
         {
             
-            if (finished)
-            {
-                [self hideActivity];
-            }
+//            if (finished)
+//            {
+//                [self hideActivity];
+//            }
 
             
             if (!wself) return;
@@ -135,7 +135,7 @@ static char imageURLKey;
 }
 
 - (void)sd_cancelCurrentImageLoad {
-    [self hideActivity];
+    //[self hideActivity];
     [self sd_cancelImageLoadOperationWithKey:@"UIImageViewImageLoad"];
 }
 

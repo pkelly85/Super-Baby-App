@@ -12,7 +12,7 @@
 #import "AppConstant.h"
 
 #import "S_HomeVC.h"
-@interface S_LoginVC ()<UITextFieldDelegate>
+@interface S_LoginVC ()<UITextFieldDelegate,UIAlertViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
     
@@ -42,7 +42,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    txtEmail.text = @"";
+    txtPassword.text = @"";
 }
+
 -(void)setupTextField
 {
     UIView *vEmailPadding = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
@@ -244,6 +247,145 @@
         [self.navigationController pushViewController:obj animated:NO];
     }
 }
+#pragma mark - Forget Password
+-(IBAction)btnForgetPassClicked:(id)sender
+{
+    if (ios8) {
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"Forget Password" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+        }];
+        UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+        {
+            UITextField *txtF = alertC.textFields[0];
+            NSString *strT = [[NSString stringWithFormat:@"%@",txtF.text] isNull];
+            [self checkValidEmail:strT];
+        }];
+        
+        [alertC addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Email";
+            textField.keyboardType = UIKeyboardTypeEmailAddress;
+            textField.font = kFONT_LIGHT(15.0);
+        }];
+        
+        [alertC addAction:cancelAction];
+        [alertC addAction:OKAction];
+        [self presentViewController:alertC animated:YES completion:^{
+            
+        }];
+    }
+    else
+    {
+        UIAlertView *alertV = [[UIAlertView alloc]initWithTitle:@"Forget Password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        alertV.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertV textFieldAtIndex:0].placeholder = @"Email";
+        [alertV textFieldAtIndex:0].keyboardType = UIKeyboardTypeEmailAddress;
+        [alertV textFieldAtIndex:0].font = kFONT_LIGHT(15.0);
+        [alertV show];
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            
+            break;
+        case 1:
+        {
+            NSString *strT = [[NSString stringWithFormat:@"%@",[alertView textFieldAtIndex:0].text] isNull];
+            [self checkValidEmail:strT];
+        }
+            break;
+        default:
+            break;
+    }
+}
+-(void)checkValidEmail:(NSString *)strEmailID
+{
+    if ([strEmailID isEqualToString:@""])
+    {
+        showHUD_with_error(@"Please add Email id");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hideHUD;
+            [self btnForgetPassClicked:nil];
+        });
+    }
+    else if(![strEmailID StringIsValidEmail])
+    {
+        showHUD_with_error(@"Please Enter valid Email");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hideHUD;
+            [self btnForgetPassClicked:nil];
+        });
+    }
+    else
+    {
+        [self forgetPassword:strEmailID];
+    }
+}
+- (NSString*)GetCurrentDate
+{
+   NSDateFormatter *dateFormatter= [[NSDateFormatter alloc] init];
+   [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+   [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+   NSDate *DateNow = [NSDate date];
+   NSString *strStartDate = [dateFormatter stringFromDate:DateNow];
+   return strStartDate;
+}
+#pragma mark - Register Now
+-(void)forgetPassword:(NSString *)strEmail
+{
+    @try
+    {
+        showHUD_with_Title(@"Please wait");
+        NSDictionary *dictReg = @{@"EmailAddress":strEmail,
+                                @"CurrentLocalTime":[self GetCurrentDate]};
+        parser = [[JSONParser alloc]initWith_withURL:Web_FORGET_PASS withParam:dictReg withData:nil withType:kURLPost withSelector:@selector(forgetPasswordSuccessful:) withObject:self];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception.description);
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+    }
+    @finally {
+    }
+}
+-(void)forgetPasswordSuccessful:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"ForgotPasswordResult"])
+    {
+        @try
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"ForgotPasswordResult.StatusMessage"] withMessage:nil withViewController:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+        }
+        
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+}
+
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;

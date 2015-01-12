@@ -11,6 +11,7 @@
 #import "S_MilestoneVC.h"
 
 #import "S_RedFlagVC.h"
+#import "S_EditBabyInfoVC.h"
 @interface S_BabyDetailVC ()
 {
     __weak IBOutlet UIView *viewTop;
@@ -32,7 +33,7 @@
     
     if (![babyModelGlobal.ImageURL isEqualToString:@""])
     {
-        [imgVBaby sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+        [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
@@ -70,6 +71,8 @@
 }
 -(IBAction)btnEditBabyInfoClicked:(id)sender
 {
+    S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
 }
 
 #pragma mark - Extra

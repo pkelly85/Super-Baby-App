@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -8,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_SettingsVC">
             <connections>
                 <outlet property="btnAccountUpdate" destination="CBu-cl-Wtp" id="TLx-0S-Jcp"/>
+                <outlet property="btnLogin_Logout" destination="iR3-hk-67t" id="ouz-vF-TUX"/>
                 <outlet property="btnRestorePurchase" destination="V54-t7-JPv" id="UbR-Sr-7sX"/>
                 <outlet property="imgVBaby" destination="eJ5-95-oSg" id="c6F-tO-e9s"/>
                 <outlet property="view" destination="ZQG-0l-7oT" id="SyR-f3-CRd"/>

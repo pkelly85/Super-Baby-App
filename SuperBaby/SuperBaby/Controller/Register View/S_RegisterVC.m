@@ -64,6 +64,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    txtEmail.text = @"";
+    txtPassword.text = @"";
 }
 -(void)setupTextField
 {

@@ -23,7 +23,7 @@
 #import "NSDate+Formatting.h"
 
 #import "UIImage+KTCategory.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 //#import "UINavigationController+Rotation_IOS6.h"
 //#import "DACircularProgressView.h"
 

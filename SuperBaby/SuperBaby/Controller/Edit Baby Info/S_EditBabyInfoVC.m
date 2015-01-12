@@ -50,6 +50,7 @@
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UIImageView *imgV;
     __weak IBOutlet UITextField *txtBabyName;
+    __weak IBOutlet UIButton *btnBack;
     
     /*--- piker ---*/
     IBOutlet UIView *viewPiker;
@@ -100,7 +101,7 @@
     // Device
 #endif
     [self setupPickerView];
-    [self setDefaultText];
+    
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTopNavigation withColor:RGBCOLOR_GREY];
@@ -127,6 +128,46 @@
             lbl.textColor = RGBCOLOR(100, 100, 100);
         }
     }
+    
+    if (_isEditingFirstTime)
+    {
+        btnBack.hidden = YES;
+        [self setDefaultText];
+    }
+    else
+    {
+        btnBack.hidden = NO;
+        [self showBabyInfo];
+    }
+    
+    txtBabyName.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    
+    
+}
+-(void)showBabyInfo
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+    
+    txtBabyName.text = babyModelGlobal.Name;
+    NSArray *arrTemp = [babyModelGlobal.Birthday componentsSeparatedByString:@" "];
+    NSDate *dTemp = [arrTemp[0] getDate_withCurrentFormate:@"MM/dd/yyyy"];
+    
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone localTimeZone] secondsFromGMT];
+    dob = [dTemp dateByAddingTimeInterval:timeZoneSeconds];
+    
+    
+    //dob = [babyModelGlobal.Birthday get_UTC_Date_with_currentformat:@"MM/dd/yyyy HH:mm:ss" Type:0];
+    txt_b_Date.text = [dob convertDateinFormat:@"dd"];
+    txt_b_Month.text = [dob convertDateinFormat:@"MMMM"];
+    txt_b_Year.text = [dob convertDateinFormat:@"yyyy"];
+    
+    txt_height.text = babyModelGlobal.Height;
+    txt_w_pound.text = babyModelGlobal.WeightPounds;
+    txt_w_ounces.text = babyModelGlobal.WeightOunces;
+
 }
 -(void)setupPickerView
 {
@@ -203,21 +244,24 @@
     {
         //[self btnTakePhotoClicked:nil];
         UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:@"Select Image from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Choose Existing" ,nil];
+        actionSheet.tag = 100;
         [actionSheet showInView:self.view];
         
     }
 }
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 0:
-            [self btnTakePhotoClicked:nil];
-            break;
-        case 1:
-            [self btnChoosePhotoClicked:nil];
-            break;
-        default:
-            break;
+    if (actionSheet.tag == 100) {
+        switch (buttonIndex) {
+            case 0:
+                [self btnTakePhotoClicked:nil];
+                break;
+            case 1:
+                [self btnChoosePhotoClicked:nil];
+                break;
+            default:
+                break;
+        }
     }
 }
 -(void)btnChoosePhotoClicked:(id)sender

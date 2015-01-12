@@ -92,12 +92,18 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
-    cell.imgV.image = [UIImage imageNamed:@"babby"];
+    
     
     if (isAgeSelected)
+    {
         cell.lblTitle.text = arrExcercise_Age[indexPath.row][EV_AGE];
+        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-age%ld",(long)indexPath.row+1]];
+    }
     else
+    {
         cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
+        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-milestone%ld",(long)indexPath.row+1]];
+    }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

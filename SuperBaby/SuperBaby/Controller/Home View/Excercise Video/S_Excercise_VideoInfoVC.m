@@ -46,7 +46,7 @@
     [super viewDidLoad];
     
     lblTitle.text = _dictInfo[EV_Detail_title];
-    imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
+    //imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
     lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
     lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
 
@@ -289,9 +289,18 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1)
+    {
         selectedIndex = indexPath.row;
-        [self addMilestoneToTimeline_withIndex];
+
+        NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
+        if ([arrSelected containsObject:strID])
+        {
+        }
+        else
+            [self addMilestoneToTimeline_withIndex];
+        
+        
     }
 }
 #pragma mark -
@@ -361,7 +370,7 @@
                 hideHUD;
                 
                 /*--- add to array and reload ---*/
-                NSString *strID = arrMilestones[selectedIndex][EV_ID];
+                NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
                 if ([arrSelected containsObject:strID])
                     [arrSelected removeObject:strID];
                 else

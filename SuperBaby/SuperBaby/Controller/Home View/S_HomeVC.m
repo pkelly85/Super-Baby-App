@@ -35,38 +35,34 @@
     {
         if (![babyModelGlobal.ImageURL isEqualToString:@""])
         {
-            [imgV sd_setImageWithURL:ImageURL(babyModelGlobal.ImageURL)];
+            [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL)  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         }
         lblName.text = babyModelGlobal.Name;
         imgV.userInteractionEnabled = YES;
         viewGuest.hidden = YES;
         viewUser.backgroundColor = [UIColor clearColor];
+        
+        UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(babyImageTapped)];
+        tapGest.numberOfTapsRequired = 1;
+        [imgV addGestureRecognizer:tapGest];
     }
     else
     {
         viewUser.hidden = YES;
     }
-
-    UITapGestureRecognizer *tapGest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(babyImageTapped)];
-    tapGest.numberOfTapsRequired = 1;
-    [imgV addGestureRecognizer:tapGest];
 }
 
 #pragma mark - Methods
 -(void)babyImageTapped
 {
-    if (myUserModelGlobal) {
-        S_BabyDetailVC *obj = [[S_BabyDetailVC alloc]initWithNibName:@"S_BabyDetailVC" bundle:nil];
-        [self.navigationController pushViewController:obj animated:YES];
-    }
-    else
-    {
-        S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
-        [self.navigationController pushViewController:obj animated:YES];
-    }
-    
+    S_BabyDetailVC *obj = [[S_BabyDetailVC alloc]initWithNibName:@"S_BabyDetailVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
 }
-
+-(IBAction)btnGetStartedClicked:(id)sender
+{
+    S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
+}
 -(IBAction)btnExcerciseVideoClicked:(id)sender
 {
     S_ExcerciseVideoVC *obj = [[S_ExcerciseVideoVC alloc]initWithNibName:@"S_ExcerciseVideoVC" bundle:nil];
@@ -84,7 +80,6 @@
         S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
         [self.navigationController pushViewController:obj animated:YES];
     }
-    
 }
 
 -(IBAction)btnSettingsClicked:(id)sender
