@@ -77,7 +77,7 @@
     
     if (arrMilestones.count > 0) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self getTimeLine];
+            [self getMilestone];
         });
     }
     
@@ -87,26 +87,34 @@
 #warning - CHANGE URL HERE
     
     //change error here
-    [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
-    
-    NSLog(@"Play : %ld",(long)btnPlay.tag);
-    NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-    //NSString *strURL = dictVideo[EV_Detail_url];
-    
-    NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
-    
-    NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
-                         @{@"startT" : @4,@"dur":@1},
-                         @{@"startT" : @7,@"du0r":@1}];
-    CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-    moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:moviePlayer animated:YES completion:^{
-        [moviePlayer readyPlayer];
-    }];
+    if ([appDel checkConnection:nil]) {
+        [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
+        NSLog(@"%@",_dictInfo);
+        //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+        NSString *strURL = _dictInfo[EV_Detail_url];
+        
+        NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
+        
+        NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
+                             @{@"startT" : @4,@"dur":@1},
+                             @{@"startT" : @7,@"du0r":@1}];
+        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:moviePlayer animated:YES completion:^{
+            [moviePlayer readyPlayer];
+        }];
+    }
+    else
+    {
+        showHUD_with_error(NSLocalizedString(@"str_No_Internet", nil));
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hideHUD;
+        });
+    }
 }
 #pragma mark -
-#pragma mark - Get Timeline
--(void)getTimeLine
+#pragma mark - Get Milestone
+-(void)getMilestone
 {
     showHUD_with_Title(@"Getting Milestone");
     
@@ -117,7 +125,7 @@
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token};
             
-            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE_COMPLETE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getTimeLineSuccess:) withObject:self];
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE_COMPLETE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getMilestoneSuccess:) withObject:self];
         }
         @catch (NSException *exception) {
             NSLog(@"%@",exception.description);
@@ -128,7 +136,7 @@
         }
     });
 }
--(void)getTimeLineSuccess:(id)objResponse
+-(void)getMilestoneSuccess:(id)objResponse
 {
     NSLog(@"Response > %@",objResponse);
     if (![objResponse isKindOfClass:[NSDictionary class]])

@@ -46,13 +46,11 @@
     showHUD_with_Title(@"Getting Timeline");
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
         @try
         {
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
                                        @"PageNumber":@"1"};
-            
             
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getTimeLineSuccess:) withObject:self];
         }

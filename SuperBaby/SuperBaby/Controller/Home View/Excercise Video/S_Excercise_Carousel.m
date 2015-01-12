@@ -99,28 +99,35 @@
 {
 #warning - CHANGE URL HERE
     //change error here
-    NSLog(@"%@",arrVideos[btnPlay.tag]);
-    [appDel addMilestoneToTimeline_WatchVideo:arrVideos[btnPlay.tag] withVideoID:arrVideos[btnPlay.tag][EV_ID]];
+    if ([appDel checkConnection:nil])
+    {
+        NSDictionary *dictVideo = arrVideos[btnPlay.tag];
 
+        [appDel addMilestoneToTimeline_WatchVideo:dictVideo withVideoID:dictVideo[EV_ID]];
+        
+        NSLog(@"Play : %ld",(long)btnPlay.tag);
+        //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+        NSString *strURL = dictVideo[EV_Detail_url];
+        
+        NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+        
+        NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
+                             @{@"startT" : @4,@"dur":@1},
+                             @{@"startT" : @7,@"dur":@1}];
+        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:moviePlayer animated:YES completion:^{
+            [moviePlayer readyPlayer];
+        }];
+    }
+    else
+    {
+        showHUD_with_error(NSLocalizedString(@"str_No_Internet", nil));
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hideHUD;
+        });
+    }
     
-    NSLog(@"Play : %ld",(long)btnPlay.tag);
-    NSDictionary *dictVideo = arrVideos[btnPlay.tag];
-    NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-    //NSString *strURL = dictVideo[EV_Detail_url];
-    
-    NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
-
-    
-    NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
-                         @{@"startT" : @4,@"dur":@1},
-                         @{@"startT" : @7,@"dur":@1}];
-    CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-    moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:moviePlayer animated:YES completion:^{
-        [moviePlayer readyPlayer];
-    }];
-    
-    //[appDel playMovieWithURL:[NSURL URLWithString:strURL] withObject:self];
 }
 
 -(void)btnInfoClicked:(UIButton *)btnInfo
