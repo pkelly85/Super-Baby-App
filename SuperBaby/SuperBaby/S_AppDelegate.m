@@ -132,30 +132,31 @@
      <xs:element minOccurs="0" name="MilestoneID" nillable="true" type="xs:string"/>
      <xs:element minOccurs="0" name="VideoID" nillable="true" type="xs:string"/>
      */
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        @try
-        {
-            NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_Detail_title]];
-            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
-                                       @"UserToken":myUserModelGlobal.Token,
-                                       @"Type":TYPE_WATCH_VIDEO_COMPLETE,
-                                       @"Message":strMessage,
-                                       @"MilestoneID":@"",
-                                       @"VideoID":strVideoID};
+    if (myUserModelGlobal) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
-            
-            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(watchVideoSuccess:) withObject:self];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@",exception.description);
-//            hideHUD;
-//            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
-        }
-        @finally {
-        }
-    });
+            @try
+            {
+                NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_Detail_title]];
+                NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                           @"UserToken":myUserModelGlobal.Token,
+                                           @"Type":TYPE_WATCH_VIDEO_COMPLETE,
+                                           @"Message":strMessage,
+                                           @"MilestoneID":@"",
+                                           @"VideoID":strVideoID};
+                
+                
+                parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(watchVideoSuccess:) withObject:self];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+    //            hideHUD;
+    //            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+            }
+            @finally {
+            }
+        });
+    }
 }
 -(void)watchVideoSuccess:(id)objResponse
 {
