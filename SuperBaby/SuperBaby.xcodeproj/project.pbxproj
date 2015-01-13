@@ -1151,7 +1151,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
+				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
 			};
 			name = Debug;
 		};
@@ -1161,12 +1161,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SB APP LLC (869E8S244Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SB APP LLC (869E8S244Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
+				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
 			};
 			name = Release;
 		};
