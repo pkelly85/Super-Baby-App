@@ -76,9 +76,12 @@
     
     
     if (arrMilestones.count > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self getMilestone];
-        });
+        if (myUserModelGlobal) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self getMilestone];
+            });
+        }
+
     }
     
 }
@@ -289,18 +292,15 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1)
-    {
-        selectedIndex = indexPath.row;
-
-        NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
-        if ([arrSelected containsObject:strID])
+    if (myUserModelGlobal) {
+        if (indexPath.section == 1)
         {
+            selectedIndex = indexPath.row;
+            
+            NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
+            if (![arrSelected containsObject:strID])
+                [self addMilestoneToTimeline_withIndex];
         }
-        else
-            [self addMilestoneToTimeline_withIndex];
-        
-        
     }
 }
 #pragma mark -

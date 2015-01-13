@@ -11,11 +11,12 @@
 
 #pragma mark - Web Service Section
 
+#warning - Local
+//#define BASE_URL @"http://192.168.0.4/SuperBabyWCF/Service1.svc/"
+//#define IMAGE_BASE_URL @"http://192.168.0.4/SuperBabyWCF/ImageUpload/"
 
-#define BASE_URL @"http://192.168.0.4/SuperBabyWCF/Service1.svc/"
-#define IMAGE_BASE_URL @"http://192.168.0.4/SuperBabyWCF/ImageUpload/"
-
-
+#define BASE_URL  @"http://183.182.91.146/SuperBabyWCF/Service1.svc/"
+#define IMAGE_BASE_URL @"http://183.182.91.146/SuperBabyWCF/ImageUpload/"
 
 #define Web_LOGIN BASE_URL@"Login"
 #define Web_REGISTER BASE_URL@"RegisterUser"
