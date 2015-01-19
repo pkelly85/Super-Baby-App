@@ -31,14 +31,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (![babyModelGlobal.ImageURL isEqualToString:@""])
-    {
-        [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    }
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     [self setAttibutedText];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
 }
 -(void)setAttibutedText
 {

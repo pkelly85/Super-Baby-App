@@ -12,7 +12,7 @@
 #import "UITextFiledWithoutInteraction.h"
 #import "S_HomeVC.h"
 
-
+#import <AVFoundation/AVFoundation.h>
 
 
 #define BIRTHDATE_SELECT @"birthdateSelected"
@@ -93,7 +93,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    isBabyInfoUpdatedGlobal = NO;
 #if TARGET_IPHONE_SIMULATOR
     //Simulator
     txtBabyName.text = @"Layla";
@@ -209,7 +209,7 @@
     }
     else
     {
-        [self updateBabyInfoNow];
+        [self downloadImageIfNeeded];
     }
     
 }
@@ -283,6 +283,44 @@
 }
 -(void)btnTakePhotoClicked:(id)sender
 {
+    [self checkCameraAccessAvailable];
+}
+-(void)checkCameraAccessAvailable
+{
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if(authStatus == AVAuthorizationStatusAuthorized)
+    {
+        [self openCamera];
+    }
+    else if(authStatus == AVAuthorizationStatusNotDetermined)
+    {
+        NSLog(@"%@", @"Camera access not determined. Ask for permission.");
+        
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted)
+         {
+             if(granted)
+             {
+                 NSLog(@"Granted access to %@", AVMediaTypeVideo);
+                 [self openCamera];
+             }
+             else
+             {
+                 NSLog(@"Not granted access to %@", AVMediaTypeVideo);
+                 [self camDenied];
+             }
+         }];
+    }
+    else if (authStatus == AVAuthorizationStatusRestricted)
+    {
+        [CommonMethods displayAlertwithTitle:@"Error" withMessage:@"You've been restricted from using the camera on this device. Without camera access this feature won't work. Please contact the device owner so they can give you access." withViewController:self];
+    }
+    else
+    {
+        [self camDenied];
+    }
+}
+-(void)openCamera
+{
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         UIImagePickerController *picker = [UIImagePickerController new];
@@ -295,20 +333,122 @@
     }
     else
     {
-        [CommonMethods displayAlertwithTitle:@"oops!" withMessage:@"Your device doesn't support Camera." withViewController:self];
+        [CommonMethods displayAlertwithTitle:@"Your device doesn't support Camera" withMessage:nil withViewController:self];
     }
 }
+
+
+- (void)camDenied
+{
+    NSLog(@"%@", @"Denied camera access");
+    
+    NSString *alertText;
+    NSString *alertButton;
+    
+    BOOL canOpenSettings = (&UIApplicationOpenSettingsURLString != NULL);
+    if (canOpenSettings)
+    {
+        alertText = @"It looks like your privacy settings are preventing us from accessing your camera. You can fix this by doing the following:\n\n1. Touch the Go button below to open the Settings app.\n\n2. Touch Privacy.\n\n3. Turn the Camera on.\n\n4. Open this app and try again.";
+        
+        alertButton = @"Go";
+    }
+    else
+    {
+        alertText = @"It looks like your privacy settings are preventing us from accessing your camera. You can fix this by doing the following:\n\n1. Close this app.\n\n2. Open the Settings app.\n\n3. Scroll to the bottom and select this app in the list.\n\n4. Touch Privacy.\n\n5. Turn the Camera on.\n\n6. Open this app and try again.";
+        
+        alertButton = @"OK";
+    }
+    
+    if (ios8)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:alertText preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:alertButton style:UIAlertActionStyleCancel  handler:^(UIAlertAction * action)
+                                       {
+                                           BOOL canOpenSettings = (&UIApplicationOpenSettingsURLString != NULL);
+                                           if (canOpenSettings)
+                                               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                       }];
+        
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:alertText
+                              delegate:self
+                              cancelButtonTitle:alertButton
+                              otherButtonTitles:nil];
+        alert.tag = 3491832;
+        [alert show];
+    }
+    
+}
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 3491832)
+    {
+        BOOL canOpenSettings = (&UIApplicationOpenSettingsURLString != NULL);
+        if (canOpenSettings)
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    }
+}
+
 #pragma mark -
 #pragma mark - Update Baby Info
--(void)updateBabyInfoNow
+-(void)downloadImageIfNeeded
 {
     showHUD_with_Title(@"Updating Baby Info");
-
+    __block NSString *strBase64Image = @"";// = [Base64 encode:UIImagePNGRepresentation(imgV.image)];
+    
+    /*--- if image nil then check if first time
+     if not first time then check if url is nil or not
+     if url is not nil then download image first then update info ---*/
+    if (imgV.image == nil)
+    {
+        if (babyModelGlobal)
+        {
+            if (![babyModelGlobal.ImageURL isEqualToString:@""])
+            {
+                //download image then update
+                [[SDWebImageDownloader sharedDownloader]
+                 downloadImageWithURL:[NSURL URLWithString:ImageURL(babyModelGlobal.ImageURL)]
+                 options:SDWebImageDownloaderUseNSURLCache
+                 progress:^(NSInteger receivedSize, NSInteger expectedSize)
+                {
+                    
+                } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                    if (finished) {
+                        if (image)
+                        {
+                            imgV.image = image;
+                            strBase64Image = [Base64 encode:UIImagePNGRepresentation(image)];
+                            [self updateBabyInfoNow:strBase64Image];
+                        }
+                    }
+                }];
+                
+            }
+            else
+            {
+                [self updateBabyInfoNow:strBase64Image];
+            }
+        }
+        else
+            [self updateBabyInfoNow:strBase64Image];
+    }
+    else
+    {
+        strBase64Image = [Base64 encode:UIImagePNGRepresentation(imgV.image)];
+        [self updateBabyInfoNow:strBase64Image];
+    }
+}
+-(void)updateBabyInfoNow:(NSString *)strBase64Image
+{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         @try
         {
-            NSString *strBase64Image = [Base64 encode:UIImagePNGRepresentation(imgV.image)];
-            
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
                                        @"Name":[txtBabyName.text isNull],
@@ -329,6 +469,7 @@
         @finally {
         }
     });
+    
 }
 -(void)updateBabyInfoSuccessful:(id)objResponse
 {
@@ -358,7 +499,7 @@
                 babyModelGlobal = [S_BabyInfoModel addMyBaby:[objResponse valueForKeyPath:@"AddEditBabyInfoResult.GetBabyResult"]];
                 [CommonMethods saveMyBaby:babyModelGlobal];
                 babyModelGlobal = [CommonMethods getMyBaby];
-                
+                isBabyInfoUpdatedGlobal = YES;
                 if (_isEditingFirstTime) {
                     S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
                     [self.navigationController pushViewController:obj animated:YES];
@@ -501,16 +642,18 @@
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    /*
     if ([strSelected isEqualToString:WEIGHT_SELECT])
     {
 
-        NSString *strPound = arrWeight[[pickerView selectedRowInComponent:0]][POUND];
-        NSString *strOunce = arrWeight[[pickerView selectedRowInComponent:1]][OUNCES];
+        //NSString *strPound = arrWeight[[pickerView selectedRowInComponent:0]][POUND];
+        //NSString *strOunce = arrWeight[[pickerView selectedRowInComponent:1]][OUNCES];
             
         NSLog(@"%@ : %@",strPound,strOunce);
     }
     else
         NSLog(@"%@",arrHeight[row]);
+     */
 }
 #pragma mark - Image Picker Delegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

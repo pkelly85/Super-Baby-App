@@ -31,6 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     if (myUserModelGlobal)
     {
         if (![babyModelGlobal.ImageURL isEqualToString:@""])
@@ -51,7 +55,6 @@
         viewUser.hidden = YES;
     }
 }
-
 #pragma mark - Methods
 -(void)babyImageTapped
 {

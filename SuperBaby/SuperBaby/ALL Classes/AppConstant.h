@@ -203,4 +203,4 @@ CGFloat animatedDistance;
 //Global Parameter
 S_UserModel *myUserModelGlobal;
 S_BabyInfoModel *babyModelGlobal;
-
+BOOL isBabyInfoUpdatedGlobal;
