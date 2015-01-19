@@ -155,12 +155,6 @@
 
 #define PLEASE_TRY_AGAIN @"Please Try Again"
 /*-----------------------------------------------------------------------------*/
-#define imageDefaultTime 2.5
-#define totalStreamTime 150
-
-#define AMAZON_ACCESS_KEY @"AKIAJGMCGGNYAGBO7ZBA"
-#define AMAZON_SECRET_KEY @"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"
-
 #define USER_INFO @"userinformation"
 #define BABY_INFO @"babyinformation"
 
@@ -190,6 +184,8 @@
 /*-----------------------------------------------------------------------------*/
 #define img_radio_Off @"radio-icon"
 #define img_radio_On @"active-radio-icon"
+/*-----------------------------------------------------------------------------*/
+#define ACCEPTABLE_CHARACTERS @" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_."
 /*-----------------------------------------------------------------------------*/
 
 #pragma mark - Keyboard Animation Declaration of values

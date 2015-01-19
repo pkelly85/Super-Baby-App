@@ -533,7 +533,7 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
 }*/
 +(void)getRemainTime_with_minute_seconds:(NSInteger)totalTime withHandler:(void(^)(NSInteger remainMinutes,NSInteger remainSeconds))compilation
 {
-    NSInteger remainSpace = totalStreamTime - totalTime;
+    NSInteger remainSpace = 100 - totalTime;
     NSInteger minutes = remainSpace / 60;
     NSInteger seconds = remainSpace % 60;
     compilation(minutes,seconds);
