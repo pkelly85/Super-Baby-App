@@ -72,7 +72,7 @@
 -(void)callProtocol
 {
     if (currentIndex >= arrAnnotation.count) {
-        NSLog(@"done");
+        //NSLog(@"done");
         [UIView animateWithDuration:0.5 animations:^{
             lblDescription.alpha = 0.0;
             lblTransperant.alpha = 0.0;
@@ -86,7 +86,7 @@
         NSDictionary *dict = arrAnnotation[currentIndex];
         NSInteger startTime = [dict[@"startT"] integerValue];
         NSInteger durationToShow = [dict[@"dur"] integerValue];
-        NSLog(@"Time : %f : %ld : %ld",mp.currentPlaybackTime,(long)startTime,(long)startTime+durationToShow);
+        //NSLog(@"Time : %f : %ld : %ld",mp.currentPlaybackTime,(long)startTime,(long)startTime+durationToShow);
 
         if (mp.currentPlaybackTime >= startTime && mp.currentPlaybackTime <= startTime+durationToShow)
         {
@@ -99,7 +99,7 @@
         {
             if (startTime+durationToShow < mp.currentPlaybackTime) {
                 currentIndex += 1;
-                NSLog(@"Index : %ld",(long)currentIndex);
+                //NSLog(@"Index : %ld",(long)currentIndex);
             }
             lblDescription.alpha = 0.0;
             lblTransperant.alpha = 0.0;
@@ -123,10 +123,9 @@
         NSLog(@"Start Movie");
         [self startTimer];
         // Remove observer
-        [[NSNotificationCenter 	defaultCenter] removeObserver:self
-                                    name:MPMoviePlayerLoadStateDidChangeNotification 
-                                    object:nil];
-
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playBackStateChange) name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
+        
         mp.view.frame = self.view.bounds;      
           
         // Add movie player as subview
@@ -138,8 +137,39 @@
         // Play the movie
         [mp play];
 	}
+    
+    
 }
-
+-(void)playBackStateChange
+{
+    if (![SVProgressHUD isVisible]) {
+        if (![appDel checkConnection:nil]) {
+            [CommonMethods displayAlertwithTitle:@"Oops!" withMessage:NSLocalizedString(@"str_No_Internet", nil) withViewController:self];
+        }
+    }
+    
+    
+    /*if(playbackState == MPMoviePlaybackStatePlaying)
+    {
+        NSLog(@"Playing Video Now");
+    }
+    else if(playbackState == MPMoviePlaybackStatePaused)
+    {
+        NSLog(@"PAUSE Video Now");
+    }
+    else if(playbackState == MPMoviePlaybackStateInterrupted)
+    {
+        NSLog(@"INTER Video Now");
+    }
+    else if(playbackState == MPMoviePlaybackStateSeekingForward)
+    {
+        NSLog(@"MPMoviePlaybackStateSeekingForward");
+    }
+    else if(playbackState == MPMoviePlaybackStateSeekingBackward)
+    {
+        NSLog(@"MPMoviePlaybackStateSeekingBackward");
+    }*/
+}
 /*---------------------------------------------------------------------------
 * For 3.1.x devices
 * For 3.2 and 4.x see moviePlayerLoadStateChanged: 
@@ -214,8 +244,14 @@
 {
     [self invalidTimer];
     NSLog(@"MOVIE FINISH");
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
+    
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 /*---------------------------------------------------------------------------
