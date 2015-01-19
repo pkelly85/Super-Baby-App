@@ -77,31 +77,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-To-mZI" userLabel="View Guest">
                     <rect key="frame" x="0.0" y="150" width="320" height="180"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us about your baby!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7x-bc-aUn">
-                            <rect key="frame" x="20" y="0.0" width="243" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="wsO-df-2rR"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJu-hs-PFF">
-                            <rect key="frame" x="20" y="30" width="200" height="80"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-xo-Q2a">
-                            <rect key="frame" x="20" y="120" width="200" height="40"/>
+                            <rect key="frame" x="20" y="120" width="280" height="40"/>
                             <color key="backgroundColor" red="0.94901960780000005" green="0.81176470590000005" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="oJ3-G0-A80"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                            <state key="normal" title="Get Started">
+                            <state key="normal" title="Sign in to customize your baby…">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -113,16 +96,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="mjC-xo-Q2a" firstAttribute="leading" secondItem="5gr-To-mZI" secondAttribute="leading" constant="20" id="Jbe-g8-Qof"/>
-                        <constraint firstAttribute="trailing" secondItem="XJu-hs-PFF" secondAttribute="trailing" constant="100" id="OWU-9X-gBf"/>
-                        <constraint firstItem="H7x-bc-aUn" firstAttribute="leading" secondItem="5gr-To-mZI" secondAttribute="leading" constant="20" id="PZI-Su-JYd"/>
-                        <constraint firstItem="mjC-xo-Q2a" firstAttribute="top" secondItem="XJu-hs-PFF" secondAttribute="bottom" constant="10" id="W0n-1o-IZm"/>
                         <constraint firstAttribute="height" constant="180" id="cBo-bo-9dk"/>
-                        <constraint firstAttribute="trailing" secondItem="mjC-xo-Q2a" secondAttribute="trailing" constant="100" id="cG2-tY-QaJ"/>
-                        <constraint firstItem="XJu-hs-PFF" firstAttribute="top" secondItem="H7x-bc-aUn" secondAttribute="bottom" constant="10" id="cdg-DZ-XWN"/>
-                        <constraint firstAttribute="trailing" secondItem="H7x-bc-aUn" secondAttribute="trailing" constant="57" id="jUd-5a-cZ6"/>
+                        <constraint firstAttribute="trailing" secondItem="mjC-xo-Q2a" secondAttribute="trailing" constant="20" id="cG2-tY-QaJ"/>
                         <constraint firstAttribute="bottom" secondItem="mjC-xo-Q2a" secondAttribute="bottom" constant="20" id="oKC-XJ-NYh"/>
-                        <constraint firstItem="XJu-hs-PFF" firstAttribute="leading" secondItem="5gr-To-mZI" secondAttribute="leading" constant="20" id="qR1-zU-eUj"/>
-                        <constraint firstItem="H7x-bc-aUn" firstAttribute="top" secondItem="5gr-To-mZI" secondAttribute="top" id="r6i-oN-eef"/>
                     </constraints>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-ld-rQj" userLabel="View User">
