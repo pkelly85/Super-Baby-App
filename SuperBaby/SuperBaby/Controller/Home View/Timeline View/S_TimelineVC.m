@@ -9,12 +9,20 @@
 #import "S_TimelineVC.h"
 #import "AppConstant.h"
 #import "CCell_TimeLine.h"
+#import "S_TimeLineModel.h"
 @interface S_TimelineVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
     
     JSONParser *parser;
+    NSMutableArray *arrTimeLine;
+    
+    UIRefreshControl *refreshControl;
+    NSInteger pageNum;
+    BOOL isErrorReceived_whilePaging;
+    BOOL isCallingService;
+    BOOL isAllDataRetrieved;
 }
 @end
 
@@ -27,30 +35,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    arrTimeLine = [[NSMutableArray alloc]init];
+    isCallingService = NO;
+    isAllDataRetrieved = NO;
+    isErrorReceived_whilePaging = NO;
     
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
+    refreshControl = [[UIRefreshControl alloc]init];
+    [refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    [tblView addSubview:refreshControl];
     [tblView registerNib:[UINib nibWithNibName:@"CCell_TimeLine" bundle:nil] forCellReuseIdentifier:@"CCell_TimeLine"];
     tblView.delegate = self;
     tblView.dataSource = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //[self getTimeLine];
+        [tblView setContentOffset:CGPointMake(0, -refreshControl.frame.size.height - 50.0) animated:YES];
+        [self refreshTableView];
     });
+}
+-(void)refreshTableView
+{
+    pageNum = 1;
+    isAllDataRetrieved = NO;
+    isCallingService = YES;
+    [refreshControl beginRefreshing];
+    [self getTimeLine];
 }
 #pragma mark -
 #pragma mark - Add To Timeline
 -(void)getTimeLine
 {
-    
-    showHUD_with_Title(@"Getting Timeline");
+    isCallingService = YES;
+    //showHUD_with_Title(@"Getting Timeline");
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         @try
         {
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
-                                       @"PageNumber":@"1"};
+                                       @"PageNumber":[NSString stringWithFormat:@"%ld",(long)pageNum]};
             
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getTimeLineSuccess:) withObject:self];
         }
@@ -69,6 +93,7 @@
     if (![objResponse isKindOfClass:[NSDictionary class]])
     {
         hideHUD;
+        isErrorReceived_whilePaging = YES;
         [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
         return;
     }
@@ -76,38 +101,71 @@
     if ([objResponse objectForKey:kURLFail])
     {
         hideHUD;
+        isErrorReceived_whilePaging = YES;
         [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
     }
     else if([objResponse objectForKey:@"GetTimelineResult"])
     {
-        BOOL isTimeLineSuccess = [[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.Status"] boolValue];;
+        BOOL isTimeLineSuccess = [[[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.Status"] isNull] boolValue];;
         
         if (isTimeLineSuccess)
         {
-            @try
-            {
-                hideHUD;
-            }
-            @catch (NSException *exception) {
-                NSLog(@"%@",exception.description);
-            }
-            @finally {
-            }
             
+            hideHUD;
+            isErrorReceived_whilePaging = NO;
+            NSArray *arrTemp = (NSArray *)[objResponse valueForKeyPath:@"GetTimelineResult.GetTimelineEntryResult"];
+            if (arrTemp.count > 0)
+            {
+                __weak UITableView *weakTable = tblView;
+                __weak UIRefreshControl *weakRef = refreshControl;
+                [self setData:[objResponse valueForKeyPath:@"GetTimelineResult.GetTimelineEntryResult"]
+                  withHandler:^{
+                      [weakRef endRefreshing];
+                      [weakTable reloadData];
+                  }];
+            }
+            else
+            {
+                [refreshControl endRefreshing];
+                
+                isCallingService = NO;
+                NSString *strText = [NSString stringWithFormat:@"%@",[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"]];
+                if ([strText isEqualToString:@"No TimelineData On this PageNumber!"]) {
+                    isErrorReceived_whilePaging = NO;
+                    isAllDataRetrieved = YES;
+                }
+                else
+                {
+                    isErrorReceived_whilePaging = YES;
+                    [CommonMethods displayAlertwithTitle:strText withMessage:nil withViewController:self];
+                }
+            }
         }
         else
         {
             hideHUD;
-            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+            isErrorReceived_whilePaging = YES;
+            [CommonMethods displayAlertwithTitle:[[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"] isNull] withMessage:nil withViewController:self];
         }
     }
     else
     {
         hideHUD;
+        isErrorReceived_whilePaging = YES;
         [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
     }
 }
-
+-(void)setData:(NSArray *)arrTemp withHandler:(void (^)())handler
+{
+    if (pageNum == 1) {
+        [arrTimeLine removeAllObjects];
+    }
+    for (NSDictionary *dictT in arrTemp) {
+        [arrTimeLine addObject:[S_TimeLineModel addTimelineModel:dictT]];
+    }
+    isCallingService = NO;
+    handler();
+}
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -115,7 +173,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return arrTimeLine.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -123,6 +181,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    S_TimeLineModel *myTimeline = arrTimeLine[indexPath.row];
     CCell_TimeLine *cell = (CCell_TimeLine *)[tblView dequeueReusableCellWithIdentifier:@"CCell_TimeLine"];
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -134,10 +193,29 @@
     cell.lblDescription.textColor = [UIColor whiteColor];
     cell.viewTransperant.backgroundColor = RGBCOLOR(176, 176, 176);
 
-    cell.lblDescription.text = @"lorem adsas duasd ajisdj iasijd ijas aij jiasijod aijos ij DONE";
+    cell.lblTime.text = myTimeline.strDisplayDate;
+    cell.lblDescription.text = myTimeline.Message;
     return cell;
 }
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (!isErrorReceived_whilePaging)
+    {
+        if (!isAllDataRetrieved)
+        {
+            if (!isCallingService)
+            {
+                CGFloat offsetY = scrollView.contentOffset.y;
+                CGFloat contentHeight = scrollView.contentSize.height;
+                if (offsetY > contentHeight - scrollView.frame.size.height)
+                {
+                    pageNum = pageNum + 1;
+                    [self getTimeLine];
+                }
+            }
+        }
+    }
+}
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

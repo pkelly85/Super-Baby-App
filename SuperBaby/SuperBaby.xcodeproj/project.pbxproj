@@ -30,6 +30,7 @@
 		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
 		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
 		108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */; };
+		109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
 		109885DE1A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D91A36E5C100FB3BB4 /* TPKeyboardAvoidingTableView.m */; };
@@ -163,6 +164,8 @@
 		108E6ABD1A5E63C40065A582 /* CCell_SimpleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_SimpleHeader.h; sourceTree = "<group>"; };
 		108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_SimpleHeader.m; sourceTree = "<group>"; };
 		108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_SimpleHeader.xib; sourceTree = "<group>"; };
+		109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TimeLineModel.h; sourceTree = "<group>"; };
+		109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TimeLineModel.m; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		109885D61A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -771,6 +774,8 @@
 				10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */,
 				10B7D5A71A444442004EFF60 /* S_BabyInfoModel.h */,
 				10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */,
+				109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */,
+				109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1027,6 +1032,7 @@
 				10A7DBD81A5D4A2C00529EDC /* CCell_Dot.m in Sources */,
 				109885EA1A370F5500FB3BB4 /* S_BabyDetailVC.m in Sources */,
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
+				109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */,
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
 				10C27D9D1A35A5DC0006985C /* NSData+ImageContentType.m in Sources */,
 				10C27D881A35A5DC0006985C /* AFHTTPSessionManager.m in Sources */,
@@ -1101,7 +1107,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
+				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1136,7 +1142,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
+				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1153,7 +1159,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
+				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
 			};
 			name = Debug;
 		};
@@ -1168,7 +1174,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b801c4d0-1146-4c03-8c27-c36b7316f993";
+				PROVISIONING_PROFILE = "415b72af-842e-4f43-a7b6-a3e97bdfddb7";
 			};
 			name = Release;
 		};

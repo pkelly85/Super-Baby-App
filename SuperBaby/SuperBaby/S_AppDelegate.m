@@ -137,7 +137,7 @@
             
             @try
             {
-                NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video",dictTemp[EV_Detail_title]];
+                NSString *strMessage = [NSString stringWithFormat:@"You watched %@ video.",dictTemp[EV_Detail_title]];
                 NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                            @"UserToken":myUserModelGlobal.Token,
                                            @"Type":TYPE_WATCH_VIDEO_COMPLETE,
