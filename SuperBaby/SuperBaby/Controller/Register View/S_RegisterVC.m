@@ -223,9 +223,10 @@
             if (isRegisterSuccess)
             {
                 if (isRegularRegister)
-                    [self saveUser:[objResponse valueForKeyPath:@"RegisterUserResult.GetUserResult"]];
+                    [self saveUser:[objResponse valueForKeyPath:@"RegisterUserResult.GetUserResult"] withBabyDetail:nil];
                 else
-                    [self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"]];
+                    [self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"] withBabyDetail:[objResponse valueForKeyPath:@"LoginWithFacebookResult.BabyInformation"]];
+                    //[self saveUser:[objResponse valueForKeyPath:@"LoginWithFacebookResult.GetUserResult"]];
             }
             else
             {
@@ -234,9 +235,7 @@
                 if (isRegularRegister)
                     strText = [objResponse valueForKeyPath:@"RegisterUserResult.ResultStatus.StatusMessage"] ;
                 else
-                {
                     strText = [objResponse valueForKeyPath:@"LoginWithFacebookResult.ResultStatus.StatusMessage"] ;
-                }
                 
                 [CommonMethods displayAlertwithTitle:strText withMessage:nil withViewController:self];
             }
@@ -256,16 +255,34 @@
 }
 
 
--(void)saveUser:(NSDictionary *)dictUser
+-(void)saveUser:(NSDictionary *)dictUser withBabyDetail:(NSDictionary *)dictBaby
 {
     hideHUD;
     myUserModelGlobal = [S_UserModel addMyUser:dictUser];
     [CommonMethods saveMyUser_LoggedIN:myUserModelGlobal];
     myUserModelGlobal = [CommonMethods getMyUser_LoggedIN];
 
-    S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
-    obj.isEditingFirstTime = YES;
-    [self.navigationController pushViewController:obj animated:YES];
+    babyModelGlobal = [S_BabyInfoModel addMyBaby:dictBaby];
+    [CommonMethods saveMyBaby:babyModelGlobal];
+    babyModelGlobal = [CommonMethods getMyBaby];
+
+    if ([babyModelGlobal.BabyID isEqualToString:@""])
+    {
+        S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
+        obj.isEditingFirstTime = YES;
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:NO];
+    }
+    
+//    
+//    
+//    S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
+//    obj.isEditingFirstTime = YES;
+//    [self.navigationController pushViewController:obj animated:YES];
 }
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
