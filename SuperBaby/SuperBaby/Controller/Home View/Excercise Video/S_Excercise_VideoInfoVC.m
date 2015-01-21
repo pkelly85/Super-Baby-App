@@ -15,6 +15,8 @@
 #import "CCell_Simple.h"
 #import "CCell_Dot.h"
 #import "CCell_Milestone.h"
+
+#import "MoviePlayer.h"
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -87,13 +89,10 @@
 }
 -(IBAction)btnPlayClicked:(UIButton *)btnPlay
 {
-#warning - CHANGE URL HERE
-    
     //change error here
     if ([appDel checkConnection:nil]) {
         [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
         NSLog(@"%@",_dictInfo);
-        //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
         NSString *strURL = _dictInfo[EV_Detail_url];
         
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
@@ -101,11 +100,16 @@
         NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
                              @{@"startT" : @4,@"dur":@1},
                              @{@"startT" : @7,@"du0r":@1}];
-        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:moviePlayer animated:YES completion:^{
-            [moviePlayer readyPlayer];
-        }];
+        MoviePlayer *player = [[MoviePlayer alloc]init];
+        player.moviePath = strURL;
+        player.arrAnnotation = arrTemp;
+        [self presentMoviePlayerViewControllerAnimated:player];
+        
+//        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+//        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//        [self presentViewController:moviePlayer animated:YES completion:^{
+//            [moviePlayer readyPlayer];
+//        }];
     }
     else
     {

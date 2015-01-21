@@ -14,6 +14,7 @@
 #import "S_Excercise_VideoInfoVC.h"
 
 #import "CustomMoviePlayerViewController.h"
+#import "MoviePlayer.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -97,7 +98,6 @@
 
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
-#warning - CHANGE URL HERE
     //change error here
     if ([appDel checkConnection:nil])
     {
@@ -114,11 +114,17 @@
         NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
                              @{@"startT" : @4,@"dur":@1},
                              @{@"startT" : @7,@"dur":@1}];
-        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:moviePlayer animated:YES completion:^{
-            [moviePlayer readyPlayer];
-        }];
+        
+        MoviePlayer *player = [[MoviePlayer alloc]init];
+        player.moviePath = strURL;
+        player.arrAnnotation = arrTemp;
+        [self presentMoviePlayerViewControllerAnimated:player];
+//
+//        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
+//        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//        [self presentViewController:moviePlayer animated:YES completion:^{
+//            [moviePlayer readyPlayer];
+//        }];
     }
     else
     {
