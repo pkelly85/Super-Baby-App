@@ -60,6 +60,8 @@
 
 #define RGBCOLOR_GREY [UIColor colorWithRed:205.0/255.0f green:205.0/255.0f blue:205.0/255.0f alpha:1.0f]
 #define RGBCOLOR_BLUE [UIColor colorWithRed:0.0/255.0f green:183.0/255.0f blue:188.0/255.0f alpha:1.0f]
+#define RGBCOLOR_RED [UIColor colorWithRed:232.0/255.0f green:114.0/255.0f blue:76.0/255.0f alpha:1.0f]
+#define RGBCOLOR_GREEN [UIColor colorWithRed:159.0/255.0f green:189.0/255.0f blue:39.0/255.0f alpha:1.0f]
 
 /*-----------------------------------------------------------------------------*/
 
@@ -78,8 +80,8 @@
 #define iPhone5ExHeight ((IS_DEVICE_iPHONE_5)?88:0)
 #define iPhone5Ex_Half_Height ((IS_DEVICE_iPHONE_5)?88:0)
 
-#define iPhone5_ImageSuffix (IS_DEVICE_iPHONE_5)?@"-568h":@""
-#define ImageName(name)([NSString stringWithFormat:@"%@%@",name,iPhone5_ImageSuffix])
+//#define iPhone5_ImageSuffix (IS_DEVICE_iPHONE_5)?@"-568h":@""
+//#define ImageName(name)([NSString stringWithFormat:@"%@%@",name,iPhone5_ImageSuffix])
 
 #define IS_DEVICE_iPHONE_4 ((UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) && ([[UIScreen mainScreen ] bounds].size.height==480.0f))
 

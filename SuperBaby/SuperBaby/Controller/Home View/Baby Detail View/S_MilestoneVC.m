@@ -90,15 +90,25 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    NSMutableDictionary *dict = arrContent[section];
+    
     CCell_HeaderView *header = (CCell_HeaderView *)[tblView dequeueReusableHeaderFooterViewWithIdentifier:@"CCell_HeaderView"];
     header.lblTitle.text = arrContent[section][SECTION_NAME];
-    
+    header.lblTitle.textColor = RGBCOLOR_RED;
+    header.imgVArrow.image = [UIImage imageNamed:@"orange-down-arrow"];
     header.btnHeader.tag = section;
     [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
+    if ([dict[TOOGLE] isEqualToString:@"0"])
+    {
+        header.imgVArrow.image = [UIImage imageNamed:@"orange-down-arrow"];
+    }
+    else
+    {
+        [UIView animateWithDuration:0.3 animations:^{header.imgVArrow.transform = CGAffineTransformMakeRotation(M_PI);}];
+    }
+    
     return header;
 }
-
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,6 +124,7 @@
 -(void)toggleRow:(UIButton *)btnHeader
 {
     NSMutableDictionary *dict = arrContent[btnHeader.tag];
+//    CCell_HeaderView *cell = (CCell_HeaderView *)[tblView headerViewForSection:btnHeader.tag];
     
     NSString *str = dict[TOOGLE];
     if ([dict[TOOGLE] isEqualToString:@"0"])
@@ -121,7 +132,9 @@
         str = @"1";
     }
     else
+    {
         str = @"0";
+    }
     
     [dict setValue:str forKey:TOOGLE];
     

@@ -57,6 +57,7 @@
 -(void)refreshTableView
 {
     pageNum = 1;
+    isErrorReceived_whilePaging = NO;
     isAllDataRetrieved = NO;
     isCallingService = YES;
     [refreshControl beginRefreshing];
@@ -89,6 +90,8 @@
 }
 -(void)getTimeLineSuccess:(id)objResponse
 {
+    [refreshControl endRefreshing];
+
     NSLog(@"Response > %@",objResponse);
     if (![objResponse isKindOfClass:[NSDictionary class]])
     {
@@ -117,17 +120,13 @@
             if (arrTemp.count > 0)
             {
                 __weak UITableView *weakTable = tblView;
-                __weak UIRefreshControl *weakRef = refreshControl;
                 [self setData:[objResponse valueForKeyPath:@"GetTimelineResult.GetTimelineEntryResult"]
                   withHandler:^{
-                      [weakRef endRefreshing];
                       [weakTable reloadData];
                   }];
             }
             else
             {
-                [refreshControl endRefreshing];
-                
                 isCallingService = NO;
                 NSString *strText = [NSString stringWithFormat:@"%@",[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"]];
                 if ([strText isEqualToString:@"No TimelineData On this PageNumber!"]) {

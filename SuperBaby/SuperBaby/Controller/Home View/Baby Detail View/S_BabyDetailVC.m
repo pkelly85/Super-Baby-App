@@ -9,9 +9,10 @@
 #import "S_BabyDetailVC.h"
 #import "AppConstant.h"
 #import "S_MilestoneVC.h"
-
+#import "S_TipsVC.h"
 #import "S_RedFlagVC.h"
 #import "S_EditBabyInfoVC.h"
+
 @interface S_BabyDetailVC ()
 {
     __weak IBOutlet UIView *viewTop;
@@ -67,6 +68,8 @@
 }
 -(IBAction)btnTipsClicked:(id)sender
 {
+    S_TipsVC *obj = [[S_TipsVC alloc]initWithNibName:@"S_TipsVC" bundle:nil];
+    [self.navigationController pushViewController:obj animated:YES];
 }
 -(IBAction)btnRedFlagClicked:(id)sender
 {

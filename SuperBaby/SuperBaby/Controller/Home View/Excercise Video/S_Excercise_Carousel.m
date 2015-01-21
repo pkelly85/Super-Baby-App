@@ -15,7 +15,7 @@
 
 #import "CustomMoviePlayerViewController.h"
 #import "MoviePlayer.h"
-@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,UITextFieldDelegate>
+@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
     NSMutableArray *arrVideos;    

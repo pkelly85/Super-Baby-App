@@ -12,5 +12,5 @@
 @property(nonatomic,weak)IBOutlet UIView *viewContent;
 @property(nonatomic,weak)IBOutlet UILabel *lblTitle;
 @property(nonatomic,weak)IBOutlet UIButton *btnHeader;
-
+@property(nonatomic,weak)IBOutlet UIImageView *imgVArrow;
 @end

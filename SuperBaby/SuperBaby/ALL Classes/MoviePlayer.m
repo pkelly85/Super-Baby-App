@@ -160,7 +160,6 @@
         [UIView animateWithDuration:0.5 animations:^{
             lblDescription.alpha = 0.0;
             lblTransperant.alpha = 0.0;
-            
         } completion:^(BOOL finished) {
             
         }];
@@ -174,11 +173,7 @@
         
         if (self.moviePlayer.currentPlaybackTime >= startTime && self.moviePlayer.currentPlaybackTime <= startTime+durationToShow)
         {
-            if (currentIndex == 0) {
-                lblDescription.text = @"Baby Text";
-            }
-            else
-                lblDescription.text = @"Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 Hi This is line 111111111111111111111111111111111111111111111111111111 ";
+            lblDescription.text = @"Baby Text";
             lblDescription.alpha = 1.0;
             lblTransperant.alpha = 0.1;
             [self.moviePlayer.view updateConstraints];

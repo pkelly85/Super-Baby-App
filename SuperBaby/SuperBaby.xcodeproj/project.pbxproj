@@ -46,6 +46,8 @@
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
 		109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D41A6F8D71001E50B1 /* MoviePlayer.m */; };
+		109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D91A6FD330001E50B1 /* S_TipsVC.m */; };
+		109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */; };
 		10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */; };
 		10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBC71A5CF00900529EDC /* Annotations.plist */; };
 		10A7DBCC1A5CF50D00529EDC /* CustomMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */; };
@@ -192,6 +194,9 @@
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
 		109F74D31A6F8D71001E50B1 /* MoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayer.h; sourceTree = "<group>"; };
 		109F74D41A6F8D71001E50B1 /* MoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayer.m; sourceTree = "<group>"; };
+		109F74D81A6FD330001E50B1 /* S_TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TipsVC.h; sourceTree = "<group>"; };
+		109F74D91A6FD330001E50B1 /* S_TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TipsVC.m; sourceTree = "<group>"; };
+		109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_TipsVC.xib; sourceTree = "<group>"; };
 		10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByMilestone.plist; sourceTree = "<group>"; };
 		10A7DBC71A5CF00900529EDC /* Annotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Annotations.plist; sourceTree = "<group>"; };
 		10A7DBCA1A5CF50D00529EDC /* CustomMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMoviePlayerViewController.h; sourceTree = "<group>"; };
@@ -456,6 +461,9 @@
 				10FB44E61A399A4800DDA935 /* S_RedFlagVC.h */,
 				10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */,
 				10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */,
+				109F74D81A6FD330001E50B1 /* S_TipsVC.h */,
+				109F74D91A6FD330001E50B1 /* S_TipsVC.m */,
+				109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */,
 			);
 			path = "Baby Detail View";
 			sourceTree = "<group>";
@@ -933,6 +941,7 @@
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
 				10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */,
 				10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */,
+				109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */,
 				10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */,
 				107995991A3EBA62006EA4BA /* Localizable.strings in Resources */,
 				108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */,
@@ -1028,6 +1037,7 @@
 				10C27DAA1A35A5DC0006985C /* UIImageView+WebCache.m in Sources */,
 				10C27DA11A35A5DC0006985C /* SDWebImageDownloader.m in Sources */,
 				10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */,
+				109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */,
 				109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */,
 				10C27D961A35A5DC0006985C /* NSUserDefaults+Helpers.m in Sources */,
 				109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */,

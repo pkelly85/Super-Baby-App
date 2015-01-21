@@ -11,7 +11,7 @@
 #import "S_Excercise_Carousel.h"
 
 #import "CCell_Excercise.h"
-@interface S_ExcerciseVideoVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface S_ExcerciseVideoVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;

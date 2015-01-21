@@ -19,10 +19,17 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="cZG-JN-3C8"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xOz-rW-ZpL">
+                            <rect key="frame" x="290" y="19" width="15" height="8"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="0RM-zU-JK4"/>
+                                <constraint firstAttribute="height" constant="8" id="vWG-3L-sDh"/>
+                            </constraints>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-5s-5ZP">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                             <constraints>
@@ -37,10 +44,12 @@
                     <constraints>
                         <constraint firstItem="dGa-9c-bbF" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="12" id="2Bs-n8-0NO"/>
                         <constraint firstItem="dGa-9c-bbF" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" constant="15" id="5m4-zo-rUa"/>
+                        <constraint firstAttribute="trailing" secondItem="xOz-rW-ZpL" secondAttribute="trailing" constant="15" id="9cP-db-tCu"/>
                         <constraint firstAttribute="trailing" secondItem="cjK-5s-5ZP" secondAttribute="trailing" priority="750" id="Pr1-f9-f8O"/>
                         <constraint firstItem="cjK-5s-5ZP" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" id="ZxZ-Je-VIR"/>
                         <constraint firstAttribute="height" constant="44" id="cUY-o8-Pwa"/>
                         <constraint firstAttribute="trailing" secondItem="dGa-9c-bbF" secondAttribute="trailing" priority="750" constant="50" id="k2w-DM-5rI"/>
+                        <constraint firstItem="xOz-rW-ZpL" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="19" id="uRm-mP-ojs"/>
                         <constraint firstItem="cjK-5s-5ZP" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" id="wwu-jk-FVQ"/>
                     </constraints>
                 </view>
@@ -56,12 +65,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnHeader" destination="cjK-5s-5ZP" id="yqr-Mg-Gaa"/>
+                <outlet property="imgVArrow" destination="xOz-rW-ZpL" id="Q2H-1h-0KG"/>
                 <outlet property="lblTitle" destination="dGa-9c-bbF" id="1d3-In-r3E"/>
                 <outlet property="viewContent" destination="Gmh-On-AjS" id="xkc-Br-2Yp"/>
             </connections>
             <point key="canvasLocation" x="401" y="163.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="orange-down-arrow" width="15" height="8"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
