@@ -9,7 +9,6 @@
 #import "S_FacebookClass.h"
 #import "S_AppDelegate.h"
 #import "AppConstant.h"
-//#import "SVProgressHUD.h"
 #import "CommonMethods.h"
 
 @implementation S_FacebookClass
@@ -107,6 +106,24 @@
                     completion(dict);
                 }
             }
+            else if ([dict objectForKey:@"error"])
+            {
+                NSString *strCode = [NSString stringWithFormat:@"%@",dict[@"error"][@"code"]];
+                if ([strCode isEqualToString:@"190"])
+                {
+                    [self performSelectorOnMainThread:@selector(appPermissionAlert) withObject:nil waitUntilDone:YES];
+                }
+                else
+                {
+                    [self performSelectorOnMainThread:@selector(showAlertFromFBError:) withObject:[dict objectForKey:@"error"] waitUntilDone:YES];
+                }
+            }
+            else
+            {
+                if (completion) {
+                    completion(nil);
+                }
+            }
         }
         
     }];
@@ -133,6 +150,16 @@
     [CommonMethods displayAlertwithTitle:NSLocalizedString(@"strNoFacebookAccountTitle", nil) withMessage:NSLocalizedString(@"strNoFacebookAccountMessage", nil) withViewController:viewCtr];
 }
 
+- (void)showAlertFromFBError:(NSDictionary*)dic
+{
+    [SVProgressHUD dismiss];
+    [CommonMethods displayAlertwithTitle:NSLocalizedString(@"strError", nil) withMessage:dic[@"message"] withViewController:viewCtr];
+}
+- (void)appPermissionAlert
+{
+    [SVProgressHUD dismiss];
+    [CommonMethods displayAlertwithTitle:@"Error Validating Access Token: Please Authorize Application with Facebook" withMessage:@"Please go to Settings and log out from Facebook. Re-login into Facebook and the open App" withViewController:viewCtr];
+}
 - (void)getFBFriendsWithViewCtr:(UIViewController*)vCtr withCompletionHandler:(void (^)(NSDictionary *Dic))completion
 {
     if ([appDel checkConnection:nil])

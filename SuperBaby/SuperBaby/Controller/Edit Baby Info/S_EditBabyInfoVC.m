@@ -458,7 +458,6 @@
                                        @"Height":[txt_height.text isNull],
                                        @"ImageData":strBase64Image};
             
-            
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_EDIT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(updateBabyInfoSuccessful:) withObject:self];
         }
         @catch (NSException *exception) {
@@ -504,13 +503,16 @@
                     S_HomeVC *obj = [[S_HomeVC alloc]initWithNibName:@"S_HomeVC" bundle:nil];
                     [self.navigationController pushViewController:obj animated:YES];
                 }
+                else
+                {
+                    popView;
+                }
             }
             @catch (NSException *exception) {
                 NSLog(@"%@",exception.description);
             }
             @finally {
             }
-            
         }
         else
         {
