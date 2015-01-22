@@ -91,7 +91,7 @@
 {
     //change error here
     if ([appDel checkConnection:nil]) {
-        [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
+//        [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
         NSLog(@"%@",_dictInfo);
         NSString *strURL = _dictInfo[EV_Detail_url];
         
@@ -103,13 +103,9 @@
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;
         player.arrAnnotation = arrTemp;
+        player.dictINFO = _dictInfo;
+        player.strVideoID = _dictInfo[EV_ID];
         [self presentMoviePlayerViewControllerAnimated:player];
-        
-//        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-//        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//        [self presentViewController:moviePlayer animated:YES completion:^{
-//            [moviePlayer readyPlayer];
-//        }];
     }
     else
     {

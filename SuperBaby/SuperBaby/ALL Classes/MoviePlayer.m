@@ -8,10 +8,14 @@
 
 #import "MoviePlayer.h"
 #import "AppConstant.h"
+
+#define VIDEO_WATCH_PERCENT 75
+
 @interface MoviePlayer ()
 {
     UILabel *lblDescription;
     UILabel *lblTransperant;
+    BOOL isServiceCalled;
 }
 @end
 
@@ -155,6 +159,15 @@
 #pragma mark - Custom protocol
 -(void)callProtocol
 {
+    /*--- if video is watched >75% then add milestone ---*/
+    NSInteger percent = (self.moviePlayer.currentPlaybackTime/self.moviePlayer.duration)*100;
+    NSLog(@"%ld : Time : %f",(long)percent ,self.moviePlayer.currentPlaybackTime);
+    if (percent > VIDEO_WATCH_PERCENT && !isServiceCalled) {
+        isServiceCalled = YES;
+        [appDel addMilestoneToTimeline_WatchVideo:_dictINFO withVideoID:_strVideoID];
+    }
+    
+    /*--- Index ---*/
     if (currentIndex >= arrAnnotation.count) {
         //NSLog(@"done");
         [UIView animateWithDuration:0.5 animations:^{
