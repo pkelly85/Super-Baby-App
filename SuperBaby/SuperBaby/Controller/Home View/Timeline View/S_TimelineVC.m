@@ -10,11 +10,13 @@
 #import "AppConstant.h"
 #import "CCell_TimeLine.h"
 #import "S_TimeLineModel.h"
+#import "UITableFooterView.h"
 @interface S_TimelineVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIView *viewTop;
+    __weak IBOutlet UIImageView *imgV;
     __weak IBOutlet UITableView *tblView;
-    
+    UITableFooterView *viewFooter;
     JSONParser *parser;
     NSMutableArray *arrTimeLine;
     
@@ -40,19 +42,49 @@
     isAllDataRetrieved = NO;
     isErrorReceived_whilePaging = NO;
     
+    viewFooter = [[[NSBundle mainBundle]loadNibNamed:@"UITableFooterView" owner:self options:nil] objectAtIndex:0];;
+
     /*--- set bottom white line ---*/
     [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        refreshControl.tintColor = [UIColor blackColor];
+        viewFooter.indicator.color = [UIColor blackColor];
+    }
+    else
+    {
+        refreshControl.tintColor = [UIColor whiteColor];
+        viewFooter.indicator.color = [UIColor whiteColor];
+    }
+    
     [tblView addSubview:refreshControl];
+    [tblView setContentOffset:CGPointMake(0, -1) animated:NO];
+    [tblView setContentOffset:CGPointMake(0, 0) animated:NO];
+    
     [tblView registerNib:[UINib nibWithNibName:@"CCell_TimeLine" bundle:nil] forCellReuseIdentifier:@"CCell_TimeLine"];
     tblView.delegate = self;
     tblView.dataSource = self;
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [tblView setContentOffset:CGPointMake(0, -refreshControl.frame.size.height - 50.0) animated:YES];
-        [self refreshTableView];
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^(void){
+            [tblView setContentOffset:CGPointMake(0, -refreshControl.frame.size.height - 50.0) animated:YES];
+        } completion:^(BOOL finished) {
+            [self refreshTableView];
+        }];
     });
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL)  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
 }
 -(void)refreshTableView
 {
@@ -69,6 +101,10 @@
 {
     isCallingService = YES;
     //showHUD_with_Title(@"Getting Timeline");
+    if (pageNum != 1) {
+        [viewFooter.indicator startAnimating];
+        tblView.tableFooterView = viewFooter;
+    }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         @try
@@ -91,7 +127,8 @@
 -(void)getTimeLineSuccess:(id)objResponse
 {
     [refreshControl endRefreshing];
-
+    [viewFooter.indicator stopAnimating];
+    tblView.tableFooterView = nil;
     NSLog(@"Response > %@",objResponse);
     if (![objResponse isKindOfClass:[NSDictionary class]])
     {
@@ -176,7 +213,11 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 130;
+    S_TimeLineModel *myTimeline = arrTimeLine[indexPath.row];
+    float heightV = 0;
+    heightV = 6.0 + 77.0 + [myTimeline.Message getHeight_withFont:kFONT_LIGHT(15.0) widht:screenSize.size.width - 81.0-25.0];
+    
+    return MAX(130.0, heightV);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -204,12 +245,14 @@
         {
             if (!isCallingService)
             {
-                CGFloat offsetY = scrollView.contentOffset.y;
-                CGFloat contentHeight = scrollView.contentSize.height;
-                if (offsetY > contentHeight - scrollView.frame.size.height)
-                {
-                    pageNum = pageNum + 1;
-                    [self getTimeLine];
+                if (arrTimeLine.count >= 10) {
+                    CGFloat offsetY = scrollView.contentOffset.y;
+                    CGFloat contentHeight = scrollView.contentSize.height;
+                    if (offsetY > contentHeight - scrollView.frame.size.height)
+                    {
+                        pageNum = pageNum + 1;
+                        [self getTimeLine];
+                    }
                 }
             }
         }

@@ -56,7 +56,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fXQ-7e-2Np" secondAttribute="bottom" constant="77" id="3Qb-5n-8TD"/>
+                    <constraint firstAttribute="bottom" secondItem="fXQ-7e-2Np" secondAttribute="bottom" constant="77" id="3Qb-5n-8TD"/>
                     <constraint firstItem="adC-TO-2eH" firstAttribute="top" secondItem="fXQ-7e-2Np" secondAttribute="top" id="FHT-sY-KvJ"/>
                     <constraint firstItem="uYy-gs-ahC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Hir-mI-lCc"/>
                     <constraint firstItem="fXQ-7e-2Np" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="81" id="Ows-h5-tuQ"/>
