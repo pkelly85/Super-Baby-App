@@ -12,6 +12,7 @@
                 <outlet property="btnLogin_Logout" destination="iR3-hk-67t" id="ouz-vF-TUX"/>
                 <outlet property="btnRestorePurchase" destination="V54-t7-JPv" id="UbR-Sr-7sX"/>
                 <outlet property="imgVBaby" destination="eJ5-95-oSg" id="c6F-tO-e9s"/>
+                <outlet property="lblAccountUpdate" destination="anX-vo-k6x" id="ryx-Ux-8ca"/>
                 <outlet property="view" destination="ZQG-0l-7oT" id="SyR-f3-CRd"/>
                 <outlet property="viewTop" destination="F16-aK-bl7" id="9pA-zu-2Ed"/>
             </connections>
@@ -80,6 +81,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnAccountUpdateClicked:" destination="-1" eventType="touchUpInside" id="ruv-8F-5Ec"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV2-y8-RDI" userLabel="Blue">
                             <rect key="frame" x="0.0" y="104" width="80" height="104"/>

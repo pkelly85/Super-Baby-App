@@ -30,6 +30,10 @@
 
 @implementation S_TimelineVC
 #pragma mark - View Did Load
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 -(IBAction)back:(id)sender
 {
     popView;

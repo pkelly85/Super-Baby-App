@@ -29,7 +29,10 @@
 {
     popView;
 }
-
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     /*--- set textfield default values ---*/

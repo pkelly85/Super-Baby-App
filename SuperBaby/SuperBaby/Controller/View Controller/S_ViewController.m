@@ -18,7 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 #pragma mark - IBAction
 -(IBAction)btnAgreeClicked:(id)sender
 {

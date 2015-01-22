@@ -35,5 +35,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>iew controller-based status bar appearance</key>
+	<false/>
 </dict>
 </plist>

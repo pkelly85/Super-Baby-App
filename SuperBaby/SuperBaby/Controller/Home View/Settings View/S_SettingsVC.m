@@ -9,10 +9,12 @@
 #import "S_SettingsVC.h"
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
+#import "S_AccountUpdateVC.h"
 @interface S_SettingsVC ()<UIActionSheetDelegate>
 {
     __weak IBOutlet UIView *viewTop;
-
+    
+    __weak IBOutlet UILabel *lblAccountUpdate;
     __weak IBOutlet UIButton *btnAccountUpdate;
     __weak IBOutlet UIButton *btnRestorePurchase;
     __weak IBOutlet UIButton *btnLogin_Logout;
@@ -23,6 +25,10 @@
 
 @implementation S_SettingsVC
 #pragma mark - View Did Load
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 -(IBAction)back:(id)sender
 {
     popView;
@@ -34,6 +40,10 @@
     if (myUserModelGlobal)
     {
         [btnLogin_Logout setTitle:@"Logout" forState:UIControlStateNormal];
+        if (![myUserModelGlobal.FacebookId isEqualToString:@""]) {
+            lblAccountUpdate.hidden = YES;
+            btnAccountUpdate.hidden = YES;
+        }
         if (![babyModelGlobal.ImageURL isEqualToString:@""])
         {
             [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -75,7 +85,20 @@
     btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btnRestorePurchase setAttributedTitle:attributedRestore forState:UIControlStateNormal];
 }
-
+#pragma mark - IBAction
+-(IBAction)btnAccountUpdateClicked:(id)sender
+{
+    if (myUserModelGlobal)
+    {
+        S_AccountUpdateVC *obj = [[S_AccountUpdateVC alloc]initWithNibName:@"S_AccountUpdateVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        S_RegisterVC *obj = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+}
 -(IBAction)btnLogOutClicked:(id)sender
 {
     if (myUserModelGlobal)
@@ -111,6 +134,17 @@
         [self.navigationController pushViewController:obj animated:YES];
     }
 }
+
+-(void)logOut
+{
+    babyModelGlobal = nil;
+    myUserModelGlobal = nil;
+    [UserDefaults removeObjectForKey:USER_INFO];
+    [UserDefaults removeObjectForKey:BABY_INFO];
+    [UserDefaults synchronize];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+#pragma mark - Actionsheet Delegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (actionSheet.tag == 100) {
@@ -125,15 +159,6 @@
                 break;
         }
     }
-}
--(void)logOut
-{
-    babyModelGlobal = nil;
-    myUserModelGlobal = nil;
-    [UserDefaults removeObjectForKey:USER_INFO];
-    [UserDefaults removeObjectForKey:BABY_INFO];
-    [UserDefaults synchronize];
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
