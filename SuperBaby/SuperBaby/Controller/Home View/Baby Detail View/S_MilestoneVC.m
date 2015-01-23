@@ -21,7 +21,6 @@
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UIView *viewTableHeader;
     __weak IBOutlet UITableView *tblView;
-    
     NSMutableArray *arrContent;
 }
 @end
@@ -95,7 +94,6 @@
     CCell_HeaderView *header = (CCell_HeaderView *)[tblView dequeueReusableHeaderFooterViewWithIdentifier:@"CCell_HeaderView"];
     header.lblTitle.text = arrContent[section][SECTION_NAME];
     header.lblTitle.textColor = RGBCOLOR_RED;
-    header.imgVArrow.image = [UIImage imageNamed:@"orange-down-arrow"];
     header.btnHeader.tag = section;
     [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
     if ([dict[TOOGLE] isEqualToString:@"0"])
@@ -104,7 +102,7 @@
     }
     else
     {
-        [UIView animateWithDuration:0.3 animations:^{header.imgVArrow.transform = CGAffineTransformMakeRotation(M_PI);}];
+        header.imgVArrow.image = [UIImage imageNamed:@"orange-up-arrow"];
     }
     
     return header;

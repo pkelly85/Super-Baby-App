@@ -335,7 +335,7 @@
    NSString *strStartDate = [dateFormatter stringFromDate:DateNow];
    return strStartDate;
 }
-#pragma mark - Register Now
+#pragma mark - ForgetPassword Now
 -(void)forgetPassword:(NSString *)strEmail
 {
     @try

@@ -45,6 +45,7 @@
 		109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */; };
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
+		109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109DCAB81A72440A00E95966 /* Tips_Sensory.plist */; };
 		109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D41A6F8D71001E50B1 /* MoviePlayer.m */; };
 		109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D91A6FD330001E50B1 /* S_TipsVC.m */; };
 		109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */; };
@@ -196,6 +197,7 @@
 		109885F91A371AF500FB3BB4 /* S_SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_SettingsVC.h; sourceTree = "<group>"; };
 		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
+		109DCAB81A72440A00E95966 /* Tips_Sensory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tips_Sensory.plist; sourceTree = "<group>"; };
 		109F74D31A6F8D71001E50B1 /* MoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayer.h; sourceTree = "<group>"; };
 		109F74D41A6F8D71001E50B1 /* MoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayer.m; sourceTree = "<group>"; };
 		109F74D81A6FD330001E50B1 /* S_TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TipsVC.h; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 				10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */,
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
+				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -948,6 +951,7 @@
 				10A4CADC1A70FE3100A120A5 /* S_AccountUpdateVC.xib in Resources */,
 				10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
+				109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
 				10A7DBD91A5D4A2C00529EDC /* CCell_Dot.xib in Resources */,
@@ -1195,7 +1199,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Debug;
 		};
@@ -1210,7 +1214,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Release;
 		};

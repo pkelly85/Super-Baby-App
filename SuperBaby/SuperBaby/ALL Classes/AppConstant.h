@@ -41,8 +41,11 @@
 #define App_Name @"Superbaby"
 #define BUCKET_NAME @"Superbaby"
 
-#define FACEBOOK_APPID @"327625884110904"
+#define FACEBOOK_APPID @"1404152686548327"
 
+//#define FACEBOOK_APPID @"327625884110904"
+//App ID: 1404152686548327
+//App Secret: b451dfefe2c178bb8379c4642e93c380
 #pragma mark - Extra
 /*-----------------------------------------------------------------------------*/
 #define appDel ((S_AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -123,7 +126,7 @@
 
 /*-----------------------------------------------------------------------------*/
 
-#define showHUD [SVProgressHUD show];
+#define showHUD [SVProgressHUD showWithStatus:SVProgressHUDMaskTypeClear];
 #define hideHUD [SVProgressHUD dismiss];
 
 #define showHUD_with_Title(status) [SVProgressHUD showWithStatus:status maskType:SVProgressHUDMaskTypeClear];

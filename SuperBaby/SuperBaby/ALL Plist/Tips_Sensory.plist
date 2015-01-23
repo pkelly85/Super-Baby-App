@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>key</key>
+		<string>Visual</string>
+		<key>value</key>
+		<array>
+			<string>approach baby from front and midline</string>
+			<string>do not place objects above or behind baby’s head when lying on back (promotes arching and extension)</string>
+			<string>use a shatter proof mirror while playing on belly </string>
+			<string>play peek-a-boo</string>
+			<string>use brightly colored toys or toys with moving parts</string>
+			<string>point out things in the environment while on a walk</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Auditory</string>
+		<key>value</key>
+		<array>
+			<string>listen to music (fast to alert, slow/soft to calm)</string>
+			<string>play with toys that make noise</string>
+			<string>read books</string>
+			<string>prepare baby for what’s to come (even if you think he won’t understand the words, it’s important to let baby know what’s happening next)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Tactile</string>
+		<key>value</key>
+		<array>
+			<string>lotion, infant massage</string>
+			<string>swaddle</string>
+			<string>bubbles</string>
+			<string>different textures (soft blankets, ridged toys, touch and feel books)</string>
+			<string>water play</string>
+			<string>squishy or spiked balls</string>
+			<string>play gyms with overhead toys or toys with moving parts</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Vestibular</string>
+		<key>value</key>
+		<array>
+			<string>when picking up baby, turn to side first to work on head righting and lateral trunk rotation</string>
+			<string>gently swing baby in blanket</string>
+			<string>once your baby can sit up, swing in toddler (bucket) swing at playground (baby will feel more secure leaning forward in swing)</string>
+			<string>rolling over ball / bouncing on ball</string>
+			<string>wear baby in carrier</string>
+			<string>bounce gently on your lap</string>
+			<string>tip baby into different positions (hold baby face down and fly in your arms, rock while lying on back in your arms)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Proprioceptive</string>
+		<key>value</key>
+		<array>
+			<string>roll baby in blanket</string>
+			<string>push objects when crawling or walking (inverted laundry basket, push toy, box of toys)</string>
+			<string>songs that involve body parts (head, shoulders, knees and toes)</string>
+			<string>songs that involve mimicking movements (itsy bitsy spider)</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>Taste / Smell</string>
+		<key>value</key>
+		<array>
+			<string>let baby play with food while eating</string>
+		</array>
+	</dict>
+</array>
+</plist>

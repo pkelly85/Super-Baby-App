@@ -132,6 +132,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnForgetPassClicked:" destination="-1" eventType="touchUpInside" id="c4G-1t-nFG"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-Gw-0uk" userLabel="New Password">
                             <rect key="frame" x="20" y="242" width="280" height="40"/>

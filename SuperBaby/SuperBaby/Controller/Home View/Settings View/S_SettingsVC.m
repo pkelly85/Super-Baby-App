@@ -10,7 +10,8 @@
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
 #import "S_AccountUpdateVC.h"
-@interface S_SettingsVC ()<UIActionSheetDelegate>
+#import <MessageUI/MessageUI.h>
+@interface S_SettingsVC ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
 {
     __weak IBOutlet UIView *viewTop;
     
@@ -20,6 +21,8 @@
     __weak IBOutlet UIButton *btnLogin_Logout;
 
     __weak IBOutlet UIImageView *imgVBaby;
+    
+    JSONParser *parser;
 }
 @end
 
@@ -86,6 +89,18 @@
     [btnRestorePurchase setAttributedTitle:attributedRestore forState:UIControlStateNormal];
 }
 #pragma mark - IBAction
+-(IBAction)btnFeedbackClicked:(id)sender
+{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *m = [[MFMailComposeViewController alloc] init];
+        [m setToRecipients:@[@"abc@example.com"]];
+        [m setSubject:@"Subject"];
+        [m setMessageBody:@"..." isHTML:YES];
+        [m setMailComposeDelegate:self];
+        [self presentViewController:m animated:YES completion:nil];
+    }
+}
+
 -(IBAction)btnAccountUpdateClicked:(id)sender
 {
     if (myUserModelGlobal)
@@ -114,7 +129,7 @@
             
             UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
                                         {
-                                            [self logOut];
+                                            [self logoutUserNow];
                                         }];
             
             [alert addAction:cancelAction];
@@ -134,15 +149,92 @@
         [self.navigationController pushViewController:obj animated:YES];
     }
 }
-
--(void)logOut
+-(void)logoutUserNow
 {
-    babyModelGlobal = nil;
-    myUserModelGlobal = nil;
-    [UserDefaults removeObjectForKey:USER_INFO];
-    [UserDefaults removeObjectForKey:BABY_INFO];
-    [UserDefaults synchronize];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    showHUD_with_Title(@"Please Wait...");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        @try
+        {
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token};
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_LOGOUT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(logOutSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)logOutSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"LogoutUserResult"])
+    {
+        BOOL isTimeLineSuccess = [[[objResponse valueForKeyPath:@"LogoutUserResult.ResultStatus.Status"] isNull] boolValue];;
+        
+        if (isTimeLineSuccess)
+        {
+            
+            hideHUD;
+            babyModelGlobal = nil;
+            myUserModelGlobal = nil;
+            [UserDefaults removeObjectForKey:USER_INFO];
+            [UserDefaults removeObjectForKey:BABY_INFO];
+            [UserDefaults synchronize];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[[objResponse valueForKeyPath:@"LogoutUserResult.ResultStatus.StatusMessage"] isNull] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+}
+#pragma mark - Mail Composer Delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+//    switch (result) {
+//        case MFMailComposeResultCancelled:
+//            
+//            break;
+//        case MFMailComposeResultFailed:
+//            
+//            break;
+//        case MFMailComposeResultSaved:
+//            
+//            break;
+//        case MFMailComposeResultSent:
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
 }
 #pragma mark - Actionsheet Delegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -153,7 +245,7 @@
                 
                 break;
             case 1:
-                [self logOut];
+                [self logoutUserNow];
                 break;
             default:
                 break;
