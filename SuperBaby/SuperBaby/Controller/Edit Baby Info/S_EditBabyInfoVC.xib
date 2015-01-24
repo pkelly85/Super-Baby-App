@@ -65,7 +65,9 @@
                                 <constraint firstAttribute="width" constant="44" id="6DU-WB-DVr"/>
                                 <constraint firstAttribute="height" constant="44" id="U6d-18-qmq"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                             <state key="normal" title="Done">
+                                <color key="titleColor" red="0.93725490199999995" green="0.7843137255" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>

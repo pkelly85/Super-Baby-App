@@ -29,7 +29,10 @@
 {
     popView;
 }
-
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     /*--- set textfield default values ---*/
@@ -332,7 +335,7 @@
    NSString *strStartDate = [dateFormatter stringFromDate:DateNow];
    return strStartDate;
 }
-#pragma mark - Register Now
+#pragma mark - ForgetPassword Now
 -(void)forgetPassword:(NSString *)strEmail
 {
     @try

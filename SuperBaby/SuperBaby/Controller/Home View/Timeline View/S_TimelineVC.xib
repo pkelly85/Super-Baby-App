@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_TimelineVC">
             <connections>
+                <outlet property="imgV" destination="dd4-MD-FAp" id="LBa-tx-ECY"/>
                 <outlet property="tblView" destination="zKi-hj-Ojm" id="Law-LK-Quu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewTop" destination="rCG-v4-jFd" id="YiP-XC-F0M"/>

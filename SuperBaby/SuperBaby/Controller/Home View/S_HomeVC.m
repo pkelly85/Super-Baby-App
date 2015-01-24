@@ -28,6 +28,10 @@
 
 @implementation S_HomeVC
 #pragma mark - View Did Load
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -30,6 +30,10 @@
 
 @implementation S_RegisterVC
 #pragma mark - Movie Player
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

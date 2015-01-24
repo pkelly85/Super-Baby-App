@@ -45,10 +45,15 @@
 		109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885F61A371AE200FB3BB4 /* S_TimelineVC.xib */; };
 		109885FC1A371AF500FB3BB4 /* S_SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */; };
 		109885FD1A371AF500FB3BB4 /* S_SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */; };
+		109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109DCAB81A72440A00E95966 /* Tips_Sensory.plist */; };
 		109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D41A6F8D71001E50B1 /* MoviePlayer.m */; };
 		109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D91A6FD330001E50B1 /* S_TipsVC.m */; };
 		109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */; };
 		10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */; };
+		10A4CAD51A70B3F700A120A5 /* UITableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */; };
+		10A4CAD71A70B40D00A120A5 /* UITableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */; };
+		10A4CADB1A70FE3100A120A5 /* S_AccountUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAD91A70FE3100A120A5 /* S_AccountUpdateVC.m */; };
+		10A4CADC1A70FE3100A120A5 /* S_AccountUpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A4CADA1A70FE3100A120A5 /* S_AccountUpdateVC.xib */; };
 		10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBC71A5CF00900529EDC /* Annotations.plist */; };
 		10A7DBCC1A5CF50D00529EDC /* CustomMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */; };
 		10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBCD1A5D022E00529EDC /* CustomMoviePlayerViewController.xib */; };
@@ -192,12 +197,19 @@
 		109885F91A371AF500FB3BB4 /* S_SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_SettingsVC.h; sourceTree = "<group>"; };
 		109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_SettingsVC.m; sourceTree = "<group>"; };
 		109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_SettingsVC.xib; sourceTree = "<group>"; };
+		109DCAB81A72440A00E95966 /* Tips_Sensory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tips_Sensory.plist; sourceTree = "<group>"; };
 		109F74D31A6F8D71001E50B1 /* MoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayer.h; sourceTree = "<group>"; };
 		109F74D41A6F8D71001E50B1 /* MoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayer.m; sourceTree = "<group>"; };
 		109F74D81A6FD330001E50B1 /* S_TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TipsVC.h; sourceTree = "<group>"; };
 		109F74D91A6FD330001E50B1 /* S_TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TipsVC.m; sourceTree = "<group>"; };
 		109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_TipsVC.xib; sourceTree = "<group>"; };
 		10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByMilestone.plist; sourceTree = "<group>"; };
+		10A4CAD31A70B3F700A120A5 /* UITableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableFooterView.h; sourceTree = "<group>"; };
+		10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableFooterView.m; sourceTree = "<group>"; };
+		10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableFooterView.xib; sourceTree = "<group>"; };
+		10A4CAD81A70FE3100A120A5 /* S_AccountUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_AccountUpdateVC.h; sourceTree = "<group>"; };
+		10A4CAD91A70FE3100A120A5 /* S_AccountUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_AccountUpdateVC.m; sourceTree = "<group>"; };
+		10A4CADA1A70FE3100A120A5 /* S_AccountUpdateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_AccountUpdateVC.xib; sourceTree = "<group>"; };
 		10A7DBC71A5CF00900529EDC /* Annotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Annotations.plist; sourceTree = "<group>"; };
 		10A7DBCA1A5CF50D00529EDC /* CustomMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMoviePlayerViewController.h; sourceTree = "<group>"; };
 		10A7DBCB1A5CF50D00529EDC /* CustomMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMoviePlayerViewController.m; sourceTree = "<group>"; };
@@ -368,6 +380,9 @@
 				1047D0D71A39CDEF00273457 /* MyViewCarousel.h */,
 				1047D0D81A39CDEF00273457 /* MyViewCarousel.m */,
 				1047D0DA1A39CE0000273457 /* MyViewCarousel.xib */,
+				10A4CAD31A70B3F700A120A5 /* UITableFooterView.h */,
+				10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */,
+				10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,6 +505,9 @@
 				109885F91A371AF500FB3BB4 /* S_SettingsVC.h */,
 				109885FA1A371AF500FB3BB4 /* S_SettingsVC.m */,
 				109885FB1A371AF500FB3BB4 /* S_SettingsVC.xib */,
+				10A4CAD81A70FE3100A120A5 /* S_AccountUpdateVC.h */,
+				10A4CAD91A70FE3100A120A5 /* S_AccountUpdateVC.m */,
+				10A4CADA1A70FE3100A120A5 /* S_AccountUpdateVC.xib */,
 			);
 			path = "Settings View";
 			sourceTree = "<group>";
@@ -537,6 +555,7 @@
 				10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */,
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
+				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -929,8 +948,10 @@
 				10FB44EA1A399A4800DDA935 /* S_RedFlagVC.xib in Resources */,
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
 				10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */,
+				10A4CADC1A70FE3100A120A5 /* S_AccountUpdateVC.xib in Resources */,
 				10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
+				109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */,
 				10C27DBA1A35AE290006985C /* S_ViewController.xib in Resources */,
 				109885EB1A370F5500FB3BB4 /* S_BabyDetailVC.xib in Resources */,
 				10A7DBD91A5D4A2C00529EDC /* CCell_Dot.xib in Resources */,
@@ -948,6 +969,7 @@
 				10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */,
 				109885F11A371A3000FB3BB4 /* S_ExcerciseVideoVC.xib in Resources */,
 				1047D0DB1A39CE0000273457 /* MyViewCarousel.xib in Resources */,
+				10A4CAD71A70B40D00A120A5 /* UITableFooterView.xib in Resources */,
 				10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */,
 				10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */,
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
@@ -1006,6 +1028,7 @@
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
 				10C27D951A35A5DC0006985C /* NSString+Validation.m in Sources */,
+				10A4CADB1A70FE3100A120A5 /* S_AccountUpdateVC.m in Sources */,
 				10C27D911A35A5DC0006985C /* NSAttributedString+Validation.m in Sources */,
 				1072DD531A4807CF00F156F7 /* S_LoginVC.m in Sources */,
 				10A7DBCC1A5CF50D00529EDC /* CustomMoviePlayerViewController.m in Sources */,
@@ -1036,6 +1059,7 @@
 				108E6ABB1A5E4D460065A582 /* CCell_Simple.m in Sources */,
 				10C27DAA1A35A5DC0006985C /* UIImageView+WebCache.m in Sources */,
 				10C27DA11A35A5DC0006985C /* SDWebImageDownloader.m in Sources */,
+				10A4CAD51A70B3F700A120A5 /* UITableFooterView.m in Sources */,
 				10C27DBF1A35AE570006985C /* S_RegisterVC.m in Sources */,
 				109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */,
 				109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */,
@@ -1177,7 +1201,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Debug;
 		};
@@ -1192,7 +1216,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Release;
 		};

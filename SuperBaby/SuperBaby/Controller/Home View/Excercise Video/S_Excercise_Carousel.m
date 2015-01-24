@@ -103,7 +103,7 @@
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag];
 
-        [appDel addMilestoneToTimeline_WatchVideo:dictVideo withVideoID:dictVideo[EV_ID]];
+//        [appDel addMilestoneToTimeline_WatchVideo:dictVideo withVideoID:dictVideo[EV_ID]];
         
         NSLog(@"Play : %ld",(long)btnPlay.tag);
         //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
@@ -118,13 +118,9 @@
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;
         player.arrAnnotation = arrTemp;
+        player.dictINFO = dictVideo;
+        player.strVideoID = dictVideo[EV_ID];
         [self presentMoviePlayerViewControllerAnimated:player];
-//
-//        CustomMoviePlayerViewController *moviePlayer = [[CustomMoviePlayerViewController alloc] initWithPath:strURL withAnnotationArray:arrTemp];
-//        moviePlayer.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//        [self presentViewController:moviePlayer animated:YES completion:^{
-//            [moviePlayer readyPlayer];
-//        }];
     }
     else
     {

@@ -25,6 +25,10 @@
 
 @implementation S_BabyDetailVC
 #pragma mark - View Did Load
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 -(IBAction)back:(id)sender
 {
     popView;

@@ -15,6 +15,9 @@
     NSArray *arrAnnotation;
     NSInteger currentIndex;
 }
+@property(nonatomic,strong)NSDictionary *dictINFO;
+@property(nonatomic,strong)NSString *strVideoID;
+
 @property(nonatomic,strong)NSString *moviePath;
 @property(nonatomic,strong)NSArray *arrAnnotation;
 @end
