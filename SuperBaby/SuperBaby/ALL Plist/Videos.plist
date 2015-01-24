@@ -8,7 +8,7 @@
 		<key>description</key>
 		<string>To promote hip flexion, abdominal activation, and bringing hands to mouth.</string>
 		<key>title</key>
-		<string>Supine- rolled towel under legs</string>
+		<string>Baby Bolster   (Supine, Rolled-Towel Under Legs)</string>
 		<key>instruction</key>
 		<string>With baby lying on back, place a small rolled towel under the knees. Give baby a toy to play with to promote bringing hands to midline and to mouth. </string>
 		<key>url</key>
@@ -44,7 +44,7 @@
 		<key>description</key>
 		<string>To promote leg extension strength and provide opportunity to weight bear.</string>
 		<key>title</key>
-		<string>Resisted Kicking “Kick-Off” </string>
+		<string>Kick-Off (Resisted Kicking)</string>
 		<key>instruction</key>
 		<string>Roll baby onto back, apply gentle pressure to the sole’s of baby’s feet. Baby will naturally push back, apply gentle resistance to kick, but let baby fully extend legs. </string>
 		<key>url</key>
@@ -62,7 +62,7 @@
 		<key>description</key>
 		<string>To promote tracking of an object and head control.</string>
 		<key>title</key>
-		<string>Optical Scanning “tracking training”</string>
+		<string>Tracking Training (Optical Scanning)</string>
 		<key>instruction</key>
 		<string>With baby on back slowly move an object of interest from side to side and up and down, across baby’s field of vision.</string>
 		<key>url</key>
@@ -80,7 +80,7 @@
 		<key>description</key>
 		<string>To promote head control and neck strength.</string>
 		<key>title</key>
-		<string>Head Control “Bobble Head”</string>
+		<string>Bobble Head (Head Control)</string>
 		<key>instruction</key>
 		<string>While supporting newborn with both hands under the shoulders and behind neck, slowly move infant in small circles, side to side, and back and forth.  Careful not to flop the infants head around. Baby has very little head control in first month.  </string>
 		<key>url</key>
@@ -98,7 +98,7 @@
 		<key>description</key>
 		<string>To promote body awareness, extremity control, coming to midline, and bilateral coordination. </string>
 		<key>title</key>
-		<string>Gentle Extremity Movements “Baby Tai-Chi”</string>
+		<string>Baby Tai-Chi (Gentle Extremity Movements) </string>
 		<key>instruction</key>
 		<string>Gently move the arms/legs/arm and leg in different directions.  Move the limbs in the same and in opposite directions.  Bring the arms together to midline.  Bring opposite hand and foot together, crossing the body</string>
 		<key>url</key>
@@ -116,7 +116,7 @@
 		<key>description</key>
 		<string>To promote trunk control, head control, balance, vestibular development, and strength.</string>
 		<key>title</key>
-		<string>Baby on belly  “Baby on Board”</string>
+		<string>Baby on Board (Baby on Belly)</string>
 		<key>instruction</key>
 		<string>While lying on your back, place baby lying on belly on your stomach/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side.</string>
 		<key>url</key>
@@ -134,7 +134,7 @@
 		<key>description</key>
 		<string>To provide vestibular input and promote a rolling motion.</string>
 		<key>title</key>
-		<string>Baby Blanket Roll  “Baby in a Blanket”</string>
+		<string>Baby in a Blanket (Baby Blanket Roll)</string>
 		<key>instruction</key>
 		<string>With baby lying on back on a small blanket, gently roll baby side to side. Position arms under blanket and on either side of baby.  Helps with balance later on in development. </string>
 		<key>url</key>
@@ -170,7 +170,7 @@
 		<key>description</key>
 		<string>To promote head control, arm strength, and trunk strength. (Do not attempt with a baby with low tone)</string>
 		<key>title</key>
-		<string>Baby “sit-ups”</string>
+		<string>Baby “Sit-Ups”</string>
 		<key>instruction</key>
 		<string>With baby lying on its back, hold babies hands and extend arms.  While maintaining eye contact with Baby, encourage the baby to come to sit by pulling arms gently. If baby is unable to tuck chin and has significant head lag, do not attempt “sit-ups” until they are able to maintain eye contact with you when pulling to sit. As baby becomes stronger you will need to provide less help, as baby will do more of the work. </string>
 		<key>url</key>
@@ -206,7 +206,7 @@
 		<key>description</key>
 		<string>To promote body awareness and trunk flexion.</string>
 		<key>title</key>
-		<string>Feet to Mouth  “Nibbly toes”</string>
+		<string>Nibbly Toes (Feet to Mouth) </string>
 		<key>instruction</key>
 		<string>With baby on back, bring both and/or one foot to baby’s mouth.  Let baby hold feet themselves, if they can. </string>
 		<key>url</key>
@@ -224,7 +224,7 @@
 		<key>description</key>
 		<string>To promote strength, head control, balance, and vestibular development.</string>
 		<key>title</key>
-		<string>Baby on Belly  &quot;Baby on Board&quot;</string>
+		<string>Baby on Board (Baby on Belly)</string>
 		<key>instruction</key>
 		<string>While lying on your back, place baby on your belly/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side</string>
 		<key>url</key>
@@ -276,13 +276,13 @@
 		<key>id</key>
 		<integer>15</integer>
 		<key>description</key>
-		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control.</string>
+		<string>To promote rolling from back to belly.</string>
 		<key>title</key>
-		<string>Assisted Tummy Time</string>
+		<string>Rollie-Pollie (Symmetrical Leg Roll)  </string>
 		<key>instruction</key>
-		<string>Roll baby onto their belly.  Place a small rolled towel or Baby Bolster under the chest so that the arms are in front.  Place a toy or child-safe mirror in front of them to promote head-lifting and arm use. </string>
+		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side.</string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Assisted+Tummy+Time+(2-3mo).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+(Symmetrical+Leg+Roll)+(4-5mo).m4v</string>
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
@@ -296,11 +296,11 @@
 		<key>description</key>
 		<string>To promote rolling from back to belly.</string>
 		<key>title</key>
-		<string>Symmetrical Leg Roll  &quot;Rollie-Pollie&quot;</string>
+		<string>Rollie-Pollie to Belly (Flex/Ext Leg Roll) </string>
 		<key>instruction</key>
-		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side.</string>
+		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side</string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+(Symmetrical+Leg+Roll)+(4-5mo).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+to+Belly+(Flex-Ext+Leg+Roll)+(4-5mo).m4v</string>
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
@@ -312,13 +312,13 @@
 		<key>id</key>
 		<integer>17</integer>
 		<key>description</key>
-		<string>To promote rolling from back to belly.</string>
+		<string>To promote sitting balance and trunk strength.</string>
 		<key>title</key>
-		<string>Flex/Ext Leg Roll  “Rollie-Pollie to belly” </string>
+		<string>Supported Long Sit</string>
 		<key>instruction</key>
-		<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands.  Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  Hold until baby’s head turns to side.  Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side</string>
+		<string>Place baby in seated position between your legs.  Supporting baby with your body, move together side to side and front to back.  As baby gains more sitting balance, provide less support.</string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+to+Belly+(Flex-Ext+Leg+Roll)+(4-5mo).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Supported+Long+Sit+(4-5mo).m4v</string>
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
@@ -329,24 +329,6 @@
 	<dict>
 		<key>id</key>
 		<integer>18</integer>
-		<key>description</key>
-		<string>To promote sitting balance and trunk strength.</string>
-		<key>title</key>
-		<string>Supported Long Sit, Side to Side and Front to Back</string>
-		<key>instruction</key>
-		<string>Place baby in seated position between your legs.  Supporting baby with your body, move together side to side and front to back.  As baby gains more sitting balance, provide less support.</string>
-		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Supported+Long+Sit+(4-5mo).m4v</string>
-		<key>price</key>
-		<string>FREE</string>
-		<key>thumbnail</key>
-		<string>image.png</string>
-		<key>annotationId</key>
-		<string>18</string>
-	</dict>
-	<dict>
-		<key>id</key>
-		<integer>19</integer>
 		<key>description</key>
 		<string>To promote rolling from belly to back. </string>
 		<key>title</key>
@@ -360,11 +342,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>19</string>
+		<string>18</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>20</integer>
+		<integer>19</integer>
 		<key>description</key>
 		<string>To promote dissociation, trunk control, and body awareness. </string>
 		<key>title</key>
@@ -378,15 +360,15 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>20</string>
+		<string>19</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>21</integer>
+		<integer>20</integer>
 		<key>description</key>
 		<string>To promote strength, trunk control, head control, and sitting balance.  </string>
 		<key>title</key>
-		<string>&quot;Baby on Board Sitting&quot;</string>
+		<string>Baby on Board Sitting</string>
 		<key>instruction</key>
 		<string>While lying on your back, place baby in a supported sitting on your belly/chest.  Support baby at sides of trunk and hips.  Encourage eye contact with baby.  You can move your body slightly to make balancing more difficult. Rock baby back and forth, and side to side.</string>
 		<key>url</key>
@@ -396,11 +378,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>21</string>
+		<string>20</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>22</integer>
+		<integer>21</integer>
 		<key>description</key>
 		<string>To promote vestibular development and trunk control.</string>
 		<key>title</key>
@@ -414,11 +396,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>22</string>
+		<string>21</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>23</integer>
+		<integer>22</integer>
 		<key>description</key>
 		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
 		<key>title</key>
@@ -432,11 +414,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>23</string>
+		<string>22</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>24</integer>
+		<integer>23</integer>
 		<key>description</key>
 		<string>To promote head and trunk control/strength, arm strength, balance, and vestibular development. </string>
 		<key>title</key>
@@ -450,11 +432,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>24</string>
+		<string>23</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>25</integer>
+		<integer>24</integer>
 		<key>description</key>
 		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control. </string>
 		<key>title</key>
@@ -468,11 +450,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>25</string>
+		<string>24</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>26</integer>
+		<integer>25</integer>
 		<key>description</key>
 		<string>To promote shoulder girdle strength, weight shifting, reaching, and dissociation. </string>
 		<key>title</key>
@@ -486,15 +468,15 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>26</string>
+		<string>25</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>27</integer>
+		<integer>26</integer>
 		<key>description</key>
 		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
 		<key>title</key>
-		<string>Sitting on Ball</string>
+		<string>Sitting on Ball (Intermediate)</string>
 		<key>instruction</key>
 		<string>While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the trunk and hips. While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down).  As baby gains better head/trunk control you can perform larger movements with baby and provide less support. </string>
 		<key>url</key>
@@ -504,11 +486,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>27</string>
+		<string>26</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>28</integer>
+		<integer>27</integer>
 		<key>description</key>
 		<string>To promote trunk rotation and reaching in sitting.</string>
 		<key>title</key>
@@ -522,11 +504,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>28</string>
+		<string>27</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>29</integer>
+		<integer>28</integer>
 		<key>description</key>
 		<string>To promote whole body strengthening, shoulder and hip stability, and preparing to crawl.</string>
 		<key>title</key>
@@ -540,15 +522,15 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>29</string>
+		<string>28</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>30</integer>
+		<integer>29</integer>
 		<key>description</key>
 		<string>To promote extensor strength and provide vestibular input. </string>
 		<key>title</key>
-		<string>Reverse Sit-Ups</string>
+		<string>Reverse &quot;Sit-Ups&quot;</string>
 		<key>instruction</key>
 		<string>Hold baby very securely by wrapping arms around waist.  Move baby’s head towards ground so their trunk is flexed, then encourage extension by applying gentle pressure to baby’s trunk and leaning back.</string>
 		<key>url</key>
@@ -558,11 +540,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>30</string>
+		<string>29</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>31</integer>
+		<integer>30</integer>
 		<key>description</key>
 		<string>To develop strength and provide vestibular input. </string>
 		<key>title</key>
@@ -576,11 +558,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>31</string>
+		<string>30</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>32</integer>
+		<integer>31</integer>
 		<key>description</key>
 		<string>To promote strength, dissociation, and extremity coordination.</string>
 		<key>title</key>
@@ -594,11 +576,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>32</string>
+		<string>31</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>33</integer>
+		<integer>32</integer>
 		<key>description</key>
 		<string>To promote head and trunk control/strength, arm strength, balance, and vestibular development. </string>
 		<key>title</key>
@@ -612,11 +594,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>33</string>
+		<string>32</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>34</integer>
+		<integer>33</integer>
 		<key>description</key>
 		<string>To promote trunk control and eventually transitioning from sitting to standing.</string>
 		<key>title</key>
@@ -630,11 +612,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>34</string>
+		<string>33</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>35</integer>
+		<integer>34</integer>
 		<key>description</key>
 		<string>To promote head and trunk control/strength, balance, and vestibular development. </string>
 		<key>title</key>
@@ -648,11 +630,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>35</string>
+		<string>34</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>36</integer>
+		<integer>35</integer>
 		<key>description</key>
 		<string>To promote weight shifting, trunk control, and motor planning. </string>
 		<key>title</key>
@@ -666,11 +648,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>36</string>
+		<string>35</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>37</integer>
+		<integer>36</integer>
 		<key>description</key>
 		<string>To promote strength, hamstring elongation, and develop a safe way to fall from standing.</string>
 		<key>title</key>
@@ -684,11 +666,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>37</string>
+		<string>36</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>38</integer>
+		<integer>37</integer>
 		<key>description</key>
 		<string>To promote reaching in a crawling position and weight bearing on one arm.</string>
 		<key>title</key>
@@ -702,15 +684,15 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>38</string>
+		<string>37</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>39</integer>
+		<integer>38</integer>
 		<key>description</key>
 		<string>To promote lower and upper extremity strength and coordination. </string>
 		<key>title</key>
-		<string>Cruising Practice &quot;Cruise Control&quot;</string>
+		<string>Cruise Control (Cruising Practice) </string>
 		<key>instruction</key>
 		<string>With baby in self-supported standing, place toy a few feet away from them.  Assist baby through the arms and/or hips to cruise to get toy.  Place toys on couch and other surfaces so baby can cruise along furniture. </string>
 		<key>url</key>
@@ -720,11 +702,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>39</string>
+		<string>38</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>40</integer>
+		<integer>39</integer>
 		<key>description</key>
 		<string>To promote moving from sitting to standing.</string>
 		<key>title</key>
@@ -738,29 +720,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>40</string>
+		<string>39</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>41</integer>
-		<key>description</key>
-		<string>To promote weight bearing, leg strength, balance, and coordination.</string>
-		<key>title</key>
-		<string>Assisted Walking</string>
-		<key>instruction</key>
-		<string>(Once baby is pulling to stand and cruising, you can begin practice walking.)  Begin by holding both hands, then switch to only one.  Make sure baby’s arms are not too high. Try to keep them no higher shoulder level.  Can also use push toys or an upside down laundry basket. </string>
-		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Backwards+on+ball+4-5+mo.mp4</string>
-		<key>price</key>
-		<string>FREE</string>
-		<key>thumbnail</key>
-		<string>image.png</string>
-		<key>annotationId</key>
-		<string>41</string>
-	</dict>
-	<dict>
-		<key>id</key>
-		<integer>42</integer>
+		<integer>40</integer>
 		<key>description</key>
 		<string>To promote stability and balance while walking.</string>
 		<key>title</key>
@@ -774,11 +738,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>42</string>
+		<string>40</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>43</integer>
+		<integer>41</integer>
 		<key>description</key>
 		<string>To promote balance, leg strength, trunk stability, and lifting feet higher off ground.</string>
 		<key>title</key>
@@ -792,11 +756,11 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>43</string>
+		<string>41</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>44</integer>
+		<integer>42</integer>
 		<key>description</key>
 		<string>To promote shoulder girdle strength and upper extremity coordination. </string>
 		<key>title</key>
@@ -810,15 +774,15 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>44</string>
+		<string>42</string>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>45</integer>
+		<integer>43</integer>
 		<key>description</key>
 		<string>To promote leg strength, coordination, balance, and body/spatial awareness. </string>
 		<key>title</key>
-		<string>Walking Backwards &quot;Moon Walk&quot;</string>
+		<string>Moon Walk   (Walking Backwards)</string>
 		<key>instruction</key>
 		<string>Holding baby’s arms at shoulder level or at trunk in standing, pull gently backwards to promote walking backwards. </string>
 		<key>url</key>
@@ -828,7 +792,7 @@
 		<key>thumbnail</key>
 		<string>image.png</string>
 		<key>annotationId</key>
-		<string>45</string>
+		<string>43</string>
 	</dict>
 </array>
 </plist>

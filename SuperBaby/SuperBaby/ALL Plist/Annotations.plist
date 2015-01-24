@@ -6,11 +6,21 @@
 		<key>id</key>
 		<integer>0</integer>
 		<key>timeIndex</key>
-		<integer>5</integer>
+		<integer>0</integer>
 		<key>duration</key>
 		<integer>3</integer>
 		<key>text</key>
-		<string>Text</string>
+		<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you.  vestibular input.</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>timeIndex</key>
+		<integer>2</integer>
+		<key>duration</key>
+		<integer>4</integer>
+		<key>text</key>
+		<string>This is annotation text, it can span several lines.  This text in particular probaby will end up covering three lines on the screen.  I&apos;ll need this sentence here to make sure it wraps onto enough new lines.</string>
 	</dict>
 	<dict>
 		<key>id</key>
