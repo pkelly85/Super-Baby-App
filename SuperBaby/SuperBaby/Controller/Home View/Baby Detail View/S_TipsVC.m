@@ -41,7 +41,28 @@
 {
     popView;
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:1.0 animations:^{
+        
+    } completion:^(BOOL finished) {
+        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    }];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [super viewWillDisappear:animated];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Tips", RGBCOLOR_BLUE, image_Blue);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_BLUE];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -204,7 +225,7 @@
 }
 -(void)toggleRow:(UIButton *)btnHeader
 {
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *dict;
     if (isSensorySelected)
         dict = arr_Sensory[btnHeader.tag];
     else
@@ -212,17 +233,15 @@
     
     //    CCell_HeaderView *cell = (CCell_HeaderView *)[tblView headerViewForSection:btnHeader.tag];
     
-    NSString *str = dict[TOOGLE];
     if ([dict[TOOGLE] isEqualToString:@"0"])
     {
-        str = @"1";
+        [dict setValue:@"1" forKey:TOOGLE];
     }
     else
     {
-        str = @"0";
+        [dict setValue:@"0" forKey:TOOGLE];
     }
     
-    [dict setValue:str forKey:TOOGLE];
     
     if (isSensorySelected)
         [arr_Sensory replaceObjectAtIndex:btnHeader.tag withObject:dict];

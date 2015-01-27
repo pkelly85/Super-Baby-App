@@ -287,11 +287,20 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     
     return retVal;
 }
-
++ (UIImage *)imageFromColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 /*----- back button with custom image -----*/
-+ (UIBarButtonItem*)backBarButtton
++ (UIBarButtonItem*)backBarButtton_withImage:(NSString *)strImageName
 {
-    UIImage *buttonImage = [UIImage imageNamed:@"back_black"];
+    UIImage *buttonImage = [UIImage imageNamed:strImageName];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
@@ -332,22 +341,12 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     
     return retVal;
 }
-+ (UIBarButtonItem*)createRightButton_withVC:(UIViewController *)vc withText:(NSString *)strText withSelector:(SEL)mySelector
++ (UIBarButtonItem*)createRightButton_withVC:(UIViewController *)vc withText:(NSString *)strText withTextColor:(UIColor *)colorr withSelector:(SEL)mySelector
 {
-//    UIImage *buttonImage = [UIImage imageNamed:@"back_icon"];
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    [button setTitle:strText forState:UIControlStateNormal];
-//    button.titleLabel.tintColor = [UIColor colorWithRed:72/255.0 green:190/255.0 blue:128/255.0 alpha:1.0];
-//    button.frame = CGRectMake(0, 0, 64, 64);
-//    [button addTarget:vc action:mySelector forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *retVal = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
     UIBarButtonItem *retVal = [[UIBarButtonItem alloc]initWithTitle:strText style:UIBarButtonItemStylePlain target:vc action:mySelector];
-    //retVal.tintColor = [UIColor colorWithRed:72/255.0 green:190/255.0 blue:128/255.0 alpha:1.0];
-
+    retVal.tintColor = colorr;
     return retVal;
 }
-
 
 +(NSString *)getMonthName:(NSString *)strMonthNumber
 {
@@ -400,6 +399,19 @@ NSString *DocumentsDirectoryPath() {NSArray *paths = NSSearchPathForDirectoriesI
     rect.size.height += textView.textContainerInset.bottom;
     [textView scrollRectToVisible:rect animated:animated];
 }
+#pragma mark - Create Image for Navigationbar
++(UIImage *)createImageForNavigationbar_withcolor:(UIColor *)color
+{
+    CGSize size = CGSizeMake(screenSize.size.width, 0.5);
+    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    [color setFill];
+    UIRectFill(CGRectMake(0, 0, size.width, size.height));
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();UIGraphicsEndImageContext();
+    return image;
+    //[self.navigationController.navigationBar setShadowImage:image];
+    
+}
+#pragma mark - Bottom Line
 +(void)addBottomLine_to_Label:(UILabel *)lbl withColor:(UIColor *)color
 {
     CALayer* layer = [lbl layer];

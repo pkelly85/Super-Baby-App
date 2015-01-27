@@ -36,7 +36,14 @@
 {
     popView;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Settings", [UIColor whiteColor], image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

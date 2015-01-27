@@ -71,11 +71,28 @@
     if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
+    
+    
+    /*--- create 4 coloured images for navigation controller ---*/
+    image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];
+    image_Blue = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_BLUE];;
+    image_Green = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_GREEN];;
+    image_Red = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_RED];;
+    image_Yellow = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_YELLOW];;
+    
     /*--- Window init ---*/
     self.window = [[UIWindow alloc]initWithFrame:screenSize];
     self.vc = [[S_RegisterVC alloc]initWithNibName:@"S_RegisterVC" bundle:nil];
     self.navC = [[UINavigationController alloc]initWithRootViewController:self.vc];
-    self.navC.navigationBarHidden = YES;
+    // Enable iOS 7 back gesture
+    if ([self.navC respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navC.interactivePopGestureRecognizer.enabled = YES;
+        self.navC.interactivePopGestureRecognizer.delegate = nil;
+    }
+    //self.navC.navigationBar.translucent = NO;
+    [self.navC.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+
+    //self.navC.navigationBarHidden = YES;
     self.window.rootViewController = self.navC;
     [self.window makeKeyAndVisible];
     return YES;

@@ -82,9 +82,14 @@
         }];
     });
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    /*--- Navigation setup ---*/
+    createNavBar(@"Timeline", [UIColor whiteColor], image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
+
     if (![babyModelGlobal.ImageURL isEqualToString:@""])
     {
         [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL)  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

@@ -46,20 +46,23 @@ NSString *DocumentsDirectoryPath() ;
 
 
 
-
++ (UIImage *)imageFromColor:(UIColor *)color;
 + (UIBarButtonItem*)leftMenuButton:(UIViewController *)viewC withSelector:(SEL)mySelector;
-+ (UIBarButtonItem*)backBarButtton;
++ (UIBarButtonItem*)backBarButtton_withImage:(NSString *)strImageName;
 + (UIButton*)backbutton;
 
 + (UIBarButtonItem*)backBarButtton_Dismiss:(UIViewController *)viewC withSelector:(SEL)mySelector;
 + (UIBarButtonItem*)backBarButtton_NewNavigation:(UIViewController *)viewC withSelector:(SEL)mySelector;
 
-+ (UIBarButtonItem*)createRightButton_withVC:(UIViewController *)vc withText:(NSString *)strText withSelector:(SEL)mySelector;
++ (UIBarButtonItem*)createRightButton_withVC:(UIViewController *)vc withText:(NSString *)strText withTextColor:(UIColor *)colorr withSelector:(SEL)mySelector;
 
 +(NSString *)getMonthName:(NSString *)strMonthNumber;
 +(NSInteger)getMonthNumber:(NSString *)strMonthName;
 
 +(NSArray *)getTagArray:(NSString *)strFinal;
+
++(UIImage *)createImageForNavigationbar_withcolor:(UIColor *)color;
+
 
 + (BOOL) isValidateUrl: (NSString *)url;
 +(void)addBottomLine_to_Label:(UILabel *)lbl withColor:(UIColor *)color;

@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
 }
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -29,8 +30,10 @@
     [UserDefaults setValue:@"done" forKey:TERMS_AGREE];
     [UserDefaults synchronize];
     [UIView animateWithDuration:0.5 animations:^{
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
         self.view.alpha = 0.0;
     } completion:^(BOOL finished) {
+        
         [self willMoveToParentViewController:nil];
         [self.view removeFromSuperview];
         [self removeFromParentViewController];

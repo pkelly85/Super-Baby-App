@@ -90,6 +90,31 @@
         hideHUD;
     });
 }
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:1.0 animations:^{
+        
+    } completion:^(BOOL finished) {
+        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    }];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [super viewWillDisappear:animated];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    /*--- Navigation setup ---*/
+    createNavBar(@"Edit Baby Information", RGBCOLOR_YELLOW, image_Yellow);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_YELLOW];
+    self.navigationItem.rightBarButtonItem = [CommonMethods createRightButton_withVC:self withText:@"Done" withTextColor:RGBCOLOR_YELLOW withSelector:@selector(doneClicked:)];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

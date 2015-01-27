@@ -55,6 +55,15 @@
     tblView.dataSource = self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Excercise Videos", RGBCOLOR_BLUE, image_Blue);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_BLUE];
+}
+
 #pragma mark - IBAction
 -(IBAction)btnAge_MilestoneClicked:(UIButton *)sender
 {
