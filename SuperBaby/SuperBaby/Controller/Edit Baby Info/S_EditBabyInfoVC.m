@@ -111,7 +111,7 @@
 {
     [super viewWillAppear:animated];
     /*--- Navigation setup ---*/
-    createNavBar(@"Edit Baby Information", RGBCOLOR_YELLOW, image_Yellow);
+    createNavBar(@"Edit Baby Information", RGBCOLOR_YELLOW, nil);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_YELLOW];
     self.navigationItem.rightBarButtonItem = [CommonMethods createRightButton_withVC:self withText:@"Done" withTextColor:RGBCOLOR_YELLOW withSelector:@selector(doneClicked:)];
 }

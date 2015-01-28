@@ -52,7 +52,7 @@
     [super viewWillAppear:animated];
     
     /*--- Navigation setup ---*/
-    createNavBar(@"Milestones", RGBCOLOR_RED, image_Red);
+    createNavBar(@"Milestones", RGBCOLOR_RED, nil);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
 }
 - (void)viewDidLoad {

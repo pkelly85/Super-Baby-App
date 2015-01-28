@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>age</key>
+		<string>1 month</string>
+		<key>milestones</key>
+		<array>
+			<string>Slightly elevates and turns head, while on belly.</string>
+			<string>Reciprocal and symmetrical kicking, while on back.  </string>
+			<string>Opens and closes hands.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>2 -3 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Lifts head to 90 degrees briefly when on tummy. </string>
+			<string>Lifts chest up when on tummy. </string>
+			<string>Minimal head lag with pull-to-sit.</string>
+			<string>Propped sitting with support. (head upright, but bobbing)</string>
+			<string>Reaches and grasps with hand-eye-coordination.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>4 - 5 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Lies on tummy with arms straightened.</string>
+			<string>Pivots on tummy to reach toys.</string>
+			<string>Rolls from back to side.</string>
+			<string>Plays with feet to mouth.</string>
+			<string>Head steady when sitting wth support.</string>
+			<string>Turns head in sitting.</string>
+			<string>Sits alone for periods.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>6 - 7 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Rolls from back to tummy.</string>
+			<string>Sits independently.</string>
+			<string>Stands holding on when placed</string>
+			<string>May crawl backwards.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>8 - 9 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Gets into hands-and-knees position.</string>
+			<string>Transitions in and out of sitting. </string>
+			<string>Pivots in sitting.</string>
+			<string>Pulls to stand at support. </string>
+			<string>Crawls/creeps forward.</string>
+			<string>Anterior/lateral protective reactions present with backward emerging.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>10 - 11 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Stands without support briefly.</string>
+			<string>Picks up obects from floor to standing position.</string>
+			<string>Walks with one or both hands held.</string>
+			<string>Creeps on hands and feet (bear walk).</string>
+			<string>Sidesteps or cruises with support.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>age</key>
+		<string>12 months</string>
+		<key>milestones</key>
+		<array>
+			<string>Independent walking with high hand guard and wide base of support.</string>
+			<string>Fast walking.</string>
+			<string>Walks backwards.</string>
+			<string>Walks sideways.</string>
+			<string>Throws a ball in sitting. </string>
+			<string>Moves rapidly from sitting or quadruped to standing.</string>
+		</array>
+	</dict>
+</array>
+</plist>

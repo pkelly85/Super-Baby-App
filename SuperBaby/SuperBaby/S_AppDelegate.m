@@ -73,7 +73,7 @@
     }
     
     
-    /*--- create 4 coloured images for navigation controller ---*/
+    /*--- create 5 coloured images for navigation controller ---*/
     image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];
     image_Blue = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_BLUE];;
     image_Green = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_GREEN];;

@@ -30,6 +30,7 @@
 		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
 		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
 		108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */; };
+		1097BCCF1A78A17F002F9FEB /* MyBabyMilestones.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */; };
 		109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
@@ -173,6 +174,7 @@
 		108E6ABD1A5E63C40065A582 /* CCell_SimpleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_SimpleHeader.h; sourceTree = "<group>"; };
 		108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_SimpleHeader.m; sourceTree = "<group>"; };
 		108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_SimpleHeader.xib; sourceTree = "<group>"; };
+		1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyBabyMilestones.plist; sourceTree = "<group>"; };
 		109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TimeLineModel.h; sourceTree = "<group>"; };
 		109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TimeLineModel.m; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
 				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
+				1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -977,6 +980,7 @@
 				10A4CAD71A70B40D00A120A5 /* UITableFooterView.xib in Resources */,
 				10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */,
 				10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */,
+				1097BCCF1A78A17F002F9FEB /* MyBabyMilestones.plist in Resources */,
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,

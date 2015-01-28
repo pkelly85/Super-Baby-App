@@ -37,7 +37,7 @@
     [super viewWillAppear:animated];
     
     /*--- Navigation setup ---*/
-    createNavBar(@"Red Flags", RGBCOLOR_GREEN, image_Green);
+    createNavBar(@"Red Flags", RGBCOLOR_GREEN, nil);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_GREEN];
 }
 - (void)viewDidLoad {
