@@ -80,7 +80,7 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CL7-HQ-uBe" userLabel="txtEmail">
                             <rect key="frame" x="20" y="236" width="280" height="40"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="VTe-Ek-HbW"/>
                             </constraints>
@@ -139,7 +139,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Mhq-RL-DS9" secondAttribute="bottom" id="3Rt-xa-9zt"/>
                                 <constraint firstItem="JY6-eQ-Ffd" firstAttribute="top" secondItem="krY-9P-5qf" secondAttribute="top" id="3zt-tB-XKC"/>
@@ -219,7 +219,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="13x-DW-cnk" firstAttribute="bottom" secondItem="mky-v4-1gl" secondAttribute="bottom" constant="-16" id="2ad-Yl-peF"/>
                                 <constraint firstItem="mky-v4-1gl" firstAttribute="top" secondItem="JhX-QG-Nvl" secondAttribute="top" id="3oO-ai-v1k"/>
@@ -275,7 +275,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="5tN-cP-0Wi" firstAttribute="top" secondItem="WuJ-EG-VMZ" secondAttribute="top" id="6dY-ql-JPl"/>
                                 <constraint firstAttribute="bottom" secondItem="5tN-cP-0Wi" secondAttribute="bottom" id="D1l-80-F3J"/>
@@ -290,6 +290,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="CL7-HQ-uBe" firstAttribute="top" secondItem="Cyq-1h-bE6" secondAttribute="bottom" constant="5" id="2Kt-jt-lL2"/>
                         <constraint firstItem="l9i-8y-2Ox" firstAttribute="trailing" secondItem="GNh-fO-0N2" secondAttribute="trailing" id="B6R-sh-PBj"/>

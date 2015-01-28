@@ -100,8 +100,8 @@
 {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *m = [[MFMailComposeViewController alloc] init];
-        [m setToRecipients:@[@"abc@example.com"]];
-        [m setSubject:@"Subject"];
+        [m setToRecipients:@[@"info@superbabyapp.com"]];
+        [m setSubject:@"Feedback"];
         [m setMessageBody:@"..." isHTML:YES];
         [m setMailComposeDelegate:self];
         [self presentViewController:m animated:YES completion:nil];

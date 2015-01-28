@@ -14,8 +14,11 @@
 #define TOOGLE @"toogleValue"
 #define ROW_NAME @"value"
 
+#define PREFIX_KEY_COUNT 7
+
 #import "CCell_HeaderView.h"
 #import "CCell_Dot.h"
+#import "CCell_Simple.h"
 @interface S_TipsVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIView *viewTop;
@@ -72,7 +75,7 @@
     
     /*--- Get From PList ---*/
     arr_Sensory = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Tips_Sensory" ofType:@"plist"]];
-    arr_FineMotor = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Tips_Sensory" ofType:@"plist"]];
+    arr_FineMotor = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Tips_FineMotor" ofType:@"plist"]];
     
     for (int i = 0; i < arr_Sensory.count; i++) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:arr_Sensory[i]];
@@ -93,8 +96,10 @@
     /*--- Register Class ---*/
     tblView.backgroundColor = [UIColor clearColor];
     tblView.tableHeaderView = viewTableHeader;
-    [tblView registerNib:[UINib nibWithNibName:@"CCell_HeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"CCell_HeaderView"];    
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_HeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"CCell_HeaderView"];
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Dot" bundle:nil] forCellReuseIdentifier:@"CCell_Dot"];
+    [tblView registerNib:[UINib nibWithNibName:@"CCell_Simple" bundle:nil] forCellReuseIdentifier:@"CCell_Simple"];
+
     tblView.delegate = self;
     tblView.dataSource = self;
 }
@@ -198,30 +203,74 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict;
+    NSString *strText;
     if (isSensorySelected)
+    {
         dict = arr_Sensory[indexPath.section];
+        strText = dict[ROW_NAME][indexPath.row];
+        float heightV = 0;
+        heightV = 8.0 + 8.0 + [strText getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width - 38.0 - 8.0];
+        
+        return MAX(37.0, heightV);
+    }
     else
+    {
         dict = arr_FineMotor[indexPath.section];
+        strText = dict[ROW_NAME][indexPath.row];
+        float heightV = 0;
+
+        if ([strText hasPrefix:@"skills#"])
+        {
+            strText = [strText substringWithRange:NSMakeRange(PREFIX_KEY_COUNT, [strText length]-PREFIX_KEY_COUNT)];
+            heightV = 8.0 + 8.0 + [strText getHeight_withFont:kFONT_REGULAR(18.0) widht:screenSize.size.width - 25.0 - 8.0];
+        }
+        else
+        {
+            heightV = 8.0 + 8.0 + [strText getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width - 38.0 - 8.0];
+        }
+        
+        return MAX(37.0, heightV);
+    }
     
-    float heightV = 0;
-    heightV = 8.0 + 8.0 + [dict[ROW_NAME][indexPath.row] getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width - 38.0 - 8.0];
-    
-    return MAX(37.0, heightV);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict;
     if (isSensorySelected)
+    {
         dict = arr_Sensory[indexPath.section];
+        CCell_Dot *cell = (CCell_Dot *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Dot"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.lblDescription.text = dict[ROW_NAME][indexPath.row];
+        cell.lblDescription.numberOfLines = 0;
+        return cell;
+    }
     else
+    {
         dict = arr_FineMotor[indexPath.section];
-    
-    CCell_Dot *cell = (CCell_Dot *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Dot"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.contentView.backgroundColor = [UIColor whiteColor];
-    cell.lblDescription.text = dict[ROW_NAME][indexPath.row];
-    cell.lblDescription.numberOfLines = 0;
-    return cell;
+        NSString *strText = dict[ROW_NAME][indexPath.row];
+        if ([strText hasPrefix:@"skills#"]) {
+            NSString *newStr = [strText substringWithRange:NSMakeRange(PREFIX_KEY_COUNT, [strText length]-PREFIX_KEY_COUNT)];
+            CCell_Simple *cell = (CCell_Simple *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Simple"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.contentView.backgroundColor = [UIColor whiteColor];
+            cell.lblDescription.font = kFONT_MEDIUM(18.0);
+            cell.lblDescription.text = newStr;
+            cell.lblDescription.numberOfLines = 0;
+            return cell;
+        }
+        else
+        {
+            CCell_Dot *cell = (CCell_Dot *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Dot"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.contentView.backgroundColor = [UIColor whiteColor];
+            cell.lblDescription.text = strText;
+            cell.lblDescription.numberOfLines = 0;
+            return cell;
+        }
+    }
+    return nil;
 }
 -(void)toggleRow:(UIButton *)btnHeader
 {

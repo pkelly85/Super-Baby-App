@@ -36,7 +36,7 @@
     [self.moviePlayer setFullscreen:YES];
     [self.moviePlayer setMovieSourceType:MPMovieSourceTypeStreaming];
     [self.moviePlayer setContentURL:[NSURL URLWithString:[_moviePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    
+    //[self.moviePlayer setContentURL:[NSURL URLWithString:@"https://s3.amazonaws.com/throwstream/1417691354.291999.mp4"]];
     self.moviePlayer.shouldAutoplay = YES;
     [self.moviePlayer prepareToPlay];
     
@@ -228,7 +228,10 @@
     if (!isDismissView) {
         if (![SVProgressHUD isVisible]) {
             if (![appDel checkConnection:nil]) {
-                [CommonMethods displayAlertwithTitle:@"Oops!" withMessage:NSLocalizedString(@"str_No_Internet", nil) withViewController:self];
+                if (self.moviePlayer.currentPlaybackTime < self.moviePlayer.duration) {
+                    [CommonMethods displayAlertwithTitle:@"Oops!" withMessage:NSLocalizedString(@"str_No_Internet", nil) withViewController:self];
+                }
+                
             }
         }
     }

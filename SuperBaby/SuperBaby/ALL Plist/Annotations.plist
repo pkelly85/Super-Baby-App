@@ -7,30 +7,1484 @@
 		<integer>0</integer>
 		<key>timeIndex</key>
 		<integer>0</integer>
-		<key>duration</key>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby lying on back, place a small rolled towel under the knees. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Give baby a toy to play with to promote bringing hands to midline and to mouth. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby lying on back, bring opposite hand to foot/knee, crossing body.   </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Switch extremities. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto back, apply gentle pressure to the sole’s of baby’s feet. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Baby will naturally push back, apply gentle resistance to kick, but let baby fully extend legs.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
 		<integer>3</integer>
-		<key>text</key>
-		<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you.  vestibular input.</string>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>With baby on back slowly move an object of interest from side to side and up and down, across baby’s field of vision.</string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>1</integer>
-		<key>timeIndex</key>
-		<integer>2</integer>
-		<key>duration</key>
 		<integer>4</integer>
-		<key>text</key>
-		<string>This is annotation text, it can span several lines.  This text in particular probaby will end up covering three lines on the screen.  I&apos;ll need this sentence here to make sure it wraps onto enough new lines.</string>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While supporting newborn with both hands under the shoulders and behind neck, slowly move infant in small circles, side to side, and back and forth.  .  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Careful not to flop the infants head around.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Baby has very little head control in first month</string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>1</integer>
+		<integer>5</integer>
 		<key>timeIndex</key>
-		<integer>2</integer>
-		<key>duration</key>
-		<integer>4</integer>
-		<key>text</key>
-		<string>This is annotation text, it can span several lines.  This text in particular probaby will end up covering three lines on the screen.  I&apos;ll need this sentence here to make sure it wraps onto enough new lines.</string>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Gently move the arms/legs/arm and leg in different directions.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Move the limbs in the same and in opposite directions. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Bring the arms together to midline.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Bring opposite hand and foot together, crossing the body.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While lying on your back, place baby lying on belly on your stomach/chest.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Support baby at sides of trunk and hips. Encourage eye contact with baby.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>You can move your body slightly to make balancing more difficult. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Rock baby back and forth, and side to side.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby lying on back on a small blanket, gently roll baby side to side. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Position arms under blanket and on either side of baby.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Helps with balance later on in development.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>8</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Gently roll baby onto belly, apply gentle pressure down on the top of the tooshy (pelvis) to allow for easier head lifting and use of arms. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>For a younger baby you can also roll a small towel under the chest to allow for easier head lifting. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>If one of baby’s arms get stuck under them, you can apply more pressure to opposite side of tooshy to help them free the stuck arm. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>9</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby lying on its back, hold babies hands and extend arms.   </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>While maintaining eye contact with Baby, encourage the baby to come to sit by pulling arms gently. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>If baby is unable to tuck chin and has significant head lag, do not attempt “sit-ups” until they are able to maintain eye contact with you when pulling to sit. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>As baby becomes stronger you will need to provide less help, as baby will do more of the work.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>10</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto belly with chest resting on your leg.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Encourage baby to use arms to push off your leg. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Encourage baby to look up/down in different directions. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>As baby’s arms become stronger, you can roll baby forward over your leg. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>11</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby on back, bring both and/or one foot to baby’s mouth.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Let baby hold feet themselves, if they can. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>12</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While lying on your back, place baby on your belly/chest. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Support baby at sides of trunk and hips.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Encourage eye contact with baby.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>You can move your body slightly to make balancing more difficult.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>8</integer>
+				<key>endtime</key>
+				<integer>10</integer>
+				<key>text</key>
+				<string>Rock baby back and forth, and side to side.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>13</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Place rolled towel behind baby’s back in side-lying.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place toy in front of child where they can reach it.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Baby has to work to maintain position, and will naturally lift side of head of ground. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>14</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto their belly.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place a small rolled towel or Baby Bolster under the chest so that the arms are in front.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Place a toy or child-safe mirror in front of them to promote head-lifting and arm use.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>15</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby on back, lift pelvis slightly and holding the baby’s legs, bring feet towards hands. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Holding legs, roll baby to side. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Hold legs to side until baby’s head turns to side as well.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Repeat to other side. Repeat 5 times on each side.  </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>16</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby on back and holding baby’s legs, lift pelvis slightly and bring feet towards hands. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Roll baby’s legs to the side while extending the bottom leg and keeping the upper leg flexed.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Hold until baby’s head turns to side.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Continue to roll the baby onto belly slowly, using forearm to help turn the baby.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>8</integer>
+				<key>endtime</key>
+				<integer>10</integer>
+				<key>text</key>
+				<string>Apply gentle traction backwards to help baby un-weight arms under trunk.  Repeat 5 times on each side. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>17</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Place baby in seated position between your legs.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Supporting baby with your body, move together side to side and front to back.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>As baby gains more sitting balance, provide less support.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>18</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto belly.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Sing “Row, Row, Row Your Boat”, as you gently roll baby’s hips side to side, and then roll over to back. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>19</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby on back, use a toy to encourage baby to turn to side and then belly.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>If baby needs more assistance, use a leading arm or leg to help baby roll onto side and then belly.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Once on belly, use the “Tooshy Down” method to help baby lift head and free-up arms.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>20</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While lying on your back, place baby in a supported sitting on your belly/chest.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Support baby at sides of trunk and hips.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Encourage eye contact with baby.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>You can move your body slightly to make balancing more difficult.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Rock baby back and forth, and side to side.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>21</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing a Thera-ball or beach ball with your legs, place baby on top of ball while supporting at the hips.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Slowly assist baby onto back and roll baby backwards so they are momentarily upside-down.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Roll baby back towards you and back into a sitting position. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>22</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing a Thera-ball or beach ball with your legs, place baby on top of ball while supporting at the trunk or under the arms. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down). </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>As baby gains better head control you can perform larger movements with baby.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>23</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Supporting baby at the sides, roll baby forward to encourage looking up and weight bearing on arms.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>The farther forward baby is on the ball, the more work they’re doing. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Grade movements depending on baby’s level of development.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>8</integer>
+				<key>endtime</key>
+				<integer>10</integer>
+				<key>text</key>
+				<string>Slower movements with more support for younger babies.  Can move baby from side to side for added vestibular input.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>24</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Supporting baby at the sides, roll baby forward to encourage looking up and weight bearing on arms.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>The farther forward baby is on the ball, the more work they’re doing. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Grade movements depending on baby’s level of development.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>8</integer>
+				<key>endtime</key>
+				<integer>10</integer>
+				<key>text</key>
+				<string>Slower movements with more support for younger babies.  Can move baby from side to side for added vestibular input.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>25</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto belly and propped on elbows or hands, place toy just out of reach to encourage baby to reach.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Move toy to different sides to encourage reaching with both arms.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string> If baby is falling over when attempting to reach, you can provide support over the pelvis.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>26</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the trunk and hips. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down). </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>As baby gains better head/trunk control you can perform larger movements with baby and provide less support. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>27</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby in sitting, place toys just out of reach of child to encourage reaching and weight shifting.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place toys in front and at different sides of baby. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Place toys slightly behind, to encourage trunk rotation and balance control.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Give baby a chance to try even if he is struggling a little.  Don’t rush to help.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>28</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto belly.  Bring knees under the baby’s trunk.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Lift tooshy off of heel to come to a quadruped position.   </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Support baby at hips, while they attempt to maintain quadruped position. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>You can provide extra support under chest if unable to bear weight on arms. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>29</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Hold baby very securely by wrapping arms around waist. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Move baby’s head towards ground so their trunk is flexed, then encourage extension by applying gentle pressure to baby’s trunk and leaning back. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>30</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Supporting baby under the arms, gently toss baby in the air and catch!</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Baby will naturally flex muscles to prepare for catch. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>The more head control the baby has, the higher you can toss them. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>31</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Roll baby onto belly. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Slowly move toy such as car in a circle around baby to encourage them to pivot while on belly. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>32</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing Thera-ball or beach ball with your legs, place baby on ball on their belly facing you.  vestibular input.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Supporting baby at the sides, roll baby forward to encourage looking up and weight bearing on arms.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>The farther forward baby is on the ball, the more work they’re doing. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>Grade movements depending on baby’s level of development.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>8</integer>
+				<key>endtime</key>
+				<integer>10</integer>
+				<key>text</key>
+				<string>Slower movements with more support for younger babies.  Can move baby from side to side for added vestibular input.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>33</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby in quadruped, support baby under the arms and bring to an upright position where baby is sitting on heels in a kneeling position.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>For older babies, you can try encouraging them to come off of heels into a tall kneel position. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>34</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the pelvis or at thighs. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>While supporting baby, move the baby in different directions (back and forth, side to side, circles, bounce up and down).  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>For babies with good head and trunk control, you can try moving quickly in different directions.</string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>6</integer>
+				<key>endtime</key>
+				<integer>8</integer>
+				<key>text</key>
+				<string>You can also lay baby on back and move them upside-down to help develop vestibular system. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>35</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby in a seated position, assist baby’s hands moving to ground. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>With baby’s hands on the ground, assist baby into a quadruped position.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Place toy a few feet in front of baby to motivate crawling while stabilizing baby at the hips. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>36</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby in a quadruped position, gently lift the pelvis up into the air so baby is weight bearing on hands and feet.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Gently shift baby’s weight in different directions.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>This position will also help to develop arched in the hands and feet.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>37</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Help baby to transition into a quadruped position.   </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place toy just out of reach to encourage baby to reach up with one arm to grab toy. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Practice switching arms.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>38</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>With baby in self-supported standing, place toy a few feet away from them.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Assist baby through the arms and/or hips to cruise to get toy. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Place toys on couch and other surfaces so baby can cruise along furniture. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>39</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>(Once baby is able to maintain a kneeling position and is ready to start pulling to stand.)  Place baby in a half-kneel position, with one leg in front, and other leg under them. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place toy on low table/chair in front of them to encourage them to pull to stand. </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>Practice maintaining position on both legs. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>40</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>In a clear space, blow bubbles out of reach of baby to encourage quick stepping and turning different directions. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>41</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Place a thick blanket on ground and encourage baby to walk over the uneven surface.</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>42</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Slowly lift baby’s legs off the ground when in a crawling position.   </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>2</integer>
+				<key>endtime</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Place a toy in front of them that they can move towards.  </string>
+			</dict>
+			<dict>
+				<key>starttime</key>
+				<integer>4</integer>
+				<key>endtime</key>
+				<integer>6</integer>
+				<key>text</key>
+				<string>You can also roll baby slowly forward on a ball until arms touch ground. Slowly roll ball forward and backward to have baby perform a “wheel-barrel” walk. </string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>42</integer>
+		<key>timeIndex</key>
+		<integer>0</integer>
+		<key>annotationtime</key>
+		<array>
+			<dict>
+				<key>starttime</key>
+				<integer>0</integer>
+				<key>endtime</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Holding baby’s arms at shoulder level or at trunk in standing, pull gently backwards to promote walking backwards. </string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>
