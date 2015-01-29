@@ -35,6 +35,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     /*--- set textfield default values ---*/
     [self setupTextField];
     
@@ -45,6 +48,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    /*--- Navigation setup ---*/
+    createNavBar(@"Login", RGBCOLOR(255.0, 255.0, 255.0), image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
+
+    
     txtEmail.text = @"";
     txtPassword.text = @"";
 }

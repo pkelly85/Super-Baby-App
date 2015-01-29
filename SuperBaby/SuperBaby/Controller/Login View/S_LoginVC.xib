@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_LoginVC">
             <connections>
-                <outlet property="lblTitle" destination="fvU-Nc-qB9" id="TkV-Nw-nYQ"/>
                 <outlet property="txtEmail" destination="yEM-Qm-xlH" id="0Rl-Tj-vgR"/>
                 <outlet property="txtPassword" destination="Jl7-ta-1hX" id="C0Z-pc-TmF"/>
                 <outlet property="view" destination="iht-Xe-Ov1" id="xSq-DM-Tpo"/>
@@ -22,16 +21,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-Nc-qB9">
-                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="RkZ-NU-agc"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-SA-xe9">
                     <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                     <subviews>
@@ -192,35 +181,17 @@
                         <constraint firstItem="dfi-UT-odc" firstAttribute="trailing" secondItem="wCa-5R-NnO" secondAttribute="trailing" id="zO5-zr-nSB"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34b-1E-72p">
-                    <rect key="frame" x="0.0" y="20" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="44" id="7mI-Ke-giO"/>
-                        <constraint firstAttribute="height" constant="44" id="qNi-7g-5uP"/>
-                    </constraints>
-                    <state key="normal" image="white-back-arrow">
-                        <color key="titleColor" red="0.93725490199999995" green="0.7843137255" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="back:" destination="-1" eventType="touchUpInside" id="M1k-9q-0g5"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Z2a-SA-xe9" firstAttribute="bottom" secondItem="NxH-B7-SzA" secondAttribute="bottom" id="8e4-Hz-uyD"/>
                 <constraint firstAttribute="bottom" secondItem="NxH-B7-SzA" secondAttribute="bottom" id="9iP-AZ-WFN"/>
+                <constraint firstItem="Z2a-SA-xe9" firstAttribute="leading" secondItem="iht-Xe-Ov1" secondAttribute="leading" id="BjQ-2Y-7zH"/>
                 <constraint firstItem="NxH-B7-SzA" firstAttribute="top" secondItem="iht-Xe-Ov1" secondAttribute="top" id="Dvq-C4-UtU"/>
-                <constraint firstItem="fvU-Nc-qB9" firstAttribute="leading" secondItem="iht-Xe-Ov1" secondAttribute="leading" id="GcS-g2-mBS"/>
-                <constraint firstItem="34b-1E-72p" firstAttribute="top" secondItem="iht-Xe-Ov1" secondAttribute="top" constant="20" id="Zaf-bc-XlU"/>
-                <constraint firstAttribute="trailing" secondItem="fvU-Nc-qB9" secondAttribute="trailing" id="fLE-yy-Tcu"/>
-                <constraint firstItem="Z2a-SA-xe9" firstAttribute="trailing" secondItem="fvU-Nc-qB9" secondAttribute="trailing" id="klz-qB-b53"/>
-                <constraint firstItem="Z2a-SA-xe9" firstAttribute="top" secondItem="fvU-Nc-qB9" secondAttribute="bottom" id="m3n-r8-GAm"/>
-                <constraint firstItem="34b-1E-72p" firstAttribute="leading" secondItem="iht-Xe-Ov1" secondAttribute="leading" id="nIs-O4-bDI"/>
-                <constraint firstItem="fvU-Nc-qB9" firstAttribute="top" secondItem="iht-Xe-Ov1" secondAttribute="top" constant="20" id="nxp-xJ-THI"/>
+                <constraint firstItem="Z2a-SA-xe9" firstAttribute="top" secondItem="iht-Xe-Ov1" secondAttribute="top" constant="64" id="GiK-f9-H4n"/>
+                <constraint firstAttribute="trailing" secondItem="Z2a-SA-xe9" secondAttribute="trailing" id="mH1-BA-AQm"/>
                 <constraint firstItem="NxH-B7-SzA" firstAttribute="leading" secondItem="iht-Xe-Ov1" secondAttribute="leading" id="oZb-Eg-gZ7"/>
                 <constraint firstAttribute="trailing" secondItem="NxH-B7-SzA" secondAttribute="trailing" id="zM1-YW-qsx"/>
-                <constraint firstItem="Z2a-SA-xe9" firstAttribute="leading" secondItem="fvU-Nc-qB9" secondAttribute="leading" id="zWj-LG-ZlL"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -231,7 +202,6 @@
     </objects>
     <resources>
         <image name="babby" width="320" height="568"/>
-        <image name="white-back-arrow" width="12" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

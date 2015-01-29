@@ -84,7 +84,7 @@
 
 -(float)getHeight_with_width:(float)myWidth
 {
-    CGSize textSize;
+    CGSize textSize = CGSizeMake(0, 0);
     if ([self respondsToSelector:@selector(boundingRectWithSize:options:context:)])
     {
         CGRect newSize = [self boundingRectWithSize:CGSizeMake(myWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];

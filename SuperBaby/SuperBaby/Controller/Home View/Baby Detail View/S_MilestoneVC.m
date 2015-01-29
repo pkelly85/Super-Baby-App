@@ -18,9 +18,9 @@
 #import "CCell_Milestone.h"
 @interface S_MilestoneVC ()<UITableViewDataSource,UITableViewDelegate>
 {
-    __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UIView *viewTableHeader;
     __weak IBOutlet UITableView *tblView;
+    
     NSMutableArray *arrContent;
 }
 @end
@@ -32,9 +32,32 @@
     popView;
 }
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:1.0 animations:^{
+        
+    } completion:^(BOOL finished) {
+        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    }];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [super viewWillDisappear:animated];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Milestones", RGBCOLOR_RED, nil);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     arrContent = [[NSMutableArray alloc]init];
     
     for (int i = 0; i<5; i++) {
@@ -50,10 +73,6 @@
         
         [arrContent addObject:dict];
     }
-    
-    /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
-    
     tblView.backgroundColor = [UIColor clearColor];
     tblView.tableHeaderView = viewTableHeader;
     //tblView.sectionHeaderHeight = 216.0;
@@ -121,20 +140,17 @@
 }
 -(void)toggleRow:(UIButton *)btnHeader
 {
-    NSMutableDictionary *dict = arrContent[btnHeader.tag];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:arrContent[btnHeader.tag]];
 //    CCell_HeaderView *cell = (CCell_HeaderView *)[tblView headerViewForSection:btnHeader.tag];
     
-    NSString *str = dict[TOOGLE];
     if ([dict[TOOGLE] isEqualToString:@"0"])
     {
-        str = @"1";
+        [dict setValue:@"1" forKey:TOOGLE];
     }
     else
     {
-        str = @"0";
+        [dict setValue:@"0" forKey:TOOGLE];
     }
-    
-    [dict setValue:str forKey:TOOGLE];
     
     [arrContent replaceObjectAtIndex:btnHeader.tag withObject:dict];
     

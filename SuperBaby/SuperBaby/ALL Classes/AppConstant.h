@@ -26,7 +26,7 @@
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 //#import "UINavigationController+Rotation_IOS6.h"
 //#import "DACircularProgressView.h"
-
+#import "UINavigationController+StatusBarStyle.h"
 #import "SVProgressHUD.h"
 
 
@@ -65,6 +65,7 @@
 #define RGBCOLOR_BLUE [UIColor colorWithRed:0.0/255.0f green:183.0/255.0f blue:188.0/255.0f alpha:1.0f]
 #define RGBCOLOR_RED [UIColor colorWithRed:232.0/255.0f green:114.0/255.0f blue:76.0/255.0f alpha:1.0f]
 #define RGBCOLOR_GREEN [UIColor colorWithRed:159.0/255.0f green:189.0/255.0f blue:39.0/255.0f alpha:1.0f]
+#define RGBCOLOR_YELLOW [UIColor colorWithRed:239.0/255.0f green:200.0/255.0f blue:50.0/255.0f alpha:1.0f]
 
 /*-----------------------------------------------------------------------------*/
 
@@ -90,6 +91,19 @@
 
 #define ios8 (([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0)?20:0)
 
+
+UIImage *image_White;
+UIImage *image_Blue;
+UIImage *image_Green;
+UIImage *image_Red;
+UIImage *image_Yellow;
+#define IMG_BACK_WHITE @"white-back-arrow"
+#define IMG_BACK_BLUE @"blue-back-arrow"
+#define IMG_BACK_GREEN @"green-back-arrow"
+#define IMG_BACK_RED @"orange-back-arrow"
+#define IMG_BACK_YELLOW @"yellow-back-arrow"
+#define createNavBar(title123,titleColor,imageCreated) self.title = title123;[self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:titleColor,NSForegroundColorAttributeName,kFONT_REGULAR(18.0),NSFontAttributeName,nil]];[self.navigationController.navigationBar setShadowImage:imageCreated];
+//#define createNavBarImage(r,g,b) CGSize size = CGSizeMake(screenSize.size.width, 0.5);UIGraphicsBeginImageContextWithOptions(size, YES, 0);[[UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f] setFill];UIRectFill(CGRectMake(0, 0, size.width, size.height));UIImage *image = UIGraphicsGetImageFromCurrentImageContext();UIGraphicsEndImageContext();[self.navigationController.navigationBar setShadowImage:image];
 /*-----------------------------------------------------------------------------*/
 /*
  HelveticaNeue-Italic

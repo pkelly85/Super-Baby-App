@@ -15,8 +15,6 @@
 
 @interface S_BabyDetailVC ()
 {
-    __weak IBOutlet UIView *viewTop;
-
     __weak IBOutlet UIButton *btn_4_EditBabyInfo;
 
     __weak IBOutlet UIImageView *imgVBaby;
@@ -36,14 +34,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
-    
+    /*--- set attributed text---*/
     [self setAttibutedText];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    /*--- Navigation setup ---*/
+    
+    createNavBar(@"My Baby", RGBCOLOR(255.0, 255.0, 255.0), image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
     if (![babyModelGlobal.ImageURL isEqualToString:@""])
     {
         [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -64,25 +68,31 @@
     [btn_4_EditBabyInfo setAttributedTitle:attributedString forState:UIControlStateNormal];
     
 }
+
 #pragma mark - IBAction methods
 -(IBAction)btnMilestoneClicked:(id)sender
 {
     S_MilestoneVC *obj = [[S_MilestoneVC alloc]initWithNibName:@"S_MilestoneVC" bundle:nil];
+//    obj.navigationController.navigationBar.translucent = YES;
+    [obj.navigationController.navigationBar setBackgroundImage:[CommonMethods imageFromColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController pushViewController:obj animated:YES];
 }
 -(IBAction)btnTipsClicked:(id)sender
 {
     S_TipsVC *obj = [[S_TipsVC alloc]initWithNibName:@"S_TipsVC" bundle:nil];
+    [obj.navigationController.navigationBar setBackgroundImage:[CommonMethods imageFromColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController pushViewController:obj animated:YES];
 }
 -(IBAction)btnRedFlagClicked:(id)sender
 {
     S_RedFlagVC *obj = [[S_RedFlagVC alloc]initWithNibName:@"S_RedFlagVC" bundle:nil];
+    [obj.navigationController.navigationBar setBackgroundImage:[CommonMethods imageFromColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController pushViewController:obj animated:YES];
 }
 -(IBAction)btnEditBabyInfoClicked:(id)sender
 {
     S_EditBabyInfoVC *obj = [[S_EditBabyInfoVC alloc]initWithNibName:@"S_EditBabyInfoVC" bundle:nil];
+    [obj.navigationController.navigationBar setBackgroundImage:[CommonMethods imageFromColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController pushViewController:obj animated:YES];
 }
 

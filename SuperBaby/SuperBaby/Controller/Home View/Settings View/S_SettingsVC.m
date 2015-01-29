@@ -36,7 +36,14 @@
 {
     popView;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Settings", [UIColor whiteColor], image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -93,8 +100,8 @@
 {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *m = [[MFMailComposeViewController alloc] init];
-        [m setToRecipients:@[@"abc@example.com"]];
-        [m setSubject:@"Subject"];
+        [m setToRecipients:@[@"info@superbabyapp.com"]];
+        [m setSubject:@"Feedback"];
         [m setMessageBody:@"..." isHTML:YES];
         [m setMailComposeDelegate:self];
         [self presentViewController:m animated:YES completion:nil];

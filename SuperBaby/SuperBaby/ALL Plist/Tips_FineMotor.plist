@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>key</key>
+		<string>4 months</string>
+		<key>value</key>
+		<array>
+			<string>skills#grasps object in palm</string>
+			<string>play with sponges in the tub</string>
+			<string>provide input to palm with massage and lotion</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>5 months</string>
+		<key>value</key>
+		<array>
+			<string>skills#transferring toys</string>
+			<string>stick puffs to baby&apos;s hand to see if he&apos;ll grab them with opposite hand</string>
+			<string>skills#picks up objects using raking motion with fingers</string>
+			<string>place multiple small objects such as puffs or cheerios on tray so baby will attempt to grab more than one</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>6 months</string>
+		<key>value</key>
+		<array>
+			<string>skills#reaching with one arm</string>
+			<string>present small desired toy or food item that baby can grasp with one hand while baby is holding a toy in the other hand</string>
+			<string>place teething ring on baby&apos;s toes</string>
+			<string>skills#banging objects</string>
+			<string>seat baby in high chair with large spoon or rattle that baby can bang on tray</string>
+			<string>skills#holds small objects between index/middle fingers and thumb (radial palmar)</string>
+			<string>place a small block inside a box so baby will attempt to reach in and grab with one hand</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>9 months</string>
+		<key>value</key>
+		<array>
+			<string>skills#voluntarily releases objects</string>
+			<string>roll a ball back and forth together</string>
+			<string>let baby play in grass and sand</string>
+			<string>skills#points / pokes with index finger</string>
+			<string>explore holes of peg board, push buttons on toys</string>
+			<string>skills#turn pages of book</string>
+			<string>use board books </string>
+			<string>skills#grabs small objects with thumb and side of index finger (inferior pincer)</string>
+			<string>place finger food in bowl or container to encourage baby to pick up with thumb and index fingers</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>12 months</string>
+		<key>value</key>
+		<array>
+			<string>skills#pincer grasp (index finger and thumb)</string>
+			<string>finger foods (puffs or Cheerios, cooked pasta, peas) </string>
+			<string>pulling tissues from a box</string>
+			<string>place puffs in ice cube tray </string>
+		</array>
+	</dict>
+</array>
+</plist>

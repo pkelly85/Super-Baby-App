@@ -19,8 +19,6 @@
 
 @interface S_RegisterVC ()<UITextFieldDelegate>
 {
-    __weak IBOutlet UILabel *lblTitle;
-    
     __weak IBOutlet UITextField *txtEmail;
     __weak IBOutlet UITextField *txtPassword;
     
@@ -37,11 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     /*--- set textfield default values ---*/
     [self setupTextField];
-    
-    /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_Label:lblTitle withColor:[UIColor whiteColor]];
     
     /*--- add agree disagree view ---*/
     if ([[UserDefaults valueForKey:TERMS_AGREE] isEqualToString:@"NO"])
@@ -68,8 +64,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationItem.hidesBackButton = YES;
     txtEmail.text = @"";
     txtPassword.text = @"";
+    
+    /*--- Custom Navigation ---*/
+    createNavBar(@"Sign Up", RGBCOLOR(255.0, 255.0, 255.0), image_White);
+    self.navigationItem.rightBarButtonItem = [CommonMethods createRightButton_withVC:self withText:@"Login" withTextColor:RGBCOLOR(255.0, 255.0, 255.0) withSelector:@selector(btnLogInClicked:)];
 }
 -(void)setupTextField
 {

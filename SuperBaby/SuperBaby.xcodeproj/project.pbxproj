@@ -30,6 +30,8 @@
 		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
 		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
 		108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */; };
+		1097BCCF1A78A17F002F9FEB /* MyBabyMilestones.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */; };
+		1097BCD11A78B60B002F9FEB /* Tips_FineMotor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1097BCD01A78B60B002F9FEB /* Tips_FineMotor.plist */; };
 		109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */; };
 		109885DC1A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D51A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.m */; };
 		109885DD1A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 109885D71A36E5C100FB3BB4 /* TPKeyboardAvoidingScrollView.m */; };
@@ -49,6 +51,7 @@
 		109F74D61A6F8D71001E50B1 /* MoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D41A6F8D71001E50B1 /* MoviePlayer.m */; };
 		109F74DB1A6FD330001E50B1 /* S_TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 109F74D91A6FD330001E50B1 /* S_TipsVC.m */; };
 		109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */; };
+		10A11F231A77745500EDC198 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A11F221A77745500EDC198 /* UINavigationController+StatusBarStyle.m */; };
 		10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */; };
 		10A4CAD51A70B3F700A120A5 /* UITableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */; };
 		10A4CAD71A70B40D00A120A5 /* UITableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */; };
@@ -172,6 +175,8 @@
 		108E6ABD1A5E63C40065A582 /* CCell_SimpleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_SimpleHeader.h; sourceTree = "<group>"; };
 		108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_SimpleHeader.m; sourceTree = "<group>"; };
 		108E6AC01A5E63D70065A582 /* CCell_SimpleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_SimpleHeader.xib; sourceTree = "<group>"; };
+		1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyBabyMilestones.plist; sourceTree = "<group>"; };
+		1097BCD01A78B60B002F9FEB /* Tips_FineMotor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tips_FineMotor.plist; sourceTree = "<group>"; };
 		109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TimeLineModel.h; sourceTree = "<group>"; };
 		109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TimeLineModel.m; sourceTree = "<group>"; };
 		109885D41A36E5C100FB3BB4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -203,6 +208,8 @@
 		109F74D81A6FD330001E50B1 /* S_TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_TipsVC.h; sourceTree = "<group>"; };
 		109F74D91A6FD330001E50B1 /* S_TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_TipsVC.m; sourceTree = "<group>"; };
 		109F74DA1A6FD330001E50B1 /* S_TipsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_TipsVC.xib; sourceTree = "<group>"; };
+		10A11F211A77745500EDC198 /* UINavigationController+StatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBarStyle.h"; sourceTree = "<group>"; };
+		10A11F221A77745500EDC198 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
 		10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExercisesByMilestone.plist; sourceTree = "<group>"; };
 		10A4CAD31A70B3F700A120A5 /* UITableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableFooterView.h; sourceTree = "<group>"; };
 		10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableFooterView.m; sourceTree = "<group>"; };
@@ -556,6 +563,8 @@
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
 				10B7D5A41A442E15004EFF60 /* Videos.plist */,
 				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
+				1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */,
+				1097BCD01A78B60B002F9FEB /* Tips_FineMotor.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -701,6 +710,8 @@
 				10C27D541A35A5DC0006985C /* UIImage+KTCategory.m */,
 				10C27D551A35A5DC0006985C /* UINavigationController+Rotation_IOS6.h */,
 				10C27D561A35A5DC0006985C /* UINavigationController+Rotation_IOS6.m */,
+				10A11F211A77745500EDC198 /* UINavigationController+StatusBarStyle.h */,
+				10A11F221A77745500EDC198 /* UINavigationController+StatusBarStyle.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -972,10 +983,12 @@
 				10A4CAD71A70B40D00A120A5 /* UITableFooterView.xib in Resources */,
 				10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */,
 				10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */,
+				1097BCCF1A78A17F002F9FEB /* MyBabyMilestones.plist in Resources */,
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,
 				108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */,
+				1097BCD11A78B60B002F9FEB /* Tips_FineMotor.plist in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
 				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
 				10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */,
@@ -1071,6 +1084,7 @@
 				10C27D9F1A35A5DC0006985C /* SDWebImageCompat.m in Sources */,
 				10A7DBD81A5D4A2C00529EDC /* CCell_Dot.m in Sources */,
 				109885EA1A370F5500FB3BB4 /* S_BabyDetailVC.m in Sources */,
+				10A11F231A77745500EDC198 /* UINavigationController+StatusBarStyle.m in Sources */,
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
 				109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */,
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
@@ -1201,7 +1215,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
+				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
 			};
 			name = Debug;
 		};
@@ -1216,7 +1230,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
+				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
 			};
 			name = Release;
 		};

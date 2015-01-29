@@ -36,9 +36,17 @@
 {
     [super viewDidLoad];
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillDisappear:animated];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     if (myUserModelGlobal)
     {
         if (![babyModelGlobal.ImageURL isEqualToString:@""])

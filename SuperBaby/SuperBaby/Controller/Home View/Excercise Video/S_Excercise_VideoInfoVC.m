@@ -44,6 +44,15 @@
 {
     popView;
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(_dictInfo[EV_Detail_title], RGBCOLOR_RED, image_Red);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

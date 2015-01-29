@@ -243,6 +243,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self invalidTimer];
+    [super viewWillDisappear:animated];
     NSLog(@"MOVIE FINISH");
     [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
     

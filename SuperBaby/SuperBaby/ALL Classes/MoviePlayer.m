@@ -16,6 +16,8 @@
     UILabel *lblDescription;
     UILabel *lblTransperant;
     BOOL isServiceCalled;
+    
+    BOOL isDismissView;
 }
 @end
 
@@ -23,7 +25,7 @@
 @synthesize arrAnnotation;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    isDismissView = NO;
     lblDescription.alpha = 0.0;
     lblTransperant.alpha = 0.0;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -34,7 +36,7 @@
     [self.moviePlayer setFullscreen:YES];
     [self.moviePlayer setMovieSourceType:MPMovieSourceTypeStreaming];
     [self.moviePlayer setContentURL:[NSURL URLWithString:[_moviePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    
+    //[self.moviePlayer setContentURL:[NSURL URLWithString:@"https://s3.amazonaws.com/throwstream/1417691354.291999.mp4"]];
     self.moviePlayer.shouldAutoplay = YES;
     [self.moviePlayer prepareToPlay];
     
@@ -58,8 +60,8 @@
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [self invalidTimer];
-    NSLog(@"MOVIE FINISH");
     [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
@@ -67,8 +69,8 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
     
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    NSLog(@"MOVIE FINISH");
+    [super viewWillDisappear:animated];
 }
 #pragma mark - Create Label with Constraint
 -(void)createLabelAndConstraint
@@ -107,8 +109,6 @@
     [self.moviePlayer.view addSubview:lblTransperant];
     [self.moviePlayer.view bringSubviewToFront:lblTransperant];
     
-    
-    NSLog(@"%@",self.moviePlayer.view);
     //do not remove just for reference
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
@@ -225,11 +225,17 @@
 }
 -(void)playBackStateChange
 {
-    if (![SVProgressHUD isVisible]) {
-        if (![appDel checkConnection:nil]) {
-            [CommonMethods displayAlertwithTitle:@"Oops!" withMessage:NSLocalizedString(@"str_No_Internet", nil) withViewController:self];
+    if (!isDismissView) {
+        if (![SVProgressHUD isVisible]) {
+            if (![appDel checkConnection:nil]) {
+                if (self.moviePlayer.currentPlaybackTime < self.moviePlayer.duration) {
+                    [CommonMethods displayAlertwithTitle:@"Oops!" withMessage:NSLocalizedString(@"str_No_Internet", nil) withViewController:self];
+                }
+                
+            }
         }
     }
+    
     
     
     /*if(playbackState == MPMoviePlaybackStatePlaying)
@@ -257,12 +263,16 @@
 {
     // [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
-    // Remove observer
+    isDismissView = YES;
     [[NSNotificationCenter 	defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-    });
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//            
+//        });
+    // Remove observer
+    
+    
 }
 
 #pragma mark - Extra

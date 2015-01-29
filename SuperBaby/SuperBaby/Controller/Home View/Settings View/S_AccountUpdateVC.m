@@ -35,6 +35,30 @@
 {
     popView;
 }
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [UIView animateWithDuration:1.0 animations:^{
+//        
+//    } completion:^(BOOL finished) {
+//        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+//    }];
+//}
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [super viewWillDisappear:animated];
+//}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    /*--- Navigation setup ---*/
+    createNavBar(@"Account Update", [UIColor whiteColor], image_White);
+    self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
+    self.navigationItem.rightBarButtonItem = [CommonMethods createRightButton_withVC:self withText:@"Save" withTextColor:[UIColor whiteColor] withSelector:@selector(btnSaveClicked:)];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

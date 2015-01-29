@@ -225,7 +225,7 @@
 -(CGFloat)getWidth_withFont:(UIFont *)myFont height:(CGFloat)myHeight
 {
     CGRect frame;
-    CGSize textSize;
+    CGSize textSize = CGSizeMake(0, 0);
     if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)])
     {
         NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -248,7 +248,7 @@
 -(CGFloat)getHeight_withFont:(UIFont *)myFont widht:(CGFloat)myWidth
 {
     CGRect frame;
-    CGSize textSize;
+    CGSize textSize = CGSizeMake(0, 0);
     if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)])
     {
         NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
