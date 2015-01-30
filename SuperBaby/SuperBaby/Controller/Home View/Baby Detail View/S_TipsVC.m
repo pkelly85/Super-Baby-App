@@ -8,7 +8,7 @@
 
 #import "S_TipsVC.h"
 #import "AppConstant.h"
-
+#import "UILabelMoreText.h"
 
 #define SECTION_NAME @"key"
 #define TOOGLE @"toogleValue"
@@ -19,12 +19,12 @@
 #import "CCell_HeaderView.h"
 #import "CCell_Dot.h"
 #import "CCell_Simple.h"
-@interface S_TipsVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface S_TipsVC ()<UITableViewDataSource,UITableViewDelegate,UILabelMoreTextDelegate>
 {
     __weak IBOutlet UIView *viewTop;
     __weak IBOutlet UITableView *tblView;
     __weak IBOutlet UIView *viewTableHeader;
-    __weak IBOutlet UILabel *lblDescription;
+    __weak IBOutlet UILabelMoreText *lblDescription;
 
     __weak IBOutlet UIButton *btnSensory;
     __weak IBOutlet UIButton *btnFineMotor;
@@ -71,7 +71,7 @@
     [super viewDidLoad];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     /*--- Get From PList ---*/
     arr_Sensory = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Tips_Sensory" ofType:@"plist"]];
@@ -88,7 +88,8 @@
         [dict setValue:@"0" forKey:TOOGLE];
         [arr_FineMotor replaceObjectAtIndex:i withObject:dict];
     }
-    
+    lblDescription.delegate = self;
+
     /*--- Set Defaults ---*/
     isSensorySelected = NO;
     [self btn_Sensory_Fine_Clicked:btnSensory];
@@ -125,9 +126,13 @@
         [btnSensory setBackgroundColor:RGBCOLOR_GREY];
         [btnFineMotor setBackgroundColor:RGBCOLOR_BLUE];
     }
-    float heightText = 200.0 + [[self getstrDescription] getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
+//    float heightText = 200.0 + [[self getstrDescription] getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
     
-    lblDescription.text = [self getstrDescription];
+
+    [lblDescription setTruncatingText:[self getstrDescription] forNumberOfLines:6];
+    
+    float heightText = 200.0 + [lblDescription.text getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
+    
     CGRect frame = viewTableHeader.frame;
     frame.size.height = MAX(216.0, heightText);
     viewTableHeader.frame = frame;
@@ -135,7 +140,16 @@
     tblView.tableHeaderView = viewTableHeader;
     [tblView reloadData];
 }
-
+-(void)expandLabelNow
+{
+    float heightText = 200.0 + [[self getstrDescription] getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
+    CGRect frame = viewTableHeader.frame;
+    frame.size.height = MAX(216.0, heightText);
+    viewTableHeader.frame = frame;
+    tblView.tableHeaderView = nil;
+    tblView.tableHeaderView = viewTableHeader;
+    [tblView reloadData];
+}
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

@@ -121,6 +121,8 @@
 		10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DBE1A35AE570006985C /* S_RegisterVC.xib */; };
 		10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */; };
 		10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */; };
+		10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */; };
+		10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */; };
 		10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */; };
 		10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */; };
 		10FB44E01A398D7200DDA935 /* CCell_HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DF1A398D7200DDA935 /* CCell_HeaderView.m */; };
@@ -340,6 +342,9 @@
 		10C27DC21A35CF4F0006985C /* S_EditBabyInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_EditBabyInfoVC.h; sourceTree = "<group>"; };
 		10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_EditBabyInfoVC.m; sourceTree = "<group>"; };
 		10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_EditBabyInfoVC.xib; sourceTree = "<group>"; };
+		10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelMoreText.h; sourceTree = "<group>"; };
+		10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelMoreText.m; sourceTree = "<group>"; };
+		10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RedFlags.plist; sourceTree = "<group>"; };
 		10FB44D91A398D4C00DDA935 /* CCell_Excercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Excercise.h; sourceTree = "<group>"; };
 		10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Excercise.m; sourceTree = "<group>"; };
 		10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Excercise.xib; sourceTree = "<group>"; };
@@ -390,6 +395,8 @@
 				10A4CAD31A70B3F700A120A5 /* UITableFooterView.h */,
 				10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */,
 				10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */,
+				10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */,
+				10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,6 +572,7 @@
 				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
 				1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */,
 				1097BCD01A78B60B002F9FEB /* Tips_FineMotor.plist */,
+				10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -971,6 +979,7 @@
 				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
+				10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */,
 				10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */,
 				10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */,
 				109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */,
@@ -1088,6 +1097,7 @@
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
 				109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */,
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
+				10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */,
 				10C27D9D1A35A5DC0006985C /* NSData+ImageContentType.m in Sources */,
 				10C27D881A35A5DC0006985C /* AFHTTPSessionManager.m in Sources */,
 				107995951A3EB621006EA4BA /* S_FacebookClass.m in Sources */,

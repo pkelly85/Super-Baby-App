@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_RedFlagVC">
             <connections>
+                <outlet property="tblView" destination="LY6-04-Uk3" id="JW9-io-QfK"/>
                 <outlet property="view" destination="MYh-hS-MT6" id="5Uc-Gh-eCr"/>
+                <outlet property="viewTableHeader" destination="leD-OK-HIb" id="RSI-FH-mFQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -52,10 +54,14 @@
                         <constraint firstItem="5XO-ah-6eQ" firstAttribute="leading" secondItem="wE9-gz-pPA" secondAttribute="leading" id="wgc-F7-kY8"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LY6-04-Uk3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LY6-04-Uk3">
                     <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="k3V-FL-ttb"/>
+                        <outlet property="delegate" destination="-1" id="B62-t4-VRX"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,8 +80,42 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="480" y="497"/>
         </view>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="leD-OK-HIb" userLabel="View Header">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="atM-Xg-efM">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="fJb-qz-bm8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLM-VG-Y8h" customClass="UILabelMoreText">
+                    <rect key="frame" x="10" y="188" width="300" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="atM-Xg-efM" secondAttribute="trailing" id="Id7-Ac-Mit"/>
+                <constraint firstAttribute="trailing" secondItem="OLM-VG-Y8h" secondAttribute="trailing" constant="10" id="Tb3-Dz-f5c"/>
+                <constraint firstItem="OLM-VG-Y8h" firstAttribute="leading" secondItem="leD-OK-HIb" secondAttribute="leading" constant="10" id="Z6l-FD-JVL"/>
+                <constraint firstItem="OLM-VG-Y8h" firstAttribute="top" secondItem="atM-Xg-efM" secondAttribute="bottom" constant="8" id="dvg-ll-zY3"/>
+                <constraint firstItem="atM-Xg-efM" firstAttribute="leading" secondItem="leD-OK-HIb" secondAttribute="leading" id="gGe-TH-Pul"/>
+                <constraint firstItem="atM-Xg-efM" firstAttribute="top" secondItem="leD-OK-HIb" secondAttribute="top" id="jOO-MP-nWN"/>
+                <constraint firstAttribute="bottom" secondItem="OLM-VG-Y8h" secondAttribute="bottom" constant="10" id="l1q-f9-nB9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="797" y="554.5"/>
+        </view>
     </objects>
     <resources>
+        <image name="babby" width="320" height="568"/>
         <image name="green-back-arrow" width="12" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
