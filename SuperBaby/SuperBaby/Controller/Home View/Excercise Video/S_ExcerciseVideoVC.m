@@ -96,12 +96,12 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 116.0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CCell_Excercise *cell = (CCell_Excercise *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Excercise"];
-    
+    tblView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if (isAgeSelected)
     {
@@ -111,7 +111,7 @@
     else
     {
         cell.lblTitle.text = arrExcercise_Milestone[indexPath.row][EV_MILESTONE];
-        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-milestone%ld",(long)indexPath.row+1]];
+        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-milestone%ld.jpg",(long)indexPath.row+1]];
     }
     return cell;
 }
@@ -132,15 +132,7 @@
     }
     [self.navigationController pushViewController:obj animated:YES];
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    // Get visible cells on table view.
-    NSArray *visibleCells = [tblView visibleCells];
-    
-    for (CCell_Excercise *cell in visibleCells) {
-        [cell cellOnTableView:tblView didScrollOnView:self.view];
-    }
-}
+
 /*
 -(void)textFieldDidChange:(UITextField *)textF
 {

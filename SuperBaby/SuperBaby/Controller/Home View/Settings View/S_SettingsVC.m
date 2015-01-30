@@ -102,7 +102,7 @@
         MFMailComposeViewController *m = [[MFMailComposeViewController alloc] init];
         [m setToRecipients:@[@"info@superbabyapp.com"]];
         [m setSubject:@"Feedback"];
-        [m setMessageBody:@"..." isHTML:YES];
+        [m setMessageBody:@"" isHTML:YES];
         [m setMailComposeDelegate:self];
         [self presentViewController:m animated:YES completion:nil];
     }
