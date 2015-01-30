@@ -200,6 +200,12 @@ UIImage *image_Yellow;
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
 
+
+#define EV_Annotation_annotationtime @"annotationtime"
+#define EV_Annotation_starttime @"starttime"
+#define EV_Annotation_endtime @"endtime"
+#define EV_Annotation_text @"text"
+
 /*-----------------------------------------------------------------------------*/
 #define img_radio_Off @"radio-icon"
 #define img_radio_On @"active-radio-icon"

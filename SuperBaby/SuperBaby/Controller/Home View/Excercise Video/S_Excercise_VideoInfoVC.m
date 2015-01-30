@@ -100,15 +100,15 @@
 {
     //change error here
     if ([appDel checkConnection:nil]) {
-//        [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
-        NSLog(@"%@",_dictInfo);
+        //NSLog(@"%@",_dictInfo);
         NSString *strURL = _dictInfo[EV_Detail_url];
         
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
         
-        NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
-                             @{@"startT" : @4,@"dur":@1},
-                             @{@"startT" : @7,@"du0r":@1}];
+        NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
+        
+        NSArray *arrTemp = arrAnnotations[[_dictInfo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
+        
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;
         player.arrAnnotation = arrTemp;

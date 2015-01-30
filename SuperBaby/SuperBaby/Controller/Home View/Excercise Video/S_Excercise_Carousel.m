@@ -111,18 +111,14 @@
     if ([appDel checkConnection:nil])
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag];
-
-//        [appDel addMilestoneToTimeline_WatchVideo:dictVideo withVideoID:dictVideo[EV_ID]];
-        
-        NSLog(@"Play : %ld",(long)btnPlay.tag);
         //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
         NSString *strURL = dictVideo[EV_Detail_url];
         
-        NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+       // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
         
-        NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
-                             @{@"startT" : @4,@"dur":@1},
-                             @{@"startT" : @7,@"dur":@1}];
+        NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
+
+        NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
         
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;

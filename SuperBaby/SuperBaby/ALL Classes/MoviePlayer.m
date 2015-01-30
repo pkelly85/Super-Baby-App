@@ -161,7 +161,7 @@
 {
     /*--- if video is watched >75% then add milestone ---*/
     NSInteger percent = (self.moviePlayer.currentPlaybackTime/self.moviePlayer.duration)*100;
-    NSLog(@"%ld : Time : %f",(long)percent ,self.moviePlayer.currentPlaybackTime);
+    //NSLog(@"%ld : Time : %f",(long)percent ,self.moviePlayer.currentPlaybackTime);
     if (percent > VIDEO_WATCH_PERCENT && !isServiceCalled) {
         isServiceCalled = YES;
         [appDel addMilestoneToTimeline_WatchVideo:_dictINFO withVideoID:_strVideoID];
@@ -179,28 +179,47 @@
     }
     else
     {
-        NSDictionary *dict = arrAnnotation[currentIndex];
-        NSInteger startTime = [dict[@"startT"] integerValue];
-        NSInteger durationToShow = [dict[@"dur"] integerValue];
-        //NSLog(@"Time : %f : %ld : %ld",mp.currentPlaybackTime,(long)startTime,(long)startTime+durationToShow);
+//        NSDictionary *dict = arrAnnotation[currentIndex];
+//        NSInteger startTime = [dict[EV_Annotation_starttime] integerValue];
+//        NSInteger endTime = [dict[EV_Annotation_endtime] integerValue];
+//        NSLog(@"Time : %f : %ld : %ld",self.moviePlayer.currentPlaybackTime,(long)startTime,(long)endTime);
         
-        if (self.moviePlayer.currentPlaybackTime >= startTime && self.moviePlayer.currentPlaybackTime <= startTime+durationToShow)
-        {
-            lblDescription.text = @"Baby Text";
+        /*--- predicate that check if currenttime > endtime then get 0 index dictionary ---*/
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                  @"endtime >= %d",(NSInteger)self.moviePlayer.currentPlaybackTime];
+        
+        NSArray *arrT = [arrAnnotation filteredArrayUsingPredicate:predicate];
+        if (arrT.count > 0) {
+            NSDictionary *dictAnnotation = arrT[0];
+            NSLog(@"%ld , start :%@ , End : %@ , text : %@",(long)self.moviePlayer.currentPlaybackTime,dictAnnotation[EV_Annotation_starttime],dictAnnotation[EV_Annotation_endtime],dictAnnotation[EV_Annotation_text]);
+            lblDescription.text = dictAnnotation[EV_Annotation_text];
             lblDescription.alpha = 1.0;
             lblTransperant.alpha = 0.1;
             [self.moviePlayer.view updateConstraints];
         }
         else
         {
-            if (startTime+durationToShow < self.moviePlayer.currentPlaybackTime) {
-                currentIndex += 1;
-                //NSLog(@"Index : %ld",(long)currentIndex);
-            }
             lblDescription.alpha = 0.0;
             lblTransperant.alpha = 0.0;
-            
+
         }
+//        if (self.moviePlayer.currentPlaybackTime >= startTime && self.moviePlayer.currentPlaybackTime <= endTime)
+//        {
+//            lblDescription.text = dict[EV_Annotation_text];
+//            lblDescription.alpha = 1.0;
+//            lblTransperant.alpha = 0.1;
+//            [self.moviePlayer.view updateConstraints];
+//        }
+//        else
+//        {
+//            if (endTime < self.moviePlayer.currentPlaybackTime) {
+//                currentIndex += 1;
+//                //NSLog(@"Index : %ld",(long)currentIndex);
+//            }
+//            lblDescription.alpha = 0.0;
+//            lblTransperant.alpha = 0.0;
+//            
+//        }
     }
     
     //    if ([self.delegate respondsToSelector:@selector(moviePlayer_CurrentTime:withTotalMovieTime:)]) {
