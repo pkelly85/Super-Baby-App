@@ -129,7 +129,7 @@
 //    float heightText = 200.0 + [[self getstrDescription] getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
     
 
-    [lblDescription setTruncatingText:[self getstrDescription] forNumberOfLines:6];
+    [lblDescription setTruncatingText:[self getstrDescription] forNumberOfLines:6 withMoreColor:RGBCOLOR_BLUE];
     
     float heightText = 200.0 + [lblDescription.text getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
     
@@ -208,7 +208,7 @@
     }
     else
     {
-        header.imgVArrow.image = [UIImage imageNamed:@"blue-top-arrow"];
+        header.imgVArrow.image = [UIImage imageNamed:@"blue-up-arrow"];
     }
     
     return header;

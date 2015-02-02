@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     /*--- Get From PList ---*/
     arrExcercise_Age = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByAge" ofType:@"plist"]];

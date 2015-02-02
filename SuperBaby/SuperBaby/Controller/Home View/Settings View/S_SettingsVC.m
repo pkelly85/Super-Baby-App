@@ -63,7 +63,7 @@
         [btnLogin_Logout setTitle:@"Login" forState:UIControlStateNormal];
 
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     [self setAttibutedText];
 }

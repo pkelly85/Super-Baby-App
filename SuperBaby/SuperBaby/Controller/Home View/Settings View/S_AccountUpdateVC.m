@@ -71,7 +71,7 @@
     [self setupTextField];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
 }
 -(void)setupTextField
 {

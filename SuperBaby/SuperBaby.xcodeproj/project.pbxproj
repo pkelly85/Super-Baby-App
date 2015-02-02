@@ -121,6 +121,9 @@
 		10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DBE1A35AE570006985C /* S_RegisterVC.xib */; };
 		10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */; };
 		10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */; };
+		10C3584C1A7F8397007EBB73 /* S_PercentileCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */; };
+		10C358501A7F9667007EBB73 /* lenageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584E1A7F9667007EBB73 /* lenageinf.csv */; };
+		10C358511A7F9667007EBB73 /* wtageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584F1A7F9667007EBB73 /* wtageinf.csv */; };
 		10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */; };
 		10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */; };
 		10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */; };
@@ -342,6 +345,10 @@
 		10C27DC21A35CF4F0006985C /* S_EditBabyInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_EditBabyInfoVC.h; sourceTree = "<group>"; };
 		10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_EditBabyInfoVC.m; sourceTree = "<group>"; };
 		10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_EditBabyInfoVC.xib; sourceTree = "<group>"; };
+		10C3584A1A7F8397007EBB73 /* S_PercentileCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_PercentileCalculator.h; sourceTree = "<group>"; };
+		10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_PercentileCalculator.m; sourceTree = "<group>"; };
+		10C3584E1A7F9667007EBB73 /* lenageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lenageinf.csv; sourceTree = "<group>"; };
+		10C3584F1A7F9667007EBB73 /* wtageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wtageinf.csv; sourceTree = "<group>"; };
 		10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelMoreText.h; sourceTree = "<group>"; };
 		10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelMoreText.m; sourceTree = "<group>"; };
 		10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RedFlags.plist; sourceTree = "<group>"; };
@@ -581,6 +588,7 @@
 		10C27CF21A35A4C20006985C = {
 			isa = PBXGroup;
 			children = (
+				10C3584D1A7F9667007EBB73 /* Docs Calculation */,
 				10B7D5A21A442E15004EFF60 /* ALL Plist */,
 				1079959A1A3EBFD1006EA4BA /* Framework */,
 				10C27DAE1A35A7190006985C /* Common Methods */,
@@ -827,6 +835,8 @@
 				10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */,
 				109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */,
 				109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */,
+				10C3584A1A7F8397007EBB73 /* S_PercentileCalculator.h */,
+				10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -859,6 +869,16 @@
 				10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */,
 			);
 			path = "Edit Baby Info";
+			sourceTree = "<group>";
+		};
+		10C3584D1A7F9667007EBB73 /* Docs Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				10C3584E1A7F9667007EBB73 /* lenageinf.csv */,
+				10C3584F1A7F9667007EBB73 /* wtageinf.csv */,
+			);
+			name = "Docs Calculation";
+			path = "SuperBaby/Docs Calculation";
 			sourceTree = "<group>";
 		};
 		10FB44D71A398D4C00DDA935 /* Baby Detail */ = {
@@ -968,6 +988,7 @@
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
 				10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */,
 				10A4CADC1A70FE3100A120A5 /* S_AccountUpdateVC.xib in Resources */,
+				10C358501A7F9667007EBB73 /* lenageinf.csv in Resources */,
 				10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */,
@@ -999,6 +1020,7 @@
 				108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */,
 				1097BCD11A78B60B002F9FEB /* Tips_FineMotor.plist in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
+				10C358511A7F9667007EBB73 /* wtageinf.csv in Resources */,
 				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
 				10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */,
 			);
@@ -1048,6 +1070,7 @@
 				1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
+				10C3584C1A7F8397007EBB73 /* S_PercentileCalculator.m in Sources */,
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
 				10C27D951A35A5DC0006985C /* NSString+Validation.m in Sources */,
 				10A4CADB1A70FE3100A120A5 /* S_AccountUpdateVC.m in Sources */,

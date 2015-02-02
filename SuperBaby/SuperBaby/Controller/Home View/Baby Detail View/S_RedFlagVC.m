@@ -110,7 +110,7 @@
     }
     else
     {
-        header.imgVArrow.image = [UIImage imageNamed:@"green-top-arrow"];
+        header.imgVArrow.image = [UIImage imageNamed:@"green-up-arrow"];
     }
     
     return header;

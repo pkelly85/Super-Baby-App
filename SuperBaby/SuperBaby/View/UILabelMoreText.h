@@ -15,5 +15,5 @@
 @interface UILabelMoreText : UILabel
 @property(nonatomic,strong)id <UILabelMoreTextDelegate> delegate;
 - (void)setTruncatingText:(NSString *) txt;
-- (void)setTruncatingText:(NSString *) txt forNumberOfLines:(int) lines;
+- (void)setTruncatingText:(NSString *) txt forNumberOfLines:(int)lines withMoreColor:(UIColor *)color;
 @end

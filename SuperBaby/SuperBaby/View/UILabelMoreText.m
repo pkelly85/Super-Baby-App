@@ -21,10 +21,10 @@
 #pragma Public Methods
 
 - (void)setTruncatingText:(NSString *) txt {
-    [self setTruncatingText:txt forNumberOfLines:kNumberOfLines];
+    [self setTruncatingText:txt forNumberOfLines:kNumberOfLines withMoreColor:self.textColor];
 }
 
-- (void)setTruncatingText:(NSString *) txt forNumberOfLines:(int)lines{
+- (void)setTruncatingText:(NSString *) txt forNumberOfLines:(int)lines withMoreColor:(UIColor *)color{
     string = txt;
     self.numberOfLines = 0;
     NSMutableString *truncatedString = [txt mutableCopy];
@@ -51,9 +51,10 @@
         [self addGestureRecognizer:tapper];
         
         
+        
         NSMutableAttributedString *stringText = [[NSMutableAttributedString alloc] initWithString:self.text];
         [stringText addAttribute: NSFontAttributeName value: self.font range:[self.text rangeOfString:ellipsis]];
-        [stringText addAttribute: NSForegroundColorAttributeName value:RGBCOLOR_BLUE range:[self.text rangeOfString:ellipsis]];
+        [stringText addAttribute: NSForegroundColorAttributeName value:color range:[self.text rangeOfString:ellipsis]];
         
         self.attributedText = stringText;
     }
