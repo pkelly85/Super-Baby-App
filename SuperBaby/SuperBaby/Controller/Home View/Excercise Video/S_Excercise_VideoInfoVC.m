@@ -17,6 +17,8 @@
 #import "CCell_Milestone.h"
 
 #import "MoviePlayer.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -121,6 +123,10 @@
         player.arrAnnotation = arrAnnotations;
         player.dictINFO = _dictInfo;
         player.strVideoID = _dictInfo[EV_ID];
+        NSError *setCategoryErr = nil;
+        NSError *activationErr  = nil;
+        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
         [self presentMoviePlayerViewControllerAnimated:player];
     }
     else

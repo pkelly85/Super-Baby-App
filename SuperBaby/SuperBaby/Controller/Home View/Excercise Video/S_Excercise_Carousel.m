@@ -15,6 +15,9 @@
 
 #import "CustomMoviePlayerViewController.h"
 #import "MoviePlayer.h"
+
+#import <AVFoundation/AVFoundation.h>
+
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -125,6 +128,10 @@
         player.arrAnnotation = arrTemp;
         player.dictINFO = dictVideo;
         player.strVideoID = dictVideo[EV_ID];
+        NSError *setCategoryErr = nil;
+        NSError *activationErr  = nil;
+        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
         [self presentMoviePlayerViewControllerAnimated:player];
     }
     else

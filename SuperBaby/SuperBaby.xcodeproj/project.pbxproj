@@ -26,6 +26,11 @@
 		107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */; };
 		107995991A3EBA62006EA4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 107995981A3EBA62006EA4BA /* Localizable.strings */; };
 		107A0C3E1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 107A0C3D1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
+		10834D361A80BC8C00D977CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D351A80BC8C00D977CF /* QuartzCore.framework */; };
+		10834D381A80BC9500D977CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D371A80BC9500D977CF /* Foundation.framework */; };
+		10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D391A80BC9C00D977CF /* UIKit.framework */; };
+		10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */; };
+		10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */; };
 		108E6ABB1A5E4D460065A582 /* CCell_Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6AB91A5E4D460065A582 /* CCell_Simple.m */; };
 		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
 		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
@@ -174,6 +179,11 @@
 		107995981A3EBA62006EA4BA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		107A0C3C1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		107A0C3D1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
+		10834D351A80BC8C00D977CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		10834D371A80BC9500D977CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		10834D391A80BC9C00D977CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		108E6AB81A5E4D460065A582 /* CCell_Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Simple.h; sourceTree = "<group>"; };
 		108E6AB91A5E4D460065A582 /* CCell_Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Simple.m; sourceTree = "<group>"; };
 		108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Simple.xib; sourceTree = "<group>"; };
@@ -368,6 +378,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */,
+				10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */,
+				10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */,
+				10834D381A80BC9500D977CF /* Foundation.framework in Frameworks */,
+				10834D361A80BC8C00D977CF /* QuartzCore.framework in Frameworks */,
 				107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +466,11 @@
 		1079959A1A3EBFD1006EA4BA /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */,
+				10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */,
+				10834D391A80BC9C00D977CF /* UIKit.framework */,
+				10834D371A80BC9500D977CF /* Foundation.framework */,
+				10834D351A80BC8C00D977CF /* QuartzCore.framework */,
 				107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */,
 			);
 			name = Framework;
