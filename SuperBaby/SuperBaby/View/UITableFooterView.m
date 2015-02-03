@@ -26,7 +26,7 @@
 
 - (void) awakeFromNib
 {
-    NSLog(@"width of view %f",super.frame.size.width); // Returns 0 as well
+    //NSLog(@"width of view %f",super.frame.size.width); // Returns 0 as well
 }
 
 - (void) setFrame:(CGRect)aFrame
