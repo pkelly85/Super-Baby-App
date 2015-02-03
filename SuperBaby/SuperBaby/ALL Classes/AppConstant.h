@@ -185,7 +185,7 @@ UIImage *image_Yellow;
 #define TYPE_WATCH_VIDEO_COMPLETE @"3"
 
 
-//For Excercise Video Keys
+//For Exercise Video Keys
 #define EV_AGE @"age"
 #define EV_MILESTONE @"milestone"
 #define EV_ID @"id"

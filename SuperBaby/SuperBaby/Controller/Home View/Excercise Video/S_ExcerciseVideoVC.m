@@ -60,7 +60,7 @@
     [super viewWillAppear:animated];
     
     /*--- Navigation setup ---*/
-    createNavBar(@"Excercise Videos", RGBCOLOR_BLUE, image_Blue);
+    createNavBar(@"Exercise Videos", RGBCOLOR_BLUE, image_Blue);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_BLUE];
 }
 
