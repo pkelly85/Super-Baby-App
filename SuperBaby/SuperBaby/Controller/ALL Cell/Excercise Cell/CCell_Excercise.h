@@ -13,6 +13,6 @@
 @property(nonatomic,weak)IBOutlet UILabel *lblTitle;
 
 
-- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
+//- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
 
 @end

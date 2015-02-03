@@ -17,6 +17,8 @@
 #import "CCell_Milestone.h"
 
 #import "MoviePlayer.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -32,6 +34,7 @@
     
     NSMutableArray *arrMilestones;
     NSMutableArray *arrSelected;
+    NSArray *arrAnnotations;
     
     JSONParser *parser;
     NSInteger selectedIndex;
@@ -73,6 +76,12 @@
     else
         strCellHeader = @"No Milestones";
 
+    /*--- Get All annotation ---*/
+    NSMutableArray *arrAnnotationsTemp = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
+    
+    arrAnnotations = arrAnnotationsTemp[[_dictInfo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
+    
+    
     /*--- Tableview setup ---*/
     tblView.tableHeaderView = viewHeader;
     tblView.backgroundView = nil;
@@ -100,20 +109,20 @@
 {
     //change error here
     if ([appDel checkConnection:nil]) {
-//        [appDel addMilestoneToTimeline_WatchVideo:_dictInfo withVideoID:_dictInfo[EV_ID]];
-        NSLog(@"%@",_dictInfo);
+        //NSLog(@"%@",_dictInfo);
         NSString *strURL = _dictInfo[EV_Detail_url];
         
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
         
-        NSArray *arrTemp = @[@{@"startT" : @1,@"dur":@2},
-                             @{@"startT" : @4,@"dur":@1},
-                             @{@"startT" : @7,@"du0r":@1}];
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;
-        player.arrAnnotation = arrTemp;
+        player.arrAnnotation = arrAnnotations;
         player.dictINFO = _dictInfo;
         player.strVideoID = _dictInfo[EV_ID];
+        NSError *setCategoryErr = nil;
+        NSError *activationErr  = nil;
+        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
         [self presentMoviePlayerViewControllerAnimated:player];
     }
     else
@@ -204,7 +213,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0) {
-        return 2;
+        return arrAnnotations.count + 1;
     }
     return arrMilestones.count;
 }
@@ -255,7 +264,7 @@
         else
         {
             //dot cell
-            heigtT = 15.0 + [_dictInfo[EV_Detail_instruction] getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width-46.0];
+            heigtT = 15.0 + [arrAnnotations[indexPath.row - 1][EV_Annotation_text] getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width-46.0];
             return MAX(37.0, heigtT);
         }
     }
@@ -282,7 +291,7 @@
             CCell_Dot *cellDot = (CCell_Dot *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Dot"];
             cellDot.backgroundColor = [UIColor clearColor];
             cellDot.selectionStyle = UITableViewCellSelectionStyleNone;
-            cellDot.lblDescription.text = _dictInfo[EV_Detail_instruction];
+            cellDot.lblDescription.text = arrAnnotations[indexPath.row - 1][EV_Annotation_text];//_dictInfo[EV_Detail_instruction];
             return cellDot;
         }
     }

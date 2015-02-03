@@ -49,7 +49,7 @@
     viewFooter = [[[NSBundle mainBundle]loadNibNamed:@"UITableFooterView" owner:self options:nil] objectAtIndex:0];;
 
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];

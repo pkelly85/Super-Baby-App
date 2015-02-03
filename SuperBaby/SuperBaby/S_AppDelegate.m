@@ -11,6 +11,8 @@
 #import "S_RegisterVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+
+#import "S_PercentileCalculator.h"
 @interface S_AppDelegate ()
 {
     //MPMoviePlayerViewController *moviePlayer;
@@ -71,7 +73,7 @@
     if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
-    
+    [S_PercentileCalculator calculate_height_percentile];
     
     /*--- create 5 coloured images for navigation controller ---*/
     image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];

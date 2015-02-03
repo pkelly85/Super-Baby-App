@@ -185,7 +185,7 @@ UIImage *image_Yellow;
 #define TYPE_WATCH_VIDEO_COMPLETE @"3"
 
 
-//For Excercise Video Keys
+//For Exercise Video Keys
 #define EV_AGE @"age"
 #define EV_MILESTONE @"milestone"
 #define EV_ID @"id"
@@ -199,6 +199,12 @@ UIImage *image_Yellow;
 #define EV_Detail_thumbnail @"thumbnail"
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
+
+
+#define EV_Annotation_annotationtime @"annotationtime"
+#define EV_Annotation_starttime @"starttime"
+#define EV_Annotation_endtime @"endtime"
+#define EV_Annotation_text @"text"
 
 /*-----------------------------------------------------------------------------*/
 #define img_radio_Off @"radio-icon"
@@ -223,3 +229,4 @@ CGFloat animatedDistance;
 S_UserModel *myUserModelGlobal;
 S_BabyInfoModel *babyModelGlobal;
 BOOL isBabyInfoUpdatedGlobal;
+#define UNAUTHORIZED @"Unauthorized"

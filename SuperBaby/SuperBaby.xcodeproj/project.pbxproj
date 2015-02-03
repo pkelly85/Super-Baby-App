@@ -26,6 +26,11 @@
 		107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */; };
 		107995991A3EBA62006EA4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 107995981A3EBA62006EA4BA /* Localizable.strings */; };
 		107A0C3E1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 107A0C3D1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
+		10834D361A80BC8C00D977CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D351A80BC8C00D977CF /* QuartzCore.framework */; };
+		10834D381A80BC9500D977CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D371A80BC9500D977CF /* Foundation.framework */; };
+		10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D391A80BC9C00D977CF /* UIKit.framework */; };
+		10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */; };
+		10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */; };
 		108E6ABB1A5E4D460065A582 /* CCell_Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6AB91A5E4D460065A582 /* CCell_Simple.m */; };
 		108E6ABC1A5E4D460065A582 /* CCell_Simple.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */; };
 		108E6ABF1A5E63C40065A582 /* CCell_SimpleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108E6ABE1A5E63C40065A582 /* CCell_SimpleHeader.m */; };
@@ -121,6 +126,11 @@
 		10C27DC01A35AE570006985C /* S_RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DBE1A35AE570006985C /* S_RegisterVC.xib */; };
 		10C27DC51A35CF4F0006985C /* S_EditBabyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */; };
 		10C27DC61A35CF4F0006985C /* S_EditBabyInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */; };
+		10C3584C1A7F8397007EBB73 /* S_PercentileCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */; };
+		10C358501A7F9667007EBB73 /* lenageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584E1A7F9667007EBB73 /* lenageinf.csv */; };
+		10C358511A7F9667007EBB73 /* wtageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584F1A7F9667007EBB73 /* wtageinf.csv */; };
+		10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */; };
+		10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */; };
 		10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */; };
 		10FB44DD1A398D4C00DDA935 /* CCell_Excercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */; };
 		10FB44E01A398D7200DDA935 /* CCell_HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DF1A398D7200DDA935 /* CCell_HeaderView.m */; };
@@ -169,6 +179,11 @@
 		107995981A3EBA62006EA4BA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		107A0C3C1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		107A0C3D1A63CC58006E1015 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
+		10834D351A80BC8C00D977CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		10834D371A80BC9500D977CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		10834D391A80BC9C00D977CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		108E6AB81A5E4D460065A582 /* CCell_Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Simple.h; sourceTree = "<group>"; };
 		108E6AB91A5E4D460065A582 /* CCell_Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Simple.m; sourceTree = "<group>"; };
 		108E6ABA1A5E4D460065A582 /* CCell_Simple.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Simple.xib; sourceTree = "<group>"; };
@@ -340,6 +355,13 @@
 		10C27DC21A35CF4F0006985C /* S_EditBabyInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_EditBabyInfoVC.h; sourceTree = "<group>"; };
 		10C27DC31A35CF4F0006985C /* S_EditBabyInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_EditBabyInfoVC.m; sourceTree = "<group>"; };
 		10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_EditBabyInfoVC.xib; sourceTree = "<group>"; };
+		10C3584A1A7F8397007EBB73 /* S_PercentileCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_PercentileCalculator.h; sourceTree = "<group>"; };
+		10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_PercentileCalculator.m; sourceTree = "<group>"; };
+		10C3584E1A7F9667007EBB73 /* lenageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lenageinf.csv; sourceTree = "<group>"; };
+		10C3584F1A7F9667007EBB73 /* wtageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wtageinf.csv; sourceTree = "<group>"; };
+		10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelMoreText.h; sourceTree = "<group>"; };
+		10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelMoreText.m; sourceTree = "<group>"; };
+		10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RedFlags.plist; sourceTree = "<group>"; };
 		10FB44D91A398D4C00DDA935 /* CCell_Excercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Excercise.h; sourceTree = "<group>"; };
 		10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Excercise.m; sourceTree = "<group>"; };
 		10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Excercise.xib; sourceTree = "<group>"; };
@@ -356,6 +378,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */,
+				10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */,
+				10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */,
+				10834D381A80BC9500D977CF /* Foundation.framework in Frameworks */,
+				10834D361A80BC8C00D977CF /* QuartzCore.framework in Frameworks */,
 				107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +417,8 @@
 				10A4CAD31A70B3F700A120A5 /* UITableFooterView.h */,
 				10A4CAD41A70B3F700A120A5 /* UITableFooterView.m */,
 				10A4CAD61A70B40D00A120A5 /* UITableFooterView.xib */,
+				10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */,
+				10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,6 +466,11 @@
 		1079959A1A3EBFD1006EA4BA /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */,
+				10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */,
+				10834D391A80BC9C00D977CF /* UIKit.framework */,
+				10834D371A80BC9500D977CF /* Foundation.framework */,
+				10834D351A80BC8C00D977CF /* QuartzCore.framework */,
 				107995961A3EB7E1006EA4BA /* SystemConfiguration.framework */,
 			);
 			name = Framework;
@@ -565,6 +599,7 @@
 				109DCAB81A72440A00E95966 /* Tips_Sensory.plist */,
 				1097BCCE1A78A17F002F9FEB /* MyBabyMilestones.plist */,
 				1097BCD01A78B60B002F9FEB /* Tips_FineMotor.plist */,
+				10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */,
 			);
 			name = "ALL Plist";
 			path = "SuperBaby/ALL Plist";
@@ -573,6 +608,7 @@
 		10C27CF21A35A4C20006985C = {
 			isa = PBXGroup;
 			children = (
+				10C3584D1A7F9667007EBB73 /* Docs Calculation */,
 				10B7D5A21A442E15004EFF60 /* ALL Plist */,
 				1079959A1A3EBFD1006EA4BA /* Framework */,
 				10C27DAE1A35A7190006985C /* Common Methods */,
@@ -819,6 +855,8 @@
 				10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */,
 				109840DF1A6E6DCD0069CFDE /* S_TimeLineModel.h */,
 				109840E01A6E6DCD0069CFDE /* S_TimeLineModel.m */,
+				10C3584A1A7F8397007EBB73 /* S_PercentileCalculator.h */,
+				10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -851,6 +889,16 @@
 				10C27DC41A35CF4F0006985C /* S_EditBabyInfoVC.xib */,
 			);
 			path = "Edit Baby Info";
+			sourceTree = "<group>";
+		};
+		10C3584D1A7F9667007EBB73 /* Docs Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				10C3584E1A7F9667007EBB73 /* lenageinf.csv */,
+				10C3584F1A7F9667007EBB73 /* wtageinf.csv */,
+			);
+			name = "Docs Calculation";
+			path = "SuperBaby/Docs Calculation";
 			sourceTree = "<group>";
 		};
 		10FB44D71A398D4C00DDA935 /* Baby Detail */ = {
@@ -960,6 +1008,7 @@
 				10C27D0F1A35A4C20006985C /* LaunchScreen.xib in Resources */,
 				10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */,
 				10A4CADC1A70FE3100A120A5 /* S_AccountUpdateVC.xib in Resources */,
+				10C358501A7F9667007EBB73 /* lenageinf.csv in Resources */,
 				10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */,
 				10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */,
 				109DCAB91A72440A00E95966 /* Tips_Sensory.plist in Resources */,
@@ -971,6 +1020,7 @@
 				1078FCB31A3ABDCC006303EE /* CCell_TimeLine.xib in Resources */,
 				1047D0D11A39C30600273457 /* S_Excercise_Carousel.xib in Resources */,
 				1078FCC11A3AF34E006303EE /* CCell_Milestone.xib in Resources */,
+				10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */,
 				10A4488A1A4C205900BDBD23 /* ExercisesByMilestone.plist in Resources */,
 				10A7DBC81A5CF00900529EDC /* Annotations.plist in Resources */,
 				109F74DC1A6FD330001E50B1 /* S_TipsVC.xib in Resources */,
@@ -990,6 +1040,7 @@
 				108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */,
 				1097BCD11A78B60B002F9FEB /* Tips_FineMotor.plist in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
+				10C358511A7F9667007EBB73 /* wtageinf.csv in Resources */,
 				109885F81A371AE200FB3BB4 /* S_TimelineVC.xib in Resources */,
 				10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */,
 			);
@@ -1039,6 +1090,7 @@
 				1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
+				10C3584C1A7F8397007EBB73 /* S_PercentileCalculator.m in Sources */,
 				10C27DA71A35A5DC0006985C /* UIImage+MultiFormat.m in Sources */,
 				10C27D951A35A5DC0006985C /* NSString+Validation.m in Sources */,
 				10A4CADB1A70FE3100A120A5 /* S_AccountUpdateVC.m in Sources */,
@@ -1088,6 +1140,7 @@
 				10C27DA91A35A5DC0006985C /* UIImageView+HighlightedWebCache.m in Sources */,
 				109840E11A6E6DCD0069CFDE /* S_TimeLineModel.m in Sources */,
 				10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */,
+				10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */,
 				10C27D9D1A35A5DC0006985C /* NSData+ImageContentType.m in Sources */,
 				10C27D881A35A5DC0006985C /* AFHTTPSessionManager.m in Sources */,
 				107995951A3EB621006EA4BA /* S_FacebookClass.m in Sources */,

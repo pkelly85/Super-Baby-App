@@ -71,7 +71,7 @@
     [self setupTextField];
     
     /*--- set bottom white line ---*/
-    [CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
+    //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
 }
 -(void)setupTextField
 {
@@ -184,8 +184,22 @@
         }
         else
         {
+            
             hideHUD;
-            [CommonMethods displayAlertwithTitle:[[objResponse valueForKeyPath:@"UpdateAccountInfoResult.ResultStatus.StatusMessage"] isNull] withMessage:nil withViewController:self];
+            NSString *strUnAuthorized = [[objResponse valueForKeyPath:@"UpdateAccountInfoResult.ResultStatus.StatusMessage"] isNull];
+            if ([strUnAuthorized isEqualToString:UNAUTHORIZED])
+            {
+                babyModelGlobal = nil;
+                myUserModelGlobal = nil;
+                [UserDefaults removeObjectForKey:USER_INFO];
+                [UserDefaults removeObjectForKey:BABY_INFO];
+                [UserDefaults synchronize];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            else
+            {
+                [CommonMethods displayAlertwithTitle:strUnAuthorized withMessage:nil withViewController:self];
+            }
         }
     }
     else

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>key</key>
+		<string>By 3 months</string>
+		<key>value</key>
+		<array>
+			<string>Can&apos;t support head.</string>
+			<string>Doesn&apos;t smile at people.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 4 months</string>
+		<key>value</key>
+		<array>
+			<string>Doesn’t bring objects to mouth.</string>
+			<string>Doesn’t babble.</string>
+			<string>Doesn’t push down with legs when feet are on firm surface .</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>5-7 months</string>
+		<key>value</key>
+		<array>
+			<string>Doesn&apos;t roll in either direction.</string>
+			<string>Has stiff and tight or very floppy muscles.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 6 months</string>
+		<key>value</key>
+		<array>
+			<string>Can’t sit with help.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>After 6 months</string>
+		<key>value</key>
+		<array>
+			<string>Hold&apos;s hands in fists frequently.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 7 months</string>
+		<key>value</key>
+		<array>
+			<string>Reaches with only one hand.</string>
+			<string>Shows no affection to caregiver.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 8 months</string>
+		<key>value</key>
+		<array>
+			<string>Not pushing on arms, lifting head and shoulders while on belly.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 10 months</string>
+		<key>value</key>
+		<array>
+			<string>Can&apos;t sit independnently.</string>
+			<string>Doesn’t bring hands to midline.</string>
+			<string>Doesn’t bang objects together.</string>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>By 12 months</string>
+		<key>value</key>
+		<array>
+			<string>Doesn&apos;t crawl.</string>
+			<string>Can’t stand when supported.</string>
+			<string>Doesn’t deliberately release objects.</string>
+		</array>
+	</dict>
+</array>
+</plist>
