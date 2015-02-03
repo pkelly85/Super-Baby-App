@@ -229,3 +229,4 @@ CGFloat animatedDistance;
 S_UserModel *myUserModelGlobal;
 S_BabyInfoModel *babyModelGlobal;
 BOOL isBabyInfoUpdatedGlobal;
+#define UNAUTHORIZED @"Unauthorized"

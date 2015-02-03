@@ -114,10 +114,6 @@
         
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
         
-//        NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
-//        
-//        NSArray *arrTemp = arrAnnotations[[_dictInfo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
-        
         MoviePlayer *player = [[MoviePlayer alloc]init];
         player.moviePath = strURL;
         player.arrAnnotation = arrAnnotations;

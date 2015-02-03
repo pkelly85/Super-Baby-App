@@ -725,14 +725,14 @@
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField == txtBabyName)
-    {
-        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARACTERS] invertedSet];
-        
-        NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
-        
-        return [string isEqualToString:filtered];
-    }
+//    if (textField == txtBabyName)
+//    {
+//        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARACTERS] invertedSet];
+//        
+//        NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+//        
+//        return [string isEqualToString:filtered];
+//    }
     return YES;
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField

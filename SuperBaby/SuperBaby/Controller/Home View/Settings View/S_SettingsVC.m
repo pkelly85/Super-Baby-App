@@ -198,7 +198,6 @@
         
         if (isTimeLineSuccess)
         {
-            
             hideHUD;
             babyModelGlobal = nil;
             myUserModelGlobal = nil;
@@ -210,7 +209,20 @@
         else
         {
             hideHUD;
-            [CommonMethods displayAlertwithTitle:[[objResponse valueForKeyPath:@"LogoutUserResult.ResultStatus.StatusMessage"] isNull] withMessage:nil withViewController:self];
+            NSString *strUnAuthorized = [[objResponse valueForKeyPath:@"LogoutUserResult.ResultStatus.StatusMessage"] isNull];
+            if ([strUnAuthorized isEqualToString:UNAUTHORIZED])
+            {
+                babyModelGlobal = nil;
+                myUserModelGlobal = nil;
+                [UserDefaults removeObjectForKey:USER_INFO];
+                [UserDefaults removeObjectForKey:BABY_INFO];
+                [UserDefaults synchronize];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            else
+            {
+                [CommonMethods displayAlertwithTitle:strUnAuthorized withMessage:nil withViewController:self];
+            }
         }
     }
     else
