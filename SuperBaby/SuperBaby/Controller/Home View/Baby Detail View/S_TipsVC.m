@@ -202,6 +202,8 @@
     header.lblTitle.textColor = RGBCOLOR_BLUE;
     header.btnHeader.tag = section;
     [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
+    [header.btnFacebook removeFromSuperview];
+
     if ([dict[TOOGLE] isEqualToString:@"0"])
     {
         header.imgVArrow.image = [UIImage imageNamed:@"blue-down-arrow"];

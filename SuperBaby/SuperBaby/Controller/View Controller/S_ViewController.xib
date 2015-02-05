@@ -24,7 +24,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ZP1-dv-GI5"/>
                     </constraints>
-                    <string key="text">THIS APP DOES NOT PROVIDE MEDICAL ADVICE</string>
+                    <string key="text">THIS APP DOES NOT 
+PROVIDE MEDICAL ADVICE
+</string>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>

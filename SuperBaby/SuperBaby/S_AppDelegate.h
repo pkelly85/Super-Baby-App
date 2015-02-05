@@ -20,6 +20,6 @@
 @property(nonatomic,readwrite)BOOL allowRotation;
 - (BOOL)checkConnection:(void (^)(void))completion;
 -(void)addMilestoneToTimeline_WatchVideo:(NSDictionary *)dictTemp withVideoID:(NSString *)strVideoID;
-
+-(void)sendFacebook:(UIViewController *)vc with_Text:(NSString *)strText withLink:(NSString *)strLink;
 @end
 

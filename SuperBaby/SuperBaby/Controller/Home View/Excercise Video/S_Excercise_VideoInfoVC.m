@@ -60,7 +60,7 @@
     [super viewDidLoad];
     
     lblTitle.text = _dictInfo[EV_Detail_title];
-    //imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
+    imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_dictInfo[EV_Detail_thumbnail]]];//[UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
     lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
     lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
 

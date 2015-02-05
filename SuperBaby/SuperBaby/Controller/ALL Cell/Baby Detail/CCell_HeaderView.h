@@ -13,4 +13,6 @@
 @property(nonatomic,weak)IBOutlet UILabel *lblTitle;
 @property(nonatomic,weak)IBOutlet UIButton *btnHeader;
 @property(nonatomic,weak)IBOutlet UIImageView *imgVArrow;
+@property(nonatomic,weak)IBOutlet UIButton *btnFacebook;
+
 @end

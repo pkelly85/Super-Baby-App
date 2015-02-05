@@ -104,7 +104,7 @@
         view.lblText.text = [NSString stringWithFormat:@"%@ - %@",dictInfo[EV_Detail_title],dictInfo[EV_Detail_price]];
     }
     
-    //view.imgVideo.image = [UIImage imageNamed:dictInfo[EV_Detail_thumbnail]];
+    view.imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dictInfo[EV_Detail_thumbnail]]];
     return view;
 }
 

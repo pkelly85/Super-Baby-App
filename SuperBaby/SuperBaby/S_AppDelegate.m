@@ -11,6 +11,7 @@
 #import "S_RegisterVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <Social/Social.h>
 
 #import "S_PercentileCalculator.h"
 @interface S_AppDelegate ()
@@ -73,8 +74,8 @@
     if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
-    [S_PercentileCalculator calculate_height_percentile];
-    
+    [S_PercentileCalculator calculate_weight_percentile];
+    [S_PercentileCalculator calculate_Height_percentile];
     /*--- create 5 coloured images for navigation controller ---*/
     image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];
     image_Blue = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_BLUE];;
@@ -137,6 +138,43 @@
     }
     return _isDataSourceAvailable;
 }
+#pragma mark - Facebook Share
+-(void)sendFacebook:(UIViewController *)vc with_Text:(NSString *)strText withLink:(NSString *)strLink {
+    
+    /*
+     The text for the post will be as follows:
+     
+     "My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>"
+     
+     Then a link to a URL. For now use http://www.google.com and I will update with the final URL.
+     */
+    SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [composeController setInitialText:strText];
+    //[composeController addImage:[UIImage imageNamed:@"AppIcon"]];
+    [composeController addURL: [NSURL URLWithString:strLink]];
+    
+    [vc presentViewController:composeController animated:YES completion:nil];
+    
+    
+    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result){
+        if (result == SLComposeViewControllerResultCancelled) {
+            
+            NSLog(@"delete");
+            
+        } else
+            
+        {
+            NSLog(@"post");
+        }
+        
+        //    [composeController dismissViewControllerAnimated:YES completion:Nil];
+    };
+    composeController.completionHandler =myBlock;
+    
+    
+}
+
 #pragma mark -
 #pragma mark - Watch Video
 #pragma mark - Add To Timeline

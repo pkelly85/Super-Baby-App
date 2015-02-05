@@ -18,7 +18,7 @@
 		<array>
 			<string>Doesn’t bring objects to mouth.</string>
 			<string>Doesn’t babble.</string>
-			<string>Doesn’t push down with legs when feet are on firm surface .</string>
+			<string>Doesn’t push down with legs when feet are on firm surface.</string>
 		</array>
 	</dict>
 	<dict>
@@ -36,14 +36,7 @@
 		<key>value</key>
 		<array>
 			<string>Can’t sit with help.</string>
-		</array>
-	</dict>
-	<dict>
-		<key>key</key>
-		<string>After 6 months</string>
-		<key>value</key>
-		<array>
-			<string>Hold&apos;s hands in fists frequently.</string>
+			<string>After 6 months Hold&apos;s hands in fists frequently.</string>
 		</array>
 	</dict>
 	<dict>

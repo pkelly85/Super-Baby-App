@@ -14,8 +14,8 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmh-On-AjS">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-9c-bbF">
-                            <rect key="frame" x="15" y="12" width="255" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-9c-bbF">
+                            <rect key="frame" x="15" y="12" width="40" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="cZG-JN-3C8"/>
                             </constraints>
@@ -39,16 +39,29 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-Cy-gLE">
+                            <rect key="frame" x="236" y="7" width="40" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="fTS-Rt-Gmj"/>
+                                <constraint firstAttribute="height" constant="30" id="gns-mC-cAD"/>
+                            </constraints>
+                            <state key="normal" title="F">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="dGa-9c-bbF" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="12" id="2Bs-n8-0NO"/>
                         <constraint firstItem="dGa-9c-bbF" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" constant="15" id="5m4-zo-rUa"/>
                         <constraint firstAttribute="trailing" secondItem="xOz-rW-ZpL" secondAttribute="trailing" constant="15" id="9cP-db-tCu"/>
+                        <constraint firstItem="xOz-rW-ZpL" firstAttribute="leading" secondItem="SP1-Cy-gLE" secondAttribute="trailing" constant="14" id="Gwf-PX-JSk"/>
                         <constraint firstAttribute="trailing" secondItem="cjK-5s-5ZP" secondAttribute="trailing" priority="750" id="Pr1-f9-f8O"/>
                         <constraint firstItem="cjK-5s-5ZP" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" id="ZxZ-Je-VIR"/>
+                        <constraint firstItem="SP1-Cy-gLE" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="7" id="amx-n6-JsA"/>
                         <constraint firstAttribute="height" constant="44" id="cUY-o8-Pwa"/>
-                        <constraint firstAttribute="trailing" secondItem="dGa-9c-bbF" secondAttribute="trailing" priority="750" constant="50" id="k2w-DM-5rI"/>
+                        <constraint firstItem="SP1-Cy-gLE" firstAttribute="leading" secondItem="dGa-9c-bbF" secondAttribute="trailing" priority="750" constant="5" id="gNW-SY-ZD3"/>
                         <constraint firstItem="xOz-rW-ZpL" firstAttribute="top" secondItem="Gmh-On-AjS" secondAttribute="top" constant="19" id="uRm-mP-ojs"/>
                         <constraint firstItem="cjK-5s-5ZP" firstAttribute="leading" secondItem="Gmh-On-AjS" secondAttribute="leading" id="wwu-jk-FVQ"/>
                     </constraints>
@@ -64,6 +77,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnFacebook" destination="SP1-Cy-gLE" id="bwU-FJ-uc5"/>
                 <outlet property="btnHeader" destination="cjK-5s-5ZP" id="yqr-Mg-Gaa"/>
                 <outlet property="imgVArrow" destination="xOz-rW-ZpL" id="Q2H-1h-0KG"/>
                 <outlet property="lblTitle" destination="dGa-9c-bbF" id="1d3-In-r3E"/>

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface S_PercentileCalculator : NSObject
-+(void)calculate_height_percentile;
++(void)calculate_weight_percentile;
++(void)calculate_Height_percentile;
 
 @end
