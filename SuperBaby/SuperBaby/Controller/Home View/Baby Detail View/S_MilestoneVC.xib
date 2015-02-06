@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-JE-5SP">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milestones-banner" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-JE-5SP">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="4PB-m2-UXf"/>
@@ -75,7 +75,7 @@
         </view>
     </objects>
     <resources>
-        <image name="babby" width="320" height="568"/>
+        <image name="milestones-banner" width="320" height="190"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

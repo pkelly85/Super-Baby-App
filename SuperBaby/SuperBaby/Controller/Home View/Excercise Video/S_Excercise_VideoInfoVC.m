@@ -317,13 +317,19 @@
             
             NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
             if (![arrSelected containsObject:strID])
-                [self addMilestoneToTimeline_withIndex];
+            {
+                [self addMilestoneToTimeline_withIndex:@"1"];
+            }
+            else
+            {
+               [self addMilestoneToTimeline_withIndex:@"0"];
+            }
         }
     }
 }
 #pragma mark -
 #pragma mark - Add To Timeline
--(void)addMilestoneToTimeline_withIndex
+-(void)addMilestoneToTimeline_withIndex:(NSString *)strComplete
 {
     //Web_BABY_ADD_TIMELINE
     /*
@@ -344,12 +350,12 @@
             NSDictionary *dictTemp = arrMilestones[selectedIndex];
             NSString *strMessage = [NSString stringWithFormat:@"%@ completed %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
-                                   @"UserToken":myUserModelGlobal.Token,
-                                   @"Type":TYPE_MILESTONE_COMPLETE,
-                                   @"Message":strMessage,
-                                   @"MilestoneID":dictTemp[EV_ID],
-                                   @"VideoID":_dictInfo[EV_ID]};
-        
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_MILESTONE_COMPLETE,
+                                       @"Message":strMessage,
+                                       @"MilestoneID":dictTemp[EV_ID],
+                                       @"VideoID":_dictInfo[EV_ID],
+                                       @"CompletedStatus":strComplete};
         
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(addMilestoneToTimelineSuccess:) withObject:self];
         }

@@ -145,14 +145,21 @@
                         <constraint firstItem="9rs-SO-O9B" firstAttribute="top" secondItem="1Jp-rP-Ull" secondAttribute="top" id="xRe-g1-fgZ"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io2-6Z-0mT">
-                    <rect key="frame" x="8" y="432" width="223" height="30"/>
-                    <state key="normal" title="Share On Facebook">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io2-6Z-0mT">
+                    <rect key="frame" x="10" y="441" width="121" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="LJI-0x-d8a"/>
+                        <constraint firstAttribute="height" constant="29" id="RkC-gs-m4G"/>
+                    </constraints>
+                    <state key="normal" image="fb-share">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnFacebookClikced:" destination="-1" eventType="touchUpInside" id="NvF-FN-Nzq"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kVd-hv-cgA">
-                    <rect key="frame" x="10" y="64" width="219" height="360"/>
+                    <rect key="frame" x="10" y="64" width="219" height="367"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="q9c-Jc-BrN"/>
@@ -163,19 +170,18 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="7lU-oi-uQF" secondAttribute="bottom" id="0oK-S6-c6R"/>
-                <constraint firstItem="io2-6Z-0mT" firstAttribute="top" secondItem="kVd-hv-cgA" secondAttribute="bottom" constant="8" id="3gT-X3-LdM"/>
+                <constraint firstItem="io2-6Z-0mT" firstAttribute="top" secondItem="kVd-hv-cgA" secondAttribute="bottom" constant="10" id="3gT-X3-LdM"/>
                 <constraint firstItem="7lU-oi-uQF" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" id="4IG-6d-46u"/>
-                <constraint firstAttribute="bottom" secondItem="io2-6Z-0mT" secondAttribute="bottom" constant="18" id="4xZ-dG-W6C"/>
+                <constraint firstAttribute="bottom" secondItem="io2-6Z-0mT" secondAttribute="bottom" constant="10" id="4xZ-dG-W6C"/>
                 <constraint firstItem="kVd-hv-cgA" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" constant="64" id="7mA-J5-WAC"/>
                 <constraint firstItem="ejt-3Q-zeP" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" constant="64" id="89R-lx-QYX"/>
-                <constraint firstItem="io2-6Z-0mT" firstAttribute="leading" secondItem="5tl-g6-mpA" secondAttribute="leading" constant="8" id="A5j-sk-zFJ"/>
                 <constraint firstItem="ejt-3Q-zeP" firstAttribute="leading" secondItem="kVd-hv-cgA" secondAttribute="trailing" constant="10" id="D1G-zv-B80"/>
                 <constraint firstAttribute="bottom" secondItem="ejt-3Q-zeP" secondAttribute="bottom" id="Pt9-UQ-zfh"/>
                 <constraint firstAttribute="trailing" secondItem="7lU-oi-uQF" secondAttribute="trailing" id="SRE-t2-JYj"/>
                 <constraint firstItem="7lU-oi-uQF" firstAttribute="leading" secondItem="5tl-g6-mpA" secondAttribute="leading" id="UfG-fd-3VK"/>
                 <constraint firstItem="kVd-hv-cgA" firstAttribute="leading" secondItem="5tl-g6-mpA" secondAttribute="leading" constant="10" id="Y3R-Ig-fgS"/>
-                <constraint firstItem="ejt-3Q-zeP" firstAttribute="leading" secondItem="io2-6Z-0mT" secondAttribute="trailing" constant="8" id="qmL-JO-iuF"/>
                 <constraint firstAttribute="trailing" secondItem="ejt-3Q-zeP" secondAttribute="trailing" constant="1" id="rEV-LB-G3J"/>
+                <constraint firstItem="io2-6Z-0mT" firstAttribute="leading" secondItem="kVd-hv-cgA" secondAttribute="leading" id="uvd-Wx-3aD"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -237,6 +243,7 @@
     </objects>
     <resources>
         <image name="babby" width="320" height="568"/>
+        <image name="fb-share" width="121" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

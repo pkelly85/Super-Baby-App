@@ -74,8 +74,6 @@
     if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
-    [S_PercentileCalculator calculate_weight_percentile];
-    [S_PercentileCalculator calculate_Height_percentile];
     /*--- create 5 coloured images for navigation controller ---*/
     image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];
     image_Blue = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_BLUE];;

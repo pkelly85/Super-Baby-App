@@ -85,7 +85,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babby" translatesAutoresizingMaskIntoConstraints="NO" id="atM-Xg-efM">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redflags-banner" translatesAutoresizingMaskIntoConstraints="NO" id="atM-Xg-efM">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="fJb-qz-bm8"/>
@@ -116,8 +116,8 @@
         </view>
     </objects>
     <resources>
-        <image name="babby" width="320" height="568"/>
         <image name="green-back-arrow" width="12" height="20"/>
+        <image name="redflags-banner" width="320" height="190"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

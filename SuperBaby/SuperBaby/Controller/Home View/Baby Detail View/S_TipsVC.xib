@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="btnFineMotor" destination="kh2-hP-Fbi" id="OYm-s4-xSB"/>
                 <outlet property="btnSensory" destination="shx-53-35Q" id="3hQ-fx-fs6"/>
+                <outlet property="imgV" destination="z5k-5j-PJM" id="9Sn-BK-CBn"/>
                 <outlet property="lblDescription" destination="Vmu-pL-Sai" id="XVN-Xk-o3g"/>
                 <outlet property="tblView" destination="hOR-CJ-GAN" id="Xtu-sw-ddK"/>
                 <outlet property="view" destination="s4F-Ly-B6b" id="6Fh-bN-ZNu"/>

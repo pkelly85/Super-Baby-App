@@ -39,14 +39,14 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-Cy-gLE">
-                            <rect key="frame" x="236" y="7" width="40" height="30"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-Cy-gLE">
+                            <rect key="frame" x="246" y="7" width="30" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="fTS-Rt-Gmj"/>
+                                <constraint firstAttribute="width" constant="30" id="fTS-Rt-Gmj"/>
                                 <constraint firstAttribute="height" constant="30" id="gns-mC-cAD"/>
                             </constraints>
-                            <state key="normal" title="F">
+                            <state key="normal" image="facebook-grey">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -87,6 +87,7 @@
         </view>
     </objects>
     <resources>
+        <image name="facebook-grey" width="30" height="30"/>
         <image name="orange-down-arrow" width="15" height="8"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

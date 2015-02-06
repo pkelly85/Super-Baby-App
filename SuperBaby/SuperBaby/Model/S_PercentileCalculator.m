@@ -52,44 +52,61 @@ Given the Baby's age (in months, rounded to the nearest 0.5 of a month) and the 
 
 3.) In the same row, again find the correct percentile c using the same logic as Weight. Note you can ignore any column beyond N.*/
 
+- (void)initialize {
+    self.arrWeigt = [[NSArray alloc]initWithArray:[self getWeightArray]];
+    self.arrHeight = [[NSArray alloc]initWithArray:[self getHeightArray]];
+}
 
-+(void)calculate_weight_percentile
++ (S_PercentileCalculator *)sharedManager
 {
+    static dispatch_once_t once;
+    static id sharedInstance;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+
+        [sharedInstance initialize];
+    });
+    return sharedInstance;
+}
+-(void)calculate_percentile:(percentileBlock)complition
+{
+    /*------------------------------ Set Weight and height ------------------------------*/
     double weightBaby = [[NSString stringWithFormat:@"%@.%@",babyModelGlobal.WeightPounds,babyModelGlobal.WeightOunces] doubleValue] * POUND_TO_KG;
-    NSLog(@"%f",weightBaby);
     
+    double heightBaby = [[NSString stringWithFormat:@"%@",babyModelGlobal.Height] doubleValue] * INCH_TO_CENTIMETER;
+
+    NSLog(@"Weight :%f    Height : %f",weightBaby,heightBaby);
     
-    NSLog(@"Month : %f",[self getBabyAge]);
+    /*------------------------------ Get Age ------------------------------*/
+    double babyAge = [self getBabyAge];
+    NSLog(@"Month : %f",babyAge);
     
-    NSDictionary *dictBabyWeight = [self getBaby_weightInfo_with_age:[self getBabyAge] withSex:@"1"];
+    /*------------------------------ Get Dictionary per Age ------------------------------*/
+    NSDictionary *dictBabyWeight = [self getBaby_weightInfo_with_age:babyAge withSex:@"1"];
     NSLog(@"Baby Weight %@",dictBabyWeight);
    
-    // L=-0.1600954, M=9.476500305, and S=0.11218624
-//    double valueZ = [self calculate_Z_Value_withLMS:@"-0.1600954" M:@"9.476500305" S:@"0.11218624" withWeight:9.7];
-    double valueZ = [self calculate_Z_Value_withLMS:dictBabyWeight[@"L"] M:dictBabyWeight[@"M"] S:dictBabyWeight[@"S"] withWeight:weightBaby];
-    
-    //0.5 * (1 + erf(z_score*M_SQRT1_2))
-    double finalPercentile = 0.5 * (1 + erf(valueZ*M_SQRT1_2));
-    NSLog(@"Weight Percentile %f%%",finalPercentile);
-}
-+(void)calculate_Height_percentile
-{
-    double heightBaby = [[NSString stringWithFormat:@"%@",babyModelGlobal.Height] doubleValue] * INCH_TO_CENTIMETER;
-    NSLog(@"%f",heightBaby);
-    
-    NSLog(@"Month : %f",[self getBabyAge]);
-    NSDictionary *dictBabyHeight = [self getBaby_heightInfo_with_age:[self getBabyAge] withSex:@"1"];
+    NSDictionary *dictBabyHeight = [self getBaby_heightInfo_with_age:babyAge withSex:@"1"];
     NSLog(@"Baby Height %@",dictBabyHeight);
-    
+
+    /*------------------------------ Calculate Value Z ------------------------------*/
     // L=-0.1600954, M=9.476500305, and S=0.11218624
 //    double valueZ = [self calculate_Z_Value_withLMS:@"-0.1600954" M:@"9.476500305" S:@"0.11218624" withWeight:9.7];
-    double valueZ = [self calculate_Z_Value_withLMS:dictBabyHeight[@"L"] M:dictBabyHeight[@"M"] S:dictBabyHeight[@"S"] withWeight:heightBaby];
+    double value_Z_Weight = [self calculate_Z_Value_withLMS:dictBabyWeight[@"L"] M:dictBabyWeight[@"M"] S:dictBabyWeight[@"S"] withWeight:weightBaby];
     
+    double value_Z_Height = [self calculate_Z_Value_withLMS:dictBabyHeight[@"L"] M:dictBabyHeight[@"M"] S:dictBabyHeight[@"S"] withWeight:heightBaby];
+
+    /*------------------------------ Calculate Percentile ------------------------------*/
     //0.5 * (1 + erf(z_score*M_SQRT1_2))
-    double finalPercentile = 0.5 * (1 + erf(valueZ*M_SQRT1_2));
-    NSLog(@"Height Percentile %f%%",finalPercentile);
+    double finalPercentileWeight = 0.5 * (1 + erf(value_Z_Weight*M_SQRT1_2));
+    NSLog(@"Weight Percentile %f%%",finalPercentileWeight);
+    
+    double finalPercentileHeight = 0.5 * (1 + erf(value_Z_Height*M_SQRT1_2));
+    NSLog(@"Height Percentile %f%%",finalPercentileHeight);
+
+    complition((NSInteger)(finalPercentileWeight*100),(NSInteger)(finalPercentileHeight*100),(NSInteger)babyAge);
 }
-+(double)getBabyAge
+
+-(double)getBabyAge
 {
     /*--- Calculate Birthday ---*/
     NSArray *arrTemp = [babyModelGlobal.Birthday componentsSeparatedByString:@" "];
@@ -119,7 +136,7 @@ Given the Baby's age (in months, rounded to the nearest 0.5 of a month) and the 
     return month;
 }
 #pragma mark - Calculate Z Value
-+(double)calculate_Z_Value_withLMS:(NSString *)strL M:(NSString *)strM S:(NSString *)strS withWeight:(double)weightBaby
+-(double)calculate_Z_Value_withLMS:(NSString *)strL M:(NSString *)strM S:(NSString *)strS withWeight:(double)weightBaby
 {
     double valueZ = 0;
     NSLog(@"%f : %@ : %f",[strL doubleValue],[NSNumber numberWithDouble:[strM doubleValue]],[strS doubleValue]);
@@ -142,15 +159,14 @@ Given the Baby's age (in months, rounded to the nearest 0.5 of a month) and the 
     return valueZ;
 }
 #pragma mark - Weight Info
-+(NSDictionary *)getBaby_weightInfo_with_age:(double)month withSex:(NSString *)sex
+-(NSDictionary *)getBaby_weightInfo_with_age:(double)month withSex:(NSString *)sex
 {
-    NSArray *arrWeight = [NSArray arrayWithArray:[self getWeightArray]];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(Agemos == %@) AND (Sex == %@)",[NSString stringWithFormat:@"%.1f",month],sex];
-    NSArray *arr = [arrWeight filteredArrayUsingPredicate:pred];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(Agemos >= %@) AND (Sex == %@)",[NSString stringWithFormat:@"%.1f",month],sex];
+    NSArray *arr = [self.arrWeigt filteredArrayUsingPredicate:pred];
     //NSLog(@"%@",arr);
     return (arr.count>0)?arr[0]:nil;
 }
-+(NSArray *)getWeightArray
+-(NSArray *)getWeightArray
 {
     NSString *pathName = [[NSBundle mainBundle]pathForResource:@"wtageinf" ofType:@"csv"];
     NSString* fileContents = [NSString stringWithContentsOfFile:pathName encoding:NSUTF8StringEncoding error:nil];
@@ -177,15 +193,14 @@ Given the Baby's age (in months, rounded to the nearest 0.5 of a month) and the 
 }
 
 #pragma mark - Height Info
-+(NSDictionary *)getBaby_heightInfo_with_age:(double)month withSex:(NSString *)sex
+-(NSDictionary *)getBaby_heightInfo_with_age:(double)month withSex:(NSString *)sex
 {
-    NSArray *arrWeight = [NSArray arrayWithArray:[self getHeightArray]];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(Agemos == %@) AND (Sex == %@)",[NSString stringWithFormat:@"%.1f",month],sex];
-    NSArray *arr = [arrWeight filteredArrayUsingPredicate:pred];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(Agemos >= %@) AND (Sex == %@)",[NSString stringWithFormat:@"%.1f",month],sex];
+    NSArray *arr = [self.arrHeight filteredArrayUsingPredicate:pred];
     //NSLog(@"%@",arr);
     return (arr.count>0)?arr[0]:nil;
 }
-+(NSArray *)getHeightArray
+-(NSArray *)getHeightArray
 {
     NSString *pathName = [[NSBundle mainBundle]pathForResource:@"lenageinf" ofType:@"csv"];
     NSString* fileContents = [NSString stringWithContentsOfFile:pathName encoding:NSUTF8StringEncoding error:nil];

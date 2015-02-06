@@ -25,6 +25,7 @@
     __weak IBOutlet UITableView *tblView;
     __weak IBOutlet UIView *viewTableHeader;
     __weak IBOutlet UILabelMoreText *lblDescription;
+    __weak IBOutlet UIImageView *imgV;
 
     __weak IBOutlet UIButton *btnSensory;
     __weak IBOutlet UIButton *btnFineMotor;
@@ -109,7 +110,7 @@
     if (isSensorySelected)
         return @"Babies use their senses to explore the world around them, receive comfort, and promote skill development.  In order to learn to move, we must use our senses to interact with our environment and learn where our body ends and space begins, or have good body spatial awareness.   A newborn baby can not only detect the 5 senses of taste, touch, smell, sight, and hearing, he can also detect the proprioceptive and vestibular senses.  The proprioceptive sense receives feedback from our muscles and joints.  It tells us where our body is in space and helps us move in a coordinated manner.  The vestibular sense is our movement sense and it aids in balance and muscle tone.  Interactions with the world, changes in body position and exposure to new sights, sounds, and tastes will help to further develop these senses";
     else
-        return @"";
+        return @"Fine motor Development and ways to facilitate:";
 }
 #pragma mark - IBAction
 -(IBAction)btn_Sensory_Fine_Clicked:(UIButton *)sender
@@ -119,12 +120,15 @@
         isSensorySelected = YES;
         [btnSensory setBackgroundColor:RGBCOLOR_BLUE];
         [btnFineMotor setBackgroundColor:RGBCOLOR_GREY];
+        imgV.image = [UIImage imageNamed:@"tips-sensory-banner"];
     }
     else
     {
         isSensorySelected = NO;
         [btnSensory setBackgroundColor:RGBCOLOR_GREY];
         [btnFineMotor setBackgroundColor:RGBCOLOR_BLUE];
+        imgV.image = [UIImage imageNamed:@"tips-finemotor-banner"];
+
     }
 //    float heightText = 200.0 + [[self getstrDescription] getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
     
