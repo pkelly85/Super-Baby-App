@@ -32,6 +32,20 @@
 {
     return UIStatusBarStyleLightContent;
 }
+-(void)enterBG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV sd_cancelCurrentImageLoad];
+    }
+}
+-(void)enterFG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -40,18 +54,36 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+
     [super viewWillDisappear:animated];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 
     if (myUserModelGlobal)
     {
         if (![babyModelGlobal.ImageURL isEqualToString:@""])
         {
-            [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL)  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//            UIImage *imggg = [[[SDWebImageManager sharedManager]imageCache]imageFromDiskCacheForKey:ImageURL(babyModelGlobal.ImageURL)];
+//            if (!imggg) {
+//                [[[SDWebImageManager sharedManager]imageCache]removeImageForKey:ImageURL(babyModelGlobal.ImageURL) fromDisk:YES];
+//                [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:ImageURL(babyModelGlobal.ImageURL)] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                    
+//                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//                    if (finished) {
+//                        imgV.image = image;
+//                    }
+//                }];
+//            }
+//            else
+                [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         }
         lblName.text = babyModelGlobal.Name;
         imgV.userInteractionEnabled = YES;
@@ -66,6 +98,11 @@
     {
         viewUser.hidden = YES;
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 #pragma mark - Methods
 -(void)babyImageTapped

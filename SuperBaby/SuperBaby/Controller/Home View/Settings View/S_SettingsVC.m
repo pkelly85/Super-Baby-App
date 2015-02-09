@@ -36,9 +36,32 @@
 {
     popView;
 }
+-(void)enterBG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby sd_cancelCurrentImageLoad];
+    }
+}
+-(void)enterFG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    [super viewWillDisappear:animated];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     /*--- Navigation setup ---*/
     createNavBar(@"Settings", [UIColor whiteColor], image_White);
@@ -217,7 +240,10 @@
                 [UserDefaults removeObjectForKey:USER_INFO];
                 [UserDefaults removeObjectForKey:BABY_INFO];
                 [UserDefaults synchronize];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [appDel display_UNAuthorized_AlertwithTitle:strUnAuthorized withViewController:self withHandler:^(BOOL success) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }];
+
             }
             else
             {

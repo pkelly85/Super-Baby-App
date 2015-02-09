@@ -14,7 +14,7 @@
 #import <Social/Social.h>
 
 #import "S_PercentileCalculator.h"
-@interface S_AppDelegate ()
+@interface S_AppDelegate ()<UIAlertViewDelegate>
 {
     //MPMoviePlayerViewController *moviePlayer;
     JSONParser *parser;
@@ -136,6 +136,37 @@
     }
     return _isDataSourceAvailable;
 }
+- (void)display_UNAuthorized_AlertwithTitle:(NSString*)title withViewController:(UIViewController*)viewCtr withHandler:(UNAuthorizedBlock)complition
+{
+    if (ios8)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
+                                        {
+                                            [alert dismissViewControllerAnimated:YES completion:nil];
+                                            complition(YES);
+                                        }];
+        [alert addAction:defaultAction];
+        [viewCtr presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        unauthorizeCallback = complition;
+        [alertView show];
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            unauthorizeCallback(YES);
+            break;
+            
+        default:
+            break;
+    }
+}
 #pragma mark - Facebook Share
 -(void)sendFacebook:(UIViewController *)vc with_Text:(NSString *)strText withLink:(NSString *)strLink {
     
@@ -251,12 +282,13 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

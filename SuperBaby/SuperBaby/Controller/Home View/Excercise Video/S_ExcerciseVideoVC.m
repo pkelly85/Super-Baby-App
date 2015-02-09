@@ -11,6 +11,7 @@
 #import "S_Excercise_Carousel.h"
 
 #import "CCell_Excercise.h"
+
 @interface S_ExcerciseVideoVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     __weak IBOutlet UIView *viewTop;
@@ -24,6 +25,7 @@
     
     NSMutableArray *arrExcercise_Age;
     NSMutableArray *arrExcercise_Milestone;
+
 }
 @end
 
@@ -106,7 +108,7 @@
     if (isAgeSelected)
     {
         cell.lblTitle.text = arrExcercise_Age[indexPath.row][EV_AGE];
-        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-age%ld",(long)indexPath.row+1]];
+        cell.imgV.image = [UIImage imageNamed:[NSString stringWithFormat:@"e-age%ld.jpg",(long)indexPath.row+1]];
     }
     else
     {
@@ -132,7 +134,6 @@
     }
     [self.navigationController pushViewController:obj animated:YES];
 }
-
 /*
 -(void)textFieldDidChange:(UITextField *)textF
 {

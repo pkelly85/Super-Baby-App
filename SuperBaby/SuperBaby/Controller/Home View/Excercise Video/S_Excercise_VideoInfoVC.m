@@ -110,12 +110,10 @@
     //change error here
     if ([appDel checkConnection:nil]) {
         //NSLog(@"%@",_dictInfo);
-        NSString *strURL = _dictInfo[EV_Detail_url];
-        
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
         
         MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = strURL;
+        player.moviePath = _dictInfo[EV_Detail_url];
         player.arrAnnotation = arrAnnotations;
         player.dictINFO = _dictInfo;
         player.strVideoID = _dictInfo[EV_ID];

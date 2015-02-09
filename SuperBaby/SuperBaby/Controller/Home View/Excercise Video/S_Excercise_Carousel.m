@@ -17,11 +17,14 @@
 #import "MoviePlayer.h"
 
 #import <AVFoundation/AVFoundation.h>
+#import <StoreKit/StoreKit.h>
 
-@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate>
+@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,SKProductsRequestDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
-    NSMutableArray *arrVideos;    
+    NSMutableArray *arrVideos;
+    SKProductsRequest *productsRequest;
+
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
@@ -114,8 +117,13 @@
     if ([appDel checkConnection:nil])
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag];
+//        NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
+//        if (![strPrice isEqualToString:@"FREE"]) {
+//            [self requestProUpgradeProductData:strPrice];
+//
+//        }
+//        return;
         //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-        NSString *strURL = dictVideo[EV_Detail_url];
         
        // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
         
@@ -124,7 +132,7 @@
         NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
         
         MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = strURL;
+        player.moviePath = dictVideo[EV_Detail_url];
         player.arrAnnotation = arrTemp;
         player.dictINFO = dictVideo;
         player.strVideoID = dictVideo[EV_ID];
@@ -151,6 +159,39 @@
     obj.dictInfo = (NSDictionary *)arrVideos[btnInfo.tag];
     [self.navigationController pushViewController:obj animated:YES];
 }
+
+- (void)requestProUpgradeProductData:(NSString *)strProductID
+{
+    NSSet *productIdentifiers = [NSSet setWithObject:strProductID];
+    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    
+    // we will release the request object in the delegate callback
+}
+
+#pragma mark -
+#pragma mark SKProductsRequestDelegate methods
+
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    NSArray *products = response.products;
+    SKProduct *proUpgradeProduct = [products count] == 1 ? [products firstObject]  : nil;
+    if (proUpgradeProduct)
+    {
+        NSLog(@"Product title: %@" , proUpgradeProduct.localizedTitle);
+        NSLog(@"Product description: %@" , proUpgradeProduct.localizedDescription);
+        NSLog(@"Product price: %@" , proUpgradeProduct.price);
+        NSLog(@"Product id: %@" , proUpgradeProduct.productIdentifier);
+    }
+    
+    for (NSString *invalidProductId in response.invalidProductIdentifiers)
+    {
+        NSLog(@"Invalid product id: %@" , invalidProductId);
+    }
+}
+
+
 /*
 #pragma mark - Text Field Delegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

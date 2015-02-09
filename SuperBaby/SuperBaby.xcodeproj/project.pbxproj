@@ -130,6 +130,8 @@
 		10C3584C1A7F8397007EBB73 /* S_PercentileCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */; };
 		10C358501A7F9667007EBB73 /* lenageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584E1A7F9667007EBB73 /* lenageinf.csv */; };
 		10C358511A7F9667007EBB73 /* wtageinf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 10C3584F1A7F9667007EBB73 /* wtageinf.csv */; };
+		10C63DE41A88A0F400A029E3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C63DE31A88A0F400A029E3 /* StoreKit.framework */; };
+		10C63DE61A88A59300A029E3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C63DE51A88A59300A029E3 /* CoreText.framework */; };
 		10DED1E81A7BAB3E00B1D0ED /* UILabelMoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */; };
 		10DED1EA1A7BBA6800B1D0ED /* RedFlags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */; };
 		10FB44DC1A398D4C00DDA935 /* CCell_Excercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44DA1A398D4C00DDA935 /* CCell_Excercise.m */; };
@@ -362,6 +364,8 @@
 		10C3584B1A7F8397007EBB73 /* S_PercentileCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_PercentileCalculator.m; sourceTree = "<group>"; };
 		10C3584E1A7F9667007EBB73 /* lenageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lenageinf.csv; sourceTree = "<group>"; };
 		10C3584F1A7F9667007EBB73 /* wtageinf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wtageinf.csv; sourceTree = "<group>"; };
+		10C63DE31A88A0F400A029E3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		10C63DE51A88A59300A029E3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		10DED1E61A7BAB3E00B1D0ED /* UILabelMoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelMoreText.h; sourceTree = "<group>"; };
 		10DED1E71A7BAB3E00B1D0ED /* UILabelMoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelMoreText.m; sourceTree = "<group>"; };
 		10DED1E91A7BBA6800B1D0ED /* RedFlags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RedFlags.plist; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C63DE61A88A59300A029E3 /* CoreText.framework in Frameworks */,
+				10C63DE41A88A0F400A029E3 /* StoreKit.framework in Frameworks */,
 				10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */,
 				10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */,
 				10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */,
@@ -469,6 +475,8 @@
 		1079959A1A3EBFD1006EA4BA /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				10C63DE51A88A59300A029E3 /* CoreText.framework */,
+				10C63DE31A88A0F400A029E3 /* StoreKit.framework */,
 				10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */,
 				10834D3B1A80BCFD00D977CF /* MediaPlayer.framework */,
 				10834D391A80BC9C00D977CF /* UIKit.framework */,
@@ -1263,7 +1271,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
+				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
 			};
 			name = Debug;
 		};
@@ -1278,7 +1286,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
+				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
 			};
 			name = Release;
 		};

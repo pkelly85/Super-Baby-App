@@ -46,6 +46,20 @@
 {
     popView;
 }
+-(void)enterBG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby sd_cancelCurrentImageLoad];
+    }
+}
+-(void)enterFG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgVBaby setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+}
 -(NSAttributedString *)getPercentileString_height:(NSString *)strHeightPercent weight:(NSString *)strWeightPercent
 {
     NSString *strHeightFormater = [strHeightPercent getNumberFormatter];
@@ -60,8 +74,8 @@
     
     NSInteger num1 = 1;
     CFNumberRef num2 = CFNumberCreate(NULL, kCFNumberNSIntegerType, &num1);
-    [attrString addAttribute:(id)kCTSuperscriptAttributeName value:(__bridge id)num2 range:NSMakeRange(strFinal.length-2,2)];
-    [attrString addAttribute:NSFontAttributeName value:kFONT_LIGHT(10.0) range:NSMakeRange(strFinal.length-2,2)];
+    [attrString addAttribute:(id)kCTSuperscriptAttributeName value:(__bridge id)num2 range:NSMakeRange(attrString.length-2,2)];
+    [attrString addAttribute:NSFontAttributeName value:kFONT_LIGHT(10.0) range:NSMakeRange(attrString.length-2,2)];
     
     [attrString appendAttributedString:[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@" percentile for height and the %@",strWeightFormater]]];
     
@@ -70,6 +84,9 @@
     [attrString addAttribute:NSFontAttributeName value:kFONT_LIGHT(10.0) range:NSMakeRange(attrString.length-2,2)];
     
     [attrString appendAttributedString:[[NSAttributedString alloc]initWithString:@" percentile for weight."]];
+    
+    CFRelease(num2);
+    
     return attrString;
 }
 - (void)viewDidLoad {
@@ -84,11 +101,19 @@
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
     [super viewWillDisappear:animated];
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
+    
     /*--- Navigation setup ---*/
     
     createNavBar(@"My Baby", RGBCOLOR(255.0, 255.0, 255.0), image_White);

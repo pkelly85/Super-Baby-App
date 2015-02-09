@@ -194,7 +194,10 @@
                 [UserDefaults removeObjectForKey:USER_INFO];
                 [UserDefaults removeObjectForKey:BABY_INFO];
                 [UserDefaults synchronize];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [appDel display_UNAuthorized_AlertwithTitle:strUnAuthorized withViewController:self withHandler:^(BOOL success) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }];
+
             }
             else
             {
