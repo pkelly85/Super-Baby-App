@@ -348,7 +348,7 @@
         @try
         {
             NSDictionary *dictTemp = arrMilestones[selectedIndex];
-            NSString *strMessage = [NSString stringWithFormat:@"%@ completed %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
+            NSString *strMessage = [NSString stringWithFormat:@"%@ completed the %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
                                        @"Type":TYPE_MILESTONE_COMPLETE,
