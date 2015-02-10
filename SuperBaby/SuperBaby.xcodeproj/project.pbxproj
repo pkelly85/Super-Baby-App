@@ -973,6 +973,7 @@
 				TargetAttributes = {
 					10C27CFA1A35A4C20006985C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 869E8S244Z;
 					};
 					10C27D131A35A4C20006985C = {
 						CreatedOnToolsVersion = 6.1;
@@ -1194,8 +1195,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SB APP LLC (869E8S244Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SB APP LLC (869E8S244Z)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1215,7 +1216,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "4a7c6348-bef9-4a37-b77a-e75f71eb27ef";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1237,8 +1238,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SB APP LLC (869E8S244Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SB APP LLC (869E8S244Z)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1251,7 +1252,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "4a7c6348-bef9-4a37-b77a-e75f71eb27ef";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1262,13 +1263,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1277,13 +1278,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
