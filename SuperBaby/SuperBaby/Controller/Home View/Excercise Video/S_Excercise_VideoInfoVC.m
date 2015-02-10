@@ -60,7 +60,7 @@
     [super viewDidLoad];
     
     lblTitle.text = _dictInfo[EV_Detail_title];
-    //imgVideo.image = [UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
+    imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_dictInfo[EV_Detail_thumbnail]]];//[UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
     lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
     lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
 
@@ -110,12 +110,10 @@
     //change error here
     if ([appDel checkConnection:nil]) {
         //NSLog(@"%@",_dictInfo);
-        NSString *strURL = _dictInfo[EV_Detail_url];
-        
         NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
         
         MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = strURL;
+        player.moviePath = _dictInfo[EV_Detail_url];
         player.arrAnnotation = arrAnnotations;
         player.dictINFO = _dictInfo;
         player.strVideoID = _dictInfo[EV_ID];
@@ -317,13 +315,19 @@
             
             NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
             if (![arrSelected containsObject:strID])
-                [self addMilestoneToTimeline_withIndex];
+            {
+                [self addMilestoneToTimeline_withIndex:@"1"];
+            }
+            else
+            {
+               [self addMilestoneToTimeline_withIndex:@"0"];
+            }
         }
     }
 }
 #pragma mark -
 #pragma mark - Add To Timeline
--(void)addMilestoneToTimeline_withIndex
+-(void)addMilestoneToTimeline_withIndex:(NSString *)strComplete
 {
     //Web_BABY_ADD_TIMELINE
     /*
@@ -342,14 +346,14 @@
         @try
         {
             NSDictionary *dictTemp = arrMilestones[selectedIndex];
-            NSString *strMessage = [NSString stringWithFormat:@"%@ completed %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
+            NSString *strMessage = [NSString stringWithFormat:@"%@ completed the %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
-                                   @"UserToken":myUserModelGlobal.Token,
-                                   @"Type":TYPE_MILESTONE_COMPLETE,
-                                   @"Message":strMessage,
-                                   @"MilestoneID":dictTemp[EV_ID],
-                                   @"VideoID":_dictInfo[EV_ID]};
-        
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_MILESTONE_COMPLETE,
+                                       @"Message":strMessage,
+                                       @"MilestoneID":dictTemp[EV_ID],
+                                       @"VideoID":_dictInfo[EV_ID],
+                                       @"CompletedStatus":strComplete};
         
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(addMilestoneToTimelineSuccess:) withObject:self];
         }

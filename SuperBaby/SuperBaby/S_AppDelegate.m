@@ -11,9 +11,10 @@
 #import "S_RegisterVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <Social/Social.h>
 
 #import "S_PercentileCalculator.h"
-@interface S_AppDelegate ()
+@interface S_AppDelegate ()<UIAlertViewDelegate>
 {
     //MPMoviePlayerViewController *moviePlayer;
     JSONParser *parser;
@@ -73,8 +74,6 @@
     if ([UserDefaults objectForKey:BABY_INFO]){
         babyModelGlobal = [CommonMethods getMyBaby];
     }
-    [S_PercentileCalculator calculate_height_percentile];
-    
     /*--- create 5 coloured images for navigation controller ---*/
     image_White = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR(255.0, 255.0, 255.0)];
     image_Blue = [CommonMethods createImageForNavigationbar_withcolor:RGBCOLOR_BLUE];;
@@ -137,6 +136,74 @@
     }
     return _isDataSourceAvailable;
 }
+- (void)display_UNAuthorized_AlertwithTitle:(NSString*)title withViewController:(UIViewController*)viewCtr withHandler:(UNAuthorizedBlock)complition
+{
+    if (ios8)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
+                                        {
+                                            [alert dismissViewControllerAnimated:YES completion:nil];
+                                            complition(YES);
+                                        }];
+        [alert addAction:defaultAction];
+        [viewCtr presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        unauthorizeCallback = complition;
+        [alertView show];
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            unauthorizeCallback(YES);
+            break;
+            
+        default:
+            break;
+    }
+}
+#pragma mark - Facebook Share
+-(void)sendFacebook:(UIViewController *)vc with_Text:(NSString *)strText withLink:(NSString *)strLink {
+    
+    /*
+     The text for the post will be as follows:
+     
+     "My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>"
+     
+     Then a link to a URL. For now use http://www.google.com and I will update with the final URL.
+     */
+    SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [composeController setInitialText:strText];
+    //[composeController addImage:[UIImage imageNamed:@"AppIcon"]];
+    [composeController addURL: [NSURL URLWithString:strLink]];
+    
+    [vc presentViewController:composeController animated:YES completion:nil];
+    
+    
+    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result){
+        if (result == SLComposeViewControllerResultCancelled) {
+            
+            NSLog(@"delete");
+            
+        } else
+            
+        {
+            NSLog(@"post");
+        }
+        
+        //    [composeController dismissViewControllerAnimated:YES completion:Nil];
+    };
+    composeController.completionHandler =myBlock;
+    
+    
+}
+
 #pragma mark -
 #pragma mark - Watch Video
 #pragma mark - Add To Timeline
@@ -215,12 +282,13 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

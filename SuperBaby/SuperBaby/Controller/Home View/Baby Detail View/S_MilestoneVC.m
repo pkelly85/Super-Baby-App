@@ -10,6 +10,8 @@
 #import "AppConstant.h"
 #import "CCell_HeaderView.h"
 
+
+
 #define SECTION_NAME @"sectionValue"
 #define TOOGLE @"toogleValue"
 
@@ -20,7 +22,7 @@
 {
     __weak IBOutlet UIView *viewTableHeader;
     __weak IBOutlet UITableView *tblView;
-    
+    __weak IBOutlet UILabel *lblDescription;
     NSMutableArray *arrContent;
 }
 @end
@@ -79,7 +81,18 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_HeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"CCell_HeaderView"];
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
 }
-
+-(void)sendFacebook:(id)sender {
+    
+    /*
+     The text for the post will be as follows:
+     
+     "My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>"
+     
+     Then a link to a URL. For now use http://www.google.com and I will update with the final URL.
+     */
+    
+    [appDel sendFacebook:self with_Text:@"My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>" withLink:@"http://www.google.com"];
+}
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -115,6 +128,9 @@
     header.lblTitle.textColor = RGBCOLOR_RED;
     header.btnHeader.tag = section;
     [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
+    
+    header.btnFacebook.tag = section;
+    [header.btnFacebook addTarget:self action:@selector(sendFacebook:) forControlEvents:UIControlEventTouchUpInside];
     if ([dict[TOOGLE] isEqualToString:@"0"])
     {
         header.imgVArrow.image = [UIImage imageNamed:@"orange-down-arrow"];

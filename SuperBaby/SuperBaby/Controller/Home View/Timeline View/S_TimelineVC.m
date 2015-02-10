@@ -38,7 +38,20 @@
 {
     popView;
 }
-
+-(void)enterBG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV sd_cancelCurrentImageLoad];
+    }
+}
+-(void)enterFG
+{
+    if (![babyModelGlobal.ImageURL isEqualToString:@""])
+    {
+        [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     arrTimeLine = [[NSMutableArray alloc]init];
@@ -82,10 +95,20 @@
         }];
     });
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    [super viewWillDisappear:animated];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
+    
     /*--- Navigation setup ---*/
     createNavBar(@"Timeline", [UIColor whiteColor], image_White);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
@@ -95,6 +118,7 @@
         [imgV setImageWithURL:ImageURL(babyModelGlobal.ImageURL)  usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
 }
+
 -(void)refreshTableView
 {
     pageNum = 1;
@@ -190,7 +214,23 @@
         {
             hideHUD;
             isErrorReceived_whilePaging = YES;
-            [CommonMethods displayAlertwithTitle:[[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"] isNull] withMessage:nil withViewController:self];
+            NSString *strUnAuthorized = [[objResponse valueForKeyPath:@"GetTimelineResult.ResultStatus.StatusMessage"] isNull];
+            if ([strUnAuthorized isEqualToString:UNAUTHORIZED])
+            {
+                babyModelGlobal = nil;
+                myUserModelGlobal = nil;
+                [UserDefaults removeObjectForKey:USER_INFO];
+                [UserDefaults removeObjectForKey:BABY_INFO];
+                [UserDefaults synchronize];
+                [appDel display_UNAuthorized_AlertwithTitle:strUnAuthorized withViewController:self withHandler:^(BOOL success) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }];
+            }
+            else
+            {
+                
+                [CommonMethods displayAlertwithTitle:strUnAuthorized withMessage:nil withViewController:self];
+            }
         }
     }
     else

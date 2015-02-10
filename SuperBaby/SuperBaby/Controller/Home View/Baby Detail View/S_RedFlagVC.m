@@ -19,6 +19,7 @@
     NSMutableArray *arr_RedFlags;
     __weak IBOutlet UITableView *tblView;
     __weak IBOutlet UIView *viewTableHeader;
+    __weak IBOutlet UILabel *lblDescription;
 }
 @end
 
@@ -68,6 +69,19 @@
     
     tblView.delegate = self;
     tblView.dataSource = self;
+    
+    
+    //[lblDescription setTruncatingText:[self getstrDescription] forNumberOfLines:6 withMoreColor:RGBCOLOR_BLUE];
+    
+    lblDescription.text = @"Age Warning Sings of Motor Skill Delay (Red Flags)";
+    float heightText = 200.0 + [lblDescription.text getHeight_withFont:kFONT_REGULAR(16.0) widht:screenSize.size.width - 20.0];
+    
+    CGRect frame = viewTableHeader.frame;
+    frame.size.height = MAX(216.0, heightText);
+    viewTableHeader.frame = frame;
+    tblView.tableHeaderView = nil;
+    tblView.tableHeaderView = viewTableHeader;
+    [tblView reloadData];
 }
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -104,6 +118,8 @@
     header.lblTitle.textColor = RGBCOLOR_GREEN;
     header.btnHeader.tag = section;
     [header.btnHeader addTarget:self action:@selector(toggleRow:) forControlEvents:UIControlEventTouchUpInside];
+    [header.btnFacebook removeFromSuperview];
+    
     if ([dict[TOOGLE] isEqualToString:@"0"])
     {
         header.imgVArrow.image = [UIImage imageNamed:@"green-down-arrow"];

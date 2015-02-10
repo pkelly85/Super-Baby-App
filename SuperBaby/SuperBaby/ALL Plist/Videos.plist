@@ -16,7 +16,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.tooshydowntummytime</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>01_superbaby_video_?_1142x803</string>
 		<key>annotationId</key>
 		<string>0</string>
 	</dict>
@@ -34,7 +34,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>02_superbaby_video_advanced_belly_1142_803</string>
 		<key>annotationId</key>
 		<string>1</string>
 	</dict>
@@ -52,7 +52,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>03_superbaby_video_advanced_sitting_1142x803</string>
 		<key>annotationId</key>
 		<string>2</string>
 	</dict>
@@ -70,7 +70,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>04_superbaby_assisted_tummy_1142x803</string>
 		<key>annotationId</key>
 		<string>3</string>
 	</dict>
@@ -88,7 +88,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>05_superbaby_b_roll2_1142x803</string>
 		<key>annotationId</key>
 		<string>4</string>
 	</dict>
@@ -106,7 +106,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>06_superbaby_b_roll3_1142x803</string>
 		<key>annotationId</key>
 		<string>5</string>
 	</dict>
@@ -124,7 +124,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>07_superbaby_b_roll_1142x803</string>
 		<key>annotationId</key>
 		<string>6</string>
 	</dict>
@@ -142,7 +142,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>08_superbaby_baby_in_blanket_1142x803</string>
 		<key>annotationId</key>
 		<string>7</string>
 	</dict>
@@ -160,7 +160,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>09_superbaby_baby_on_board_1142x803</string>
 		<key>annotationId</key>
 		<string>8</string>
 	</dict>
@@ -178,7 +178,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>10_superbaby_baby_on_board_sitting</string>
 		<key>annotationId</key>
 		<string>9</string>
 	</dict>
@@ -196,7 +196,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>11_superbaby_baby_situps</string>
 		<key>annotationId</key>
 		<string>10</string>
 	</dict>
@@ -214,7 +214,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>12_superbaby_baby_tai_chi</string>
 		<key>annotationId</key>
 		<string>11</string>
 	</dict>
@@ -232,7 +232,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>13_superbaby_baby_toss</string>
 		<key>annotationId</key>
 		<string>12</string>
 	</dict>
@@ -250,7 +250,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>14_superbaby_backwards_on_ball</string>
 		<key>annotationId</key>
 		<string>13</string>
 	</dict>
@@ -268,7 +268,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>15_superbaby_bear_walk_01</string>
 		<key>annotationId</key>
 		<string>14</string>
 	</dict>
@@ -286,7 +286,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>16_superbaby_bear_walk_02</string>
 		<key>annotationId</key>
 		<string>15</string>
 	</dict>
@@ -304,7 +304,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>17_superbaby_belly_on_ball_8-9mo</string>
 		<key>annotationId</key>
 		<string>16</string>
 	</dict>
@@ -322,7 +322,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>18_superbaby_belly_on_ball_beginner2</string>
 		<key>annotationId</key>
 		<string>17</string>
 	</dict>
@@ -340,7 +340,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>19_superbaby_belly_on_ball_beginner</string>
 		<key>annotationId</key>
 		<string>18</string>
 	</dict>
@@ -358,7 +358,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>20_superbaby_bobblehead</string>
 		<key>annotationId</key>
 		<string>19</string>
 	</dict>
@@ -376,7 +376,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>21_superbaby_chasing_bubbles</string>
 		<key>annotationId</key>
 		<string>20</string>
 	</dict>
@@ -394,7 +394,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>22_superbaby_cross_crawl2</string>
 		<key>annotationId</key>
 		<string>21</string>
 	</dict>
@@ -412,7 +412,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>23_superbaby_cross_crawl</string>
 		<key>annotationId</key>
 		<string>22</string>
 	</dict>
@@ -430,7 +430,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>24_superbaby_cruise_control</string>
 		<key>annotationId</key>
 		<string>23</string>
 	</dict>
@@ -448,7 +448,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>25_superbaby_half_kneel_training</string>
 		<key>annotationId</key>
 		<string>24</string>
 	</dict>
@@ -466,7 +466,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>26_superbaby_kick_off_1_mo</string>
 		<key>annotationId</key>
 		<string>25</string>
 	</dict>
@@ -484,7 +484,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>27_superbaby_kneeling_training_8-9</string>
 		<key>annotationId</key>
 		<string>26</string>
 	</dict>
@@ -502,7 +502,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>28_superbaby_moon_walk</string>
 		<key>annotationId</key>
 		<string>27</string>
 	</dict>
@@ -520,7 +520,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>29_superbaby_moving_on_belly</string>
 		<key>annotationId</key>
 		<string>28</string>
 	</dict>
@@ -538,7 +538,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>30_superbaby_nibbly_toes</string>
 		<key>annotationId</key>
 		<string>29</string>
 	</dict>
@@ -556,7 +556,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>31_superbaby_optical_scanning</string>
 		<key>annotationId</key>
 		<string>30</string>
 	</dict>
@@ -574,7 +574,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>32_superbaby_over_leg_tummy_time</string>
 		<key>annotationId</key>
 		<string>31</string>
 	</dict>
@@ -592,7 +592,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>33_superbaby_quadruped_training</string>
 		<key>annotationId</key>
 		<string>32</string>
 	</dict>
@@ -610,7 +610,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>34_superbaby_reaching_in_prone</string>
 		<key>annotationId</key>
 		<string>33</string>
 	</dict>
@@ -628,7 +628,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>35_superbaby_reaching_in_quadruped2</string>
 		<key>annotationId</key>
 		<string>34</string>
 	</dict>
@@ -646,7 +646,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>36_superbaby_reaching_quadruped</string>
 		<key>annotationId</key>
 		<string>35</string>
 	</dict>
@@ -664,7 +664,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>37_superbaby_reverse_situp</string>
 		<key>annotationId</key>
 		<string>36</string>
 	</dict>
@@ -682,7 +682,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>38_superbaby_rollie_pollie</string>
 		<key>annotationId</key>
 		<string>37</string>
 	</dict>
@@ -700,7 +700,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>39_superbaby_rollie_to_belly</string>
 		<key>annotationId</key>
 		<string>38</string>
 	</dict>
@@ -718,7 +718,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>40_superbaby_rolling_back_belly</string>
 		<key>annotationId</key>
 		<string>39</string>
 	</dict>
@@ -736,7 +736,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>41_superbaby_row_your_boat</string>
 		<key>annotationId</key>
 		<string>40</string>
 	</dict>
@@ -754,7 +754,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>42_superbaby_sitting_on_ball_6-7</string>
 		<key>annotationId</key>
 		<string>41</string>
 	</dict>
@@ -772,7 +772,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>43_superbaby_sitting_on_ball_advanced2</string>
 		<key>annotationId</key>
 		<string>42</string>
 	</dict>
@@ -790,7 +790,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>image.png</string>
+		<string>44_superbaby_sitting_on_ball_advanced_8-9</string>
 		<key>annotationId</key>
 		<string>43</string>
 	</dict>

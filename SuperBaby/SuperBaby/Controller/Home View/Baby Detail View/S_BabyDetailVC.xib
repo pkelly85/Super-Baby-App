@@ -10,7 +10,13 @@
             <connections>
                 <outlet property="btn_4_EditBabyInfo" destination="1BT-Ja-uNY" id="jfz-uC-yIT"/>
                 <outlet property="imgVBaby" destination="7lU-oi-uQF" id="qTg-WE-ccn"/>
+                <outlet property="lblBabyInfo" destination="hVM-z5-3r6" id="xtg-ui-BO2"/>
+                <outlet property="lblCurrentMilestone" destination="K3c-GW-PBe" id="QNw-W6-ynp"/>
+                <outlet property="lblName" destination="ewu-HN-wRA" id="aMf-Xq-F9S"/>
+                <outlet property="lblPercentile" destination="Jcc-pL-xgh" id="vkx-3m-37G"/>
+                <outlet property="tblView" destination="kVd-hv-cgA" id="Yur-5L-xFd"/>
                 <outlet property="view" destination="5tl-g6-mpA" id="x3S-JH-Go9"/>
+                <outlet property="viewTableHeader" destination="LrC-pK-1FZ" id="2s3-P0-nmA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -139,16 +145,43 @@
                         <constraint firstItem="9rs-SO-O9B" firstAttribute="top" secondItem="1Jp-rP-Ull" secondAttribute="top" id="xRe-g1-fgZ"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io2-6Z-0mT">
+                    <rect key="frame" x="10" y="441" width="121" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="LJI-0x-d8a"/>
+                        <constraint firstAttribute="height" constant="29" id="RkC-gs-m4G"/>
+                    </constraints>
+                    <state key="normal" image="fb-share">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFacebookClikced:" destination="-1" eventType="touchUpInside" id="NvF-FN-Nzq"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kVd-hv-cgA">
+                    <rect key="frame" x="10" y="64" width="219" height="367"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="q9c-Jc-BrN"/>
+                        <outlet property="delegate" destination="-1" id="kZZ-0w-Hss"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="7lU-oi-uQF" secondAttribute="bottom" id="0oK-S6-c6R"/>
+                <constraint firstItem="io2-6Z-0mT" firstAttribute="top" secondItem="kVd-hv-cgA" secondAttribute="bottom" constant="10" id="3gT-X3-LdM"/>
                 <constraint firstItem="7lU-oi-uQF" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" id="4IG-6d-46u"/>
+                <constraint firstAttribute="bottom" secondItem="io2-6Z-0mT" secondAttribute="bottom" constant="10" id="4xZ-dG-W6C"/>
+                <constraint firstItem="kVd-hv-cgA" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" constant="64" id="7mA-J5-WAC"/>
                 <constraint firstItem="ejt-3Q-zeP" firstAttribute="top" secondItem="5tl-g6-mpA" secondAttribute="top" constant="64" id="89R-lx-QYX"/>
+                <constraint firstItem="ejt-3Q-zeP" firstAttribute="leading" secondItem="kVd-hv-cgA" secondAttribute="trailing" constant="10" id="D1G-zv-B80"/>
                 <constraint firstAttribute="bottom" secondItem="ejt-3Q-zeP" secondAttribute="bottom" id="Pt9-UQ-zfh"/>
                 <constraint firstAttribute="trailing" secondItem="7lU-oi-uQF" secondAttribute="trailing" id="SRE-t2-JYj"/>
                 <constraint firstItem="7lU-oi-uQF" firstAttribute="leading" secondItem="5tl-g6-mpA" secondAttribute="leading" id="UfG-fd-3VK"/>
+                <constraint firstItem="kVd-hv-cgA" firstAttribute="leading" secondItem="5tl-g6-mpA" secondAttribute="leading" constant="10" id="Y3R-Ig-fgS"/>
                 <constraint firstAttribute="trailing" secondItem="ejt-3Q-zeP" secondAttribute="trailing" constant="1" id="rEV-LB-G3J"/>
+                <constraint firstItem="io2-6Z-0mT" firstAttribute="leading" secondItem="kVd-hv-cgA" secondAttribute="leading" id="uvd-Wx-3aD"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -156,9 +189,61 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="468" y="381"/>
         </view>
+        <view contentMode="scaleToFill" id="LrC-pK-1FZ">
+            <rect key="frame" x="0.0" y="0.0" width="201" height="213"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewu-HN-wRA">
+                    <rect key="frame" x="0.0" y="100" width="201" height="25"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVM-z5-3r6">
+                    <rect key="frame" x="0.0" y="135" width="201" height="19"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcc-pL-xgh">
+                    <rect key="frame" x="0.0" y="164" width="201" height="19"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Milestone:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-GW-PBe">
+                    <rect key="frame" x="0.0" y="193" width="201" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="K3c-GW-PBe" firstAttribute="top" secondItem="Jcc-pL-xgh" secondAttribute="bottom" constant="10" id="1pw-4M-rOO"/>
+                <constraint firstItem="hVM-z5-3r6" firstAttribute="top" secondItem="ewu-HN-wRA" secondAttribute="bottom" constant="10" id="21M-8X-04R"/>
+                <constraint firstItem="hVM-z5-3r6" firstAttribute="leading" secondItem="LrC-pK-1FZ" secondAttribute="leading" id="2on-Qf-dIK"/>
+                <constraint firstAttribute="trailing" secondItem="ewu-HN-wRA" secondAttribute="trailing" id="5Hz-si-53O"/>
+                <constraint firstItem="ewu-HN-wRA" firstAttribute="leading" secondItem="LrC-pK-1FZ" secondAttribute="leading" id="GUu-bV-Pvc"/>
+                <constraint firstItem="K3c-GW-PBe" firstAttribute="leading" secondItem="LrC-pK-1FZ" secondAttribute="leading" id="Gne-Ih-g7h"/>
+                <constraint firstAttribute="trailing" secondItem="K3c-GW-PBe" secondAttribute="trailing" id="HPO-uo-gB7"/>
+                <constraint firstItem="Jcc-pL-xgh" firstAttribute="leading" secondItem="LrC-pK-1FZ" secondAttribute="leading" id="g6a-62-yeC"/>
+                <constraint firstAttribute="trailing" secondItem="hVM-z5-3r6" secondAttribute="trailing" id="sJe-Pd-nND"/>
+                <constraint firstItem="Jcc-pL-xgh" firstAttribute="top" secondItem="hVM-z5-3r6" secondAttribute="bottom" constant="10" id="uca-wm-92X"/>
+                <constraint firstAttribute="trailing" secondItem="Jcc-pL-xgh" secondAttribute="trailing" id="wUZ-CM-Ynq"/>
+                <constraint firstItem="ewu-HN-wRA" firstAttribute="top" secondItem="LrC-pK-1FZ" secondAttribute="top" constant="100" id="y2Q-BR-fAa"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="850.5" y="390.5"/>
+        </view>
     </objects>
     <resources>
         <image name="babby" width="320" height="568"/>
+        <image name="fb-share" width="121" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

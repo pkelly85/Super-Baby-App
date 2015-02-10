@@ -79,4 +79,5 @@
 - (BOOL)containsString: (NSString*) substring;
 -(BOOL)isEqualToString_CaseInsensitive:(NSString *)strText;
 
+- (NSString *)getNumberFormatter;
 @end

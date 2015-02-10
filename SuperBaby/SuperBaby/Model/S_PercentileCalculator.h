@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef void(^percentileBlock)(NSInteger percentileWeight, NSInteger percentileHeight, NSInteger Age);
 @interface S_PercentileCalculator : NSObject
-+(void)calculate_height_percentile;
+{
+//    NSArray *arrWeigt;
+//    NSArray *arrHeight;
+}
+@property(nonatomic,strong)    NSArray *arrWeigt;
+@property(nonatomic,strong)    NSArray *arrHeight;
+
++ (S_PercentileCalculator *)sharedManager;
+-(void)calculate_percentile:(percentileBlock)complition;
+
 
 @end
