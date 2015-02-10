@@ -74,6 +74,7 @@
 		10B7D5A51A442E15004EFF60 /* ExercisesByAge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */; };
 		10B7D5A61A442E15004EFF60 /* Videos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B7D5A41A442E15004EFF60 /* Videos.plist */; };
 		10B7D5A91A444442004EFF60 /* S_BabyInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */; };
+		10BA23C71A89C53700564845 /* VideoMilestones.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10BA23C61A89C53700564845 /* VideoMilestones.plist */; };
 		10C27D011A35A4C20006985C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D001A35A4C20006985C /* main.m */; };
 		10C27D041A35A4C20006985C /* S_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C27D031A35A4C20006985C /* S_AppDelegate.m */; };
 		10C27D0C1A35A4C20006985C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C27D0B1A35A4C20006985C /* Images.xcassets */; };
@@ -253,6 +254,7 @@
 		10B7D5A41A442E15004EFF60 /* Videos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Videos.plist; sourceTree = "<group>"; };
 		10B7D5A71A444442004EFF60 /* S_BabyInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_BabyInfoModel.h; sourceTree = "<group>"; };
 		10B7D5A81A444442004EFF60 /* S_BabyInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_BabyInfoModel.m; sourceTree = "<group>"; };
+		10BA23C61A89C53700564845 /* VideoMilestones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoMilestones.plist; sourceTree = "<group>"; };
 		10C27CFB1A35A4C20006985C /* SuperBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C27CFF1A35A4C20006985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10C27D001A35A4C20006985C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 		10B7D5A21A442E15004EFF60 /* ALL Plist */ = {
 			isa = PBXGroup;
 			children = (
+				10BA23C61A89C53700564845 /* VideoMilestones.plist */,
 				10A7DBC71A5CF00900529EDC /* Annotations.plist */,
 				10A448891A4C205900BDBD23 /* ExercisesByMilestone.plist */,
 				10B7D5A31A442E15004EFF60 /* ExercisesByAge.plist */,
@@ -1051,6 +1054,7 @@
 				1072DD541A4807CF00F156F7 /* S_LoginVC.xib in Resources */,
 				10C27DAC1A35A5DC0006985C /* SVProgressHUD.bundle in Resources */,
 				106C08DE1A385CCA002AD6BE /* S_MilestoneVC.xib in Resources */,
+				10BA23C71A89C53700564845 /* VideoMilestones.plist in Resources */,
 				108E6AC11A5E63D70065A582 /* CCell_SimpleHeader.xib in Resources */,
 				1097BCD11A78B60B002F9FEB /* Tips_FineMotor.plist in Resources */,
 				109885E51A37060400FB3BB4 /* S_HomeVC.xib in Resources */,
