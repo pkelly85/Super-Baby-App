@@ -5,47 +5,92 @@
 	<dict>
 		<key>id</key>
 		<integer>0</integer>
-		<key>milestones</key>
-		<array>
+		<key>Milestone 0</key>
+		<dict>
+			<key>text</key>
 			<string>Opens and closes hands.</string>
+			<key>key</key>
+			<string>0</string>
+		</dict>
+		<key>Milestone 1</key>
+		<dict>
+			<key>text</key>
 			<string>Reciprocal and symmetrical kicking, while on back. </string>
-		</array>
+			<key>key</key>
+			<string>1</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>1</integer>
-		<key>milestones</key>
-		<array>
+		<key>Milestone 0</key>
+		<dict>
+			<key>text</key>
 			<string>Reaches and grasps with hand-eye-coordination.</string>
+			<key>key</key>
+			<string>2</string>
+		</dict>
+		<key>Milestone 1</key>
+		<dict>
+			<key>text</key>
 			<string>Reciprocal and symmetrical kicking, while on back.  </string>
-		</array>
+			<key>key</key>
+			<string>3</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>2</integer>
-		<key>milestones</key>
-		<array>
+		<key>Milestone 0</key>
+		<dict>
+			<key>text</key>
 			<string>Reciprocal and symmetrical kicking, while on back. </string>
-		</array>
+			<key>key</key>
+			<string>4</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>3</integer>
-		<key>milestones</key>
-		<array>
+		<key>Milestone 0</key>
+		<dict>
+			<key>text</key>
 			<string>Reaches and grasps with hand-eye-coordination.</string>
-		</array>
+			<key>key</key>
+			<string>5</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>4</integer>
-		<key>milestones</key>
-		<array>
+		<key>Milestone 0</key>
+		<dict>
+			<key>text</key>
 			<string>Slightly elevates and turns head, while on belly.</string>
+			<key>key</key>
+			<string>6</string>
+		</dict>
+		<key>Milestone 1</key>
+		<dict>
+			<key>text</key>
 			<string>Reaches and grasps with hand-eye-coordination.</string>
+			<key>key</key>
+			<string>7</string>
+		</dict>
+		<key>Milestone 2</key>
+		<dict>
+			<key>text</key>
 			<string>Lifts head to 90 degrees briefly when on tummy. </string>
+			<key>key</key>
+			<string>8</string>
+		</dict>
+		<key>Milestone 3</key>
+		<dict>
+			<key>text</key>
 			<string>Minimal head lag with pull-to-sit.</string>
-		</array>
+			<key>key</key>
+			<string>9</string>
+		</dict>
 	</dict>
 	<dict>
 		<key>id</key>
