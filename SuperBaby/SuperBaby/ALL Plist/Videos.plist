@@ -34,7 +34,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Cross+Crawl+(1mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.crosscrawl</string>
 		<key>thumbnail</key>
 		<string>02_superbaby_video_advanced_belly_1142_803</string>
 		<key>annotationId</key>
@@ -94,7 +94,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Bobble+Head+(Head+Control)+(1mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.bobblehead</string>
 		<key>thumbnail</key>
 		<string>05_superbaby_b_roll2_1142x803</string>
 		<key>annotationId</key>
@@ -114,7 +114,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Baby+Tai-Chi+(Gentle+Exremity+Movements)+(1mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.babytaichi</string>
 		<key>thumbnail</key>
 		<string>06_superbaby_b_roll3_1142x803</string>
 		<key>annotationId</key>
@@ -134,7 +134,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Baby+on+Board+(Baby+on+Belly)+(2-3mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.babyonboard</string>
 		<key>thumbnail</key>
 		<string>07_superbaby_b_roll_1142x803</string>
 		<key>annotationId</key>
@@ -194,7 +194,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Backwards+on+ball+4-5+mo.mp4</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.babysitups</string>
 		<key>thumbnail</key>
 		<string>10_superbaby_baby_on_board_sitting</string>
 		<key>annotationId</key>
@@ -214,7 +214,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Over+Leg+Tummy+Time+(2-3mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.overlegtummytime</string>
 		<key>thumbnail</key>
 		<string>11_superbaby_baby_situps</string>
 		<key>annotationId</key>
@@ -314,7 +314,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+(Symmetrical+Leg+Roll)+(4-5mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.rolliepolliesymmetricallegroll</string>
 		<key>thumbnail</key>
 		<string>16_superbaby_bear_walk_02</string>
 		<key>annotationId</key>
@@ -334,7 +334,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Rollie-Pollie+to+Belly+(Flex-Ext+Leg+Roll)+(4-5mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.rolliepollietobelly</string>
 		<key>thumbnail</key>
 		<string>17_superbaby_belly_on_ball_8-9mo</string>
 		<key>annotationId</key>
@@ -414,7 +414,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Baby+on+Board+Sitting+(4-5mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.babyonboardsitting</string>
 		<key>thumbnail</key>
 		<string>21_superbaby_chasing_bubbles</string>
 		<key>annotationId</key>
@@ -454,7 +454,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Sitting+on+Ball+Beginner+(4-5mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.sittingonballbeginner</string>
 		<key>thumbnail</key>
 		<string>23_superbaby_cross_crawl</string>
 		<key>annotationId</key>
@@ -474,7 +474,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Belly+on+Ball+Beginner+(4-5mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.bellyonballbeginner</string>
 		<key>thumbnail</key>
 		<string>24_superbaby_cruise_control</string>
 		<key>annotationId</key>
@@ -532,7 +532,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Backwards+on+ball+4-5+mo.mp4</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.sittingonballintermediate</string>
 		<key>thumbnail</key>
 		<string>27_superbaby_kneeling_training_8-9</string>
 		<key>annotationId</key>
@@ -572,7 +572,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Quadruped+Training+(6-7mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.quadrupedtraining</string>
 		<key>thumbnail</key>
 		<string>29_superbaby_moving_on_belly</string>
 		<key>annotationId</key>
@@ -652,7 +652,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Belly+on+Ball+Advanced+(6-7mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.bellyonballadvanced</string>
 		<key>thumbnail</key>
 		<string>33_superbaby_quadruped_training</string>
 		<key>annotationId</key>
@@ -692,7 +692,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Sitting+on+Ball+Advanvced+(8-9mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.sittingonballadvanced</string>
 		<key>thumbnail</key>
 		<string>35_superbaby_reaching_in_quadruped2</string>
 		<key>annotationId</key>
@@ -712,7 +712,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Transitioning+Sitting+to+Crawling+(8-9mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.transitioningsittingtocrawling</string>
 		<key>thumbnail</key>
 		<string>36_superbaby_reaching_quadruped</string>
 		<key>annotationId</key>
@@ -752,7 +752,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Reaching+in+Quadruped+(8-9mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.reachinginquadruped</string>
 		<key>thumbnail</key>
 		<string>38_superbaby_rollie_pollie</string>
 		<key>annotationId</key>
@@ -792,7 +792,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Half-Kneel+Training+(10-11mo).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.halfkneeltraining</string>
 		<key>thumbnail</key>
 		<string>40_superbaby_rolling_back_belly</string>
 		<key>annotationId</key>
@@ -852,7 +852,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Wheel-Barrel+Walk.m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.wheelbarrelwalking</string>
 		<key>thumbnail</key>
 		<string>43_superbaby_sitting_on_ball_advanced2</string>
 		<key>annotationId</key>
@@ -872,7 +872,7 @@
 		<key>url</key>
 		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Moon+Walk+(Walking+Backwards)+(12mo+%2B).m4v</string>
 		<key>price</key>
-		<string>FREE</string>
+		<string>com.sbapp.superbaby.moonwalk</string>
 		<key>thumbnail</key>
 		<string>44_superbaby_sitting_on_ball_advanced_8-9</string>
 		<key>annotationId</key>
