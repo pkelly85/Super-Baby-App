@@ -20,3 +20,10 @@
 "strNoFacebookAccountTitle" = "No Facebook Account";
 "strNoFacebookAccountMessage" = "There are no facebook accounts configured. You can add or create a Facebook account in settings.";
 
+//IAP
+"Error Message" = "Error Message";
+"Loading products..." = "Loading products...";
+"Buying products..." = "Buying products...";
+"Purchasing..." = "Purchasing...";
+"Verifying..." = "Verifying...";
+"Restored..." = "Restored...";

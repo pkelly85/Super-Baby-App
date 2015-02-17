@@ -12,10 +12,13 @@
 
 
 
-#define SECTION_NAME @"sectionValue"
+#define SECTION_NAME @"age"
 #define TOOGLE @"toogleValue"
 
-#define ROW_NAME @"rowValue"
+#define ROW_NAME @"milestones"
+
+#define KEY @"key"
+#define VALUE @"text"
 
 #import "CCell_Milestone.h"
 @interface S_MilestoneVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -24,6 +27,10 @@
     __weak IBOutlet UITableView *tblView;
     __weak IBOutlet UILabel *lblDescription;
     NSMutableArray *arrContent;
+    NSMutableArray *arrSelected;
+    JSONParser *parser;
+    NSIndexPath *selectedIndexPath;
+
 }
 @end
 
@@ -60,19 +67,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    arrContent = [[NSMutableArray alloc]init];
-    
-    for (int i = 0; i<5; i++) {
-        NSMutableDictionary *dict = [NSMutableDictionary new];
-        [dict setValue:[NSString stringWithFormat:@"Section %d",i] forKey:SECTION_NAME];
-        [dict setValue:@"0" forKey:TOOGLE];
+    NSArray *arrM = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MyBabyMilestones" ofType:@"plist"]];
+    arrSelected = [[NSMutableArray alloc]init];
 
-        NSMutableArray *arrTemp = [[NSMutableArray alloc]init];
-        for (int i = 0; i<3; i++) {
-            [arrTemp addObject:[NSString stringWithFormat:@"%d",i]];
-        }
-        [dict setObject:arrTemp forKey:ROW_NAME];
-        
+    arrContent = [[NSMutableArray alloc]init];
+    for (int i = 0; i < arrM.count; i++) {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:arrM[i]];
+        [dict setValue:@"0" forKey:TOOGLE];
         [arrContent addObject:dict];
     }
     tblView.backgroundColor = [UIColor clearColor];
@@ -80,18 +81,115 @@
     //tblView.sectionHeaderHeight = 216.0;
     [tblView registerNib:[UINib nibWithNibName:@"CCell_HeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"CCell_HeaderView"];
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
+    
+    if (myUserModelGlobal) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self getMilestone];
+        });
+    }
 }
--(void)sendFacebook:(id)sender {
+#pragma mark -
+#pragma mark - Get Milestone
+-(void)getMilestone
+{
+    showHUD_with_Title(@"Getting Milestone");
     
-    /*
-     The text for the post will be as follows:
-     
-     "My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>"
-     
-     Then a link to a URL. For now use http://www.google.com and I will update with the final URL.
-     */
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        @try
+        {
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_MILESTONE_MYBABY_COMPLETE};
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE_COMPLETE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getMilestoneSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)getMilestoneSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
     
-    [appDel sendFacebook:self with_Text:@"My baby just completed the <AGE GROUP HERE> Milestone: <List all Milestones the user has selected, each with a newline between them>" withLink:@"http://www.google.com"];
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"GetCompletedMilestonesResult"])
+    {
+        BOOL isTimeLineAdded = [[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.ResultStatus.Status"] boolValue];;
+        
+        if (isTimeLineAdded)
+        {
+            @try
+            {
+                hideHUD;
+                /*--- Add all ids in array to check which milestone is completed ---*/
+                [arrSelected addObjectsFromArray:[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.lstCompletedMilestones"]];
+                [tblView reloadData];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            @finally {
+            }
+            
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"GetCompletedMilestonesResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+}
+
+#pragma mark - Facebook Share
+-(void)sendFacebook:(id)sender
+{
+    UIButton  *btnF = (UIButton *)sender;
+    NSDictionary *dict = arrContent[btnF.tag];
+    NSMutableString *strToSend = [[NSMutableString alloc]init];
+
+    for (NSDictionary *dictIn in dict[ROW_NAME])
+    {
+        NSString *strMID = [NSString stringWithFormat:@"%@",dictIn[KEY]];
+        if ([arrSelected containsObject:strMID])
+        {
+            [strToSend appendFormat:@"\n"];
+            [strToSend appendString:[NSString stringWithFormat:@"• %@",dictIn[VALUE]]];
+        }
+    }
+    if (strToSend.length > 0) {
+        NSString *strFinal = [NSString stringWithFormat:@"My baby just completed the %@ Milestone: %@",dict[SECTION_NAME],strToSend];
+        [appDel sendFacebook:self with_Text:strFinal withLink:@"http://www.google.com"];
+    }
+    else
+    {
+        NSString *error = [NSString stringWithFormat:@"You have not completed any milestone for %@",dict[SECTION_NAME]];
+        showHUD_with_error(error);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hideHUD;
+        });
+    }
+    
 }
 #pragma mark - Table Delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -145,15 +243,44 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    CCell_Milestone *cell = (CCell_Milestone *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Milestone"];
+    NSDictionary *dict = arrContent[indexPath.section];
+    NSString *strT = dict[ROW_NAME][indexPath.row][VALUE];
+    float heightT = 20.0 + [strT getHeight_withFont:cell.lblDescription.font widht:tblView.frame.size.width - 70.0];
+    return MAX(44.0, heightT);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CCell_Milestone *cell = (CCell_Milestone *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Milestone"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSDictionary *dict = arrContent[indexPath.section];
-    cell.lblDescription.text = dict[ROW_NAME][indexPath.row];
+    cell.lblDescription.text = dict[ROW_NAME][indexPath.row][VALUE];
+    NSString *strMID = [NSString stringWithFormat:@"%@",dict[ROW_NAME][indexPath.row][KEY]];
+    if ([arrSelected containsObject:strMID])
+        cell.imgV_On_Off.image = [UIImage imageNamed:img_radio_On];
+    else
+        cell.imgV_On_Off.image = [UIImage imageNamed:img_radio_Off];
     return cell;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (myUserModelGlobal) {
+        selectedIndexPath = indexPath;
+        NSDictionary *dict = arrContent[indexPath.section];
+
+        NSString *strID = [NSString stringWithFormat:@"%@",dict[ROW_NAME][indexPath.row][KEY]];
+        if (![arrSelected containsObject:strID])
+        {
+            [self addMilestoneToTimeline_withIndex:@"1"];
+        }
+        else
+        {
+            [self addMilestoneToTimeline_withIndex:@"0"];
+        }
+    }
+}
+
+
 -(void)toggleRow:(UIButton *)btnHeader
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithDictionary:arrContent[btnHeader.tag]];
@@ -174,6 +301,107 @@
     [tblView reloadSections:[NSIndexSet indexSetWithIndex:btnHeader.tag] withRowAnimation:UITableViewRowAnimationNone];
     [tblView endUpdates];
 }
+
+
+
+#pragma mark -
+#pragma mark - Add To Timeline
+-(void)addMilestoneToTimeline_withIndex:(NSString *)strComplete
+{
+    //Web_BABY_ADD_TIMELINE
+    /*
+     <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="UserToken" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="MilestoneID" nillable="true" type="xs:string"/>
+     <xs:element minOccurs="0" name="VideoID" nillable="true" type="xs:string"/>
+     */
+    
+    showHUD_with_Title(@"Complete Milestone");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        @try
+        {
+            NSDictionary *dict = arrContent[selectedIndexPath.section];
+
+            NSString *strMessage = [NSString stringWithFormat:@"%@ completed the %@ Milestone.",babyModelGlobal.Name,dict[ROW_NAME][selectedIndexPath.row][VALUE]];
+            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_MILESTONE_MYBABY_COMPLETE,
+                                       @"Message":strMessage,
+                                       @"MilestoneID":dict[ROW_NAME][selectedIndexPath.row][KEY],
+                                       @"VideoID":@"",
+                                       @"CompletedStatus":strComplete};
+            
+            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_ADD_TIMELINE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(addMilestoneToTimelineSuccess:) withObject:self];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        }
+        @finally {
+        }
+    });
+}
+-(void)addMilestoneToTimelineSuccess:(id)objResponse
+{
+    NSLog(@"Response > %@",objResponse);
+    if (![objResponse isKindOfClass:[NSDictionary class]])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+        return;
+    }
+    
+    if ([objResponse objectForKey:kURLFail])
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+    else if([objResponse objectForKey:@"AddTimelineResult"])
+    {
+        BOOL isTimeLineAdded = [[objResponse valueForKeyPath:@"AddTimelineResult.ResultStatus.Status"] boolValue];;
+        
+        if (isTimeLineAdded)
+        {
+            @try
+            {
+                hideHUD;
+                NSDictionary *dict = arrContent[selectedIndexPath.section];
+
+                /*--- add to array and reload ---*/
+                NSString *strID = [NSString stringWithFormat:@"%@",dict[ROW_NAME][selectedIndexPath.row][KEY]];
+                if ([arrSelected containsObject:strID])
+                    [arrSelected removeObject:strID];
+                else
+                    [arrSelected addObject:strID];
+                
+                [tblView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:selectedIndexPath.row inSection:selectedIndexPath.section]] withRowAnimation:UITableViewRowAnimationNone];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            @finally {
+            }
+            
+        }
+        else
+        {
+            hideHUD;
+            [CommonMethods displayAlertwithTitle:[objResponse valueForKeyPath:@"AddTimelineResult.ResultStatus.StatusMessage"] withMessage:nil withViewController:self];
+        }
+    }
+    else
+    {
+        hideHUD;
+        [CommonMethods displayAlertwithTitle:[objResponse objectForKey:kURLFail] withMessage:nil withViewController:self];
+    }
+}
+
+
 #pragma mark - Extra
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

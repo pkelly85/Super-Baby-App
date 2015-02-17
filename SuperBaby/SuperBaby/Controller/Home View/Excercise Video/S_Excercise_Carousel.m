@@ -18,7 +18,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <StoreKit/StoreKit.h>
-
+#import "GlobalMethods.h"
 @interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,SKProductsRequestDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -36,9 +36,30 @@
 {
     popView;
 }
+#pragma mark - Product Purchase NotificationCenter
+- (void)productPurchased:(NSNotification *) notification
+{
+    // After completion of transaction provide purchased item to customer and also update purchased item's status in NSUserDefaults
+    [UserDefaults setObject:@"YES" forKey:notification.object];
+    [UserDefaults synchronize];
+}
+
+- (void)productPurchaseFailed:(NSNotification *) notification
+{
+    NSString *status = [[notification userInfo] valueForKey:@"isAlert"];
+    [CommonMethods displayAlertwithTitle:@"Failed" withMessage:status withViewController:self];
+}
+#pragma mark - View Did Load
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //inAppPurchase Notification Fire Declaration Start
+   [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+   [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+   
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchaseFailed:) name:IAPHelperProductNotPurchasedNotification object:nil];
     
     /*--- Navigation setup ---*/
     createNavBar(_strTitle, RGBCOLOR_RED, image_Red);
@@ -83,7 +104,9 @@
     //return the total number of items in the carousel
     return [arrVideos count];
 }
-
+-(void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
+{
+}
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(MyViewCarousel *)view
 {
     //create new view if no view is available for recycling
@@ -97,14 +120,16 @@
     NSDictionary *dictInfo = (NSDictionary *)arrVideos[index];
     view.btnPlay.tag = index;
     view.btnInfo.tag = index;
-   
+    view.lblText.text = [NSString stringWithFormat:@"%@",dictInfo[EV_Detail_title]];
+
     NSString *strPrice = [[NSString stringWithFormat:@"%@",dictInfo[EV_Detail_price]] isNull];
-    if ([strPrice isEqualToString_CaseInsensitive:@"FREE"]) {
-        view.lblText.text = [NSString stringWithFormat:@"%@",dictInfo[EV_Detail_title]];
+    if ([strPrice isEqualToString_CaseInsensitive:@"FREE"])
+    {
+        view.lblPrice.text = @"";
     }
     else
     {
-        view.lblText.text = [NSString stringWithFormat:@"%@ - %@",dictInfo[EV_Detail_title],dictInfo[EV_Detail_price]];
+        view.lblPrice.text = @"123";
     }
     
     view.imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dictInfo[EV_Detail_thumbnail]]];
@@ -113,34 +138,39 @@
 
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
+#warning - REMOVE BELOW LINE
     //change error here
     if ([appDel checkConnection:nil])
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag];
-//        NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
-//        if (![strPrice isEqualToString:@"FREE"]) {
-//            [self requestProUpgradeProductData:strPrice];
-//
-//        }
-//        return;
-        //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-        
-       // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
-        
-        NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
+        NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
+        if (![strPrice isEqualToString:@"FREE"]) {
+            
+            showHUD_with_Title(@"Getting Price");
+            [self requestProUpgradeProductData:strPrice];
+            //[GlobalMethods BuyProduct:strPrice withViewController:self];
+        }
+        else
+        {
+            //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+            
+           // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+            
+            NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
 
-        NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
-        
-        MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = dictVideo[EV_Detail_url];
-        player.arrAnnotation = arrTemp;
-        player.dictINFO = dictVideo;
-        player.strVideoID = dictVideo[EV_ID];
-        NSError *setCategoryErr = nil;
-        NSError *activationErr  = nil;
-        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
-        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
-        [self presentMoviePlayerViewControllerAnimated:player];
+            NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
+            
+            MoviePlayer *player = [[MoviePlayer alloc]init];
+            player.moviePath = dictVideo[EV_Detail_url];
+            player.arrAnnotation = arrTemp;
+            player.dictINFO = dictVideo;
+            player.strVideoID = dictVideo[EV_ID];
+            NSError *setCategoryErr = nil;
+            NSError *activationErr  = nil;
+            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+            [self presentMoviePlayerViewControllerAnimated:player];
+        }
     }
     else
     {
@@ -175,15 +205,24 @@
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
+    hideHUD;
     NSArray *products = response.products;
     SKProduct *proUpgradeProduct = [products count] == 1 ? [products firstObject]  : nil;
     if (proUpgradeProduct)
     {
-        NSLog(@"Product title: %@" , proUpgradeProduct.localizedTitle);
-        NSLog(@"Product description: %@" , proUpgradeProduct.localizedDescription);
-        NSLog(@"Product price: %@" , proUpgradeProduct.price);
-        NSLog(@"Product id: %@" , proUpgradeProduct.productIdentifier);
+        NSLog(@"title: %@" , proUpgradeProduct.localizedTitle);
+        NSLog(@"description: %@" , proUpgradeProduct.localizedDescription);
+        NSLog(@"price: %@" , proUpgradeProduct.price);
+        NSLog(@"id: %@" , proUpgradeProduct.productIdentifier);
+        
+        NSNumberFormatter *formatter = [NSNumberFormatter new];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [formatter setLocale:proUpgradeProduct.priceLocale];
+        NSString *cost = [formatter stringFromNumber:proUpgradeProduct.price];
+        NSLog(@"%@",cost);
     }
+    
+    
     
     for (NSString *invalidProductId in response.invalidProductIdentifiers)
     {

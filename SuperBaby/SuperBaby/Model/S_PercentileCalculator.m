@@ -154,7 +154,7 @@ Given the Baby's age (in months, rounded to the nearest 0.5 of a month) and the 
         double l_into_s = [strL doubleValue] * [strS doubleValue];
         valueZ = restToL / l_into_s;
     }
-    NSLog(@"%f",valueZ);
+    NSLog(@"Zval = %f",valueZ);
 
     return valueZ;
 }

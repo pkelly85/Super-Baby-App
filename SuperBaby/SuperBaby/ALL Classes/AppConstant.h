@@ -181,7 +181,8 @@ UIImage *image_Yellow;
 //#define EDIT_BABY_INFO_FIRST_TIME @"firsttimeeditbabyinfo"
 /*-----------------------------------------------------------------------------*/
 //Types
-#define TYPE_MILESTONE_COMPLETE @"0"
+#define TYPE_MILESTONE_VIDEO_COMPLETE @"0"
+#define TYPE_MILESTONE_MYBABY_COMPLETE @"4"
 #define TYPE_WATCH_VIDEO_COMPLETE @"3"
 
 
@@ -199,6 +200,7 @@ UIImage *image_Yellow;
 #define EV_Detail_thumbnail @"thumbnail"
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
+#define EV_Detail_milestoneId @"milestoneId"
 
 
 #define EV_Annotation_annotationtime @"annotationtime"
@@ -230,3 +232,7 @@ S_UserModel *myUserModelGlobal;
 S_BabyInfoModel *babyModelGlobal;
 BOOL isBabyInfoUpdatedGlobal;
 #define UNAUTHORIZED @"Unauthorized"
+
+NSMutableArray *arryProducts;
+#define IAPHelperProductPurchasedNotification @"IAPHelperProductPurchasedNotification"
+#define IAPHelperProductNotPurchasedNotification @"IAPHelperProductNotPurchasedNotification"

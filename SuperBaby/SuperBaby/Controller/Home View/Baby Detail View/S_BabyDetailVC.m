@@ -19,6 +19,9 @@
 
 #import "CCell_SimpleHeader.h"
 #import "CCell_BabyInfo_Dot.h"
+
+#define KEY @"key"
+#define VALUE @"text"
 @interface S_BabyDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIButton *btn_4_EditBabyInfo;
@@ -219,7 +222,7 @@
     [strToSend appendString:lblCurrentMilestone.text];
     for (int i = 0; i<arrCurrentMilestones.count; i++) {
         [strToSend appendFormat:@"\n"];
-        [strToSend appendString:[NSString stringWithFormat:@"• %@",arrCurrentMilestones[i]]];
+        [strToSend appendString:[NSString stringWithFormat:@"• %@",arrCurrentMilestones[i][VALUE]]];
     }    
     [appDel sendFacebook:self with_Text:strToSend withLink:@"http://www.google.com"];
 }
@@ -268,7 +271,7 @@
 {
     float heigtT = 0.0;
     //milestone cell
-    heigtT = 5.0 + [arrCurrentMilestones[indexPath.row] getHeight_withFont:kFONT_LIGHT(15.0) widht:tblView.frame.size.width - 21.0];
+    heigtT = 5.0 + [arrCurrentMilestones[indexPath.row][VALUE] getHeight_withFont:kFONT_LIGHT(15.0) widht:tblView.frame.size.width - 21.0];
     return MAX(27.0, heigtT);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -279,7 +282,7 @@
     cellDot.selectionStyle = UITableViewCellSelectionStyleNone;
     cellDot.lblDescription.textColor = [UIColor whiteColor];
     cellDot.lblDescription.font = kFONT_LIGHT(15.0);
-    cellDot.lblDescription.text = arrCurrentMilestones[indexPath.row];//_dictInfo[EV_Detail_instruction];
+    cellDot.lblDescription.text = arrCurrentMilestones[indexPath.row][VALUE];//_dictInfo[EV_Detail_instruction];
     return cellDot;
 }
 
