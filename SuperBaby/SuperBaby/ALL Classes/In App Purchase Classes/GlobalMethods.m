@@ -11,7 +11,7 @@
 #import "AppConstant.h"
 #import "GlobalMethods.h"
 
-@interface GlobalMethods()<SKProductsRequestDelegate>
+@interface GlobalMethods()
 {
     SKProductsRequest *productsRequest;
 }
