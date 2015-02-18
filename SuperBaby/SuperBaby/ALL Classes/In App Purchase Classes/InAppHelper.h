@@ -28,5 +28,6 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 //Method declaration to buy product
 - (void)buyProduct:(SKProduct *)product withViewController:(UIViewController *)vc;
 - (void)restoreCompletedTransactions:(UIViewController *)vc;
+-(void)cancelAllProductRequest;
 
 @end

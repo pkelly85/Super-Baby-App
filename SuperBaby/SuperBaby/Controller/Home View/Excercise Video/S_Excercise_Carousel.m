@@ -17,21 +17,20 @@
 #import "MoviePlayer.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import <StoreKit/StoreKit.h>
 #import "GlobalMethods.h"
-@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate,SKProductsRequestDelegate>
+
+
+@interface S_Excercise_Carousel ()<iCarouselDataSource, iCarouselDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
     NSMutableArray *arrVideos;
-    SKProductsRequest *productsRequest;
-
+    BOOL isCallingService;
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
 @end
 
 @implementation S_Excercise_Carousel
-#pragma mark - View Did Load
 -(IBAction)back:(id)sender
 {
     popView;
@@ -40,12 +39,16 @@
 - (void)productPurchased:(NSNotification *) notification
 {
     // After completion of transaction provide purchased item to customer and also update purchased item's status in NSUserDefaults
+    NSLog(@"Purchase : %@",notification.object);
     [UserDefaults setObject:@"YES" forKey:notification.object];
     [UserDefaults synchronize];
+    
+    [_carousel reloadData];
 }
 
 - (void)productPurchaseFailed:(NSNotification *) notification
 {
+    NSLog(@"Purchase Fail : %@",notification.userInfo);
     NSString *status = [[notification userInfo] valueForKey:@"isAlert"];
     [CommonMethods displayAlertwithTitle:@"Failed" withMessage:status withViewController:self];
 }
@@ -53,6 +56,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    isCallingService = NO;
     
     //inAppPurchase Notification Fire Declaration Start
    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
@@ -65,7 +69,12 @@
     createNavBar(_strTitle, RGBCOLOR_RED, image_Red);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    [super viewWillDisappear:animated];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -104,9 +113,6 @@
     //return the total number of items in the carousel
     return [arrVideos count];
 }
--(void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
-{
-}
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(MyViewCarousel *)view
 {
     //create new view if no view is available for recycling
@@ -129,13 +135,82 @@
     }
     else
     {
-        view.lblPrice.text = @"123";
+        if([UserDefaults objectForKey:strPrice])
+        {
+            view.lblPrice.text = @"";
+        }
+        else if (![dictInfo objectForKey:VIDEO_PRICE])
+        {
+            view.lblPrice.text = @" getting price... ";
+        }
+        else
+        {
+            view.lblPrice.text = [NSString stringWithFormat:@" %@ ",[dictInfo objectForKey:VIDEO_PRICE]];
+        }
     }
     
     view.imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dictInfo[EV_Detail_thumbnail]]];
     return view;
 }
-
+- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
+{
+    //done
+    NSDictionary *dictVideo = arrVideos[carousel.currentItemIndex];
+    NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
+    
+    if (![strPrice isEqualToString:@"FREE"] &&
+        ![dictVideo objectForKey:VIDEO_PRICE])
+    {
+        if (![UserDefaults objectForKey:strPrice]) {
+            if (!isCallingService) {
+                isCallingService = YES;
+                [self getPrice:strPrice];
+                //[self requestProUpgradeProductData:strPrice];
+            }
+        }
+    }
+    else
+    {
+        //[_carousel reloadItemAtIndex:carousel.currentItemIndex animated:NO];
+    }
+}
+-(void)getPrice:(NSString *)strPrice
+{
+    NSLog(@"Get Product : %@",strPrice);
+    [GlobalMethods getProductPrices_withIdentifier:strPrice
+                                       withHandler:^(SKProduct *product, NSString *cost)
+    {
+        if (product)
+        {
+            for (int i = 0; i < arrVideos.count; i++) {
+                NSString *strPID = arrVideos[i][EV_Detail_price];
+                if ([strPID isEqualToString:product.productIdentifier]) {
+                    NSMutableDictionary *dictVideo = [[NSMutableDictionary alloc]initWithDictionary:arrVideos[i]];
+                    NSLog(@"%@ : PRICE : %@",dictVideo,cost);
+                    
+                    [dictVideo setValue:cost forKey:VIDEO_PRICE];
+                    [arrVideos replaceObjectAtIndex:i withObject:dictVideo];
+                }
+            }
+            [_carousel reloadData];
+            
+            /*NSPredicate *predicate = [NSPredicate predicateWithFormat:@"price == %@", product.productIdentifier];
+            NSUInteger index = [arrVideos indexOfObjectPassingTest:^(id obj, NSUInteger idx, BOOL *stop) {
+                return [predicate evaluateWithObject:obj];
+            }];
+            if (index < arrVideos.count) {
+                NSMutableDictionary *dictVideo = [[NSMutableDictionary alloc]initWithDictionary:arrVideos[index]];
+                NSLog(@"%@ : PRICE : %@",dictVideo,cost);
+                
+                [dictVideo setValue:cost forKey:VIDEO_PRICE];
+                [arrVideos replaceObjectAtIndex:index withObject:dictVideo];
+                [_carousel reloadItemAtIndex:index animated:NO];
+            }*/
+        }
+        isCallingService = NO;
+    }];
+}
+#pragma mark - IBAction Methods
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
 #warning - REMOVE BELOW LINE
@@ -144,18 +219,17 @@
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag];
         NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
-        if (![strPrice isEqualToString:@"FREE"]) {
-            
-            showHUD_with_Title(@"Getting Price");
-            [self requestProUpgradeProductData:strPrice];
-            //[GlobalMethods BuyProduct:strPrice withViewController:self];
+        
+        /*--- if product is not free + already not purchased ---*/
+        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
+        {
+            showHUD_with_Title(@"Getting Product");
+            [GlobalMethods BuyProduct:strPrice withViewController:self];
         }
         else
         {
             //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-            
            // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
-            
             NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
 
             NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
@@ -190,45 +264,6 @@
     [self.navigationController pushViewController:obj animated:YES];
 }
 
-- (void)requestProUpgradeProductData:(NSString *)strProductID
-{
-    NSSet *productIdentifiers = [NSSet setWithObject:strProductID];
-    productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
-    productsRequest.delegate = self;
-    [productsRequest start];
-    
-    // we will release the request object in the delegate callback
-}
-
-#pragma mark -
-#pragma mark SKProductsRequestDelegate methods
-
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
-    hideHUD;
-    NSArray *products = response.products;
-    SKProduct *proUpgradeProduct = [products count] == 1 ? [products firstObject]  : nil;
-    if (proUpgradeProduct)
-    {
-        NSLog(@"title: %@" , proUpgradeProduct.localizedTitle);
-        NSLog(@"description: %@" , proUpgradeProduct.localizedDescription);
-        NSLog(@"price: %@" , proUpgradeProduct.price);
-        NSLog(@"id: %@" , proUpgradeProduct.productIdentifier);
-        
-        NSNumberFormatter *formatter = [NSNumberFormatter new];
-        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [formatter setLocale:proUpgradeProduct.priceLocale];
-        NSString *cost = [formatter stringFromNumber:proUpgradeProduct.price];
-        NSLog(@"%@",cost);
-    }
-    
-    
-    
-    for (NSString *invalidProductId in response.invalidProductIdentifiers)
-    {
-        NSLog(@"Invalid product id: %@" , invalidProductId);
-    }
-}
 
 
 /*

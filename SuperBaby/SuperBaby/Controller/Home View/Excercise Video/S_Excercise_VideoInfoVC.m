@@ -19,6 +19,7 @@
 #import "MoviePlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "GlobalMethods.h"
 
 #define KEY @"key"
 #define VALUE @"text"
@@ -31,7 +32,7 @@
     __weak IBOutlet UIView *viewHeader;
     __weak IBOutlet UIImageView *imgVideo;
     __weak IBOutlet UILabel *lblTitle_Age;
-
+    __weak IBOutlet UILabel *lblPrice;
     __weak IBOutlet UILabel *lblCompletedExcercise;
 
     NSString *strCellHeader;
@@ -51,21 +52,50 @@
 {
     popView;
 }
+#pragma mark - Product Purchase NotificationCenter
+- (void)productPurchased:(NSNotification *) notification
+{
+    // After completion of transaction provide purchased item to customer and also update purchased item's status in NSUserDefaults
+    NSLog(@"Purchase : %@",notification.object);
+    [UserDefaults setObject:@"YES" forKey:notification.object];
+    [UserDefaults synchronize];
+    lblPrice.text = @"";
+}
+
+- (void)productPurchaseFailed:(NSNotification *) notification
+{
+    NSLog(@"Purchase Fail : %@",notification.userInfo);
+    NSString *status = [[notification userInfo] valueForKey:@"isAlert"];
+    [CommonMethods displayAlertwithTitle:@"Failed" withMessage:status withViewController:self];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //inAppPurchase Notification Fire Declaration Start
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchaseFailed:) name:IAPHelperProductNotPurchasedNotification object:nil];
+    
     
     /*--- Navigation setup ---*/
     createNavBar(_dictInfo[EV_Detail_title], RGBCOLOR_RED, image_Red);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    [super viewWillDisappear:animated];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     lblTitle.text = _dictInfo[EV_Detail_title];
     imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_dictInfo[EV_Detail_thumbnail]]];//[UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
-    lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
+    lblTitle_Age.text = [NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_title ]];
     lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
 
     /*--- Search milestone by video ---*/
@@ -114,6 +144,26 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
     [tblView reloadData];
     
+    lblPrice.text = @"";
+    NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
+    if (![strPrice isEqualToString:@"FREE"] )
+    {
+        if ([UserDefaults objectForKey:strPrice]) {
+            //already purchased
+        }
+        else if(![_dictInfo objectForKey:VIDEO_PRICE])
+        {
+            //do not have price
+            lblPrice.text = @" getting price ";
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self getPrice:strPrice];
+
+            });
+        }
+        else// already have a price
+            lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
+    }
     
     if (arrMilestones.count > 0) {
         if (myUserModelGlobal) {
@@ -122,25 +172,50 @@
             });
         }
     }
-    
 }
+-(void)getPrice:(NSString *)strPrice
+{
+    NSLog(@"Get Product : %@",strPrice);
+    [GlobalMethods getProductPrices_withIdentifier:strPrice
+                                       withHandler:^(SKProduct *product, NSString *cost)
+     {
+         if (product)
+         {
+             [_dictInfo setValue:cost forKey:VIDEO_PRICE];
+             lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
+         }
+     }];
+}
+
+#pragma mark - IBAction
 -(IBAction)btnPlayClicked:(UIButton *)btnPlay
 {
     //change error here
-    if ([appDel checkConnection:nil]) {
-        //NSLog(@"%@",_dictInfo);
-        NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
-        
-        MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = _dictInfo[EV_Detail_url];
-        player.arrAnnotation = arrAnnotations;
-        player.dictINFO = _dictInfo;
-        player.strVideoID = _dictInfo[EV_ID];
-        NSError *setCategoryErr = nil;
-        NSError *activationErr  = nil;
-        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
-        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
-        [self presentMoviePlayerViewControllerAnimated:player];
+    if ([appDel checkConnection:nil])
+    {
+        NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
+        /*--- if product is not free + already not purchased ---*/
+        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
+        {
+            showHUD_with_Title(@"Getting Product");
+            [GlobalMethods BuyProduct:strPrice withViewController:self];
+        }
+        else
+        {
+            //NSLog(@"%@",_dictInfo);
+            NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
+            
+            MoviePlayer *player = [[MoviePlayer alloc]init];
+            player.moviePath = _dictInfo[EV_Detail_url];
+            player.arrAnnotation = arrAnnotations;
+            player.dictINFO = _dictInfo;
+            player.strVideoID = _dictInfo[EV_ID];
+            NSError *setCategoryErr = nil;
+            NSError *activationErr  = nil;
+            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+            [self presentMoviePlayerViewControllerAnimated:player];
+        }
     }
     else
     {

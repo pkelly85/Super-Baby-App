@@ -61,6 +61,12 @@
 }
 
 #pragma mark - SKProductsRequestDelegate Methods
+-(void)cancelAllProductRequest
+{
+    _productsRequest.delegate = nil;
+    [_productsRequest cancel];
+    _productsRequest = nil;
+}
 // This method will be called on successfull retrieval of products
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
 

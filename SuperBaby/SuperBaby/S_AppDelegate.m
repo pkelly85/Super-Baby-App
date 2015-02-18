@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <Social/Social.h>
+#import <StoreKit/StoreKit.h>
 
 #import "S_PercentileCalculator.h"
 @interface S_AppDelegate ()<UIAlertViewDelegate>
@@ -167,6 +168,7 @@
             break;
     }
 }
+
 #pragma mark - Facebook Share
 -(void)sendFacebook:(UIViewController *)vc with_Text:(NSString *)strText withLink:(NSString *)strLink {
     
@@ -200,8 +202,6 @@
         //    [composeController dismissViewControllerAnimated:YES completion:Nil];
     };
     composeController.completionHandler =myBlock;
-    
-    
 }
 
 #pragma mark -
