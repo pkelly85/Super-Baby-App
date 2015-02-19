@@ -67,6 +67,8 @@
 		10A7DBCE1A5D022E00529EDC /* CustomMoviePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBCD1A5D022E00529EDC /* CustomMoviePlayerViewController.xib */; };
 		10A7DBD81A5D4A2C00529EDC /* CCell_Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */; };
 		10A7DBD91A5D4A2C00529EDC /* CCell_Dot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */; };
+		10A7E3441A9340EA0050112E /* InAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7E3411A9340EA0050112E /* InAppHelper.m */; };
+		10A7E3481A93439C0050112E /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7E3471A93439C0050112E /* GlobalMethods.m */; };
 		10AF09E61A839BE800882D36 /* CCell_BabyInfo_Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AF09E41A839BE800882D36 /* CCell_BabyInfo_Dot.m */; };
 		10AF09E71A839BE800882D36 /* CCell_BabyInfo_Dot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AF09E51A839BE800882D36 /* CCell_BabyInfo_Dot.xib */; };
 		10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7D59D1A43F8AF004EFF60 /* S_UserModel.m */; };
@@ -243,6 +245,10 @@
 		10A7DBD51A5D4A2C00529EDC /* CCell_Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_Dot.h; sourceTree = "<group>"; };
 		10A7DBD61A5D4A2C00529EDC /* CCell_Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_Dot.m; sourceTree = "<group>"; };
 		10A7DBD71A5D4A2C00529EDC /* CCell_Dot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_Dot.xib; sourceTree = "<group>"; };
+		10A7E3401A9340EA0050112E /* InAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppHelper.h; sourceTree = "<group>"; };
+		10A7E3411A9340EA0050112E /* InAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppHelper.m; sourceTree = "<group>"; };
+		10A7E3461A93439C0050112E /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
+		10A7E3471A93439C0050112E /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
 		10AF09E31A839BE800882D36 /* CCell_BabyInfo_Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCell_BabyInfo_Dot.h; sourceTree = "<group>"; };
 		10AF09E41A839BE800882D36 /* CCell_BabyInfo_Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCell_BabyInfo_Dot.m; sourceTree = "<group>"; };
 		10AF09E51A839BE800882D36 /* CCell_BabyInfo_Dot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCell_BabyInfo_Dot.xib; sourceTree = "<group>"; };
@@ -605,6 +611,17 @@
 			path = "Extra Cell";
 			sourceTree = "<group>";
 		};
+		10A7E33F1A9340EA0050112E /* In App Purchase Classes */ = {
+			isa = PBXGroup;
+			children = (
+				10A7E3461A93439C0050112E /* GlobalMethods.h */,
+				10A7E3471A93439C0050112E /* GlobalMethods.m */,
+				10A7E3401A9340EA0050112E /* InAppHelper.h */,
+				10A7E3411A9340EA0050112E /* InAppHelper.m */,
+			);
+			path = "In App Purchase Classes";
+			sourceTree = "<group>";
+		};
 		10B7D5A21A442E15004EFF60 /* ALL Plist */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +705,7 @@
 		10C27D261A35A5DB0006985C /* ALL Classes */ = {
 			isa = PBXGroup;
 			children = (
+				10A7E33F1A9340EA0050112E /* In App Purchase Classes */,
 				109F74D31A6F8D71001E50B1 /* MoviePlayer.h */,
 				109F74D41A6F8D71001E50B1 /* MoviePlayer.m */,
 				10A7DBC91A5CF50D00529EDC /* CustomMoviePlayer */,
@@ -1093,6 +1111,7 @@
 				10C27D841A35A5DC0006985C /* AFAPIClient.m in Sources */,
 				10C27D8D1A35A5DC0006985C /* AFURLResponseSerialization.m in Sources */,
 				106C08DD1A385CCA002AD6BE /* S_MilestoneVC.m in Sources */,
+				10A7E3481A93439C0050112E /* GlobalMethods.m in Sources */,
 				10C27DAD1A35A5DC0006985C /* SVProgressHUD.m in Sources */,
 				10C27DA21A35A5DC0006985C /* SDWebImageDownloaderOperation.m in Sources */,
 				10C27DB91A35AE290006985C /* S_ViewController.m in Sources */,
@@ -1106,6 +1125,7 @@
 				10B7D59E1A43F8AF004EFF60 /* S_UserModel.m in Sources */,
 				10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */,
 				10B7D5A11A44090E004EFF60 /* UITextFiledWithoutInteraction.m in Sources */,
+				10A7E3441A9340EA0050112E /* InAppHelper.m in Sources */,
 				1078FCC01A3AF34E006303EE /* CCell_Milestone.m in Sources */,
 				10C27D851A35A5DC0006985C /* AFDownloadRequestOperation.m in Sources */,
 				10C27D971A35A5DC0006985C /* UIActionSheet+Blocks.m in Sources */,
@@ -1202,8 +1222,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1223,7 +1243,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "07fa7105-922e-485c-9852-4d693eaf90ae";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1245,8 +1265,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1259,7 +1279,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "07fa7105-922e-485c-9852-4d693eaf90ae";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1270,13 +1290,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SB APP LLC (869E8S244Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SB APP LLC (869E8S244Z)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f5e6396-2a66-4cde-83ee-f83da8eecd1a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Debug;
 		};
@@ -1285,13 +1305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SB APP LLC (869E8S244Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SB APP LLC (869E8S244Z)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f5e6396-2a66-4cde-83ee-f83da8eecd1a";
+				PROVISIONING_PROFILE = "0e7d4f76-5faa-439d-8397-46e1492ab775";
 			};
 			name = Release;
 		};

@@ -10,6 +10,8 @@
 
 @interface MyViewCarousel : UIView
 @property(nonatomic,weak)IBOutlet UILabel *lblText;
+@property(nonatomic,weak)IBOutlet UILabel *lblPrice;
+
 @property(nonatomic,weak)IBOutlet UIButton *btnPlay;
 @property(nonatomic,weak)IBOutlet UIButton *btnInfo;
 @property(nonatomic,weak)IBOutlet UIImageView *imgVideo;

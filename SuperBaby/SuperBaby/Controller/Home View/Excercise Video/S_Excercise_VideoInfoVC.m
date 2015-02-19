@@ -19,6 +19,11 @@
 #import "MoviePlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "GlobalMethods.h"
+
+#define KEY @"key"
+#define VALUE @"text"
+
 @interface S_Excercise_VideoInfoVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UILabel *lblTitle;
@@ -27,7 +32,7 @@
     __weak IBOutlet UIView *viewHeader;
     __weak IBOutlet UIImageView *imgVideo;
     __weak IBOutlet UILabel *lblTitle_Age;
-
+    __weak IBOutlet UILabel *lblPrice;
     __weak IBOutlet UILabel *lblCompletedExcercise;
 
     NSString *strCellHeader;
@@ -47,29 +52,81 @@
 {
     popView;
 }
+#pragma mark - Product Purchase NotificationCenter
+- (void)productPurchased:(NSNotification *) notification
+{
+    // After completion of transaction provide purchased item to customer and also update purchased item's status in NSUserDefaults
+    NSLog(@"Purchase : %@",notification.object);
+    [UserDefaults setObject:@"YES" forKey:notification.object];
+    [UserDefaults synchronize];
+    lblPrice.text = @"";
+}
+
+- (void)productPurchaseFailed:(NSNotification *) notification
+{
+    NSLog(@"Purchase Fail : %@",notification.userInfo);
+    NSString *status = [[notification userInfo] valueForKey:@"isAlert"];
+    [CommonMethods displayAlertwithTitle:@"Failed" withMessage:status withViewController:self];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //inAppPurchase Notification Fire Declaration Start
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchaseFailed:) name:IAPHelperProductNotPurchasedNotification object:nil];
+    
     
     /*--- Navigation setup ---*/
     createNavBar(_dictInfo[EV_Detail_title], RGBCOLOR_RED, image_Red);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_RED];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    [super viewWillDisappear:animated];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     lblTitle.text = _dictInfo[EV_Detail_title];
     imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_dictInfo[EV_Detail_thumbnail]]];//[UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
-    lblTitle_Age.text = [NSString stringWithFormat:@"%@ - %@",_dictInfo[EV_Detail_title ],@"Add Age Here"];
-    lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
+    lblTitle_Age.text = [NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_title ]];
+    
+    /*--- If find value from video id in default then show label -------*/
+    if ([UserDefaults objectForKey:[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_vid]]]) {
+        lblCompletedExcercise.text = [NSString stringWithFormat:@"You completed this exercise %@",[UserDefaults objectForKey:[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_vid]]]];
+    }
+    else{
+        lblCompletedExcercise.hidden = YES;
+    }
 
     /*--- Search milestone by video ---*/
     arrSelected = [[NSMutableArray alloc]init];
-    NSArray *arrT = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ExercisesByMilestone" ofType:@"plist"]];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"self.videos CONTAINS[cd] %@",_dictInfo[EV_ID]];
-    arrMilestones = [[NSMutableArray alloc]initWithArray:[arrT filteredArrayUsingPredicate:pred]];
-    NSLog(@"Milestones found %@ for ID : %@",arrMilestones,_dictInfo[EV_ID]);
+    NSArray *arrT = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"VideoMilestones" ofType:@"plist"]];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"id == %d",[_dictInfo[EV_Detail_milestoneId] integerValue]];
+    NSArray *arrM = [arrT filteredArrayUsingPredicate:pred];
+    NSLog(@"Milestones found %@ for ID : %@",arrM,_dictInfo[EV_Detail_milestoneId]);
+    
+    /*--- Add all milestones in array ---*/
+    arrMilestones = [[NSMutableArray alloc]init];
+    
+    if (arrM.count > 0)
+    {
+        NSDictionary *dictT = arrM[0];
+        NSMutableArray *arrKeys = [dictT.allKeys mutableCopy];
+        [arrKeys removeObject:@"id"];//remove id
+        arrKeys=[[arrKeys sortedArrayUsingSelector:@selector(localizedStandardCompare:)] mutableCopy];//sort all keys
+        for (NSString *strKey in arrKeys) {
+            [arrMilestones addObject:dictT[strKey]];
+        }
+    }
+    
+    NSLog(@"%@",arrMilestones);
     
     if (arrMilestones.count > 0)
         strCellHeader = [NSString stringWithFormat:@"Milestones for %@ :",_dictInfo[EV_Detail_title]];
@@ -94,6 +151,26 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Milestone" bundle:nil] forCellReuseIdentifier:@"CCell_Milestone"];
     [tblView reloadData];
     
+    lblPrice.text = @"";
+    NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
+    if (![strPrice isEqualToString:@"FREE"] )
+    {
+        if ([UserDefaults objectForKey:strPrice]) {
+            //already purchased
+        }
+        else if(![_dictInfo objectForKey:VIDEO_PRICE])
+        {
+            //do not have price
+            lblPrice.text = @" getting price ";
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self getPrice:strPrice];
+
+            });
+        }
+        else// already have a price
+            lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
+    }
     
     if (arrMilestones.count > 0) {
         if (myUserModelGlobal) {
@@ -101,27 +178,51 @@
                 [self getMilestone];
             });
         }
-
     }
-    
 }
+-(void)getPrice:(NSString *)strPrice
+{
+    NSLog(@"Get Product : %@",strPrice);
+    [GlobalMethods getProductPrices_withIdentifier:strPrice
+                                       withHandler:^(SKProduct *product, NSString *cost)
+     {
+         if (product)
+         {
+             [_dictInfo setValue:cost forKey:VIDEO_PRICE];
+             lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
+         }
+     }];
+}
+
+#pragma mark - IBAction
 -(IBAction)btnPlayClicked:(UIButton *)btnPlay
 {
     //change error here
-    if ([appDel checkConnection:nil]) {
-        //NSLog(@"%@",_dictInfo);
-        NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
-        
-        MoviePlayer *player = [[MoviePlayer alloc]init];
-        player.moviePath = _dictInfo[EV_Detail_url];
-        player.arrAnnotation = arrAnnotations;
-        player.dictINFO = _dictInfo;
-        player.strVideoID = _dictInfo[EV_ID];
-        NSError *setCategoryErr = nil;
-        NSError *activationErr  = nil;
-        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
-        [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
-        [self presentMoviePlayerViewControllerAnimated:player];
+    if ([appDel checkConnection:nil])
+    {
+        NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
+        /*--- if product is not free + already not purchased ---*/
+        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
+        {
+            showHUD_with_Title(@"Getting Product");
+            [GlobalMethods BuyProduct:strPrice withViewController:self];
+        }
+        else
+        {
+            //NSLog(@"%@",_dictInfo);
+            NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
+            
+            MoviePlayer *player = [[MoviePlayer alloc]init];
+            player.moviePath = _dictInfo[EV_Detail_url];
+            player.arrAnnotation = arrAnnotations;
+            player.dictINFO = _dictInfo;
+            player.strVideoID = _dictInfo[EV_ID];
+            NSError *setCategoryErr = nil;
+            NSError *activationErr  = nil;
+            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+            [self presentMoviePlayerViewControllerAnimated:player];
+        }
     }
     else
     {
@@ -142,7 +243,8 @@
         @try
         {
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
-                                       @"UserToken":myUserModelGlobal.Token};
+                                       @"UserToken":myUserModelGlobal.Token,
+                                       @"Type":TYPE_MILESTONE_VIDEO_COMPLETE};
             
             parser = [[JSONParser alloc]initWith_withURL:Web_BABY_GET_TIMELINE_COMPLETE withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(getMilestoneSuccess:) withObject:self];
         }
@@ -267,7 +369,7 @@
         }
     }
     //milestone cell
-    heigtT = 23.0 + [arrMilestones[indexPath.row][EV_MILESTONE] getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width-70.0];
+    heigtT = 23.0 + [arrMilestones[indexPath.row][VALUE] getHeight_withFont:kFONT_LIGHT(16.0) widht:screenSize.size.width-70.0];
     return MAX(44.0, heigtT);
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -297,8 +399,8 @@
     CCell_Milestone *cellMilestone = (CCell_Milestone *)[tblView dequeueReusableCellWithIdentifier:@"CCell_Milestone"];
     cellMilestone.backgroundColor = [UIColor clearColor];
     cellMilestone.selectionStyle = UITableViewCellSelectionStyleNone;
-    cellMilestone.lblDescription.text = arrMilestones[indexPath.row][EV_MILESTONE];
-    NSString *strMID = [NSString stringWithFormat:@"%@",arrMilestones[indexPath.row][EV_ID]];
+    cellMilestone.lblDescription.text = arrMilestones[indexPath.row][VALUE];
+    NSString *strMID = [NSString stringWithFormat:@"%@",arrMilestones[indexPath.row][KEY]];
     if ([arrSelected containsObject:strMID])
         cellMilestone.imgV_On_Off.image = [UIImage imageNamed:img_radio_On];
     else
@@ -313,7 +415,7 @@
         {
             selectedIndex = indexPath.row;
             
-            NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
+            NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][KEY]];
             if (![arrSelected containsObject:strID])
             {
                 [self addMilestoneToTimeline_withIndex:@"1"];
@@ -346,12 +448,12 @@
         @try
         {
             NSDictionary *dictTemp = arrMilestones[selectedIndex];
-            NSString *strMessage = [NSString stringWithFormat:@"%@ completed the %@ Milestone.",babyModelGlobal.Name,dictTemp[EV_MILESTONE]];
+            NSString *strMessage = [NSString stringWithFormat:@"%@ completed the %@ Milestone.",babyModelGlobal.Name,dictTemp[VALUE]];
             NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
                                        @"UserToken":myUserModelGlobal.Token,
-                                       @"Type":TYPE_MILESTONE_COMPLETE,
+                                       @"Type":TYPE_MILESTONE_VIDEO_COMPLETE,
                                        @"Message":strMessage,
-                                       @"MilestoneID":dictTemp[EV_ID],
+                                       @"MilestoneID":dictTemp[KEY],
                                        @"VideoID":_dictInfo[EV_ID],
                                        @"CompletedStatus":strComplete};
         
@@ -392,7 +494,7 @@
                 hideHUD;
                 
                 /*--- add to array and reload ---*/
-                NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][EV_ID]];
+                NSString *strID = [NSString stringWithFormat:@"%@",arrMilestones[selectedIndex][KEY]];
                 if ([arrSelected containsObject:strID])
                     [arrSelected removeObject:strID];
                 else
