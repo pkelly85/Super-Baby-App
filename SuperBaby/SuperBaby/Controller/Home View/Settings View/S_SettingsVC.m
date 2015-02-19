@@ -10,6 +10,7 @@
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
 #import "S_AccountUpdateVC.h"
+#import "InAppHelper.h"
 #import <MessageUI/MessageUI.h>
 @interface S_SettingsVC ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
 {
@@ -63,6 +64,13 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
+    //inAppPurchase Notification Fire Declaration Start
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductNotPurchasedNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchaseFailed:) name:IAPHelperProductNotPurchasedNotification object:nil];
+
     /*--- Navigation setup ---*/
     createNavBar(@"Settings", [UIColor whiteColor], image_White);
     self.navigationItem.leftBarButtonItem = [CommonMethods backBarButtton_withImage:IMG_BACK_WHITE];
@@ -89,6 +97,8 @@
     //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
     [self setAttibutedText];
+    
+    NSUserDefaults *defaultIn = UserDefaults;
 }
 -(void)setAttibutedText
 {
@@ -118,7 +128,34 @@
     btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btnRestorePurchase setAttributedTitle:attributedRestore forState:UIControlStateNormal];
 }
+#pragma mark - Product Purchase NotificationCenter
+- (void)productPurchased:(NSNotification *) notification
+{
+    // After completion of transaction provide purchased item to customer and also update purchased item's status in NSUserDefaults
+    NSLog(@"Purchase : %@",notification.object);
+    [UserDefaults setObject:@"YES" forKey:notification.object];
+    [UserDefaults synchronize];
+    hideHUD
+    //[_carousel reloadData];
+}
+
+- (void)productPurchaseFailed:(NSNotification *) notification
+{
+    hideHUD
+    NSLog(@"Purchase Fail : %@",notification.userInfo);
+    NSString *status = [[notification userInfo] valueForKey:@"isAlert"];
+    [CommonMethods displayAlertwithTitle:@"Failed" withMessage:status withViewController:self];
+}
+
+
 #pragma mark - IBAction
+
+
+-(IBAction)btnRestoreClicked:(id)sender{
+    showHUD_with_Title(@"Restoring All Purchases");
+    [[InAppHelper sharedInstance]restoreCompletedTransactions:self];
+}
+
 -(IBAction)btnFeedbackClicked:(id)sender
 {
     if ([MFMailComposeViewController canSendMail]) {

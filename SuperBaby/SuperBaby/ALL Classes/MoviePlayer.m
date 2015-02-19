@@ -157,12 +157,20 @@
     [self.moviePlayer play];
 }
 #pragma mark - Custom protocol
+
+-(void)saveCompletedExerciseDate:(NSString*)strId{
+    /*--- if video is watched >75% then add that date to userdefault ---*/
+    NSString *strDate = [[NSDate date] convertDateinFormat:@"MM/dd/YY"];
+    [UserDefaults setObject:strDate forKey:[NSString stringWithFormat:@"%@",_strVideoID]];
+    [UserDefaults synchronize];
+}
 -(void)callProtocol
 {
     /*--- if video is watched >75% then add milestone ---*/
     NSInteger percent = (self.moviePlayer.currentPlaybackTime/self.moviePlayer.duration)*100;
     //NSLog(@"%ld : Time : %f",(long)percent ,self.moviePlayer.currentPlaybackTime);
     if (percent > VIDEO_WATCH_PERCENT && !isServiceCalled) {
+        [self saveCompletedExerciseDate:_strVideoID];
         isServiceCalled = YES;
         [appDel addMilestoneToTimeline_WatchVideo:_dictINFO withVideoID:_strVideoID];
     }

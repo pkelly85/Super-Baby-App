@@ -55,6 +55,8 @@
     [tblView registerNib:[UINib nibWithNibName:@"CCell_Excercise" bundle:nil] forCellReuseIdentifier:@"CCell_Excercise"];
     tblView.delegate = self;
     tblView.dataSource = self;
+    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated

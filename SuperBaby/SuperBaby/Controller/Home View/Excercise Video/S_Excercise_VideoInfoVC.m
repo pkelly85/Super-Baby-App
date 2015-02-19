@@ -96,7 +96,14 @@
     lblTitle.text = _dictInfo[EV_Detail_title];
     imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_dictInfo[EV_Detail_thumbnail]]];//[UIImage imageNamed:_dictInfo[EV_Detail_thumbnail]];
     lblTitle_Age.text = [NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_title ]];
-    lblCompletedExcercise.text = [NSString stringWithFormat:@"Add Text + Date"];
+    
+    /*--- If find value from video id in default then show label -------*/
+    if ([UserDefaults objectForKey:[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_vid]]]) {
+        lblCompletedExcercise.text = [NSString stringWithFormat:@"You completed this exercise %@",[UserDefaults objectForKey:[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_vid]]]];
+    }
+    else{
+        lblCompletedExcercise.hidden = YES;
+    }
 
     /*--- Search milestone by video ---*/
     arrSelected = [[NSMutableArray alloc]init];

@@ -95,6 +95,8 @@
     [_carousel setVertical:YES];
     
     [_carousel reloadData];
+//    [UserDefaults setObject:@"YES" forKey:@"com.sbapp.superbaby.babytaichi"];
+    [UserDefaults removeObjectForKey:@"com.sbapp.superbaby.babytaichi"];
 }
 
 #pragma mark -
@@ -124,7 +126,7 @@
     }
     
     NSDictionary *dictInfo = (NSDictionary *)arrVideos[index];
-    view.btnPlay.tag = index;
+    view.btnPlay.tag = 100+index;
     view.btnInfo.tag = index;
     view.lblText.text = [NSString stringWithFormat:@"%@",dictInfo[EV_Detail_title]];
 
@@ -215,9 +217,10 @@
 {
 #warning - REMOVE BELOW LINE
     //change error here
+    
     if ([appDel checkConnection:nil])
     {
-        NSDictionary *dictVideo = arrVideos[btnPlay.tag];
+        NSDictionary *dictVideo = arrVideos[btnPlay.tag-100];
         NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
         
         /*--- if product is not free + already not purchased ---*/
