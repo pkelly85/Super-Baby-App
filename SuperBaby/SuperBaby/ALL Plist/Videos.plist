@@ -12,11 +12,11 @@
 		<key>instruction</key>
 		<string>With baby lying on back, place a small rolled towel under the knees. Give baby a toy to play with to promote bringing hands to midline and to mouth. </string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Baby+Bolster+(Supine%2C+Rolled-Towel+Under+Legs+(1mo).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/BabyBolster.m4v</string>
 		<key>price</key>
 		<string>com.sbapp.superbaby.tooshydowntummytime</string>
 		<key>thumbnail</key>
-		<string>01_superbaby_video_?_1142x803</string>
+		<string>22_superbaby_cross_crawl2</string>
 		<key>annotationId</key>
 		<string>0</string>
 		<key>milestoneId</key>
@@ -36,7 +36,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.crosscrawl</string>
 		<key>thumbnail</key>
-		<string>02_superbaby_video_advanced_belly_1142_803</string>
+		<string>23_superbaby_cross_crawl</string>
 		<key>annotationId</key>
 		<string>1</string>
 		<key>milestoneId</key>
@@ -56,7 +56,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>03_superbaby_video_advanced_sitting_1142x803</string>
+		<string>26_superbaby_kick_off_1_mo</string>
 		<key>annotationId</key>
 		<string>2</string>
 		<key>milestoneId</key>
@@ -76,7 +76,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>04_superbaby_assisted_tummy_1142x803</string>
+		<string>31_superbaby_optical_scanning</string>
 		<key>annotationId</key>
 		<string>3</string>
 		<key>milestoneId</key>
@@ -96,7 +96,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.bobblehead</string>
 		<key>thumbnail</key>
-		<string>05_superbaby_b_roll2_1142x803</string>
+		<string>20_superbaby_bobblehead</string>
 		<key>annotationId</key>
 		<string>4</string>
 		<key>milestoneId</key>
@@ -116,7 +116,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.babytaichi</string>
 		<key>thumbnail</key>
-		<string>06_superbaby_b_roll3_1142x803</string>
+		<string>12_superbaby_baby_tai_chi</string>
 		<key>annotationId</key>
 		<string>5</string>
 		<key>milestoneId</key>
@@ -136,7 +136,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.babyonboard</string>
 		<key>thumbnail</key>
-		<string>07_superbaby_b_roll_1142x803</string>
+		<string>09_superbaby_baby_on_board_1142x803</string>
 		<key>annotationId</key>
 		<string>6</string>
 		<key>milestoneId</key>
@@ -176,7 +176,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>09_superbaby_baby_on_board_1142x803</string>
+		<string>51_superbaby_tushy_down_tummy_time_2-3mo</string>
 		<key>annotationId</key>
 		<string>8</string>
 		<key>milestoneId</key>
@@ -192,11 +192,11 @@
 		<key>instruction</key>
 		<string>With baby lying on its back, hold babies hands and extend arms.  While maintaining eye contact with Baby, encourage the baby to come to sit by pulling arms gently. If baby is unable to tuck chin and has significant head lag, do not attempt “sit-ups” until they are able to maintain eye contact with you when pulling to sit. As baby becomes stronger you will need to provide less help, as baby will do more of the work. </string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Backwards+on+ball+4-5+mo.mp4</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/BabySitUps.m4v</string>
 		<key>price</key>
 		<string>com.sbapp.superbaby.babysitups</string>
 		<key>thumbnail</key>
-		<string>10_superbaby_baby_on_board_sitting</string>
+		<string>11_superbaby_baby_situps</string>
 		<key>annotationId</key>
 		<string>9</string>
 		<key>milestoneId</key>
@@ -216,7 +216,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.overlegtummytime</string>
 		<key>thumbnail</key>
-		<string>11_superbaby_baby_situps</string>
+		<string>32_superbaby_over_leg_tummy_time</string>
 		<key>annotationId</key>
 		<string>10</string>
 		<key>milestoneId</key>
@@ -236,7 +236,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>12_superbaby_baby_tai_chi</string>
+		<string>30_superbaby_nibbly_toes</string>
 		<key>annotationId</key>
 		<string>11</string>
 		<key>milestoneId</key>
@@ -256,7 +256,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>13_superbaby_baby_toss</string>
+		<string>09_superbaby_baby_on_board_1142x803</string>
 		<key>annotationId</key>
 		<string>12</string>
 		<key>milestoneId</key>
@@ -276,7 +276,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>14_superbaby_backwards_on_ball</string>
+		<string>49_superbaby_supported_side_laying</string>
 		<key>annotationId</key>
 		<string>13</string>
 		<key>milestoneId</key>
@@ -296,7 +296,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>15_superbaby_bear_walk_01</string>
+		<string>04_superbaby_assisted_tummy_1142x803</string>
 		<key>annotationId</key>
 		<string>14</string>
 		<key>milestoneId</key>
@@ -316,7 +316,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.rolliepolliesymmetricallegroll</string>
 		<key>thumbnail</key>
-		<string>16_superbaby_bear_walk_02</string>
+		<string>38_superbaby_rollie_pollie</string>
 		<key>annotationId</key>
 		<string>15</string>
 		<key>milestoneId</key>
@@ -336,7 +336,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.rolliepollietobelly</string>
 		<key>thumbnail</key>
-		<string>17_superbaby_belly_on_ball_8-9mo</string>
+		<string>39_superbaby_rollie_to_belly</string>
 		<key>annotationId</key>
 		<string>16</string>
 		<key>milestoneId</key>
@@ -356,7 +356,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>18_superbaby_belly_on_ball_beginner2</string>
+		<string>47_superbaby_supported_long_sit</string>
 		<key>annotationId</key>
 		<string>17</string>
 		<key>milestoneId</key>
@@ -376,7 +376,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>19_superbaby_belly_on_ball_beginner</string>
+		<string>41_superbaby_row_your_boat</string>
 		<key>annotationId</key>
 		<string>18</string>
 		<key>milestoneId</key>
@@ -396,7 +396,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>20_superbaby_bobblehead</string>
+		<string>39_superbaby_rollie_to_belly</string>
 		<key>annotationId</key>
 		<string>19</string>
 		<key>milestoneId</key>
@@ -416,7 +416,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.babyonboardsitting</string>
 		<key>thumbnail</key>
-		<string>21_superbaby_chasing_bubbles</string>
+		<string>10_superbaby_baby_on_board_sitting</string>
 		<key>annotationId</key>
 		<string>20</string>
 		<key>milestoneId</key>
@@ -436,7 +436,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>22_superbaby_cross_crawl2</string>
+		<string>14_superbaby_backwards_on_ball</string>
 		<key>annotationId</key>
 		<string>21</string>
 		<key>milestoneId</key>
@@ -456,7 +456,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.sittingonballbeginner</string>
 		<key>thumbnail</key>
-		<string>23_superbaby_cross_crawl</string>
+		<string>45_superbaby_sitting_on_ball_beginner_4-5</string>
 		<key>annotationId</key>
 		<string>22</string>
 		<key>milestoneId</key>
@@ -476,7 +476,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.bellyonballbeginner</string>
 		<key>thumbnail</key>
-		<string>24_superbaby_cruise_control</string>
+		<string>19_superbaby_belly_on_ball_beginner</string>
 		<key>annotationId</key>
 		<string>23</string>
 		<key>milestoneId</key>
@@ -496,7 +496,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>25_superbaby_half_kneel_training</string>
+		<string>52_superbaby_tushy_down_tummy_time_4-5mo</string>
 		<key>annotationId</key>
 		<string>24</string>
 	</dict>
@@ -514,7 +514,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>26_superbaby_kick_off_1_mo</string>
+		<string>34_superbaby_reaching_in_prone</string>
 		<key>annotationId</key>
 		<string>25</string>
 		<key>milestoneId</key>
@@ -530,11 +530,11 @@
 		<key>instruction</key>
 		<string>While securing Thera-ball or beach ball with your legs, place baby in a sitting position on ball while supporting at the trunk and hips. While supporting baby, move the baby in different directions (back and forth, side to side, circles, gentle bouncing up and down).  As baby gains better head/trunk control you can perform larger movements with baby and provide less support. </string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Backwards+on+ball+4-5+mo.mp4</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/BackwardsonBall4-5mo.m4v</string>
 		<key>price</key>
 		<string>com.sbapp.superbaby.sittingonballintermediate</string>
 		<key>thumbnail</key>
-		<string>27_superbaby_kneeling_training_8-9</string>
+		<string>45_superbaby_sitting_on_ball_beginner_4-5</string>
 		<key>annotationId</key>
 		<string>26</string>
 		<key>milestoneId</key>
@@ -554,7 +554,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>28_superbaby_moon_walk</string>
+		<string>07_superbaby_b_roll_1142x803</string>
 		<key>annotationId</key>
 		<string>27</string>
 		<key>milestoneId</key>
@@ -574,7 +574,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.quadrupedtraining</string>
 		<key>thumbnail</key>
-		<string>29_superbaby_moving_on_belly</string>
+		<string>33_superbaby_quadruped_training</string>
 		<key>annotationId</key>
 		<string>28</string>
 		<key>milestoneId</key>
@@ -594,7 +594,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>30_superbaby_nibbly_toes</string>
+		<string>37_superbaby_reverse_situp</string>
 		<key>annotationId</key>
 		<string>29</string>
 		<key>milestoneId</key>
@@ -614,7 +614,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>31_superbaby_optical_scanning</string>
+		<string>13_superbaby_baby_toss</string>
 		<key>annotationId</key>
 		<string>30</string>
 		<key>milestoneId</key>
@@ -634,7 +634,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>32_superbaby_over_leg_tummy_time</string>
+		<string>29_superbaby_moving_on_belly</string>
 		<key>annotationId</key>
 		<string>31</string>
 		<key>milestoneId</key>
@@ -654,7 +654,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.bellyonballadvanced</string>
 		<key>thumbnail</key>
-		<string>33_superbaby_quadruped_training</string>
+		<string>17_superbaby_belly_on_ball_8-9mo</string>
 		<key>annotationId</key>
 		<string>32</string>
 		<key>milestoneId</key>
@@ -674,7 +674,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>34_superbaby_reaching_in_prone</string>
+		<string>27_superbaby_kneeling_training_8-9</string>
 		<key>annotationId</key>
 		<string>33</string>
 		<key>milestoneId</key>
@@ -694,7 +694,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.sittingonballadvanced</string>
 		<key>thumbnail</key>
-		<string>35_superbaby_reaching_in_quadruped2</string>
+		<string>44_superbaby_sitting_on_ball_advanced_8-9</string>
 		<key>annotationId</key>
 		<string>34</string>
 		<key>milestoneId</key>
@@ -714,7 +714,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.transitioningsittingtocrawling</string>
 		<key>thumbnail</key>
-		<string>36_superbaby_reaching_quadruped</string>
+		<string>50_superbaby_transition_sitting_to_crawling</string>
 		<key>annotationId</key>
 		<string>35</string>
 		<key>milestoneId</key>
@@ -734,7 +734,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>37_superbaby_reverse_situp</string>
+		<string>16_superbaby_bear_walk_02</string>
 		<key>annotationId</key>
 		<string>36</string>
 		<key>milestoneId</key>
@@ -754,7 +754,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.reachinginquadruped</string>
 		<key>thumbnail</key>
-		<string>38_superbaby_rollie_pollie</string>
+		<string>35_superbaby_reaching_in_quadruped2</string>
 		<key>annotationId</key>
 		<string>37</string>
 		<key>milestoneId</key>
@@ -774,7 +774,7 @@
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>39_superbaby_rollie_to_belly</string>
+		<string>24_superbaby_cruise_control</string>
 		<key>annotationId</key>
 		<string>38</string>
 		<key>milestoneId</key>
@@ -794,7 +794,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.halfkneeltraining</string>
 		<key>thumbnail</key>
-		<string>40_superbaby_rolling_back_belly</string>
+		<string>25_superbaby_half_kneel_training</string>
 		<key>annotationId</key>
 		<string>39</string>
 		<key>milestoneId</key>
@@ -810,11 +810,11 @@
 		<key>instruction</key>
 		<string>In a clear space, blow bubbles out of reach of baby to encourage quick stepping and turning different directions. </string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Chasing+Bubbles+(12mo+%2B).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/ChasingBubbles.m4v</string>
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
-		<string>41_superbaby_row_your_boat</string>
+		<string>21_superbaby_chasing_bubbles</string>
 		<key>annotationId</key>
 		<string>40</string>
 		<key>milestoneId</key>
@@ -830,7 +830,7 @@
 		<key>instruction</key>
 		<string>Place a thick blanket on ground and encourage baby to walk over the uneven surface.</string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Walking+Over+Blanket+(12mo+%2B).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/WalkingOverBlanket.m4v</string>
 		<key>price</key>
 		<string>FREE</string>
 		<key>thumbnail</key>
@@ -854,7 +854,7 @@
 		<key>price</key>
 		<string>com.sbapp.superbaby.wheelbarrelwalking</string>
 		<key>thumbnail</key>
-		<string>43_superbaby_sitting_on_ball_advanced2</string>
+		<string>54_superbaby_wheel_barrel_walking</string>
 		<key>annotationId</key>
 		<string>42</string>
 		<key>milestoneId</key>
@@ -870,11 +870,11 @@
 		<key>instruction</key>
 		<string>Holding baby’s arms at shoulder level or at trunk in standing, pull gently backwards to promote walking backwards. </string>
 		<key>url</key>
-		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/Moon+Walk+(Walking+Backwards)+(12mo+%2B).m4v</string>
+		<string>https://s3-us-west-2.amazonaws.com/superbabyvideos/MoonWalk.m4v</string>
 		<key>price</key>
 		<string>com.sbapp.superbaby.moonwalk</string>
 		<key>thumbnail</key>
-		<string>44_superbaby_sitting_on_ball_advanced_8-9</string>
+		<string>28_superbaby_moon_walk</string>
 		<key>annotationId</key>
 		<string>43</string>
 		<key>milestoneId</key>
