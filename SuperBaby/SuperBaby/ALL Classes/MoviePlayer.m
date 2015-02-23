@@ -31,7 +31,6 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterBG) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFG) name:UIApplicationWillEnterForegroundNotification object:nil];
     
-    
     [self.moviePlayer setControlStyle:MPMovieControlStyleFullscreen];
     [self.moviePlayer setFullscreen:YES];
     [self.moviePlayer setMovieSourceType:MPMovieSourceTypeStreaming];
@@ -93,7 +92,6 @@
     [self.view addSubview:lblDescription];
     [self.view bringSubviewToFront:lblDescription];
     
-    
     //transperant
     lblTransperant = [[UILabel alloc]init];
     lblTransperant.alpha = 0.0;
@@ -113,9 +111,9 @@
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
     
-
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[lblDescription]-(>=20)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-70-[lblDescription]-(>=64)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
+    
     //now create left,right,top,bottom related to descrioption
     NSLayoutConstraint *consL = [NSLayoutConstraint constraintWithItem:lblTransperant attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:lblDescription attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-10.0];
     
@@ -301,8 +299,6 @@
 //            
 //        });
     // Remove observer
-    
-    
 }
 
 #pragma mark - Extra

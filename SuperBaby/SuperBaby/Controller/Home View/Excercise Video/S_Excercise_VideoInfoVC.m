@@ -211,7 +211,6 @@
         {
             //NSLog(@"%@",_dictInfo);
             NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
-            
             MoviePlayer *player = [[MoviePlayer alloc]init];
             player.moviePath = _dictInfo[EV_Detail_url];
             player.arrAnnotation = arrAnnotations;
