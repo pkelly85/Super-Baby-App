@@ -82,7 +82,7 @@
     lblDescription.textColor = [UIColor whiteColor];
     lblDescription.alpha = 0.0;
     lblDescription.numberOfLines = 0;
-    lblDescription.preferredMaxLayoutWidth = screenSize.size.width-40.0;
+    //lblDescription.preferredMaxLayoutWidth = screenSize.size.width-40.0;
     lblDescription.backgroundColor = [UIColor clearColor];
     
     // hugging priority is required and contentcompression is also required
@@ -90,15 +90,15 @@
     [lblDescription setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     [lblDescription setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self.moviePlayer.view addSubview:lblDescription];
-    [self.moviePlayer.view bringSubviewToFront:lblDescription];
+    [self.view addSubview:lblDescription];
+    [self.view bringSubviewToFront:lblDescription];
     
     
     //transperant
     lblTransperant = [[UILabel alloc]init];
     lblTransperant.alpha = 0.0;
     lblTransperant.numberOfLines = 0;
-    lblTransperant.preferredMaxLayoutWidth = screenSize.size.width-20.0;
+    //lblTransperant.preferredMaxLayoutWidth = screenSize.size.width - 20.0;
     lblTransperant.backgroundColor = [UIColor whiteColor];
     
     // hugging priority is Low and contentcompression is also Low otherwise description can not increase height
@@ -106,17 +106,16 @@
     [lblTransperant setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisVertical];
     [lblTransperant setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self.moviePlayer.view addSubview:lblTransperant];
-    [self.moviePlayer.view bringSubviewToFront:lblTransperant];
+    [self.view addSubview:lblTransperant];
+    [self.view bringSubviewToFront:lblTransperant];
     
     //do not remove just for reference
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
     //    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[lblTransperant]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblTransperant)]];
     
-    
-    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[lblDescription]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
-    [self.moviePlayer.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-70-[lblDescription]-(>=64)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
-    
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[lblDescription]-(>=20)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-70-[lblDescription]-(>=64)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lblDescription)]];
     //now create left,right,top,bottom related to descrioption
     NSLayoutConstraint *consL = [NSLayoutConstraint constraintWithItem:lblTransperant attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:lblDescription attribute:NSLayoutAttributeLeading multiplier:1.0 constant:-10.0];
     
@@ -129,9 +128,11 @@
     [self.view addConstraint:consR];
     [self.view addConstraint:consTT];
     [self.view addConstraint:consB];
-    
+
     /*--- Update Constraint ---*/
-    [self.moviePlayer.view updateConstraints];
+    //[self.view updateConstraints];
+    [self.view setNeedsUpdateConstraints];
+    [self.view setNeedsLayout];
 }
 #pragma mark - Timing
 -(void)startTimer
@@ -203,7 +204,9 @@
             lblDescription.text = dictAnnotation[EV_Annotation_text];
             lblDescription.alpha = 1.0;
             lblTransperant.alpha = 0.1;
-            [self.moviePlayer.view updateConstraints];
+            //[self.view updateConstraints];
+            [self.view setNeedsUpdateConstraints];
+            [self.view setNeedsLayout];
         }
         else
         {
