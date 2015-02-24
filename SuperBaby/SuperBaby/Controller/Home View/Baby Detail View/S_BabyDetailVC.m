@@ -137,7 +137,7 @@
          
          lblName.text = babyModelGlobal.Name;
          
-         lblBabyInfo.text = [NSString stringWithFormat:@"Age: %ld Months \nWeight: %@ Pound \nHeight: %@ inches",(long)Age,babyModelGlobal.WeightPounds,babyModelGlobal.Height];
+         lblBabyInfo.text = [NSString stringWithFormat:@"Age: %ld Months \nWeight: %@ Pounds \nHeight: %@ inches",(long)Age,babyModelGlobal.WeightPounds,babyModelGlobal.Height];
          
          float heightText = 100.0 + [lblName.text getHeight_withFont:lblName.font widht:tblView.frame.size.width] +
          [lblBabyInfo.text getHeight_withFont:lblBabyInfo.font widht:tblView.frame.size.width] +

@@ -96,9 +96,7 @@
     /*--- set bottom white line ---*/
     //[CommonMethods addBottomLine_to_View:viewTop withColor:RGBCOLOR_GREY];
     
-    [self setAttibutedText];
-    
-    NSUserDefaults *defaultIn = UserDefaults;
+    [self setAttibutedText];    
 }
 -(void)setAttibutedText
 {
@@ -207,6 +205,7 @@
         else
         {
             UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:@"Would you like to logout?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Yes" ,nil];
+            actionSheet.tag = 100;
             [actionSheet showInView:self.view];
         }
     }
@@ -324,10 +323,9 @@
     if (actionSheet.tag == 100) {
         switch (buttonIndex) {
             case 0:
-                
+                [self logoutUserNow];
                 break;
             case 1:
-                [self logoutUserNow];
                 break;
             default:
                 break;

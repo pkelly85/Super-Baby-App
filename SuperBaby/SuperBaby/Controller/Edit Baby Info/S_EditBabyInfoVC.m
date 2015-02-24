@@ -471,28 +471,37 @@
 }
 -(void)updateBabyInfoNow:(NSString *)strBase64Image
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        @try
-        {
-            NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
-                                       @"UserToken":myUserModelGlobal.Token,
-                                       @"Name":[txtBabyName.text isNull],
-                                       @"Birthday":[CommonMethods GetDateFromUTCTimeZone:dob Formatter:@"yyyy-MM-dd"],
-                                       @"WeightPounds":[txt_w_pound.text isNull],
-                                       @"WeightOunces":[txt_w_ounces.text isNull],
-                                       @"Height":[txt_height.text isNull],
-                                       @"ImageData":strBase64Image};
-            
-            parser = [[JSONParser alloc]initWith_withURL:Web_BABY_EDIT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(updateBabyInfoSuccessful:) withObject:self];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@",exception.description);
+    if ([appDel checkConnection:nil]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            @try
+            {
+                NSDictionary *dictBaby = @{@"UserID":myUserModelGlobal.UserID,
+                                           @"UserToken":myUserModelGlobal.Token,
+                                           @"Name":[txtBabyName.text isNull],
+                                           @"Birthday":[CommonMethods GetDateFromUTCTimeZone:dob Formatter:@"yyyy-MM-dd"],
+                                           @"WeightPounds":[txt_w_pound.text isNull],
+                                           @"WeightOunces":[txt_w_ounces.text isNull],
+                                           @"Height":[txt_height.text isNull],
+                                           @"ImageData":strBase64Image};
+                
+                parser = [[JSONParser alloc]initWith_withURL:Web_BABY_EDIT withParam:dictBaby withData:nil withType:kURLPost withSelector:@selector(updateBabyInfoSuccessful:) withObject:self];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+                hideHUD;
+                [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
+            }
+            @finally {
+            }
+        });
+    }
+    else
+    {
+        showHUD_with_error(NSLocalizedString(@"str_No_Internet", nil));
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             hideHUD;
-            [CommonMethods displayAlertwithTitle:PLEASE_TRY_AGAIN withMessage:nil withViewController:self];
-        }
-        @finally {
-        }
-    });
+        });
+    }
     
 }
 -(void)updateBabyInfoSuccessful:(id)objResponse

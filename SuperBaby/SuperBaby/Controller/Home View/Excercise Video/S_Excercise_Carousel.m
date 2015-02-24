@@ -217,7 +217,7 @@
 {
 #warning - REMOVE BELOW LINE
     //change error here
-    
+     //btnPlay.userInteractionEnabled = NO;
     if ([appDel checkConnection:nil])
     {
         NSDictionary *dictVideo = arrVideos[btnPlay.tag-100];
@@ -256,7 +256,7 @@
             hideHUD;
         });
     }
-    
+     //btnPlay.userInteractionEnabled = YES;
 }
 
 -(void)btnInfoClicked:(UIButton *)btnInfo
