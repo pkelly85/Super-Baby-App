@@ -78,7 +78,7 @@
     lblDescription = [[UILabel alloc]init];
     lblDescription.font = kFONT_MEDIUM(15.0);
     lblDescription.text = @"";
-    lblDescription.textColor = [UIColor whiteColor];
+    lblDescription.textColor = [UIColor blackColor];
     lblDescription.alpha = 0.0;
     lblDescription.numberOfLines = 0;
     //lblDescription.preferredMaxLayoutWidth = screenSize.size.width-40.0;
@@ -201,7 +201,7 @@
             NSLog(@"%ld , start :%@ , End : %@ , text : %@",(long)self.moviePlayer.currentPlaybackTime,dictAnnotation[EV_Annotation_starttime],dictAnnotation[EV_Annotation_endtime],dictAnnotation[EV_Annotation_text]);
             lblDescription.text = dictAnnotation[EV_Annotation_text];
             lblDescription.alpha = 1.0;
-            lblTransperant.alpha = 0.1;
+            lblTransperant.alpha = 0.2;
             //[self.view updateConstraints];
             [self.view setNeedsUpdateConstraints];
             [self.view setNeedsLayout];
