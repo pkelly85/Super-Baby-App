@@ -533,9 +533,16 @@
 		<key>Milestone 0</key>
 		<dict>
 			<key>text</key>
-			<string>TBD</string>
+			<string>Sits independently </string>
 			<key>key</key>
 			<string>59</string>
+		</dict>
+		<key>Milestone 1</key>
+		<dict>
+			<key>text</key>
+			<string>Stands holding on when placed</string>
+			<key>key</key>
+			<string>84</string>
 		</dict>
 	</dict>
 	<dict>

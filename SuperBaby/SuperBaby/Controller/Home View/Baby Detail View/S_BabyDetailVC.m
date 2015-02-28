@@ -224,7 +224,7 @@
         [strToSend appendFormat:@"\n"];
         [strToSend appendString:[NSString stringWithFormat:@"• %@",arrCurrentMilestones[i][VALUE]]];
     }    
-    [appDel sendFacebook:self with_Text:strToSend withLink:@"http://www.google.com"];
+    [appDel sendFacebook:self with_Text:strToSend withLink:@"http://www.superbabyapp.com"];
 }
 -(IBAction)btnMilestoneClicked:(id)sender
 {

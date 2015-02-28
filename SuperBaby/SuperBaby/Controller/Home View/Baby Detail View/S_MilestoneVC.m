@@ -179,7 +179,7 @@
     }
     if (strToSend.length > 0) {
         NSString *strFinal = [NSString stringWithFormat:@"My baby just completed the %@ Milestone: %@",dict[SECTION_NAME],strToSend];
-        [appDel sendFacebook:self with_Text:strFinal withLink:@"http://www.google.com"];
+        [appDel sendFacebook:self with_Text:strFinal withLink:@"http://www.superbabyapp.com"];
     }
     else
     {
