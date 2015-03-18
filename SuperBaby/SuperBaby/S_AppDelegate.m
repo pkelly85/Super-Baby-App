@@ -14,6 +14,7 @@
 #import <Social/Social.h>
 #import <StoreKit/StoreKit.h>
 
+
 #import "S_PercentileCalculator.h"
 @interface S_AppDelegate ()<UIAlertViewDelegate>
 {
@@ -57,6 +58,7 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerStartNotification:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil ];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayerEndNotification:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil ];
     
+    [Mobiquire startSessionWithAppKey:@"YMKS1-O62X0-ZXZ0G-EQRUE-VP0VI" andDelegate:self];
     /*--- SDWebImage setup ---*/
     [SDWebImageManager.sharedManager.imageDownloader setValue:@"SuperBaby Image" forHTTPHeaderField:@"SuperBaby"];
     SDWebImageManager.sharedManager.imageDownloader.executionOrder = SDWebImageDownloaderLIFOExecutionOrder;

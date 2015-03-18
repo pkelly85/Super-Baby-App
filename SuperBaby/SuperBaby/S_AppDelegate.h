@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mobiquire.h"
 typedef void (^UNAuthorizedBlock)(BOOL success);
 #define NSLog(...)
 
 @class S_RegisterVC;
-@interface S_AppDelegate : UIResponder <UIApplicationDelegate>
+@interface S_AppDelegate : UIResponder <UIApplicationDelegate, MobiquireDelegate>
 {
     UNAuthorizedBlock unauthorizeCallback;
 }
