@@ -143,6 +143,7 @@
 		10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E11A398D8400DDA935 /* CCell_HeaderView.xib */; };
 		10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */; };
 		10FB44EA1A399A4800DDA935 /* S_RedFlagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */; };
+		C5B5EB7A1AB9EBDF000D4168 /* libMobiquire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B5EB781AB9EBDF000D4168 /* libMobiquire.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -386,6 +387,8 @@
 		10FB44E61A399A4800DDA935 /* S_RedFlagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_RedFlagVC.h; sourceTree = "<group>"; };
 		10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_RedFlagVC.m; sourceTree = "<group>"; };
 		10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_RedFlagVC.xib; sourceTree = "<group>"; };
+		C5B5EB781AB9EBDF000D4168 /* libMobiquire.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiquire.a; sourceTree = "<group>"; };
+		C5B5EB791AB9EBDF000D4168 /* Mobiquire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mobiquire.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C63DE61A88A59300A029E3 /* CoreText.framework in Frameworks */,
+				C5B5EB7A1AB9EBDF000D4168 /* libMobiquire.a in Frameworks */,
 				10C63DE41A88A0F400A029E3 /* StoreKit.framework in Frameworks */,
 				10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */,
 				10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */,
@@ -705,6 +709,7 @@
 		10C27D261A35A5DB0006985C /* ALL Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C5B5EB771AB9EBC0000D4168 /* Mobiquire */,
 				10A7E33F1A9340EA0050112E /* In App Purchase Classes */,
 				109F74D31A6F8D71001E50B1 /* MoviePlayer.h */,
 				109F74D41A6F8D71001E50B1 /* MoviePlayer.m */,
@@ -956,6 +961,15 @@
 				10FB44DB1A398D4C00DDA935 /* CCell_Excercise.xib */,
 			);
 			path = "Excercise Cell";
+			sourceTree = "<group>";
+		};
+		C5B5EB771AB9EBC0000D4168 /* Mobiquire */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5EB781AB9EBDF000D4168 /* libMobiquire.a */,
+				C5B5EB791AB9EBDF000D4168 /* Mobiquire.h */,
+			);
+			name = Mobiquire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1295,6 +1309,11 @@
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperBaby/ALL",
+					Classes,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "07fa7105-922e-485c-9852-4d693eaf90ae";
 			};
@@ -1310,6 +1329,11 @@
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SuperBaby/ALL",
+					Classes,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "07fa7105-922e-485c-9852-4d693eaf90ae";
 			};
