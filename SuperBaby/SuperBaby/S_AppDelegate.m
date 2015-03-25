@@ -139,6 +139,39 @@
     }
     return _isDataSourceAvailable;
 }
+
+- (void)display_SuperPack_withPrice:(NSString *)strPrice withViewController:(UIViewController*)viewCtr withSuperpackHandler:(SuperpackBlock)superPackBlock
+{
+    NSString *strTitle = @"Superbaby Super Pack";
+    NSString *strMessage = [NSString stringWithFormat:@"For a limited time unlock all Superbaby exercise videos for the discounted price of %@",strPrice];
+    superPackCallBack = superPackBlock;
+    if (ios8)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:strTitle message:strMessage preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionSuperPack = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
+                                          {
+                                              [alert dismissViewControllerAnimated:YES completion:nil];
+                                              superPackCallBack(YES);
+                                          }];
+        UIAlertAction* actionNO = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action)
+                                   {
+                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                       superPackCallBack(NO);
+                                   }];
+        [alert addAction:actionSuperPack];
+        [alert addAction:actionNO];
+        [viewCtr presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:strTitle message:strMessage delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes!",@"No Thanks",nil];
+        alertView.tag = 100;
+        [alertView show];
+    }
+}
+
+
+
 - (void)display_UNAuthorized_AlertwithTitle:(NSString*)title withViewController:(UIViewController*)viewCtr withHandler:(UNAuthorizedBlock)complition
 {
     if (ios8)
@@ -161,13 +194,29 @@
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 0:
-            unauthorizeCallback(YES);
-            break;
-            
-        default:
-            break;
+    if (alertView.tag == 100)
+    {
+        switch (buttonIndex) {
+            case 0:
+                superPackCallBack(YES);
+                break;
+            case 1:
+                superPackCallBack(NO);
+                break;
+            default:
+                break;
+        }
+    }
+    else
+    {
+        switch (buttonIndex) {
+            case 0:
+                unauthorizeCallback(YES);
+                break;
+                
+            default:
+                break;
+        }
     }
 }
 

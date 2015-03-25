@@ -25,6 +25,8 @@
     __weak IBOutlet UILabel *lblTitle;
     NSMutableArray *arrVideos;
     BOOL isCallingService;
+    
+    NSString *strPurchaseIdentifier;
 }
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
@@ -96,7 +98,7 @@
     
     [_carousel reloadData];
 //    [UserDefaults setObject:@"YES" forKey:@"com.sbapp.superbaby.babytaichi"];
-    [UserDefaults removeObjectForKey:@"com.sbapp.superbaby.babytaichi"];
+//    [UserDefaults removeObjectForKey:@"com.sbapp.superbaby.babytaichi"];
 }
 
 #pragma mark -
@@ -130,26 +132,35 @@
     view.btnInfo.tag = index;
     view.lblText.text = [NSString stringWithFormat:@"%@",dictInfo[EV_Detail_title]];
 
-    NSString *strPrice = [[NSString stringWithFormat:@"%@",dictInfo[EV_Detail_price]] isNull];
-    if ([strPrice isEqualToString_CaseInsensitive:@"FREE"])
+    /*--- If user purchase superbaby pack then do not show any video price ---*/
+    if ([UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER])
     {
         view.lblPrice.text = @"";
     }
     else
     {
-        if([UserDefaults objectForKey:strPrice])
+        NSString *strPrice = [[NSString stringWithFormat:@"%@",dictInfo[EV_Detail_price]] isNull];
+        if ([strPrice isEqualToString_CaseInsensitive:@"FREE"])
         {
             view.lblPrice.text = @"";
         }
-        else if (![dictInfo objectForKey:VIDEO_PRICE])
-        {
-            view.lblPrice.text = @" getting price... ";
-        }
         else
         {
-            view.lblPrice.text = [NSString stringWithFormat:@" %@ ",[dictInfo objectForKey:VIDEO_PRICE]];
+            if([UserDefaults objectForKey:strPrice])
+            {
+                view.lblPrice.text = @"";
+            }
+            else if (![dictInfo objectForKey:VIDEO_PRICE])
+            {
+                view.lblPrice.text = @" getting price... ";
+            }
+            else
+            {
+                view.lblPrice.text = [NSString stringWithFormat:@" %@ ",[dictInfo objectForKey:VIDEO_PRICE]];
+            }
         }
     }
+    
     
     view.imgVideo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dictInfo[EV_Detail_thumbnail]]];
     return view;
@@ -157,24 +168,29 @@
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
 {
     //done
-    NSDictionary *dictVideo = arrVideos[carousel.currentItemIndex];
-    NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
-    
-    if (![strPrice isEqualToString:@"FREE"] &&
-        ![dictVideo objectForKey:VIDEO_PRICE])
+    /*--- If user purchase superbaby pack then do not get any video price ---*/
+    if (![UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER])
     {
-        if (![UserDefaults objectForKey:strPrice]) {
-            if (!isCallingService) {
-                isCallingService = YES;
-                [self getPrice:strPrice];
-                //[self requestProUpgradeProductData:strPrice];
+        NSDictionary *dictVideo = arrVideos[carousel.currentItemIndex];
+        NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
+        
+        if (![strPrice isEqualToString:@"FREE"] &&
+            ![dictVideo objectForKey:VIDEO_PRICE])
+        {
+            if (![UserDefaults objectForKey:strPrice]) {
+                if (!isCallingService) {
+                    isCallingService = YES;
+                    [self getPrice:strPrice];
+                    //[self requestProUpgradeProductData:strPrice];
+                }
             }
         }
+        else
+        {
+            //[_carousel reloadItemAtIndex:carousel.currentItemIndex animated:NO];
+        }
     }
-    else
-    {
-        //[_carousel reloadItemAtIndex:carousel.currentItemIndex animated:NO];
-    }
+    
 }
 -(void)getPrice:(NSString *)strPrice
 {
@@ -215,7 +231,6 @@
 #pragma mark - IBAction Methods
 -(void)btnPlayClicked:(UIButton *)btnPlay
 {
-#warning - REMOVE BELOW LINE
     //change error here
      //btnPlay.userInteractionEnabled = NO;
     if ([appDel checkConnection:nil])
@@ -223,18 +238,15 @@
         NSDictionary *dictVideo = arrVideos[btnPlay.tag-100];
         NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
         
-        /*--- if product is not free + already not purchased ---*/
-        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
-        {
-            showHUD_with_Title(@"Getting Product");
-            [GlobalMethods BuyProduct:strPrice withViewController:self];
-        }
-        else
+        /*--- if superpack purchased + Video purchased + free then play video ---*/
+        if ([UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER] ||
+            [UserDefaults objectForKey:strPrice] ||
+            [strPrice isEqualToString:@"FREE"])
         {
             //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-           // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+            // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
             NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
-
+            
             NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
             
             MoviePlayer *player = [[MoviePlayer alloc]init];
@@ -248,6 +260,32 @@
             [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
             [self presentMoviePlayerViewControllerAnimated:player];
         }
+        else// if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
+        {
+            strPurchaseIdentifier = strPrice;
+            [self getSuperPackPrice];
+            //showHUD_with_Title(@"Getting Product");
+            //[GlobalMethods BuyProduct:strPrice withViewController:self];
+        }
+//        else
+//        {
+//            //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
+//           // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
+//            NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
+//
+//            NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
+//            
+//            MoviePlayer *player = [[MoviePlayer alloc]init];
+//            player.moviePath = dictVideo[EV_Detail_url];
+//            player.arrAnnotation = arrTemp;
+//            player.dictINFO = dictVideo;
+//            player.strVideoID = dictVideo[EV_ID];
+//            NSError *setCategoryErr = nil;
+//            NSError *activationErr  = nil;
+//            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+//            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+//            [self presentMoviePlayerViewControllerAnimated:player];
+//        }
     }
     else
     {
@@ -267,6 +305,31 @@
     [self.navigationController pushViewController:obj animated:YES];
 }
 
+
+-(void)getSuperPackPrice
+{
+    showHUD;
+    [GlobalMethods getProductPrices_withIdentifier:SUPERBABY_SUPERPACK_IDENTIFIER
+                                       withHandler:^(SKProduct *product, NSString *cost)
+     {
+         hideHUD;
+         [appDel display_SuperPack_withPrice:cost
+                          withViewController:self
+                        withSuperpackHandler:^(BOOL isSuperPack)
+         {
+             if (isSuperPack)
+             {
+                 showHUD_with_Title(@"Getting Super Pack");
+                 [GlobalMethods BuyProduct:SUPERBABY_SUPERPACK_IDENTIFIER withViewController:self];
+             }
+             else
+             {
+                 showHUD_with_Title(@"Getting Product");
+                 [GlobalMethods BuyProduct:strPurchaseIdentifier withViewController:self];
+             }
+         }];
+     }];
+}
 
 
 /*

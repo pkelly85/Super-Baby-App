@@ -43,6 +43,8 @@
     
     JSONParser *parser;
     NSInteger selectedIndex;
+    
+    NSString *strPurchaseIdentifier;
 }
 @end
 
@@ -152,25 +154,30 @@
     [tblView reloadData];
     
     lblPrice.text = @"";
-    NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
-    if (![strPrice isEqualToString:@"FREE"] )
+    /*--- If user bought superbaby pack then do not get price for video ---*/
+    if (![UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER])
     {
-        if ([UserDefaults objectForKey:strPrice]) {
-            //already purchased
-        }
-        else if(![_dictInfo objectForKey:VIDEO_PRICE])
+        strPurchaseIdentifier = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
+        if (![strPurchaseIdentifier isEqualToString:@"FREE"] )
         {
-            //do not have price
-            lblPrice.text = @" getting price ";
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self getPrice:strPrice];
-
-            });
+            if ([UserDefaults objectForKey:strPurchaseIdentifier]) {
+                //already purchased
+            }
+            else if(![_dictInfo objectForKey:VIDEO_PRICE])
+            {
+                //do not have price
+                lblPrice.text = @" getting price ";
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self getPrice];
+                    
+                });
+            }
+            else// already have a price
+                lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
         }
-        else// already have a price
-            lblPrice.text = [NSString stringWithFormat:@" %@ ",[_dictInfo objectForKey:VIDEO_PRICE]];
     }
+
     
     if (arrMilestones.count > 0) {
         if (myUserModelGlobal) {
@@ -180,10 +187,34 @@
         }
     }
 }
--(void)getPrice:(NSString *)strPrice
+-(void)getSuperPackPrice
 {
-    NSLog(@"Get Product : %@",strPrice);
-    [GlobalMethods getProductPrices_withIdentifier:strPrice
+    showHUD;
+    [GlobalMethods getProductPrices_withIdentifier:SUPERBABY_SUPERPACK_IDENTIFIER
+                                       withHandler:^(SKProduct *product, NSString *cost)
+     {
+         hideHUD;
+         [appDel display_SuperPack_withPrice:cost
+                          withViewController:self
+                        withSuperpackHandler:^(BOOL isSuperPack)
+          {
+              if (isSuperPack)
+              {
+                  showHUD_with_Title(@"Getting Super Pack");
+                  [GlobalMethods BuyProduct:SUPERBABY_SUPERPACK_IDENTIFIER withViewController:self];
+              }
+              else
+              {
+                  showHUD_with_Title(@"Getting Product");
+                  [GlobalMethods BuyProduct:strPurchaseIdentifier withViewController:self];
+              }
+          }];
+     }];
+}
+-(void)getPrice
+{
+    NSLog(@"Get Product : %@",strPurchaseIdentifier);
+    [GlobalMethods getProductPrices_withIdentifier:strPurchaseIdentifier
                                        withHandler:^(SKProduct *product, NSString *cost)
      {
          if (product)
@@ -201,13 +232,11 @@
     if ([appDel checkConnection:nil])
     {
         NSString *strPrice = [[NSString stringWithFormat:@"%@",_dictInfo[EV_Detail_price]] isNull];
-        /*--- if product is not free + already not purchased ---*/
-        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
-        {
-            showHUD_with_Title(@"Getting Product");
-            [GlobalMethods BuyProduct:strPrice withViewController:self];
-        }
-        else
+
+        /*--- if superpack purchased + Video purchased + free then play video ---*/
+        if ([UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER] ||
+            [UserDefaults objectForKey:strPrice] ||
+            [strPrice isEqualToString:@"FREE"])
         {
             //NSLog(@"%@",_dictInfo);
             NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
@@ -222,6 +251,35 @@
             [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
             [self presentMoviePlayerViewControllerAnimated:player];
         }
+        else
+        {
+            
+            strPurchaseIdentifier = strPrice;
+            [self getSuperPackPrice];
+            
+           // showHUD_with_Title(@"Getting Product");
+           // [GlobalMethods BuyProduct:strPrice withViewController:self];
+        }
+        /*--- if product is not free + already not purchased ---*/
+//        if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
+//        {
+//            
+//        }
+//        else
+//        {
+//            //NSLog(@"%@",_dictInfo);
+//            NSLog(@"annotation ID : %@",_dictInfo[EV_Detail_annotationId]);
+//            MoviePlayer *player = [[MoviePlayer alloc]init];
+//            player.moviePath = _dictInfo[EV_Detail_url];
+//            player.arrAnnotation = arrAnnotations;
+//            player.dictINFO = _dictInfo;
+//            player.strVideoID = _dictInfo[EV_ID];
+//            NSError *setCategoryErr = nil;
+//            NSError *activationErr  = nil;
+//            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
+//            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
+//            [self presentMoviePlayerViewControllerAnimated:player];
+//        }
     }
     else
     {

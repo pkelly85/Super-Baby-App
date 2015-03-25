@@ -140,7 +140,7 @@ UIImage *image_Yellow;
 
 /*-----------------------------------------------------------------------------*/
 
-#define showHUD [SVProgressHUD showWithStatus:SVProgressHUDMaskTypeClear];
+#define showHUD [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear]
 #define hideHUD [SVProgressHUD dismiss];
 
 #define showHUD_with_Title(status) [SVProgressHUD showWithStatus:status maskType:SVProgressHUDMaskTypeClear];
@@ -233,6 +233,7 @@ S_UserModel *myUserModelGlobal;
 S_BabyInfoModel *babyModelGlobal;
 BOOL isBabyInfoUpdatedGlobal;
 #define UNAUTHORIZED @"Unauthorized"
+#define SUPERBABY_SUPERPACK_IDENTIFIER @"com.sbapp.superbaby.superpack"
 
 NSMutableArray *arryProducts;
 #define IAPHelperProductPurchasedNotification @"IAPHelperProductPurchasedNotification"
