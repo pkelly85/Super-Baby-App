@@ -143,6 +143,10 @@
 		10FB44E21A398D8400DDA935 /* CCell_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E11A398D8400DDA935 /* CCell_HeaderView.xib */; };
 		10FB44E91A399A4800DDA935 /* S_RedFlagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */; };
 		10FB44EA1A399A4800DDA935 /* S_RedFlagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */; };
+		C50276DB1AF8F4B700AF5D5C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50276D91AF8F4B700AF5D5C /* FBSDKLoginKit.framework */; };
+		C50276DC1AF8F4B700AF5D5C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50276DA1AF8F4B700AF5D5C /* FBSDKShareKit.framework */; };
+		C515B1E41AE97EC400F0E16A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C515B1E31AE97EC400F0E16A /* FBSDKCoreKit.framework */; };
+		C515B1E61AE97FCE00F0E16A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C515B1E51AE97FCE00F0E16A /* Bolts.framework */; };
 		C5B5EB7A1AB9EBDF000D4168 /* libMobiquire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B5EB781AB9EBDF000D4168 /* libMobiquire.a */; };
 /* End PBXBuildFile section */
 
@@ -387,6 +391,10 @@
 		10FB44E61A399A4800DDA935 /* S_RedFlagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S_RedFlagVC.h; sourceTree = "<group>"; };
 		10FB44E71A399A4800DDA935 /* S_RedFlagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S_RedFlagVC.m; sourceTree = "<group>"; };
 		10FB44E81A399A4800DDA935 /* S_RedFlagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S_RedFlagVC.xib; sourceTree = "<group>"; };
+		C50276D91AF8F4B700AF5D5C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C50276DA1AF8F4B700AF5D5C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C515B1E31AE97EC400F0E16A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C515B1E51AE97FCE00F0E16A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C5B5EB781AB9EBDF000D4168 /* libMobiquire.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiquire.a; sourceTree = "<group>"; };
 		C5B5EB791AB9EBDF000D4168 /* Mobiquire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mobiquire.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -398,11 +406,15 @@
 			files = (
 				10C63DE61A88A59300A029E3 /* CoreText.framework in Frameworks */,
 				C5B5EB7A1AB9EBDF000D4168 /* libMobiquire.a in Frameworks */,
+				C50276DB1AF8F4B700AF5D5C /* FBSDKLoginKit.framework in Frameworks */,
 				10C63DE41A88A0F400A029E3 /* StoreKit.framework in Frameworks */,
+				C50276DC1AF8F4B700AF5D5C /* FBSDKShareKit.framework in Frameworks */,
 				10834D3E1A80BE4100D977CF /* MobileCoreServices.framework in Frameworks */,
 				10834D3C1A80BCFD00D977CF /* MediaPlayer.framework in Frameworks */,
+				C515B1E41AE97EC400F0E16A /* FBSDKCoreKit.framework in Frameworks */,
 				10834D3A1A80BC9C00D977CF /* UIKit.framework in Frameworks */,
 				10834D381A80BC9500D977CF /* Foundation.framework in Frameworks */,
+				C515B1E61AE97FCE00F0E16A /* Bolts.framework in Frameworks */,
 				10834D361A80BC8C00D977CF /* QuartzCore.framework in Frameworks */,
 				107995971A3EB7E1006EA4BA /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -487,6 +499,10 @@
 		1079959A1A3EBFD1006EA4BA /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				C50276D91AF8F4B700AF5D5C /* FBSDKLoginKit.framework */,
+				C50276DA1AF8F4B700AF5D5C /* FBSDKShareKit.framework */,
+				C515B1E51AE97FCE00F0E16A /* Bolts.framework */,
+				C515B1E31AE97EC400F0E16A /* FBSDKCoreKit.framework */,
 				10C63DE51A88A59300A029E3 /* CoreText.framework */,
 				10C63DE31A88A0F400A029E3 /* StoreKit.framework */,
 				10834D3D1A80BE4100D977CF /* MobileCoreServices.framework */,
@@ -1302,10 +1318,15 @@
 		10C27D1F1A35A4C20006985C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1314,17 +1335,23 @@
 					"$(PROJECT_DIR)/SuperBaby/ALL\\ Classes",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "/Users/bobby/Documents/dev/BlueLabelLabs-BL095-SuperBaby-iOS";
 			};
 			name = Debug;
 		};
 		10C27D201A35A4C20006985C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Morrison (289A56PN88)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: William Morrison (289A56PN88)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SuperBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1333,7 +1360,8 @@
 					"$(PROJECT_DIR)/SuperBaby/ALL\\ Classes",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f577dfb4-3f07-4a53-a99a-0d7d2f639d6a";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "/Users/bobby/Documents/dev/BlueLabelLabs-BL095-SuperBaby-iOS";
 			};
 			name = Release;
 		};
