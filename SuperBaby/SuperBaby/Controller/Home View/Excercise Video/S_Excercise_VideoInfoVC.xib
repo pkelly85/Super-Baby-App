@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="S_Excercise_VideoInfoVC">
             <connections>
                 <outlet property="imgVideo" destination="bzr-pS-48S" id="OCu-Qf-7A1"/>
                 <outlet property="lblCompletedExcercise" destination="dDa-W4-BKh" id="7f6-pS-v8V"/>
-                <outlet property="lblPrice" destination="LJ0-oT-Rhb" id="Anx-w2-uTr"/>
                 <outlet property="lblTitle" destination="Vnk-4g-1vr" id="peO-Yh-fFv"/>
                 <outlet property="lblTitle_Age" destination="zIk-NS-fqv" id="8QT-00-n7a"/>
                 <outlet property="tblView" destination="Eh5-vt-gT1" id="y4m-sq-fkG"/>
@@ -129,16 +128,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJ0-oT-Rhb" userLabel="Price">
-                    <rect key="frame" x="278" y="0.0" width="42" height="29"/>
-                    <color key="backgroundColor" red="0.90980392160000001" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="29" id="2qU-v9-Qdw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -149,16 +138,13 @@
                 <constraint firstItem="bzr-pS-48S" firstAttribute="top" secondItem="gcz-7q-tSi" secondAttribute="top" id="GhY-FQ-c0Y"/>
                 <constraint firstAttribute="trailing" secondItem="dDa-W4-BKh" secondAttribute="trailing" constant="20" id="Rmg-ec-afQ"/>
                 <constraint firstItem="atX-hS-dNq" firstAttribute="leading" secondItem="gcz-7q-tSi" secondAttribute="leading" id="TuS-dn-r8d"/>
-                <constraint firstAttribute="trailing" secondItem="LJ0-oT-Rhb" secondAttribute="trailing" id="WV8-eb-n4z"/>
                 <constraint firstAttribute="bottom" secondItem="atX-hS-dNq" secondAttribute="bottom" id="YpF-Mk-cbj"/>
                 <constraint firstAttribute="trailing" secondItem="xqb-07-hRw" secondAttribute="trailing" id="Zlg-oP-KRv"/>
                 <constraint firstAttribute="bottom" secondItem="zIk-NS-fqv" secondAttribute="bottom" constant="10" id="bkJ-cQ-5v5"/>
-                <constraint firstItem="LJ0-oT-Rhb" firstAttribute="leading" relation="lessThanOrEqual" secondItem="gcz-7q-tSi" secondAttribute="leading" priority="250" constant="278" id="cV0-Ns-zBf"/>
                 <constraint firstAttribute="bottom" secondItem="xqb-07-hRw" secondAttribute="bottom" constant="40" id="eQP-U0-tNJ"/>
                 <constraint firstItem="bzr-pS-48S" firstAttribute="leading" secondItem="gcz-7q-tSi" secondAttribute="leading" id="eRw-mS-2N7"/>
                 <constraint firstItem="dDa-W4-BKh" firstAttribute="leading" secondItem="gcz-7q-tSi" secondAttribute="leading" constant="20" id="iIz-qa-f99"/>
                 <constraint firstItem="zIk-NS-fqv" firstAttribute="leading" secondItem="gcz-7q-tSi" secondAttribute="leading" constant="10" id="nD5-Y4-Hx4"/>
-                <constraint firstItem="LJ0-oT-Rhb" firstAttribute="top" secondItem="gcz-7q-tSi" secondAttribute="top" id="qSs-WW-Cgz"/>
                 <constraint firstAttribute="trailing" secondItem="atX-hS-dNq" secondAttribute="trailing" id="rO8-yp-Krg"/>
                 <constraint firstAttribute="trailing" secondItem="zIk-NS-fqv" secondAttribute="trailing" constant="10" id="vLL-gz-adb"/>
                 <constraint firstAttribute="bottom" secondItem="dDa-W4-BKh" secondAttribute="bottom" constant="48" id="xih-BX-sYV"/>
@@ -175,9 +161,4 @@
         <image name="orange-back-arrow" width="12" height="20"/>
         <image name="reload-icon" width="65" height="65"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

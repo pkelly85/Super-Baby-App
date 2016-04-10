@@ -14,9 +14,9 @@ typedef void(^ProductPriceComplition)(SKProduct *product, NSString *cost);
 
 
 //In App Purchases Products
-+(void)getProducts:(NSString*)strProductId withViewController:(UIViewController *)vc;
-+(void)RestoreInApp_withViewController:(UIViewController *)vc;
-+(void)BuyProduct:(NSString*)strProductId withViewController:(UIViewController *)vc;
+//+(void)getProducts:(NSString*)strProductId withViewController:(UIViewController *)vc;
+//+(void)RestoreInApp_withViewController:(UIViewController *)vc;
+//+(void)BuyProduct:(NSString*)strProductId withViewController:(UIViewController *)vc;
 
 
 +(void)getProductPrices_withIdentifier:(NSString*)strProductId withHandler:(ProductPriceComplition)handler;

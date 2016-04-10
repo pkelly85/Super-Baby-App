@@ -239,10 +239,10 @@
         NSString *strPrice = [[NSString stringWithFormat:@"%@",dictVideo[EV_Detail_price]] isNull];
         
         /*--- if superpack purchased + Video purchased + free then play video ---*/
-        if ([UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER] ||
-            [UserDefaults objectForKey:strPrice] ||
-            [strPrice isEqualToString:@"FREE"])
-        {
+//        if ([UserDefaults objectForKey:SUPERBABY_SUPERPACK_IDENTIFIER] ||
+//            [UserDefaults objectForKey:strPrice] ||
+//            [strPrice isEqualToString:@"FREE"])
+//        {
             //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
             // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
             NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
@@ -259,32 +259,6 @@
             [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
             [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
             [self presentMoviePlayerViewControllerAnimated:player];
-        }
-        else// if (![strPrice isEqualToString:@"FREE"] && ![UserDefaults objectForKey:strPrice])
-        {
-            strPurchaseIdentifier = strPrice;
-            [self getSuperPackPrice];
-            //showHUD_with_Title(@"Getting Product");
-            //[GlobalMethods BuyProduct:strPrice withViewController:self];
-        }
-//        else
-//        {
-//            //NSString *strURL = @"https://s3.amazonaws.com/throwstream/1418196290.690771.mp4";
-//           // NSLog(@"annotation ID : %@",dictVideo[EV_Detail_annotationId]);
-//            NSMutableArray *arrAnnotations = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Annotations" ofType:@"plist"]];
-//
-//            NSArray *arrTemp = arrAnnotations[[dictVideo[EV_Detail_annotationId] integerValue]][EV_Annotation_annotationtime];
-//            
-//            MoviePlayer *player = [[MoviePlayer alloc]init];
-//            player.moviePath = dictVideo[EV_Detail_url];
-//            player.arrAnnotation = arrTemp;
-//            player.dictINFO = dictVideo;
-//            player.strVideoID = dictVideo[EV_ID];
-//            NSError *setCategoryErr = nil;
-//            NSError *activationErr  = nil;
-//            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error:&setCategoryErr];
-//            [[AVAudioSession sharedInstance] setActive:YES error:&activationErr];
-//            [self presentMoviePlayerViewControllerAnimated:player];
 //        }
     }
     else
@@ -304,33 +278,6 @@
     obj.dictInfo = (NSDictionary *)arrVideos[btnInfo.tag];
     [self.navigationController pushViewController:obj animated:YES];
 }
-
-
--(void)getSuperPackPrice
-{
-    showHUD;
-    [GlobalMethods getProductPrices_withIdentifier:SUPERBABY_SUPERPACK_IDENTIFIER
-                                       withHandler:^(SKProduct *product, NSString *cost)
-     {
-         hideHUD;
-         [appDel display_SuperPack_withPrice:cost
-                          withViewController:self
-                        withSuperpackHandler:^(BOOL isSuperPack)
-         {
-             if (isSuperPack)
-             {
-                 showHUD_with_Title(@"Getting Super Pack");
-                 [GlobalMethods BuyProduct:SUPERBABY_SUPERPACK_IDENTIFIER withViewController:self];
-             }
-             else
-             {
-                 showHUD_with_Title(@"Getting Product");
-                 [GlobalMethods BuyProduct:strPurchaseIdentifier withViewController:self];
-             }
-         }];
-     }];
-}
-
 
 /*
 #pragma mark - Text Field Delegate
