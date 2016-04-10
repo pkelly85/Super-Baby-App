@@ -196,12 +196,10 @@ UIImage *image_Yellow;
 #define EV_Detail_description @"description"
 #define EV_Detail_vid @"id"
 #define EV_Detail_instruction @"instruction"
-#define EV_Detail_price @"price" //TODO: this to remove
 #define EV_Detail_thumbnail @"thumbnail"
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
 #define EV_Detail_milestoneId @"milestoneId"
-#define VIDEO_PRICE @"priceOfVideo" //TODO: remove this
 
 
 #define EV_Annotation_annotationtime @"annotationtime"
