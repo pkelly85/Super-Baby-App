@@ -201,7 +201,7 @@ UIImage *image_Yellow;
 #define EV_Detail_title @"title"
 #define EV_Detail_url @"url"
 #define EV_Detail_milestoneId @"milestoneId"
-#define VIDEO_PRICE @"priceOfVideo"
+#define VIDEO_PRICE @"priceOfVideo" //TODO: remove this
 
 
 #define EV_Annotation_annotationtime @"annotationtime"

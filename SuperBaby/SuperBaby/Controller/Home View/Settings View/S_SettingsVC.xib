@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -10,7 +10,6 @@
             <connections>
                 <outlet property="btnAccountUpdate" destination="CBu-cl-Wtp" id="TLx-0S-Jcp"/>
                 <outlet property="btnLogin_Logout" destination="iR3-hk-67t" id="ouz-vF-TUX"/>
-                <outlet property="btnRestorePurchase" destination="V54-t7-JPv" id="UbR-Sr-7sX"/>
                 <outlet property="imgVBaby" destination="eJ5-95-oSg" id="c6F-tO-e9s"/>
                 <outlet property="lblAccountUpdate" destination="anX-vo-k6x" id="ryx-Ux-8ca"/>
                 <outlet property="view" destination="ZQG-0l-7oT" id="SyR-f3-CRd"/>
@@ -67,14 +66,14 @@
                     <rect key="frame" x="239" y="64" width="80" height="416"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anX-vo-k6x" userLabel="Red">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="138.5"/>
                             <color key="backgroundColor" red="0.90980392160000001" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBu-cl-Wtp">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="138.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <state key="normal" title="Account Update">
@@ -86,14 +85,14 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV2-y8-RDI" userLabel="Blue">
-                            <rect key="frame" x="0.0" y="104" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="138.5" width="80" height="139"/>
                             <color key="backgroundColor" red="0.0" green="0.71764705880000002" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5o-Uj-q9O">
-                            <rect key="frame" x="0.0" y="104" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="138.5" width="80" height="139"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <state key="normal" title="Feedback">
@@ -104,34 +103,15 @@
                                 <action selector="btnFeedbackClicked:" destination="-1" eventType="touchUpInside" id="Z3e-dg-lah"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUz-RK-pXI" userLabel="Green">
-                            <rect key="frame" x="0.0" y="208" width="80" height="104"/>
-                            <color key="backgroundColor" red="0.62352941179999999" green="0.74117647060000003" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V54-t7-JPv">
-                            <rect key="frame" x="0.0" y="208" width="80" height="104"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                            <state key="normal" title="Restore Purchases">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btnRestoreClicked:" destination="-1" eventType="touchUpInside" id="0Y0-ql-OY6"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-bT-Oth" userLabel="Yellow">
-                            <rect key="frame" x="0.0" y="312" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="277.5" width="80" height="138.5"/>
                             <color key="backgroundColor" red="0.94901960780000005" green="0.81176470590000005" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-hk-67t">
-                            <rect key="frame" x="0.0" y="312" width="80" height="104"/>
+                            <rect key="frame" x="0.0" y="277.5" width="80" height="138.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <state key="normal" title="Logout">
@@ -146,33 +126,25 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="anX-vo-k6x" firstAttribute="leading" secondItem="CBu-cl-Wtp" secondAttribute="leading" id="0jv-jC-VaB"/>
+                        <constraint firstItem="iR3-hk-67t" firstAttribute="top" secondItem="m5o-Uj-q9O" secondAttribute="bottom" id="1kg-oW-mqP"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="leading" secondItem="ny9-TV-wKx" secondAttribute="leading" id="72f-zY-bQ0"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="leading" secondItem="cV2-y8-RDI" secondAttribute="leading" id="7Iq-ld-Yxc"/>
                         <constraint firstAttribute="bottom" secondItem="iR3-hk-67t" secondAttribute="bottom" id="9TM-Hf-nEL"/>
-                        <constraint firstItem="iR3-hk-67t" firstAttribute="height" secondItem="V54-t7-JPv" secondAttribute="height" id="AYm-5c-so5"/>
                         <constraint firstAttribute="trailing" secondItem="CBu-cl-Wtp" secondAttribute="trailing" id="Bdk-ZB-0Bd"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="leading" secondItem="kUz-RK-pXI" secondAttribute="leading" id="BhA-sW-otx"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="top" secondItem="m5o-Uj-q9O" secondAttribute="bottom" id="EfS-nu-wYQ"/>
                         <constraint firstItem="CfG-bT-Oth" firstAttribute="trailing" secondItem="iR3-hk-67t" secondAttribute="trailing" id="GKl-t7-Ui4"/>
                         <constraint firstItem="anX-vo-k6x" firstAttribute="trailing" secondItem="CBu-cl-Wtp" secondAttribute="trailing" id="GPu-XF-vMp"/>
                         <constraint firstItem="CfG-bT-Oth" firstAttribute="leading" secondItem="iR3-hk-67t" secondAttribute="leading" id="Ige-Wa-wi9"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="bottom" secondItem="kUz-RK-pXI" secondAttribute="bottom" id="LBL-Nw-949"/>
                         <constraint firstItem="CBu-cl-Wtp" firstAttribute="top" secondItem="ny9-TV-wKx" secondAttribute="top" id="QGL-C5-dcf"/>
-                        <constraint firstAttribute="trailing" secondItem="V54-t7-JPv" secondAttribute="trailing" id="SJQ-f5-y9m"/>
                         <constraint firstItem="CfG-bT-Oth" firstAttribute="top" secondItem="iR3-hk-67t" secondAttribute="top" id="UOd-u1-ZRC"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="top" secondItem="cV2-y8-RDI" secondAttribute="top" id="Y6P-0y-PaH"/>
                         <constraint firstItem="iR3-hk-67t" firstAttribute="leading" secondItem="ny9-TV-wKx" secondAttribute="leading" id="bc4-u1-ULe"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="height" secondItem="m5o-Uj-q9O" secondAttribute="height" id="btB-Ap-w52"/>
                         <constraint firstItem="anX-vo-k6x" firstAttribute="bottom" secondItem="CBu-cl-Wtp" secondAttribute="bottom" id="cR7-Sr-3k9"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="top" secondItem="kUz-RK-pXI" secondAttribute="top" id="frK-CR-MPq"/>
-                        <constraint firstItem="m5o-Uj-q9O" firstAttribute="height" secondItem="CBu-cl-Wtp" secondAttribute="height" id="g0v-z8-bQm"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="trailing" secondItem="cV2-y8-RDI" secondAttribute="trailing" id="h0B-ox-2yh"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="trailing" secondItem="kUz-RK-pXI" secondAttribute="trailing" id="hXM-KC-RGy"/>
                         <constraint firstAttribute="width" secondItem="ny9-TV-wKx" secondAttribute="height" multiplier="25:104" constant="-20" id="hsU-mY-yRG"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="bottom" secondItem="cV2-y8-RDI" secondAttribute="bottom" id="iQ4-IE-Z9O"/>
-                        <constraint firstItem="V54-t7-JPv" firstAttribute="leading" secondItem="ny9-TV-wKx" secondAttribute="leading" id="jYe-25-biE"/>
-                        <constraint firstItem="iR3-hk-67t" firstAttribute="top" secondItem="V54-t7-JPv" secondAttribute="bottom" id="lQS-Rv-TiB"/>
+                        <constraint firstItem="m5o-Uj-q9O" firstAttribute="height" secondItem="CBu-cl-Wtp" secondAttribute="height" id="lGt-sH-uQV"/>
                         <constraint firstAttribute="trailing" secondItem="m5o-Uj-q9O" secondAttribute="trailing" id="mvR-GL-d8K"/>
+                        <constraint firstItem="iR3-hk-67t" firstAttribute="height" secondItem="CBu-cl-Wtp" secondAttribute="height" id="plB-ra-Lhz"/>
                         <constraint firstItem="m5o-Uj-q9O" firstAttribute="top" secondItem="CBu-cl-Wtp" secondAttribute="bottom" id="tHa-uY-SeA"/>
                         <constraint firstItem="CfG-bT-Oth" firstAttribute="bottom" secondItem="iR3-hk-67t" secondAttribute="bottom" id="tW7-iz-48N"/>
                         <constraint firstItem="CBu-cl-Wtp" firstAttribute="leading" secondItem="ny9-TV-wKx" secondAttribute="leading" id="toS-ar-rjh"/>
@@ -219,9 +191,4 @@
         <image name="babby" width="320" height="568"/>
         <image name="white-back-arrow" width="12" height="20"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

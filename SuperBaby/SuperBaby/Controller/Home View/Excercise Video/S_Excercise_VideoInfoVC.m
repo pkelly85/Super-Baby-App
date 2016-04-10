@@ -19,8 +19,6 @@
 #import "MoviePlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
-#import "GlobalMethods.h"
-
 #define KEY @"key"
 #define VALUE @"text"
 
