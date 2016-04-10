@@ -10,7 +10,6 @@
 #import "AppConstant.h"
 #import "S_RegisterVC.h"
 #import "S_AccountUpdateVC.h"
-#import "InAppHelper.h"
 #import <MessageUI/MessageUI.h>
 @interface S_SettingsVC ()<UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
 {
@@ -18,7 +17,6 @@
     
     __weak IBOutlet UILabel *lblAccountUpdate;
     __weak IBOutlet UIButton *btnAccountUpdate;
-    __weak IBOutlet UIButton *btnRestorePurchase;
     __weak IBOutlet UIButton *btnLogin_Logout;
 
     __weak IBOutlet UIImageView *imgVBaby;
@@ -111,21 +109,8 @@
     btnAccountUpdate.titleLabel.numberOfLines = 0;
     btnAccountUpdate.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btnAccountUpdate setAttributedTitle:attributedString forState:UIControlStateNormal];
-    
-    
-    
-    //btnRestorePurchase
-    NSMutableAttributedString *attributedRestore = [[NSMutableAttributedString alloc] initWithString:@"Restore\nPurchases"];
-    
-    NSRange goRange123 = [[attributedRestore string] rangeOfString:@"Restore\nPurchases"];
-    [attributedRestore addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:goRange123];//TextColor
-    [attributedRestore addAttribute:NSFontAttributeName value:btnRestorePurchase.titleLabel.font range:goRange123];//TextFont
-    
-    btnRestorePurchase.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    btnRestorePurchase.titleLabel.numberOfLines = 0;
-    btnRestorePurchase.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [btnRestorePurchase setAttributedTitle:attributedRestore forState:UIControlStateNormal];
 }
+
 #pragma mark - Product Purchase NotificationCenter
 - (void)productPurchased:(NSNotification *) notification
 {
@@ -147,12 +132,6 @@
 
 
 #pragma mark - IBAction
-
-
--(IBAction)btnRestoreClicked:(id)sender{
-    showHUD_with_Title(@"Restoring All Purchases");
-    [[InAppHelper sharedInstance]restoreCompletedTransactions:self];
-}
 
 -(IBAction)btnFeedbackClicked:(id)sender
 {
